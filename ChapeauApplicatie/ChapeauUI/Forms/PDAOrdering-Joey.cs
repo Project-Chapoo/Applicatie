@@ -14,7 +14,6 @@ using ChapeauDAL;
 
 namespace ChapeauUI
 {
-    // vuile flikker
     public partial class PDAOrdering_Joey : Form
     {
         private int tableID = 0;
@@ -25,6 +24,29 @@ namespace ChapeauUI
         {
             OrderedItems.Add(orderedItems);
         }
+
+        void HidePanels()
+        {
+            pnlOrderOrPayment.Hide();
+            pnlLunch.Hide();
+            pnlDiner.Hide();
+            pnlDranken.Hide();
+            pnlLunchHoofdgerechten.Hide();
+            pnlLunchNagerechten.Hide();
+            pnlLunchVoorgerechten.Hide();
+            pnlOpmerkingen.Hide();
+            pnlOrderOrPayment.Hide();
+            pnlOrderReview.Hide();
+            pnlTableSelection.Hide();
+            pnlCourseChoosing.Hide();
+            pnlConfirmOrder.Hide();
+            pnlDinerTussengerechten.Hide();
+            pnlDinerHoofdgerechten.Hide();
+            pnlDinerNagerechten.Hide();
+        }
+
+
+
 
 
         public PDAOrdering_Joey()
@@ -58,7 +80,7 @@ namespace ChapeauUI
                 pnlDinerTussengerechten.Hide();
                 pnlDinerHoofdgerechten.Hide();
                 pnlDinerNagerechten.Hide();
-                
+
 
                 // show tableSelection
                 pnlTableSelection.Show();
@@ -401,6 +423,8 @@ namespace ChapeauUI
 
         private void btnLunch_Click(object sender, EventArgs e)
         {
+            //if tijd != 14:00 - 17:00 messagebox.show("Je kan geen lunch meer bestellen, dit kan alleen tussen 14:00 en 17:00");
+            //else
             showPanel("Lunch");
         }
 
@@ -509,7 +533,11 @@ namespace ChapeauUI
         }
 
         private void btnLunchSteakTartaar_Click(object sender, EventArgs e)
-        {
+        {            
+            OrderItemsService orderItemsService = new OrderItemsService();
+            orderItemsService.LunchSteak(tableID);
+           /* MenuItemService menuItemService = new MenuItemService();
+            menuItemService.LunchSteak();*/
             showPanel("CourseChoosing");
             //add to order
         }
@@ -529,30 +557,28 @@ namespace ChapeauUI
         private void btnOrder_Click(object sender, EventArgs e)
         {
             showPanel("ConfirmOrder");
-            OrderItemsService orderItemsService = new OrderItemsService();
-            List<OrderItems> orderItemsList = orderItemsService.GetOrderItems();
-            foreach (OrderItems orderItem in orderItemsList)
-            {
-                ListViewItem li = new ListViewItem(orderItem.OrderItemID.ToString());
-                li.SubItems.Add(orderItem.quantity.ToString());
-                lstviewOrder.Items.Add(li);
-            }
+            lstViewOrderedItems();
         }
 
         private void btnTaart_Click(object sender, EventArgs e)
         {
             showPanel("CourseChoosing");
+            MessageBox.Show("Taart is toegevoegd aan bestelling");
             //add to order
         }
 
         private void btnMadeleine_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show("Madeleine is toegevoegd aan bestelling");
+
             showPanel("CourseChoosing");
+
             //add to order
         }
 
         private void btnBoerenKaas_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Boerenkaas is toegevoegd aan bestelling");
             showPanel("CourseChoosing");
             //add to order
         }
@@ -586,18 +612,21 @@ namespace ChapeauUI
 
         private void btnDinerKalfstartaar_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Tartaar is toegevoegd aan bestelling");
             showPanel("CourseChoosing");
             //add to order
         }
 
         private void btnDinerFazant_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Fazant is toegevoegd aan bestelling");
             showPanel("CourseChoosing");
             //add to order
         }
 
         private void btnDinerKrabZalmKoekjes_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Krab-zalm koekjes zijn toegevoegd aan bestelling");
             showPanel("CourseChoosing");
             //add to order
         }
@@ -649,28 +678,128 @@ namespace ChapeauUI
             showPanel("CourseChoosing");
             //add to order
         }
+
+        private void btnConfirmOrder_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Order is verstuurd naar de keuken/Bar");
+
+            showPanel("TableSelection");
+            int IDtable = tableID;
+
+            OrderService orderService = new OrderService();
+            orderService.ConfirmOrder(IDtable);
+
+            //OrderItemsService orderItemsService = new OrderItemsService();
+            //orderItemsService.LunchSteak();
+        }
+
+        private void btnAddItem_Click(object sender, EventArgs e)
+        {
+            try
+            {                
+                int selectedOrderItemID = int.Parse(lstviewOrder.SelectedItems[0].SubItems[3].Text);
+                OrderItemsService orderItemsService = new OrderItemsService();
+                orderItemsService.AddItem(selectedOrderItemID);
+                lstViewOrderedItems();
+            }
+            catch (Exception)
+            {
+                if (lstviewOrder.SelectedItems.Count == 0)
+                {
+                    MessageBox.Show("Selecteer eerst een gerecht wat u wilt toevoegen");
+                }
+            }
+            
+        }
+
+        private void btnRemoveItem_Click(object sender, EventArgs e)
+        {
+            try
+            {                
+                int selectedItem = int.Parse(lstviewOrder.SelectedItems[0].SubItems[3].Text);
+                OrderItemsService orderItemsService = new OrderItemsService();
+                orderItemsService.RemoveItem(selectedItem);
+                lstViewOrderedItems();
+            }
+            catch (Exception)
+            {
+                if (lstviewOrder.SelectedItems.Count == 0)
+                {
+                    MessageBox.Show("Selecteer eerst een gerecht wat u wilt verminderen");
+                };
+            }            
+        }
+
+        private void lstViewOrderedItems()
+        {
+            OrderItemsService orderItemsService = new OrderItemsService();
+            List<OrderItems> orderItemsList = orderItemsService.GetOrderItemsPerTable(tableID);
+            lstviewOrder.Items.Clear();
+            lstviewOrder.View = View.Details;
+            foreach (OrderItems orderItem in orderItemsList)
+            {
+                ListViewItem li = new ListViewItem(orderItem.TableID.ToString());
+                li.SubItems.Add(orderItem.quantity.ToString());
+                li.SubItems.Add(orderItem.description.ToString());
+                li.SubItems.Add(orderItem.OrderItemID.ToString());                
+                lstviewOrder.Items.Add(li);
+            }
+        }
+
+        private void btnDeleteOrder_Click(object sender, EventArgs e)
+        {           
+            OrderItemsService orderItemsService = new OrderItemsService();
+            
+            DialogResult dialogResult = MessageBox.Show("Weet je zeker dat je de gehele bestelling wilt verwijderen?",MessageBoxButtons.YesNo.ToString());
+            if (dialogResult == DialogResult.Yes)
+            {
+                orderItemsService.VerwijderOrder(tableID);
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                showPanel("ConfirmOrder");           
+            }
+            lstViewOrderedItems();           
+        }
+
+        private void btnVerwijderItem_Click(object sender, EventArgs e)
+        {
+            string message = "Weet je zeker dat je dit item wilt verwijderen?";
+            string title = "Item verwijderen";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    int selectedOrderItemID = int.Parse(lstviewOrder.SelectedItems[0].SubItems[3].Text);
+                    OrderItemsService orderItemsService = new OrderItemsService();
+                    orderItemsService.VerwijderItem(selectedOrderItemID);
+                    lstViewOrderedItems();
+                }
+                catch (Exception)
+                {
+                    if (lstviewOrder.SelectedItems.Count == 0)
+                    {
+                        MessageBox.Show("Selecteer eerst een gerecht wat u wilt verwijderen");
+                    };                    
+                }
+            }
+            else
+            {
+                showPanel("ConfirmOrder");  
+            }
+
+            
+           
+            }
+        }
     }
 
 
 
 
-        /* private void HideAndShowPanels(string panelName)
-         {
-             if (panelName == "TableSelection")
-             {
-                 //hide other panels
-                 pnlOrderOrPayment.Hide();
-                 pnlCourseChoosing.Hide();
-                 pnlOrderOrPayment.Hide();
-                 // show tableSelection
-                 pnlTableSelection.Show();
-             }
-             else if (panelName == "pnlOrderOrPayment")
-             {
-                 pnlTableSelection.Hide();
-                 pnlOrderOrPayment.Hide();
-                 pnlCourseChoosing.Hide();
-                 pnlOrderOrPayment.Show();
-             }*/
-    }
+
+       
+    
     

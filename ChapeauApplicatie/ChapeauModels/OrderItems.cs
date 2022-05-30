@@ -12,6 +12,7 @@ namespace ChapeauModels
         public int OrderID { get; set; }
         public int MenuItemID { get; set; }
         public int quantity { get; set; }
-
+        public string description { get; set; }
+        public int TableID { get; set; }
     }
 }

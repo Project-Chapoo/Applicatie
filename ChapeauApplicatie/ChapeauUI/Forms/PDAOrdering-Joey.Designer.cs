@@ -74,11 +74,16 @@
             this.lblCurrentOrder = new System.Windows.Forms.Label();
             this.btnSendOrder = new System.Windows.Forms.Button();
             this.pnlConfirmOrder = new System.Windows.Forms.Panel();
+            this.btnVerwijderItem = new System.Windows.Forms.Button();
+            this.btnDeleteOrder = new System.Windows.Forms.Button();
+            this.btnAddItem = new System.Windows.Forms.Button();
+            this.btnRemoveItem = new System.Windows.Forms.Button();
+            this.btnConfirmOrder = new System.Windows.Forms.Button();
             this.lstviewOrder = new System.Windows.Forms.ListView();
-            this.columnMenuItemID = new System.Windows.Forms.ColumnHeader();
-            this.columnQuantity = new System.Windows.Forms.ColumnHeader();
+            this.TafelID = new System.Windows.Forms.ColumnHeader();
+            this.Quantity = new System.Windows.Forms.ColumnHeader();
+            this.Description = new System.Windows.Forms.ColumnHeader();
             this.btnGoBackToCourseChoosingFromConfirmOrder = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.pnlDiner = new System.Windows.Forms.Panel();
             this.btnGoBackToCourseChoosingFromDinerSelection = new System.Windows.Forms.Button();
             this.btnDinerNagerechten = new System.Windows.Forms.Button();
@@ -104,7 +109,7 @@
             this.btnGoBackToDinerCoursesFromNagerechten = new System.Windows.Forms.Button();
             this.btnDinerNagerechtenCherryBaby = new System.Windows.Forms.Button();
             this.btnDinerNagerechtenCaféSurprise = new System.Windows.Forms.Button();
-            this.columnOrderItemID = new System.Windows.Forms.ColumnHeader();
+            this.OrderItemID = new System.Windows.Forms.ColumnHeader();
             this.pnlTableSelection.SuspendLayout();
             this.pnlOrderOrPayment.SuspendLayout();
             this.pnlCourseChoosing.SuspendLayout();
@@ -585,35 +590,97 @@
             // pnlConfirmOrder
             // 
             this.pnlConfirmOrder.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlConfirmOrder.Controls.Add(this.btnVerwijderItem);
+            this.pnlConfirmOrder.Controls.Add(this.btnDeleteOrder);
+            this.pnlConfirmOrder.Controls.Add(this.btnAddItem);
+            this.pnlConfirmOrder.Controls.Add(this.btnRemoveItem);
+            this.pnlConfirmOrder.Controls.Add(this.btnConfirmOrder);
             this.pnlConfirmOrder.Controls.Add(this.lstviewOrder);
             this.pnlConfirmOrder.Controls.Add(this.btnGoBackToCourseChoosingFromConfirmOrder);
-            this.pnlConfirmOrder.Controls.Add(this.button3);
             this.pnlConfirmOrder.Location = new System.Drawing.Point(0, 0);
             this.pnlConfirmOrder.Name = "pnlConfirmOrder";
             this.pnlConfirmOrder.Size = new System.Drawing.Size(240, 320);
             this.pnlConfirmOrder.TabIndex = 13;
             // 
+            // btnVerwijderItem
+            // 
+            this.btnVerwijderItem.Location = new System.Drawing.Point(4, 258);
+            this.btnVerwijderItem.Name = "btnVerwijderItem";
+            this.btnVerwijderItem.Size = new System.Drawing.Size(75, 50);
+            this.btnVerwijderItem.TabIndex = 11;
+            this.btnVerwijderItem.Text = "Verwijder item";
+            this.btnVerwijderItem.UseVisualStyleBackColor = true;
+            this.btnVerwijderItem.Click += new System.EventHandler(this.btnVerwijderItem_Click);
+            // 
+            // btnDeleteOrder
+            // 
+            this.btnDeleteOrder.Location = new System.Drawing.Point(83, 258);
+            this.btnDeleteOrder.Name = "btnDeleteOrder";
+            this.btnDeleteOrder.Size = new System.Drawing.Size(75, 50);
+            this.btnDeleteOrder.TabIndex = 10;
+            this.btnDeleteOrder.Text = "Verwijder alles";
+            this.btnDeleteOrder.UseVisualStyleBackColor = true;
+            this.btnDeleteOrder.Click += new System.EventHandler(this.btnDeleteOrder_Click);
+            // 
+            // btnAddItem
+            // 
+            this.btnAddItem.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAddItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddItem.Location = new System.Drawing.Point(83, 202);
+            this.btnAddItem.Name = "btnAddItem";
+            this.btnAddItem.Size = new System.Drawing.Size(75, 50);
+            this.btnAddItem.TabIndex = 9;
+            this.btnAddItem.Text = "+ ";
+            this.btnAddItem.UseVisualStyleBackColor = true;
+            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
+            // 
+            // btnRemoveItem
+            // 
+            this.btnRemoveItem.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRemoveItem.Location = new System.Drawing.Point(4, 202);
+            this.btnRemoveItem.Name = "btnRemoveItem";
+            this.btnRemoveItem.Size = new System.Drawing.Size(73, 50);
+            this.btnRemoveItem.TabIndex = 8;
+            this.btnRemoveItem.Text = "-";
+            this.btnRemoveItem.UseVisualStyleBackColor = true;
+            this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
+            // 
+            // btnConfirmOrder
+            // 
+            this.btnConfirmOrder.Location = new System.Drawing.Point(163, 202);
+            this.btnConfirmOrder.Name = "btnConfirmOrder";
+            this.btnConfirmOrder.Size = new System.Drawing.Size(75, 106);
+            this.btnConfirmOrder.TabIndex = 7;
+            this.btnConfirmOrder.Text = "Order";
+            this.btnConfirmOrder.UseVisualStyleBackColor = true;
+            this.btnConfirmOrder.Click += new System.EventHandler(this.btnConfirmOrder_Click);
+            // 
             // lstviewOrder
             // 
             this.lstviewOrder.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnOrderItemID,
-            this.columnMenuItemID,
-            this.columnQuantity});
+            this.TafelID,
+            this.Quantity,
+            this.Description,
+            this.OrderItemID});
+            this.lstviewOrder.FullRowSelect = true;
+            this.lstviewOrder.GridLines = true;
             this.lstviewOrder.Location = new System.Drawing.Point(4, 34);
             this.lstviewOrder.Name = "lstviewOrder";
-            this.lstviewOrder.Size = new System.Drawing.Size(233, 206);
+            this.lstviewOrder.Size = new System.Drawing.Size(233, 162);
             this.lstviewOrder.TabIndex = 6;
             this.lstviewOrder.UseCompatibleStateImageBehavior = false;
             // 
-            // columnMenuItemID
+            // TafelID
             // 
-            this.columnMenuItemID.DisplayIndex = 0;
-            this.columnMenuItemID.Text = "MenuItemID";
+            this.TafelID.Text = "TableID";
             // 
-            // columnQuantity
+            // Quantity
             // 
-            this.columnQuantity.DisplayIndex = 1;
-            this.columnQuantity.Text = "Quantity";
+            this.Quantity.Text = "Quantity";
+            // 
+            // Description
+            // 
+            this.Description.Text = "Description";
             // 
             // btnGoBackToCourseChoosingFromConfirmOrder
             // 
@@ -624,15 +691,6 @@
             this.btnGoBackToCourseChoosingFromConfirmOrder.Text = "Go back";
             this.btnGoBackToCourseChoosingFromConfirmOrder.UseVisualStyleBackColor = true;
             this.btnGoBackToCourseChoosingFromConfirmOrder.Click += new System.EventHandler(this.btnGoBackToCourseChoosingFromConfirmOrder_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(153, 246);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 60);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Order";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // pnlDiner
             // 
@@ -889,10 +947,9 @@
             this.btnDinerNagerechtenCaféSurprise.UseVisualStyleBackColor = true;
             this.btnDinerNagerechtenCaféSurprise.Click += new System.EventHandler(this.btnDinerNagerechtenCaféSurprise_Click);
             // 
-            // columnOrderItemID
+            // OrderItemID
             // 
-            this.columnOrderItemID.DisplayIndex = 2;
-            this.columnOrderItemID.Text = "OrderItemID";
+            this.OrderItemID.Text = "OrderItemID";
             // 
             // PDAOrdering_Joey
             // 
@@ -986,10 +1043,9 @@
         private Button btnGoBackToTableSelection;
         private Panel pnlConfirmOrder;
         private Button btnGoBackToCourseChoosingFromConfirmOrder;
-        private Button button3;
         private ListView lstviewOrder;
-        private ColumnHeader columnMenuItemID;
-        private ColumnHeader columnQuantity;
+        private ColumnHeader TafelID;
+        private ColumnHeader Quantity;
         private Button btnGoBackToCourseChoosingFromDinerSelection;
         private Button btnDinerNagerechten;
         private Button btnDinerHoofdgerechten;
@@ -1014,6 +1070,12 @@
         private Button btnGoBackToDinerCoursesFromNagerechten;
         private Button btnDinerNagerechtenCherryBaby;
         private Button btnDinerNagerechtenCaféSurprise;
-        private ColumnHeader columnOrderItemID;
+        private Button btnConfirmOrder;
+        private ColumnHeader Description;
+        private Button btnAddItem;
+        private Button btnRemoveItem;
+        private Button btnVerwijderItem;
+        private Button btnDeleteOrder;
+        private ColumnHeader OrderItemID;
     }
 }

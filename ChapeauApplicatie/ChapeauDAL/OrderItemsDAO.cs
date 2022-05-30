@@ -37,5 +37,66 @@ namespace ChapeauDAL
             return orderItems;
         }
 
+        public List<OrderItems> GetAllOrderItemsPerTable(int tableID)
+        {
+            string query = $"SELECT oi.orderitemid, OI.TableID, oi.Quantity, mi.description FROM OrderItem AS OI " +
+                           $"JOIN [dbo].[MenuItem] AS MI ON MI.MenuItemID = oi.MenuItemID " +
+                           $"where tableid = {tableID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTablesPerTable(ExecuteSelectQuery(query, sqlParameters));
+        }
+
+        private List<OrderItems> ReadTablesPerTable(DataTable dataTable)
+        {
+            List<OrderItems> orderItems = new List<OrderItems>();
+
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                OrderItems orderItem = new OrderItems()
+                {
+                    OrderItemID = (int)dr["orderitemid"],
+                    quantity = (int)(dr["quantity"]),
+                    TableID = (int)(dr["tableid"]),
+                    description = (string)(dr["description"]),
+                };
+                orderItems.Add(orderItem);
+            }
+            return orderItems;
+        }
+
+        public void SteakLunch(int tableID)
+        {
+            //table id nog toevoegen
+            string query = $"INSERT INTO [orderitem] (OrderID, MenuItemID, quantity, tableid) VALUES (12, 1, 1, {tableID})";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void ItemAdd(int selectedItemID)
+        {
+            string query = $"update OrderItem set Quantity = Quantity + 1 where OrderItemID = {selectedItemID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
+        public void ItemRemove(int selectedItemID)
+        {
+            string query = $"update OrderItem set Quantity = Quantity - 1 where OrderItemID = {selectedItemID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void OrderVerwijderen(int tableID)
+        {
+            string query = $"delete from OrderItem where tableID = {tableID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void ItemVerwijderen(int selectedItemID)
+        {
+            string query = $"delete from OrderItem where orderitemID = {selectedItemID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
     }
 }

@@ -23,5 +23,35 @@ namespace ChapeauService
             return orderItems;
         }
 
+        public List<OrderItems> GetOrderItemsPerTable(int tableID)
+        {
+            List<OrderItems> orderItems = orderitemsdb.GetAllOrderItemsPerTable(tableID);
+            return orderItems;
+        }
+
+        public void LunchSteak(int tableID)
+        {
+            orderitemsdb.SteakLunch(tableID);
+        }
+
+        public void AddItem(int selectedItemID)
+        {
+            orderitemsdb.ItemAdd(selectedItemID);
+        }
+
+        public void RemoveItem(int selectedItemID)
+        {
+            orderitemsdb.ItemRemove(selectedItemID);
+        }
+
+        public void VerwijderOrder(int tableID)
+        {
+            orderitemsdb.OrderVerwijderen(tableID);
+        }
+
+        public void VerwijderItem(int selectedItemID)
+        {
+            orderitemsdb.ItemVerwijderen(selectedItemID);
+        }
     }
 }
