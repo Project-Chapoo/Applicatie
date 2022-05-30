@@ -30,7 +30,7 @@ namespace ChapeauDAL
                     OrderItemID = (int)dr["OrderItemID"],
                     OrderID = (int)(dr["OrderID"]),
                     MenuItemID = (int)(dr["MenuItemID"]),
-                    quantity = (int)(dr["Quantity"]),
+                    Quantity = (int)(dr["Quantity"]),
                 };
                 orderItems.Add(orderitem);
             }
@@ -55,9 +55,9 @@ namespace ChapeauDAL
                 OrderItems orderItem = new OrderItems()
                 {
                     OrderItemID = (int)dr["orderitemid"],
-                    quantity = (int)(dr["quantity"]),
+                    Quantity = (int)(dr["quantity"]),
                     TableID = (int)(dr["tableid"]),
-                    description = (string)(dr["description"]),
+                    Description = (string)(dr["description"]),
                 };
                 orderItems.Add(orderItem);
             }
