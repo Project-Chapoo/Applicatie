@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ChapeauDAL\ChapeauDAL.csproj" />
+    <ProjectReference Include="..\ChapeauModels\ChapeauModels.csproj" />
+  </ItemGroup>
+
 </Project>
