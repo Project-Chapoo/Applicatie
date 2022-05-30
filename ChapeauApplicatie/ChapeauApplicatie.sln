@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChapeauUI", "ChapeauUI\ChapeauUI.csproj", "{447644F0-E005-459B-A90C-812C68111FA8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChapeauService", "ChapeauService\ChapeauService.csproj", "{D7905FA4-5A8C-4AA5-A4AA-C635CD1A3669}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{447644F0-E005-459B-A90C-812C68111FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{447644F0-E005-459B-A90C-812C68111FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{447644F0-E005-459B-A90C-812C68111FA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7905FA4-5A8C-4AA5-A4AA-C635CD1A3669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7905FA4-5A8C-4AA5-A4AA-C635CD1A3669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7905FA4-5A8C-4AA5-A4AA-C635CD1A3669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7905FA4-5A8C-4AA5-A4AA-C635CD1A3669}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
