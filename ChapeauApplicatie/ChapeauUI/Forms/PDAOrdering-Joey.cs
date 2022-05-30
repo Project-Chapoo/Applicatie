@@ -14,6 +14,7 @@ using ChapeauDAL;
 
 namespace ChapeauUI
 {
+    // vuile flikker
     public partial class PDAOrdering_Joey : Form
     {
         private int tableID = 0;
