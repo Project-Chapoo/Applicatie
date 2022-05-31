@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTafel10 = new System.Windows.Forms.Button();
+            this.btnTafel9 = new System.Windows.Forms.Button();
+            this.btnTafel7 = new System.Windows.Forms.Button();
+            this.btnTafel8 = new System.Windows.Forms.Button();
+            this.btnTafel2 = new System.Windows.Forms.Button();
+            this.btnTafel3 = new System.Windows.Forms.Button();
+            this.btnTafel4 = new System.Windows.Forms.Button();
+            this.btnTafel6 = new System.Windows.Forms.Button();
+            this.btnTafel5 = new System.Windows.Forms.Button();
             this.btnTafel1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblViewStatus = new System.Windows.Forms.Label();
@@ -46,86 +46,95 @@
             this.btnKassaLogOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button9
+            // btnTafel10
             // 
-            this.button9.Location = new System.Drawing.Point(592, 587);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(73, 73);
-            this.button9.TabIndex = 19;
-            this.button9.Text = "Tafel 10";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnTafel10.Location = new System.Drawing.Point(592, 587);
+            this.btnTafel10.Name = "btnTafel10";
+            this.btnTafel10.Size = new System.Drawing.Size(73, 73);
+            this.btnTafel10.TabIndex = 19;
+            this.btnTafel10.Text = "10";
+            this.btnTafel10.UseVisualStyleBackColor = true;
+            this.btnTafel10.Click += new System.EventHandler(this.btnTafel10_Click);
             // 
-            // button8
+            // btnTafel9
             // 
-            this.button8.Location = new System.Drawing.Point(442, 587);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(73, 73);
-            this.button8.TabIndex = 18;
-            this.button8.Text = "Tafel 9";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnTafel9.Location = new System.Drawing.Point(442, 587);
+            this.btnTafel9.Name = "btnTafel9";
+            this.btnTafel9.Size = new System.Drawing.Size(73, 73);
+            this.btnTafel9.TabIndex = 18;
+            this.btnTafel9.Text = "9";
+            this.btnTafel9.UseVisualStyleBackColor = true;
+            this.btnTafel9.Click += new System.EventHandler(this.btnTafel9_Click_1);
             // 
-            // button7
+            // btnTafel7
             // 
-            this.button7.Location = new System.Drawing.Point(442, 471);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(73, 73);
-            this.button7.TabIndex = 17;
-            this.button7.Text = "Tafel 7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnTafel7.Location = new System.Drawing.Point(442, 471);
+            this.btnTafel7.Name = "btnTafel7";
+            this.btnTafel7.Size = new System.Drawing.Size(73, 73);
+            this.btnTafel7.TabIndex = 17;
+            this.btnTafel7.Text = "7";
+            this.btnTafel7.UseVisualStyleBackColor = true;
+            this.btnTafel7.Click += new System.EventHandler(this.btnTafel7_Click_1);
             // 
-            // button6
+            // btnTafel8
             // 
-            this.button6.Location = new System.Drawing.Point(592, 471);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(73, 73);
-            this.button6.TabIndex = 16;
-            this.button6.Text = "Tafel 8";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnTafel8.Location = new System.Drawing.Point(592, 471);
+            this.btnTafel8.Name = "btnTafel8";
+            this.btnTafel8.Size = new System.Drawing.Size(73, 73);
+            this.btnTafel8.TabIndex = 16;
+            this.btnTafel8.Text = "8";
+            this.btnTafel8.UseVisualStyleBackColor = true;
+            this.btnTafel8.Click += new System.EventHandler(this.btnTafel8_Click_1);
             // 
-            // button5
+            // btnTafel2
             // 
-            this.button5.Location = new System.Drawing.Point(592, 117);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(73, 73);
-            this.button5.TabIndex = 15;
-            this.button5.Text = "Tafel 2";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnTafel2.Location = new System.Drawing.Point(592, 117);
+            this.btnTafel2.Name = "btnTafel2";
+            this.btnTafel2.Size = new System.Drawing.Size(73, 73);
+            this.btnTafel2.TabIndex = 15;
+            this.btnTafel2.Text = "2";
+            this.btnTafel2.UseVisualStyleBackColor = true;
+            this.btnTafel2.Click += new System.EventHandler(this.btnTafel2_Click_1);
             // 
-            // button4
+            // btnTafel3
             // 
-            this.button4.Location = new System.Drawing.Point(442, 233);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(73, 73);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Tafel 3";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnTafel3.Location = new System.Drawing.Point(442, 233);
+            this.btnTafel3.Name = "btnTafel3";
+            this.btnTafel3.Size = new System.Drawing.Size(73, 73);
+            this.btnTafel3.TabIndex = 14;
+            this.btnTafel3.Text = "3";
+            this.btnTafel3.UseVisualStyleBackColor = true;
+            this.btnTafel3.Click += new System.EventHandler(this.btnTafel3_Click_1);
             // 
-            // button3
+            // btnTafel4
             // 
-            this.button3.Location = new System.Drawing.Point(592, 233);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(73, 73);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Tafel 4";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnTafel4.Location = new System.Drawing.Point(592, 233);
+            this.btnTafel4.Name = "btnTafel4";
+            this.btnTafel4.Size = new System.Drawing.Size(73, 73);
+            this.btnTafel4.TabIndex = 13;
+            this.btnTafel4.Text = "4";
+            this.btnTafel4.UseVisualStyleBackColor = true;
+            this.btnTafel4.Click += new System.EventHandler(this.btnTafel4_Click_1);
             // 
-            // button2
+            // btnTafel6
             // 
-            this.button2.Location = new System.Drawing.Point(592, 355);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(73, 73);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Tafel 6";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnTafel6.Location = new System.Drawing.Point(592, 355);
+            this.btnTafel6.Name = "btnTafel6";
+            this.btnTafel6.Size = new System.Drawing.Size(73, 73);
+            this.btnTafel6.TabIndex = 12;
+            this.btnTafel6.Text = "6";
+            this.btnTafel6.UseVisualStyleBackColor = true;
+            this.btnTafel6.Click += new System.EventHandler(this.btnTafel6_Click_1);
             // 
-            // button1
+            // btnTafel5
             // 
-            this.button1.Location = new System.Drawing.Point(442, 355);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 73);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Tafel 5";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTafel5.Location = new System.Drawing.Point(442, 355);
+            this.btnTafel5.Name = "btnTafel5";
+            this.btnTafel5.Size = new System.Drawing.Size(73, 73);
+            this.btnTafel5.TabIndex = 11;
+            this.btnTafel5.Text = "5";
+            this.btnTafel5.UseVisualStyleBackColor = true;
+            this.btnTafel5.Click += new System.EventHandler(this.btnTafel5_Click_1);
             // 
             // btnTafel1
             // 
@@ -203,15 +212,15 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblViewStatus);
             this.Controls.Add(this.lblStatus);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnTafel10);
+            this.Controls.Add(this.btnTafel9);
+            this.Controls.Add(this.btnTafel7);
+            this.Controls.Add(this.btnTafel8);
+            this.Controls.Add(this.btnTafel2);
+            this.Controls.Add(this.btnTafel3);
+            this.Controls.Add(this.btnTafel4);
+            this.Controls.Add(this.btnTafel6);
+            this.Controls.Add(this.btnTafel5);
             this.Controls.Add(this.btnTafel1);
             this.Name = "TafelOverzicht";
             this.Text = "TafelOverzicht";
@@ -222,15 +231,15 @@
 
         #endregion
 
-        private Button button9;
-        private Button button8;
-        private Button button7;
-        private Button button6;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button btnTafel10;
+        private Button btnTafel9;
+        private Button btnTafel7;
+        private Button btnTafel8;
+        private Button btnTafel2;
+        private Button btnTafel3;
+        private Button btnTafel4;
+        private Button btnTafel6;
+        private Button btnTafel5;
         private Button btnTafel1;
         private Label label3;
         private Label lblViewStatus;
