@@ -14,25 +14,33 @@ namespace ChapeauUI.Forms
 {
     public partial class Payingfrm : Form
     {
-        private double tip;
-        
-        public Payingfrm()
+        private PayingService payingService = new PayingService();
+        private Bill bill;
+
+        public Payingfrm(Bill bill)
         {
+            this.bill = bill;
             InitializeComponent();
         }
 
-        public Payingfrm(double tip)
+        public Payingfrm()
         {
+            this.bill = payingService.GetOrder();
             InitializeComponent();
-            this.tip = tip;
-            // Add method that adds the tip to the bill Items
+        }
+
+        public Payingfrm(Bill bill, double tip)
+        {
+            this.bill = bill;
+            this.bill = payingService.AddTip(bill, tip);
+            InitializeComponent();
         }
 
 
 
         private void btnAddTip_Click(object sender, EventArgs e)
         {
-            Tipfrm tf = new Tipfrm(5);
+            Tipfrm tf = new Tipfrm(bill, bill.TotalPrice);
             this.Hide();
             tf.Closed += (s, args) => this.Close();
             tf.Show();
@@ -40,20 +48,21 @@ namespace ChapeauUI.Forms
 
         private void Payingfrm_Load(object sender, EventArgs e)
         {
-            PayingService payingService = new PayingService();
-            Bill bill = payingService.GetBill();
+            txtOrder.Columns.Add("Quantity", 69);
+            txtOrder.Columns.Add("Item", 124);
+            txtOrder.Columns.Add("Price", 69);
 
-            txtOrder.Columns.Add("Quantity", 50);
-            txtOrder.Columns.Add("Item", 100);
-            txtOrder.Columns.Add("Price", 50);
+            // euro character =  €
 
             foreach (BillItem b in bill.billItems) 
             { 
                 ListViewItem item = new ListViewItem(Convert.ToString(b.Quantity) + "x");
                 item.SubItems.Add(b.Description);
-                item.SubItems.Add(Convert.ToString(b.Price));
+                item.SubItems.Add($"€ {b.Price:0.00}");
                 txtOrder.Items.Add(item);
             }
+
+            lblTotalPrice.Text = $"Total Price: € {bill.TotalPrice:0.00}";
         }
     }
 }

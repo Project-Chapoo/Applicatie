@@ -25,9 +25,17 @@
             }
         }
 
-        public void AddTip(double tip)
+        public double TotalPrice
         {
-            billItems.Add(new BillItem(billItems.Count, 1, "fooi", tip, false));
+            get
+            {
+                double totalPrice = 0;
+                foreach (BillItem item in billItems)
+                {
+                    totalPrice += item.Price;
+                }
+                return totalPrice;
+            }
         }
     }
 }

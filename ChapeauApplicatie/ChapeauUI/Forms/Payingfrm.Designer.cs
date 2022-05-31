@@ -35,11 +35,12 @@
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnOrderStatus = new System.Windows.Forms.Button();
             this.btnMenus = new System.Windows.Forms.Button();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnPay
             // 
-            this.btnPay.Location = new System.Drawing.Point(59, 358);
+            this.btnPay.Location = new System.Drawing.Point(59, 377);
             this.btnPay.Margin = new System.Windows.Forms.Padding(6);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(143, 83);
@@ -49,7 +50,7 @@
             // 
             // btnAddTip
             // 
-            this.btnAddTip.Location = new System.Drawing.Point(281, 358);
+            this.btnAddTip.Location = new System.Drawing.Point(281, 377);
             this.btnAddTip.Margin = new System.Windows.Forms.Padding(6);
             this.btnAddTip.Name = "btnAddTip";
             this.btnAddTip.Size = new System.Drawing.Size(78, 83);
@@ -60,6 +61,7 @@
             // 
             // txtOrder
             // 
+            this.txtOrder.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtOrder.Location = new System.Drawing.Point(59, 113);
             this.txtOrder.Margin = new System.Windows.Forms.Padding(6);
             this.txtOrder.Name = "txtOrder";
@@ -108,11 +110,22 @@
             this.btnMenus.Text = "Menu\'s";
             this.btnMenus.UseVisualStyleBackColor = true;
             // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Location = new System.Drawing.Point(359, 319);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(0, 32);
+            this.lblTotalPrice.TabIndex = 8;
+            this.lblTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Payingfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(431, 599);
+            this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.btnMenus);
             this.Controls.Add(this.btnOrderStatus);
             this.Controls.Add(this.btnPayment);
@@ -125,6 +138,7 @@
             this.Text = "Payingfrm";
             this.Load += new System.EventHandler(this.Payingfrm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -137,5 +151,6 @@
         private Button btnPayment;
         private Button btnOrderStatus;
         private Button btnMenus;
+        private Label lblTotalPrice;
     }
 }
