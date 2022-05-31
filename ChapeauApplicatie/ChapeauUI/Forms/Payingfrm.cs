@@ -42,7 +42,11 @@ namespace ChapeauUI.Forms
         {
             PayingService payingService = new PayingService();
             Bill bill = payingService.GetBill();
-            
+
+            txtOrder.Columns.Add("Quantity", 50);
+            txtOrder.Columns.Add("Item", 100);
+            txtOrder.Columns.Add("Price", 50);
+
             foreach (BillItem b in bill.billItems) 
             { 
                 ListViewItem item = new ListViewItem(Convert.ToString(b.Quantity) + "x");
