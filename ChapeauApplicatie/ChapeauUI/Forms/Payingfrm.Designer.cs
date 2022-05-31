@@ -40,7 +40,7 @@
             // btnPay
             // 
             this.btnPay.Location = new System.Drawing.Point(59, 358);
-            this.btnPay.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnPay.Margin = new System.Windows.Forms.Padding(6);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(143, 83);
             this.btnPay.TabIndex = 0;
@@ -49,8 +49,8 @@
             // 
             // btnAddTip
             // 
-            this.btnAddTip.Location = new System.Drawing.Point(243, 358);
-            this.btnAddTip.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAddTip.Location = new System.Drawing.Point(281, 358);
+            this.btnAddTip.Margin = new System.Windows.Forms.Padding(6);
             this.btnAddTip.Name = "btnAddTip";
             this.btnAddTip.Size = new System.Drawing.Size(78, 83);
             this.btnAddTip.TabIndex = 1;
@@ -61,16 +61,17 @@
             // txtOrder
             // 
             this.txtOrder.Location = new System.Drawing.Point(59, 113);
-            this.txtOrder.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtOrder.Margin = new System.Windows.Forms.Padding(6);
             this.txtOrder.Name = "txtOrder";
-            this.txtOrder.Size = new System.Drawing.Size(258, 202);
+            this.txtOrder.Size = new System.Drawing.Size(300, 200);
             this.txtOrder.TabIndex = 3;
             this.txtOrder.UseCompatibleStateImageBehavior = false;
+            this.txtOrder.View = System.Windows.Forms.View.Details;
             // 
             // btnBack
             // 
             this.btnBack.Location = new System.Drawing.Point(22, 26);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(6);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(43, 49);
             this.btnBack.TabIndex = 4;
@@ -119,7 +120,7 @@
             this.Controls.Add(this.txtOrder);
             this.Controls.Add(this.btnAddTip);
             this.Controls.Add(this.btnPay);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Payingfrm";
             this.Text = "Payingfrm";
             this.Load += new System.EventHandler(this.Payingfrm_Load);

@@ -25,9 +25,10 @@ namespace ChapeauUI.Forms
         {
             InitializeComponent();
             this.tip = tip;
+            // Add method that adds the tip to the bill Items
         }
 
-        
+
 
         private void btnAddTip_Click(object sender, EventArgs e)
         {
@@ -39,11 +40,16 @@ namespace ChapeauUI.Forms
 
         private void Payingfrm_Load(object sender, EventArgs e)
         {
-            //TODO: Add code that loads Bill data to the table
-            PayingService ps = new PayingService();
-            Bill bill = ps.GetBill();
-
-            txtOrder.Items.Add(Convert.ToString(bill.OrderID));
+            PayingService payingService = new PayingService();
+            Bill bill = payingService.GetBill();
+            
+            foreach (BillItem b in bill.billItems) 
+            { 
+                ListViewItem item = new ListViewItem(Convert.ToString(b.Quantity) + "x");
+                item.SubItems.Add(b.Description);
+                item.SubItems.Add(Convert.ToString(b.Price));
+                txtOrder.Items.Add(item);
+            }
         }
     }
 }
