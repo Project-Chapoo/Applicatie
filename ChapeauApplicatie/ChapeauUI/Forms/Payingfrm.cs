@@ -36,8 +36,6 @@ namespace ChapeauUI.Forms
             InitializeComponent();
         }
 
-
-
         private void btnAddTip_Click(object sender, EventArgs e)
         {
             Tipfrm tf = new Tipfrm(bill, bill.TotalPrice);
@@ -48,11 +46,10 @@ namespace ChapeauUI.Forms
 
         private void Payingfrm_Load(object sender, EventArgs e)
         {
-            txtOrder.Columns.Add("Quantity", 69);
-            txtOrder.Columns.Add("Item", 124);
-            txtOrder.Columns.Add("Price", 69);
-
-            // euro character =  €
+            // Scroll bar is 21 px wide
+            txtOrder.Columns.Add("Aantal", 35);
+            txtOrder.Columns.Add("Item", 104);
+            txtOrder.Columns.Add("Prijs", 40);
 
             foreach (BillItem b in bill.billItems) 
             { 
