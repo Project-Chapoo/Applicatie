@@ -96,6 +96,7 @@
             this.btnOrderStatus.TabIndex = 6;
             this.btnOrderStatus.Text = "Order Status";
             this.btnOrderStatus.UseVisualStyleBackColor = true;
+            this.btnOrderStatus.Click += new System.EventHandler(this.btnOrderStatus_Click);
             // 
             // btnMenus
             // 
@@ -106,6 +107,7 @@
             this.btnMenus.TabIndex = 7;
             this.btnMenus.Text = "Menu\'s";
             this.btnMenus.UseVisualStyleBackColor = true;
+            this.btnMenus.Click += new System.EventHandler(this.btnMenus_Click);
             // 
             // lblTotalPrice
             // 

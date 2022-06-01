@@ -40,12 +40,19 @@ namespace ChapeauUI.Forms
             {
                 tip = Convert.ToDouble(txtbTip.Text);
             }
+            // Error message no number
             catch (Exception ex)
             {
-                MessageBox.Show("Please enter a valid tip amount!\n" + ex , "Error!" );
+                MessageBox.Show("You cannot enter a word for a tip!", "Error!" );
                 return;
             }
 
+            // Error message negative number
+            if (tip < 0)
+            {
+                MessageBox.Show("You cannot enter a negative amount for a tip!", "Waring!");
+                return;
+            }
             
             if (tip > currentTotalAmount)
             {
@@ -131,12 +138,12 @@ namespace ChapeauUI.Forms
 
         private void btnMenus_Click(object sender, EventArgs e)
         {
-
+            // TODO: Add link to the menu form
         }
 
         private void btnOrderStatus_Click(object sender, EventArgs e)
         {
-
+            // TODO: Add link to the order status form
         }
     }
 }

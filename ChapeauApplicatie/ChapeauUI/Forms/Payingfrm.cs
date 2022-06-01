@@ -63,5 +63,15 @@ namespace ChapeauUI.Forms
             tf.Closed += (s, args) => this.Close();
             tf.Show();
         }
+
+        private void btnMenus_Click(object sender, EventArgs e)
+        {
+            // TODO: Add link to the menu form
+        }
+
+        private void btnOrderStatus_Click(object sender, EventArgs e)
+        {
+            // TODO: Add link to the order status form
+        }
     }
 }
