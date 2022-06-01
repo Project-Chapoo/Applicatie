@@ -40,6 +40,8 @@ namespace ChapeauUI.Forms
 
         private void Payingfrm_Load(object sender, EventArgs e)
         {
+            bill.BTWPrice = payingService.CalculateBTW(bill);
+
             // Scroll bar is 21 px wide
             txtOrder.Columns.Add("Aantal", 35);
             txtOrder.Columns.Add("Item", 104);
@@ -54,6 +56,7 @@ namespace ChapeauUI.Forms
             }
 
             lblTotalPrice.Text = $"Total Price: € {bill.TotalPrice:0.00}";
+            lblBTW.Text = $"BTW: € {bill.BTWPrice:0.00}";
         }
 
         private void btnComment_Click(object sender, EventArgs e)
