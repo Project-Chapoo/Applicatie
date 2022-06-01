@@ -36,6 +36,7 @@
             this.btnOrderStatus = new System.Windows.Forms.Button();
             this.btnMenus = new System.Windows.Forms.Button();
             this.btnComment = new System.Windows.Forms.Button();
+            this.lblBTW = new System.Windows.Forms.Label();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             this.txtOrder.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtOrder.Location = new System.Drawing.Point(13, 41);
             this.txtOrder.Name = "txtOrder";
-            this.txtOrder.Size = new System.Drawing.Size(200, 130);
+            this.txtOrder.Size = new System.Drawing.Size(200, 108);
             this.txtOrder.TabIndex = 3;
             this.txtOrder.UseCompatibleStateImageBehavior = false;
             this.txtOrder.View = System.Windows.Forms.View.Details;
@@ -97,6 +98,7 @@
             this.btnOrderStatus.TabIndex = 6;
             this.btnOrderStatus.Text = "Order Status";
             this.btnOrderStatus.UseVisualStyleBackColor = true;
+            this.btnOrderStatus.Click += new System.EventHandler(this.btnOrderStatus_Click);
             // 
             // btnMenus
             // 
@@ -107,6 +109,7 @@
             this.btnMenus.TabIndex = 7;
             this.btnMenus.Text = "Menu\'s";
             this.btnMenus.UseVisualStyleBackColor = true;
+            this.btnMenus.Click += new System.EventHandler(this.btnMenus_Click);
             // 
             // btnComment
             // 
@@ -118,6 +121,13 @@
             this.btnComment.UseVisualStyleBackColor = true;
             this.btnComment.Click += new System.EventHandler(this.btnComment_Click);
             // 
+            // lblBTW
+            // 
+            this.lblBTW.Location = new System.Drawing.Point(13, 152);
+            this.lblBTW.Name = "lblBTW";
+            this.lblBTW.Size = new System.Drawing.Size(179, 23);
+            this.lblBTW.TabIndex = 10;
+            this.lblBTW.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // lblTotalPrice
             // 
             this.lblTotalPrice.Location = new System.Drawing.Point(13, 173);
@@ -131,6 +141,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(232, 281);
+            this.Controls.Add(this.lblBTW);
+            this.Controls.Add(this.btnComment);
             this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.btnComment);
             this.Controls.Add(this.btnMenus);
@@ -157,6 +169,8 @@
         private Button btnOrderStatus;
         private Button btnMenus;
         private Button btnComment;
+        private Label lblBTW;
         private Label lblTotalPrice;
+
     }
 }

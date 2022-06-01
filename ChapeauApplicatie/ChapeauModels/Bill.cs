@@ -15,6 +15,7 @@
         public int OrderID { get; }
         public int TableID { get; }
         public string Comment { get; set; }
+        public double BTWPrice { get; set; }
         public string EmployeeFirstName { get; }
         public string EmployeeLastName { get; }
         public List<BillItem> billItems { get; set; }
@@ -33,7 +34,7 @@
                 double totalPrice = 0;
                 foreach (BillItem item in billItems)
                 {
-                    totalPrice += item.Price;
+                    totalPrice += (item.Price * item.Quantity);
                 }
                 return totalPrice;
             }

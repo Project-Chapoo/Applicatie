@@ -55,6 +55,7 @@
             this.btnMenus.TabIndex = 16;
             this.btnMenus.Text = "Menu\'s";
             this.btnMenus.UseVisualStyleBackColor = true;
+            this.btnMenus.Click += new System.EventHandler(this.btnMenus_Click);
             // 
             // btnOrderStatus
             // 
@@ -65,6 +66,7 @@
             this.btnOrderStatus.TabIndex = 15;
             this.btnOrderStatus.Text = "Order Status";
             this.btnOrderStatus.UseVisualStyleBackColor = true;
+            this.btnOrderStatus.Click += new System.EventHandler(this.btnOrderStatus_Click);
             // 
             // btnPayment
             // 

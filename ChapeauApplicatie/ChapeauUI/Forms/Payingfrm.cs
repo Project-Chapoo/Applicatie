@@ -14,25 +14,19 @@ namespace ChapeauUI.Forms
 {
     public partial class Payingfrm : Form
     {
-        private PayingService payingService = new PayingService();
         private Bill bill;
+        private PayingService payingService = new PayingService();
 
-        public Payingfrm(Bill bill)
-        {
-            this.bill = bill;
-            InitializeComponent();
-        }
 
-        public Payingfrm()
+        public Payingfrm() // Joey this contructor for de link between forms
         {
             this.bill = payingService.GetOrder();
             InitializeComponent();
         }
 
-        public Payingfrm(Bill bill, double tip)
+        public Payingfrm(Bill bill)
         {
             this.bill = bill;
-            this.bill = payingService.AddTip(bill, tip);
             InitializeComponent();
         }
 
@@ -46,6 +40,8 @@ namespace ChapeauUI.Forms
 
         private void Payingfrm_Load(object sender, EventArgs e)
         {
+            bill.BTWPrice = payingService.CalculateBTW(bill);
+
             // Scroll bar is 21 px wide
             txtOrder.Columns.Add("Aantal", 35);
             txtOrder.Columns.Add("Item", 104);
@@ -60,6 +56,7 @@ namespace ChapeauUI.Forms
             }
 
             lblTotalPrice.Text = $"Total Price: € {bill.TotalPrice:0.00}";
+            lblBTW.Text = $"BTW: € {bill.BTWPrice:0.00}";
         }
 
         private void btnComment_Click(object sender, EventArgs e)
@@ -76,6 +73,16 @@ namespace ChapeauUI.Forms
             this.Hide();
             paymentOptionsForm.Closed += (s, args) => this.Close();
             paymentOptionsForm.Show();
+        }
+
+        private void btnMenus_Click(object sender, EventArgs e)
+        {
+            // TODO: Add link to the menu form
+        }
+
+        private void btnOrderStatus_Click(object sender, EventArgs e)
+        {
+            // TODO: Add link to the order status form
         }
     }
 }

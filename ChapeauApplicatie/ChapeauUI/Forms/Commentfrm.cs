@@ -47,5 +47,15 @@ namespace ChapeauUI.Forms
         {
             btnAddComment.Enabled = true;
         }
+
+        private void btnMenus_Click(object sender, EventArgs e)
+        {
+            // TODO: Add link to the menu form
+        }
+
+        private void btnOrderStatus_Click(object sender, EventArgs e)
+        {
+            // TODO: Add link to the order status form
+        }
     }
 }
