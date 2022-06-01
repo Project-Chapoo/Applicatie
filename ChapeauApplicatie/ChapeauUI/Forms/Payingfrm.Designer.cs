@@ -47,6 +47,7 @@
             this.btnPay.TabIndex = 0;
             this.btnPay.Text = "Pay";
             this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // btnAddTip
             // 

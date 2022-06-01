@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChapeauModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace ChapeauUI.Forms
 {
     public partial class PaymentOptionsfrm : Form
     {
-        public PaymentOptionsfrm()
+        private Bill bill;
+
+        public PaymentOptionsfrm(Bill bill)
         {
             InitializeComponent();
+            this.bill = bill;
         }
 
         private void btnCardPayment_Click(object sender, EventArgs e)
@@ -25,6 +29,14 @@ namespace ChapeauUI.Forms
         private void btnCashPayment_Click(object sender, EventArgs e)
         {
             // Add code
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Payingfrm payingForm = new Payingfrm(bill);
+            this.Hide();
+            payingForm.Closed += (s, args) => this.Close();
+            payingForm.Show();
         }
     }
 }

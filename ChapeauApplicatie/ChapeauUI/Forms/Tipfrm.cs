@@ -98,10 +98,10 @@ namespace ChapeauUI.Forms
         // Opens the paying form with the tip amount
         private void OpenPayingFormWithTip(double tip)
         {
-            Payingfrm pf = new Payingfrm(bill, tip);
+            Payingfrm payingForm = new Payingfrm(bill, tip);
             this.Hide();
-            pf.Closed += (s, args) => this.Close();
-            pf.Show();
+            payingForm.Closed += (s, args) => this.Close();
+            payingForm.Show();
         }
 
         // Turns on the button when the textbox is not empty
@@ -112,18 +112,18 @@ namespace ChapeauUI.Forms
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Payingfrm pf = new Payingfrm(bill);
+            Payingfrm payingForm = new Payingfrm(bill);
             this.Hide();
-            pf.Closed += (s, args) => this.Close();
-            pf.Show();
+            payingForm.Closed += (s, args) => this.Close();
+            payingForm.Show();
         }
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-            Payingfrm pf = new Payingfrm(bill);
+            Payingfrm payingForm = new Payingfrm(bill);
             this.Hide();
-            pf.Closed += (s, args) => this.Close();
-            pf.Show();
+            payingForm.Closed += (s, args) => this.Close();
+            payingForm.Show();
         }
 
         private void btnMenus_Click(object sender, EventArgs e)
