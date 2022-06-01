@@ -29,9 +29,9 @@ namespace ChapeauService
             return orderItems;
         }
 
-        public void LunchSteak(int tableID)
+        public void AddOrderItem(int tableID, int menuItemID)
         {
-            orderitemsdb.SteakLunch(tableID);
+            orderitemsdb.OrderItemAdd(tableID, menuItemID);
         }
 
         public void AddItem(int selectedItemID)

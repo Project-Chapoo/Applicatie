@@ -16,16 +16,18 @@ namespace ChapeauUI
 {
     public partial class PDAOrdering_Joey : Form
     {
-        private int tableID = 0;
+        private int tableID = 0;        
+        private string commentaar;
+        private DateTime tijd = DateTime.Now;
+        private int menuItemID;
 
-        private List<OrderItems> OrderedItems = new List<OrderItems>();
 
-        public void addToOrder(OrderItems orderedItems)
+        public PDAOrdering_Joey()
         {
-            OrderedItems.Add(orderedItems);
+            InitializeComponent();
         }
 
-        void HidePanels()
+        private void HideAllPanels()
         {
             pnlOrderOrPayment.Hide();
             pnlLunch.Hide();
@@ -36,23 +38,26 @@ namespace ChapeauUI
             pnlLunchVoorgerechten.Hide();
             pnlOpmerkingen.Hide();
             pnlOrderOrPayment.Hide();
-            pnlOrderReview.Hide();
-            pnlTableSelection.Hide();
             pnlCourseChoosing.Hide();
+            pnlOrderReview.Hide();
             pnlConfirmOrder.Hide();
+            pnlDinerVoorgerechten.Hide();
             pnlDinerTussengerechten.Hide();
             pnlDinerHoofdgerechten.Hide();
             pnlDinerNagerechten.Hide();
+            pnlGedestilleerdeDranken.Hide();
+            pnlFrisdranken.Hide();
+            pnlKoffieThee.Hide();
+            pnlBieren.Hide();
+            pnlWijnen.Hide();
         }
 
-
-
-
-
-        public PDAOrdering_Joey()
+        private void OrderItem()
         {
-            InitializeComponent();
+            OrderItemsService orderItemsService = new OrderItemsService();
+            orderItemsService.AddOrderItem(tableID, menuItemID);
         }
+
 
         private void PDAOrdering_Joey_Load(object sender, EventArgs e)
         {
@@ -63,362 +68,139 @@ namespace ChapeauUI
         {
             if (panelName == "TableSelection")
             {
-                //hide other panels
-                pnlOrderOrPayment.Hide();
-                pnlLunch.Hide();
-                pnlDiner.Hide();
-                pnlDranken.Hide();
-                pnlLunchHoofdgerechten.Hide();
-                pnlLunchNagerechten.Hide();
-                pnlLunchVoorgerechten.Hide();
-                pnlOpmerkingen.Hide();
-                pnlOrderOrPayment.Hide();
-                pnlCourseChoosing.Hide();
-                pnlOrderReview.Hide();
-                pnlConfirmOrder.Hide();
-                pnlDinerVoorgerechten.Hide();
-                pnlDinerTussengerechten.Hide();
-                pnlDinerHoofdgerechten.Hide();
-                pnlDinerNagerechten.Hide();
-
-
-                // show tableSelection
+                HideAllPanels();                
                 pnlTableSelection.Show();
             }
             else if (panelName == "pnlOrderOrPayment")
             {
-                pnlLunch.Hide();
-                pnlDiner.Hide();
-                pnlDranken.Hide();
-                pnlLunchHoofdgerechten.Hide();
-                pnlLunchNagerechten.Hide();
-                pnlLunchVoorgerechten.Hide();
-                pnlOpmerkingen.Hide();
+                HideAllPanels();
                 pnlOrderOrPayment.Show();
-                pnlCourseChoosing.Hide();
-                pnlTableSelection.Hide();
-                pnlConfirmOrder.Hide();
-                pnlDinerVoorgerechten.Hide();
-                pnlDinerTussengerechten.Hide();
-                pnlDinerHoofdgerechten.Hide();
-                pnlDinerNagerechten.Hide();
-
             }
             else if (panelName == "CourseChoosing")
             {
-                pnlOrderOrPayment.Hide();
-                pnlLunch.Hide();
-                pnlDiner.Hide();
-                pnlDranken.Hide();
-                pnlLunchHoofdgerechten.Hide();
-                pnlLunchNagerechten.Hide();
-                pnlLunchVoorgerechten.Hide();
-                pnlOpmerkingen.Hide();
-                pnlOrderOrPayment.Hide();
-                pnlOrderReview.Hide();
-                pnlTableSelection.Hide();
+                HideAllPanels();
                 pnlCourseChoosing.Show();
-                pnlConfirmOrder.Hide();
-                pnlDinerVoorgerechten.Hide();
-                pnlDinerTussengerechten.Hide();
-                pnlDinerHoofdgerechten.Hide();
-                pnlDinerNagerechten.Hide();
-
             }
             else if (panelName == "Lunch")
             {
-                pnlOrderOrPayment.Hide();
+                HideAllPanels();
                 pnlLunch.Show();
-                pnlDiner.Hide();
-                pnlDranken.Hide();
-                pnlLunchHoofdgerechten.Hide();
-                pnlLunchNagerechten.Hide();
-                pnlLunchVoorgerechten.Hide();
-                pnlOpmerkingen.Hide();
-                pnlOrderOrPayment.Hide();
-                pnlOrderReview.Hide();
-                pnlTableSelection.Hide();
-                pnlCourseChoosing.Hide();
-                pnlConfirmOrder.Hide();
-                pnlDinerVoorgerechten.Hide();
-                pnlDinerTussengerechten.Hide();
-                pnlDinerHoofdgerechten.Hide();
-                pnlDinerNagerechten.Hide();
-
             }
             else if (panelName == "Diner")
             {
-                pnlOrderOrPayment.Hide();
-                pnlLunch.Hide();
+                HideAllPanels();
                 pnlDiner.Show();
-                pnlDranken.Hide();
-                pnlLunchHoofdgerechten.Hide();
-                pnlLunchNagerechten.Hide();
-                pnlLunchVoorgerechten.Hide();
-                pnlOpmerkingen.Hide();
-                pnlOrderOrPayment.Hide();
-                pnlOrderReview.Hide();
-                pnlTableSelection.Hide();
-                pnlCourseChoosing.Hide();
-                pnlConfirmOrder.Hide();
-                pnlDinerVoorgerechten.Hide();
-                pnlDinerTussengerechten.Hide();
-                pnlDinerHoofdgerechten.Hide();
-                pnlDinerNagerechten.Hide();
-
             }
             else if (panelName == "Dranken")
             {
-                pnlOrderOrPayment.Hide();
-                pnlLunch.Hide();
-                pnlDiner.Hide();
+                HideAllPanels();
                 pnlDranken.Show();
-                pnlLunchHoofdgerechten.Hide();
-                pnlLunchNagerechten.Hide();
-                pnlLunchVoorgerechten.Hide();
-                pnlOpmerkingen.Hide();
-                pnlOrderOrPayment.Hide();
-                pnlOrderReview.Hide();
-                pnlTableSelection.Hide();
-                pnlCourseChoosing.Hide();
-                pnlConfirmOrder.Hide();
-                pnlDinerVoorgerechten.Hide();
-                pnlDinerTussengerechten.Hide();
-                pnlDinerHoofdgerechten.Hide();
-                pnlDinerNagerechten.Hide();
-
-
             }
             else if (panelName == "Opmerkingen")
             {
-                pnlOrderOrPayment.Hide();
-                pnlLunch.Hide();
-                pnlDiner.Hide();
-                pnlDranken.Hide();
-                pnlLunchHoofdgerechten.Hide();
-                pnlLunchNagerechten.Hide();
-                pnlLunchVoorgerechten.Hide();
+                HideAllPanels();
                 pnlOpmerkingen.Show();
-                pnlOrderOrPayment.Hide();
-                pnlOrderReview.Hide();
-                pnlTableSelection.Hide();
-                pnlCourseChoosing.Hide();
-                pnlConfirmOrder.Hide();
-                pnlDinerVoorgerechten.Hide();
-                pnlDinerTussengerechten.Hide();
-                pnlDinerHoofdgerechten.Hide();
-                pnlDinerNagerechten.Hide();
-
             }
             else if (panelName == "LunchVoorgerechten")
             {
-                pnlOrderOrPayment.Hide();
-                pnlLunch.Hide();
-                pnlDiner.Hide();
-                pnlDranken.Hide();
-                pnlLunchHoofdgerechten.Hide();
-                pnlLunchNagerechten.Hide();
+                HideAllPanels();
                 pnlLunchVoorgerechten.Show();
-                pnlOpmerkingen.Hide();
-                pnlOrderOrPayment.Hide();
-                pnlOrderReview.Hide();
-                pnlTableSelection.Hide();
-                pnlCourseChoosing.Hide();
-                pnlConfirmOrder.Hide();
-                pnlDinerVoorgerechten.Hide();
-                pnlDinerTussengerechten.Hide();
-                pnlDinerHoofdgerechten.Hide();
-                pnlDinerNagerechten.Hide();
-
             }
             else if (panelName == "LunchHoofdgerechten")
             {
-                pnlOrderOrPayment.Hide();
-                pnlLunch.Hide();
-                pnlDiner.Hide();
-                pnlDranken.Hide();
+                HideAllPanels();
                 pnlLunchHoofdgerechten.Show();
-                pnlLunchNagerechten.Hide();
-                pnlLunchVoorgerechten.Hide();
-                pnlOpmerkingen.Hide();
-                pnlOrderOrPayment.Hide();
-                pnlOrderReview.Hide();
-                pnlTableSelection.Hide();
-                pnlCourseChoosing.Hide();
-                pnlConfirmOrder.Hide();
-                pnlDinerVoorgerechten.Hide();
-                pnlDinerTussengerechten.Hide();
-                pnlDinerHoofdgerechten.Hide();
-                pnlDinerNagerechten.Hide();
-
             }
             else if (panelName == "LunchNagerechten")
             {
-                pnlOrderOrPayment.Hide();
-                pnlLunch.Hide();
-                pnlDiner.Hide();
-                pnlDranken.Hide();
-                pnlLunchHoofdgerechten.Hide();
+                HideAllPanels();
                 pnlLunchNagerechten.Show();
-                pnlLunchVoorgerechten.Hide();
-                pnlOpmerkingen.Hide();
-                pnlOrderOrPayment.Hide();
-                pnlOrderReview.Hide();
-                pnlTableSelection.Hide();
-                pnlCourseChoosing.Hide();
-                pnlConfirmOrder.Hide();
-                pnlDinerTussengerechten.Hide();
-                pnlDinerHoofdgerechten.Hide();
-                pnlDinerNagerechten.Hide();
-
             }
             else if ((panelName == "ConfirmOrder"))
             {
-                pnlOrderOrPayment.Hide();
-                pnlLunch.Hide();
-                pnlDiner.Hide();
-                pnlDranken.Hide();
-                pnlLunchHoofdgerechten.Hide();
-                pnlLunchNagerechten.Hide();
-                pnlLunchVoorgerechten.Hide();
-                pnlOpmerkingen.Hide();
-                pnlOrderOrPayment.Hide();
-                pnlOrderReview.Hide();
-                pnlTableSelection.Hide();
-                pnlCourseChoosing.Hide();
+                HideAllPanels();
                 pnlConfirmOrder.Show();
-                pnlDinerVoorgerechten.Hide();
-                pnlDinerTussengerechten.Hide();
-                pnlDinerHoofdgerechten.Hide();
-                pnlDinerNagerechten.Hide();
-
             }
             else if (panelName == "btnDinervoorgerechten")
             {
-                pnlOrderOrPayment.Hide();
-                pnlLunch.Hide();
-                pnlDiner.Hide();
-                pnlDranken.Hide();
-                pnlLunchHoofdgerechten.Hide();
-                pnlLunchNagerechten.Hide();
-                pnlLunchVoorgerechten.Hide();
-                pnlOpmerkingen.Hide();
-                pnlOrderOrPayment.Hide();
-                pnlOrderReview.Hide();
-                pnlTableSelection.Hide();
-                pnlCourseChoosing.Hide();
-                pnlConfirmOrder.Hide();
-                pnlDinerVoorgerechten.Hide();
-                pnlDinerTussengerechten.Hide();
-                pnlDinerHoofdgerechten.Hide();
+                HideAllPanels();
                 pnlDinerVoorgerechten.Show();
-                pnlDinerTussengerechten.Hide();
-                pnlDinerHoofdgerechten.Hide();
-                pnlDinerNagerechten.Hide();
             }
             else if (panelName == "DinerTussengerechten")
             {
-                pnlOrderOrPayment.Hide();
-                pnlLunch.Hide();
-                pnlDiner.Hide();
-                pnlDranken.Hide();
-                pnlLunchHoofdgerechten.Hide();
-                pnlLunchNagerechten.Hide();
-                pnlLunchVoorgerechten.Hide();
-                pnlOpmerkingen.Hide();
-                pnlOrderOrPayment.Hide();
-                pnlOrderReview.Hide();
-                pnlTableSelection.Hide();
-                pnlCourseChoosing.Hide();
-                pnlConfirmOrder.Hide();
-                pnlDinerVoorgerechten.Hide();
-                pnlDinerTussengerechten.Hide();
-                pnlDinerHoofdgerechten.Hide();
-                pnlDinerVoorgerechten.Hide();
+                HideAllPanels();
                 pnlDinerTussengerechten.Show();
-                pnlDinerHoofdgerechten.Hide();
-                pnlDinerNagerechten.Hide();
             }
             else if (panelName == "DinerHoofdgerechten")
             {
-                pnlOrderOrPayment.Hide();
-                pnlLunch.Hide();
-                pnlDiner.Hide();
-                pnlDranken.Hide();
-                pnlLunchHoofdgerechten.Hide();
-                pnlLunchNagerechten.Hide();
-                pnlLunchVoorgerechten.Hide();
-                pnlOpmerkingen.Hide();
-                pnlOrderOrPayment.Hide();
-                pnlOrderReview.Hide();
-                pnlTableSelection.Hide();
-                pnlCourseChoosing.Hide();
-                pnlConfirmOrder.Hide();
-                pnlDinerVoorgerechten.Hide();
-                pnlDinerTussengerechten.Hide();
-                pnlDinerHoofdgerechten.Hide();
-                pnlDinerVoorgerechten.Hide();
-                pnlDinerTussengerechten.Hide();
+                HideAllPanels();
                 pnlDinerHoofdgerechten.Show();
-                pnlDinerNagerechten.Hide();
             }
             else if (panelName == "DinerNagerechten")
             {
-                pnlOrderOrPayment.Hide();
-                pnlLunch.Hide();
-                pnlDiner.Hide();
-                pnlDranken.Hide();
-                pnlLunchHoofdgerechten.Hide();
-                pnlLunchNagerechten.Hide();
-                pnlLunchVoorgerechten.Hide();
-                pnlOpmerkingen.Hide();
-                pnlOrderOrPayment.Hide();
-                pnlOrderReview.Hide();
-                pnlTableSelection.Hide();
-                pnlCourseChoosing.Hide();
-                pnlConfirmOrder.Hide();
-                pnlDinerVoorgerechten.Hide();
-                pnlDinerTussengerechten.Hide();
-                pnlDinerHoofdgerechten.Hide();
-                pnlDinerVoorgerechten.Hide();
-                pnlDinerTussengerechten.Hide();
-                pnlDinerHoofdgerechten.Hide();
+                HideAllPanels();
                 pnlDinerNagerechten.Show();
-
+            }
+            else if (panelName == "Frisdranken")
+            {
+                HideAllPanels();
+                pnlFrisdranken.Show();
+            }
+            else if (panelName == "Bieren")
+            {
+                HideAllPanels();
+                pnlBieren.Show();
+            }
+            else if (panelName == "Wijnen")
+            {
+                HideAllPanels();
+                pnlWijnen.Show();
+            }
+            else if (panelName == "GedestilleerdeDranken")
+            {
+                HideAllPanels();
+                pnlGedestilleerdeDranken.Show();
+            }
+            else if (panelName == "KoffieThee")
+            {
+                HideAllPanels();
+                pnlKoffieThee.Show();
             }
         }
         private void btnTable1_Click(object sender, EventArgs e)
         {
             showPanel("pnlOrderOrPayment");
             tableID = 1;
+            
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void btnOrdering_Click(object sender, EventArgs e)
         {
+            // if methode == null
+            //maak nieuwe order
+            
             showPanel("CourseChoosing");
         }
 
         private void btnHertenstoofpot_Click(object sender, EventArgs e)
         {
-            showPanel("CourseChoosing");
-            //add to order
+            menuItemID = 4;
+            OrderItem();
+            showPanel("Lunch");
         }
 
         private void btnKabeljauw_Click(object sender, EventArgs e)
         {
-            showPanel("CourseChoosing");
-            //add to order
+            menuItemID = 5;
+            OrderItem();
+            showPanel("Lunch");
         }
 
         private void btnLinguini_Click(object sender, EventArgs e)
         {
-            showPanel("CourseChoosing");
-            //add to order
+            menuItemID = 6;
+            OrderItem();
+            showPanel("Lunch");
         }
 
         private void btnLunch_Click(object sender, EventArgs e)
@@ -533,25 +315,24 @@ namespace ChapeauUI
         }
 
         private void btnLunchSteakTartaar_Click(object sender, EventArgs e)
-        {            
-            OrderItemsService orderItemsService = new OrderItemsService();
-            orderItemsService.LunchSteak(tableID);
-           /* MenuItemService menuItemService = new MenuItemService();
-            menuItemService.LunchSteak();*/
-            showPanel("CourseChoosing");
-            //add to order
+        {
+            menuItemID = 1;
+            OrderItem();
+            showPanel("Lunch");
         }
 
         private void btnLunchPatéFazant_Click(object sender, EventArgs e)
         {
-            showPanel("CourseChoosing");
-            //add to order
+            menuItemID = 2;
+            OrderItem();
+            showPanel("Lunch");
         }
 
         private void btnLunchVissoep_Click(object sender, EventArgs e)
         {
-            showPanel("CourseChoosing");
-            //add to order
+            menuItemID = 3;
+            OrderItem();
+            showPanel("Lunch");
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
@@ -562,25 +343,23 @@ namespace ChapeauUI
 
         private void btnTaart_Click(object sender, EventArgs e)
         {
-            showPanel("CourseChoosing");
-            MessageBox.Show("Taart is toegevoegd aan bestelling");
-            //add to order
+            menuItemID = 7;
+            OrderItem();
+            showPanel("Lunch");
         }
 
         private void btnMadeleine_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Madeleine is toegevoegd aan bestelling");
-
-            showPanel("CourseChoosing");
-
-            //add to order
+            menuItemID = 8;
+            OrderItem();
+            showPanel("Lunch");
         }
 
         private void btnBoerenKaas_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Boerenkaas is toegevoegd aan bestelling");
-            showPanel("CourseChoosing");
-            //add to order
+            menuItemID = 9;
+            OrderItem();
+            showPanel("Lunch");
         }
 
         private void btnGoBackToCourseChoosingFromDinerSelection_Click(object sender, EventArgs e)
@@ -612,70 +391,80 @@ namespace ChapeauUI
 
         private void btnDinerKalfstartaar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Tartaar is toegevoegd aan bestelling");
-            showPanel("CourseChoosing");
-            //add to order
+            menuItemID = 10;
+            OrderItem();
+            showPanel("Diner");
         }
 
         private void btnDinerFazant_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Fazant is toegevoegd aan bestelling");
-            showPanel("CourseChoosing");
+            menuItemID = 11;
+            OrderItem();
+            showPanel("Diner");
             //add to order
         }
 
         private void btnDinerKrabZalmKoekjes_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Krab-zalm koekjes zijn toegevoegd aan bestelling");
-            showPanel("CourseChoosing");
+            menuItemID = 12;
+            OrderItem();
+            showPanel("Diner");
             //add to order
         }
 
         private void btnDinerTussengerechtVissoep_Click(object sender, EventArgs e)
         {
-            showPanel("CourseChoosing");
+            menuItemID = 13;
+            OrderItem();
+            showPanel("Diner");
             //add to order
         }
 
         private void btnDinerTussengerechtConsomméFazant_Click(object sender, EventArgs e)
         {
-            showPanel("CourseChoosing");
+            menuItemID = 14;
+            OrderItem();
+            showPanel("Diner");
             //add to order
         }
 
         private void btnDinerHoofdgerechtKabeljauw_Click(object sender, EventArgs e)
         {
-            showPanel("CourseChoosing");
-            //add to order
-        }
-
-        private void btnDinerHoofdgerechtenOssenhaas_Click(object sender, EventArgs e)
-        {
-            showPanel("CourseChoosing");
+            menuItemID = 15;
+            OrderItem();
+            showPanel("Diner");
             //add to order
         }
 
         private void btnDinerHoofdgerechtenHertenbiefstuk_Click(object sender, EventArgs e)
         {
-            showPanel("CourseChoosing");
+            menuItemID = 17;
+            OrderItem();
+            showPanel("Diner");
             //add to order
         }
 
         private void btnDinerNagerechtenCaféSurprise_Click(object sender, EventArgs e)
         {
-            showPanel("CourseChoosing");
+            menuItemID = 18;
+            OrderItem();
+            showPanel("Diner");
             //add to order
         }
 
         private void btnDinerNagerechtenCherryBaby_Click(object sender, EventArgs e)
         {
-            showPanel("CourseChoosing");
+            menuItemID = 19;
+            OrderItem();
+            showPanel("Diner");
             //add to order
         }
 
         private void btnDinerNagerechtenFromage_Click(object sender, EventArgs e)
         {
-            showPanel("CourseChoosing");
+            menuItemID = 20;
+            OrderItem();
+            showPanel("Diner");
             //add to order
         }
 
@@ -683,11 +472,17 @@ namespace ChapeauUI
         {
             MessageBox.Show("Order is verstuurd naar de keuken/Bar");
 
+            
+
             showPanel("TableSelection");
             int IDtable = tableID;
 
             OrderService orderService = new OrderService();
-            orderService.ConfirmOrder(IDtable);
+            orderService.ConfirmOrder(IDtable, commentaar);
+
+            txtBoxOpmerking.Text = "";
+            commentaar = "";
+            lblGemaakteOpmerkingen.Text = "Er is nog geen commentaar";
 
             //OrderItemsService orderItemsService = new OrderItemsService();
             //orderItemsService.LunchSteak();
@@ -749,15 +544,19 @@ namespace ChapeauUI
         private void btnDeleteOrder_Click(object sender, EventArgs e)
         {           
             OrderItemsService orderItemsService = new OrderItemsService();
-            
-            DialogResult dialogResult = MessageBox.Show("Weet je zeker dat je de gehele bestelling wilt verwijderen?",MessageBoxButtons.YesNo.ToString());
-            if (dialogResult == DialogResult.Yes)
+
+
+            string message = "Weet je zeker dat je de gehele bestelling wilt verwijderen?";
+            string title = "Bestelling verwijderen";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
             {
                 orderItemsService.VerwijderOrder(tableID);
             }
-            else if (dialogResult == DialogResult.No)
+            else
             {
-                showPanel("ConfirmOrder");           
+                showPanel("ConfirmOrder");
             }
             lstViewOrderedItems();           
         }
@@ -788,13 +587,294 @@ namespace ChapeauUI
             else
             {
                 showPanel("ConfirmOrder");  
-            }
+            }           
+        }
 
-            
-           
-            }
+        private void BtnBackToLunch_Click_1(object sender, EventArgs e)
+        {
+            showPanel("Lunch");
+        }
+
+        private void btnBackToLunchFromNagerechten_Click(object sender, EventArgs e)
+        {
+            showPanel("Lunch");
+        }
+
+        private void btnBackToLunchFromVoorgerechten_Click(object sender, EventArgs e)
+        {
+            showPanel("Lunch");
+        }
+
+        private void btnGoBackToDinerCourseChoosingFromVoorgerechten_Click(object sender, EventArgs e)
+        {
+            showPanel("Diner");
+        }
+
+        private void btnGoBackToDinerCourses_Click(object sender, EventArgs e)
+        {
+            showPanel("Diner");
+        }
+
+        private void btnGoBackToDinerCoursesFromDinerHoofdgerechten_Click(object sender, EventArgs e)
+        {
+            showPanel("Diner");
+        }
+
+        private void btnDinerHoofdgerechtenOssenhaas_Click_1(object sender, EventArgs e)
+        {
+            menuItemID = 16;
+            OrderItem();
+            showPanel("Diner");
+        }
+
+        private void btnGoBackToDinerCoursesFromNagerechten_Click(object sender, EventArgs e)
+        {
+            showPanel("Diner");
+        }
+
+        private void btnFrisdranken_Click(object sender, EventArgs e)
+        {
+            showPanel("Frisdranken");
+        }
+
+        private void btnBieren_Click(object sender, EventArgs e)
+        {
+            showPanel("Bieren");
+        }
+
+        private void btnWijnen_Click(object sender, EventArgs e)
+        {
+            showPanel("Wijnen");
+        }
+
+        private void btnGedestilleerdeDranken_Click(object sender, EventArgs e)
+        {
+            showPanel("GedestilleerdeDranken");
+        }
+
+        private void btnKoffieThee_Click(object sender, EventArgs e)
+        {
+            showPanel("KoffieThee");
+        }
+
+        private void btnBackToCourseChoosingFromDrinks_Click(object sender, EventArgs e)
+        {
+            showPanel("CourseChoosing");
+        }
+
+        private void btnSpaRood_Click(object sender, EventArgs e)
+        {
+            menuItemID = 21;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnSpaGroen_Click(object sender, EventArgs e)
+        {
+            menuItemID = 22;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnCola_Click(object sender, EventArgs e)
+        {
+            menuItemID = 24;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnColaLight_Click(object sender, EventArgs e)
+        {
+            menuItemID = 23;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnSisi_Click(object sender, EventArgs e)
+        {
+            menuItemID = 25;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnTonic_Click(object sender, EventArgs e)
+        {
+            menuItemID = 26;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnBitterLemon_Click(object sender, EventArgs e)
+        {
+            menuItemID = 27;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnBackToDrinksFromFrisdranken_Click(object sender, EventArgs e)
+        {
+            showPanel("Dranken");
+        }    
+
+        private void btnGoBackFromKoffieThee_Click(object sender, EventArgs e)
+        {
+            showPanel("Dranken");
+        }
+
+        private void btnKoffie_Click(object sender, EventArgs e)
+        {
+            menuItemID = 42;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnCappuchino_Click(object sender, EventArgs e)
+        {
+            menuItemID = 43;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnEspresso_Click(object sender, EventArgs e)
+        {
+            menuItemID = 44;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnThee_Click(object sender, EventArgs e)
+        {
+            menuItemID = 45;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnBackFromGedestilleerdeDranken_Click(object sender, EventArgs e)
+        {
+            showPanel("Dranken");
+        }
+
+        private void btnJongeJenever_Click(object sender, EventArgs e)
+        {
+            menuItemID = 37;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnWhiskey_Click(object sender, EventArgs e)
+        {
+            menuItemID = 38;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnRum_Click(object sender, EventArgs e)
+        {
+            menuItemID = 39;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnVieux_Click(object sender, EventArgs e)
+        {
+            menuItemID = 40;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnBerenburg_Click(object sender, EventArgs e)
+        {
+            menuItemID = 41;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnBackFromWijnen_Click(object sender, EventArgs e)
+        {
+            showPanel("Dranken");
+        }
+
+        private void btnGlasWitteWijn_Click(object sender, EventArgs e)
+        {
+            menuItemID = 33;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnFlesWitteWijn_Click(object sender, EventArgs e)
+        {
+            menuItemID = 32;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnGlasRodeWijn_Click(object sender, EventArgs e)
+        {
+            menuItemID = 35;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnFlesRodeWijn_Click(object sender, EventArgs e)
+        {
+            menuItemID = 34;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnChampagne_Click(object sender, EventArgs e)
+        {
+            menuItemID = 36;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnBackFromBieren_Click(object sender, EventArgs e)
+        {
+            showPanel("Dranken");
+        }
+
+        private void btnHertogJan_Click(object sender, EventArgs e)
+        {
+            menuItemID = 28;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnDuvel_Click(object sender, EventArgs e)
+        {
+            menuItemID = 29;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnKriek_Click(object sender, EventArgs e)
+        {
+            menuItemID = 30;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnLeffeTripel_Click(object sender, EventArgs e)
+        {
+            menuItemID = 31;
+            OrderItem();
+            showPanel("Dranken");
+        }
+
+        private void btnBackFromOpmerkingen_Click(object sender, EventArgs e)
+        {
+            showPanel("CourseChoosing");
+        }
+
+        private void btnAddComment_Click(object sender, EventArgs e)
+        {
+            commentaar = txtBoxOpmerking.Text;
+
+            lblGemaakteOpmerkingen.Text = "" + commentaar;
         }
     }
+}
 
 
 

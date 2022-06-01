@@ -39,9 +39,10 @@ namespace ChapeauDAL
 
         public List<OrderItems> GetAllOrderItemsPerTable(int tableID)
         {
-            string query = $"SELECT oi.orderitemid, OI.TableID, oi.Quantity, mi.description FROM OrderItem AS OI " +
-                           $"JOIN [dbo].[MenuItem] AS MI ON MI.MenuItemID = oi.MenuItemID " +
-                           $"where tableid = {tableID}";
+            string query = $"SELECT oi.orderitemid, O.TableID, oi.Quantity, mi.description FROM OrderItem AS OI " +
+                           $"JOIN[dbo].[MenuItem] AS MI ON MI.MenuItemID = oi.MenuItemID " +
+                           $"join[dbo].[Order] as O on o.OrderID = OI.OrderID " +
+                           $"where oi.OrderID = {tableID}";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTablesPerTable(ExecuteSelectQuery(query, sqlParameters));
         }
@@ -64,10 +65,10 @@ namespace ChapeauDAL
             return orderItems;
         }
 
-        public void SteakLunch(int tableID)
+        public void OrderItemAdd(int tableID, int MenuItemID)
         {
             //table id nog toevoegen
-            string query = $"INSERT INTO [orderitem] (OrderID, MenuItemID, quantity, tableid) VALUES (12, 1, 1, {tableID})";
+            string query = $"INSERT INTO [orderitem] (OrderID, MenuItemID, quantity) VALUES ({tableID}, {MenuItemID}, 1)";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }

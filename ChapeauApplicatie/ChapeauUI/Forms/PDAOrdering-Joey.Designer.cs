@@ -51,21 +51,36 @@
             this.btnDiner = new System.Windows.Forms.Button();
             this.btnLunch = new System.Windows.Forms.Button();
             this.pnlLunch = new System.Windows.Forms.Panel();
-            this.btnBackToLunch = new System.Windows.Forms.Button();
+            this.btnBackToCourseChoosing = new System.Windows.Forms.Button();
             this.btnLunchNagerechten = new System.Windows.Forms.Button();
             this.btnLunchHoofdgerechten = new System.Windows.Forms.Button();
             this.btnLunchVoorgerechten = new System.Windows.Forms.Button();
             this.pnlDranken = new System.Windows.Forms.Panel();
+            this.btnGedestilleerdeDranken = new System.Windows.Forms.Button();
+            this.btnBackToCourseChoosingFromDrinks = new System.Windows.Forms.Button();
+            this.btnWijnen = new System.Windows.Forms.Button();
+            this.btnKoffieThee = new System.Windows.Forms.Button();
+            this.btnBieren = new System.Windows.Forms.Button();
+            this.btnFrisdranken = new System.Windows.Forms.Button();
             this.pnlOpmerkingen = new System.Windows.Forms.Panel();
+            this.btnAddComment = new System.Windows.Forms.Button();
+            this.grpboxOpmerkingen = new System.Windows.Forms.GroupBox();
+            this.lblGemaakteOpmerkingen = new System.Windows.Forms.Label();
+            this.lblOpmerkingen = new System.Windows.Forms.Label();
+            this.txtBoxOpmerking = new System.Windows.Forms.TextBox();
+            this.btnBackFromOpmerkingen = new System.Windows.Forms.Button();
             this.pnlLunchVoorgerechten = new System.Windows.Forms.Panel();
+            this.btnBackToLunchFromVoorgerechten = new System.Windows.Forms.Button();
             this.btnLunchVissoep = new System.Windows.Forms.Button();
             this.btnLunchPatéFazant = new System.Windows.Forms.Button();
             this.btnLunchSteakTartaar = new System.Windows.Forms.Button();
             this.pnlLunchHoofdgerechten = new System.Windows.Forms.Panel();
+            this.BtnBackToLunchFromHoofdgerechten = new System.Windows.Forms.Button();
             this.btnLinguini = new System.Windows.Forms.Button();
             this.btnKabeljauw = new System.Windows.Forms.Button();
             this.btnHertenstoofpot = new System.Windows.Forms.Button();
             this.pnlLunchNagerechten = new System.Windows.Forms.Panel();
+            this.btnBackToLunchFromNagerechten = new System.Windows.Forms.Button();
             this.btnBoerenKaas = new System.Windows.Forms.Button();
             this.btnMadeleine = new System.Windows.Forms.Button();
             this.btnTaart = new System.Windows.Forms.Button();
@@ -83,6 +98,7 @@
             this.TafelID = new System.Windows.Forms.ColumnHeader();
             this.Quantity = new System.Windows.Forms.ColumnHeader();
             this.Description = new System.Windows.Forms.ColumnHeader();
+            this.OrderItemID = new System.Windows.Forms.ColumnHeader();
             this.btnGoBackToCourseChoosingFromConfirmOrder = new System.Windows.Forms.Button();
             this.pnlDiner = new System.Windows.Forms.Panel();
             this.btnGoBackToCourseChoosingFromDinerSelection = new System.Windows.Forms.Button();
@@ -109,11 +125,56 @@
             this.btnGoBackToDinerCoursesFromNagerechten = new System.Windows.Forms.Button();
             this.btnDinerNagerechtenCherryBaby = new System.Windows.Forms.Button();
             this.btnDinerNagerechtenCaféSurprise = new System.Windows.Forms.Button();
-            this.OrderItemID = new System.Windows.Forms.ColumnHeader();
+            this.pnlFrisdranken = new System.Windows.Forms.Panel();
+            this.btnTonic = new System.Windows.Forms.Button();
+            this.btnSisi = new System.Windows.Forms.Button();
+            this.btnColaLight = new System.Windows.Forms.Button();
+            this.btnSpaGroen = new System.Windows.Forms.Button();
+            this.btnCola = new System.Windows.Forms.Button();
+            this.btnBitterLemon = new System.Windows.Forms.Button();
+            this.btnSpaRood = new System.Windows.Forms.Button();
+            this.btnBackToDrinksFromFrisdranken = new System.Windows.Forms.Button();
+            this.pnlBieren = new System.Windows.Forms.Panel();
+            this.btnLeffeTripel = new System.Windows.Forms.Button();
+            this.btnKriek = new System.Windows.Forms.Button();
+            this.btnDuvel = new System.Windows.Forms.Button();
+            this.button26 = new System.Windows.Forms.Button();
+            this.button27 = new System.Windows.Forms.Button();
+            this.button28 = new System.Windows.Forms.Button();
+            this.button29 = new System.Windows.Forms.Button();
+            this.btnHertogJan = new System.Windows.Forms.Button();
+            this.btnBackFromBieren = new System.Windows.Forms.Button();
+            this.pnlWijnen = new System.Windows.Forms.Panel();
+            this.btnFlesRodeWijn = new System.Windows.Forms.Button();
+            this.btnGlasRodeWijn = new System.Windows.Forms.Button();
+            this.btnChampagne = new System.Windows.Forms.Button();
+            this.btnFlesWitteWijn = new System.Windows.Forms.Button();
+            this.button36 = new System.Windows.Forms.Button();
+            this.button37 = new System.Windows.Forms.Button();
+            this.button38 = new System.Windows.Forms.Button();
+            this.button39 = new System.Windows.Forms.Button();
+            this.btnGlasWitteWijn = new System.Windows.Forms.Button();
+            this.btnBackFromWijnen = new System.Windows.Forms.Button();
+            this.pnlGedestilleerdeDranken = new System.Windows.Forms.Panel();
+            this.btnVieux = new System.Windows.Forms.Button();
+            this.btnRum = new System.Windows.Forms.Button();
+            this.btnBerenburg = new System.Windows.Forms.Button();
+            this.btnWhiskey = new System.Windows.Forms.Button();
+            this.btnJongeJenever = new System.Windows.Forms.Button();
+            this.btnBackFromGedestilleerdeDranken = new System.Windows.Forms.Button();
+            this.pnlKoffieThee = new System.Windows.Forms.Panel();
+            this.btnGoBackFromKoffieThee = new System.Windows.Forms.Button();
+            this.btnThee = new System.Windows.Forms.Button();
+            this.btnEspresso = new System.Windows.Forms.Button();
+            this.btnCappuchino = new System.Windows.Forms.Button();
+            this.btnKoffie = new System.Windows.Forms.Button();
             this.pnlTableSelection.SuspendLayout();
             this.pnlOrderOrPayment.SuspendLayout();
             this.pnlCourseChoosing.SuspendLayout();
             this.pnlLunch.SuspendLayout();
+            this.pnlDranken.SuspendLayout();
+            this.pnlOpmerkingen.SuspendLayout();
+            this.grpboxOpmerkingen.SuspendLayout();
             this.pnlLunchVoorgerechten.SuspendLayout();
             this.pnlLunchHoofdgerechten.SuspendLayout();
             this.pnlLunchNagerechten.SuspendLayout();
@@ -124,6 +185,11 @@
             this.pnlDinerTussengerechten.SuspendLayout();
             this.pnlDinerHoofdgerechten.SuspendLayout();
             this.pnlDinerNagerechten.SuspendLayout();
+            this.pnlFrisdranken.SuspendLayout();
+            this.pnlBieren.SuspendLayout();
+            this.pnlWijnen.SuspendLayout();
+            this.pnlGedestilleerdeDranken.SuspendLayout();
+            this.pnlKoffieThee.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTableSelection
@@ -273,7 +339,6 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnOrdering
             // 
@@ -362,7 +427,7 @@
             // pnlLunch
             // 
             this.pnlLunch.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnlLunch.Controls.Add(this.btnBackToLunch);
+            this.pnlLunch.Controls.Add(this.btnBackToCourseChoosing);
             this.pnlLunch.Controls.Add(this.btnLunchNagerechten);
             this.pnlLunch.Controls.Add(this.btnLunchHoofdgerechten);
             this.pnlLunch.Controls.Add(this.btnLunchVoorgerechten);
@@ -371,15 +436,15 @@
             this.pnlLunch.Size = new System.Drawing.Size(240, 320);
             this.pnlLunch.TabIndex = 13;
             // 
-            // btnBackToLunch
+            // btnBackToCourseChoosing
             // 
-            this.btnBackToLunch.Location = new System.Drawing.Point(12, 9);
-            this.btnBackToLunch.Name = "btnBackToLunch";
-            this.btnBackToLunch.Size = new System.Drawing.Size(75, 23);
-            this.btnBackToLunch.TabIndex = 3;
-            this.btnBackToLunch.Text = "Go back";
-            this.btnBackToLunch.UseVisualStyleBackColor = true;
-            this.btnBackToLunch.Click += new System.EventHandler(this.btnBackToLunch_Click);
+            this.btnBackToCourseChoosing.Location = new System.Drawing.Point(12, 9);
+            this.btnBackToCourseChoosing.Name = "btnBackToCourseChoosing";
+            this.btnBackToCourseChoosing.Size = new System.Drawing.Size(75, 23);
+            this.btnBackToCourseChoosing.TabIndex = 3;
+            this.btnBackToCourseChoosing.Text = "Go back";
+            this.btnBackToCourseChoosing.UseVisualStyleBackColor = true;
+            this.btnBackToCourseChoosing.Click += new System.EventHandler(this.btnBackToLunch_Click);
             // 
             // btnLunchNagerechten
             // 
@@ -414,22 +479,149 @@
             // pnlDranken
             // 
             this.pnlDranken.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlDranken.Controls.Add(this.btnGedestilleerdeDranken);
+            this.pnlDranken.Controls.Add(this.btnBackToCourseChoosingFromDrinks);
+            this.pnlDranken.Controls.Add(this.btnWijnen);
+            this.pnlDranken.Controls.Add(this.btnKoffieThee);
+            this.pnlDranken.Controls.Add(this.btnBieren);
+            this.pnlDranken.Controls.Add(this.btnFrisdranken);
             this.pnlDranken.Location = new System.Drawing.Point(0, 0);
             this.pnlDranken.Name = "pnlDranken";
             this.pnlDranken.Size = new System.Drawing.Size(240, 320);
             this.pnlDranken.TabIndex = 13;
             // 
+            // btnGedestilleerdeDranken
+            // 
+            this.btnGedestilleerdeDranken.Location = new System.Drawing.Point(37, 200);
+            this.btnGedestilleerdeDranken.Name = "btnGedestilleerdeDranken";
+            this.btnGedestilleerdeDranken.Size = new System.Drawing.Size(170, 50);
+            this.btnGedestilleerdeDranken.TabIndex = 14;
+            this.btnGedestilleerdeDranken.Text = "Gedestilleerde dranken";
+            this.btnGedestilleerdeDranken.UseVisualStyleBackColor = true;
+            this.btnGedestilleerdeDranken.Click += new System.EventHandler(this.btnGedestilleerdeDranken_Click);
+            // 
+            // btnBackToCourseChoosingFromDrinks
+            // 
+            this.btnBackToCourseChoosingFromDrinks.Location = new System.Drawing.Point(12, 9);
+            this.btnBackToCourseChoosingFromDrinks.Name = "btnBackToCourseChoosingFromDrinks";
+            this.btnBackToCourseChoosingFromDrinks.Size = new System.Drawing.Size(75, 23);
+            this.btnBackToCourseChoosingFromDrinks.TabIndex = 15;
+            this.btnBackToCourseChoosingFromDrinks.Text = "Go back";
+            this.btnBackToCourseChoosingFromDrinks.UseVisualStyleBackColor = true;
+            this.btnBackToCourseChoosingFromDrinks.Click += new System.EventHandler(this.btnBackToCourseChoosingFromDrinks_Click);
+            // 
+            // btnWijnen
+            // 
+            this.btnWijnen.Location = new System.Drawing.Point(37, 146);
+            this.btnWijnen.Name = "btnWijnen";
+            this.btnWijnen.Size = new System.Drawing.Size(170, 50);
+            this.btnWijnen.TabIndex = 13;
+            this.btnWijnen.Text = "Wijnen";
+            this.btnWijnen.UseVisualStyleBackColor = true;
+            this.btnWijnen.Click += new System.EventHandler(this.btnWijnen_Click);
+            // 
+            // btnKoffieThee
+            // 
+            this.btnKoffieThee.Location = new System.Drawing.Point(38, 253);
+            this.btnKoffieThee.Name = "btnKoffieThee";
+            this.btnKoffieThee.Size = new System.Drawing.Size(170, 50);
+            this.btnKoffieThee.TabIndex = 12;
+            this.btnKoffieThee.Text = "Koffie/Thee";
+            this.btnKoffieThee.UseVisualStyleBackColor = true;
+            this.btnKoffieThee.Click += new System.EventHandler(this.btnKoffieThee_Click);
+            // 
+            // btnBieren
+            // 
+            this.btnBieren.Location = new System.Drawing.Point(37, 92);
+            this.btnBieren.Name = "btnBieren";
+            this.btnBieren.Size = new System.Drawing.Size(170, 50);
+            this.btnBieren.TabIndex = 11;
+            this.btnBieren.Text = "Bieren";
+            this.btnBieren.UseVisualStyleBackColor = true;
+            this.btnBieren.Click += new System.EventHandler(this.btnBieren_Click);
+            // 
+            // btnFrisdranken
+            // 
+            this.btnFrisdranken.Location = new System.Drawing.Point(37, 38);
+            this.btnFrisdranken.Name = "btnFrisdranken";
+            this.btnFrisdranken.Size = new System.Drawing.Size(170, 50);
+            this.btnFrisdranken.TabIndex = 6;
+            this.btnFrisdranken.Text = "Frisdranken";
+            this.btnFrisdranken.UseVisualStyleBackColor = true;
+            this.btnFrisdranken.Click += new System.EventHandler(this.btnFrisdranken_Click);
+            // 
             // pnlOpmerkingen
             // 
             this.pnlOpmerkingen.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlOpmerkingen.Controls.Add(this.btnAddComment);
+            this.pnlOpmerkingen.Controls.Add(this.grpboxOpmerkingen);
+            this.pnlOpmerkingen.Controls.Add(this.lblOpmerkingen);
+            this.pnlOpmerkingen.Controls.Add(this.txtBoxOpmerking);
+            this.pnlOpmerkingen.Controls.Add(this.btnBackFromOpmerkingen);
             this.pnlOpmerkingen.Location = new System.Drawing.Point(0, 0);
             this.pnlOpmerkingen.Name = "pnlOpmerkingen";
             this.pnlOpmerkingen.Size = new System.Drawing.Size(240, 320);
             this.pnlOpmerkingen.TabIndex = 13;
             // 
+            // btnAddComment
+            // 
+            this.btnAddComment.Location = new System.Drawing.Point(125, 266);
+            this.btnAddComment.Name = "btnAddComment";
+            this.btnAddComment.Size = new System.Drawing.Size(103, 43);
+            this.btnAddComment.TabIndex = 4;
+            this.btnAddComment.Text = "Voeg commentaar bij";
+            this.btnAddComment.UseVisualStyleBackColor = true;
+            this.btnAddComment.Click += new System.EventHandler(this.btnAddComment_Click);
+            // 
+            // grpboxOpmerkingen
+            // 
+            this.grpboxOpmerkingen.Controls.Add(this.lblGemaakteOpmerkingen);
+            this.grpboxOpmerkingen.Location = new System.Drawing.Point(12, 90);
+            this.grpboxOpmerkingen.Name = "grpboxOpmerkingen";
+            this.grpboxOpmerkingen.Size = new System.Drawing.Size(216, 162);
+            this.grpboxOpmerkingen.TabIndex = 3;
+            this.grpboxOpmerkingen.TabStop = false;
+            this.grpboxOpmerkingen.Text = "Gemaakte Opmerkingen:";
+            // 
+            // lblGemaakteOpmerkingen
+            // 
+            this.lblGemaakteOpmerkingen.AutoSize = true;
+            this.lblGemaakteOpmerkingen.Location = new System.Drawing.Point(6, 19);
+            this.lblGemaakteOpmerkingen.Name = "lblGemaakteOpmerkingen";
+            this.lblGemaakteOpmerkingen.Size = new System.Drawing.Size(152, 15);
+            this.lblGemaakteOpmerkingen.TabIndex = 0;
+            this.lblGemaakteOpmerkingen.Text = "Er is nog geen commentaar";
+            // 
+            // lblOpmerkingen
+            // 
+            this.lblOpmerkingen.AutoSize = true;
+            this.lblOpmerkingen.Location = new System.Drawing.Point(12, 43);
+            this.lblOpmerkingen.Name = "lblOpmerkingen";
+            this.lblOpmerkingen.Size = new System.Drawing.Size(83, 15);
+            this.lblOpmerkingen.TabIndex = 2;
+            this.lblOpmerkingen.Text = "Opmerkingen:";
+            // 
+            // txtBoxOpmerking
+            // 
+            this.txtBoxOpmerking.Location = new System.Drawing.Point(12, 61);
+            this.txtBoxOpmerking.Name = "txtBoxOpmerking";
+            this.txtBoxOpmerking.Size = new System.Drawing.Size(216, 23);
+            this.txtBoxOpmerking.TabIndex = 1;
+            // 
+            // btnBackFromOpmerkingen
+            // 
+            this.btnBackFromOpmerkingen.Location = new System.Drawing.Point(12, 9);
+            this.btnBackFromOpmerkingen.Name = "btnBackFromOpmerkingen";
+            this.btnBackFromOpmerkingen.Size = new System.Drawing.Size(75, 23);
+            this.btnBackFromOpmerkingen.TabIndex = 0;
+            this.btnBackFromOpmerkingen.Text = "Go back";
+            this.btnBackFromOpmerkingen.UseVisualStyleBackColor = true;
+            this.btnBackFromOpmerkingen.Click += new System.EventHandler(this.btnBackFromOpmerkingen_Click);
+            // 
             // pnlLunchVoorgerechten
             // 
             this.pnlLunchVoorgerechten.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlLunchVoorgerechten.Controls.Add(this.btnBackToLunchFromVoorgerechten);
             this.pnlLunchVoorgerechten.Controls.Add(this.btnLunchVissoep);
             this.pnlLunchVoorgerechten.Controls.Add(this.btnLunchPatéFazant);
             this.pnlLunchVoorgerechten.Controls.Add(this.btnLunchSteakTartaar);
@@ -437,6 +629,16 @@
             this.pnlLunchVoorgerechten.Name = "pnlLunchVoorgerechten";
             this.pnlLunchVoorgerechten.Size = new System.Drawing.Size(240, 320);
             this.pnlLunchVoorgerechten.TabIndex = 14;
+            // 
+            // btnBackToLunchFromVoorgerechten
+            // 
+            this.btnBackToLunchFromVoorgerechten.Location = new System.Drawing.Point(12, 9);
+            this.btnBackToLunchFromVoorgerechten.Name = "btnBackToLunchFromVoorgerechten";
+            this.btnBackToLunchFromVoorgerechten.Size = new System.Drawing.Size(75, 23);
+            this.btnBackToLunchFromVoorgerechten.TabIndex = 5;
+            this.btnBackToLunchFromVoorgerechten.Text = "Go back";
+            this.btnBackToLunchFromVoorgerechten.UseVisualStyleBackColor = true;
+            this.btnBackToLunchFromVoorgerechten.Click += new System.EventHandler(this.btnBackToLunchFromVoorgerechten_Click);
             // 
             // btnLunchVissoep
             // 
@@ -471,6 +673,7 @@
             // pnlLunchHoofdgerechten
             // 
             this.pnlLunchHoofdgerechten.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlLunchHoofdgerechten.Controls.Add(this.BtnBackToLunchFromHoofdgerechten);
             this.pnlLunchHoofdgerechten.Controls.Add(this.btnLinguini);
             this.pnlLunchHoofdgerechten.Controls.Add(this.btnKabeljauw);
             this.pnlLunchHoofdgerechten.Controls.Add(this.btnHertenstoofpot);
@@ -478,6 +681,16 @@
             this.pnlLunchHoofdgerechten.Name = "pnlLunchHoofdgerechten";
             this.pnlLunchHoofdgerechten.Size = new System.Drawing.Size(240, 320);
             this.pnlLunchHoofdgerechten.TabIndex = 14;
+            // 
+            // BtnBackToLunchFromHoofdgerechten
+            // 
+            this.BtnBackToLunchFromHoofdgerechten.Location = new System.Drawing.Point(12, 9);
+            this.BtnBackToLunchFromHoofdgerechten.Name = "BtnBackToLunchFromHoofdgerechten";
+            this.BtnBackToLunchFromHoofdgerechten.Size = new System.Drawing.Size(75, 23);
+            this.BtnBackToLunchFromHoofdgerechten.TabIndex = 4;
+            this.BtnBackToLunchFromHoofdgerechten.Text = "Go back";
+            this.BtnBackToLunchFromHoofdgerechten.UseVisualStyleBackColor = true;
+            this.BtnBackToLunchFromHoofdgerechten.Click += new System.EventHandler(this.BtnBackToLunch_Click_1);
             // 
             // btnLinguini
             // 
@@ -512,6 +725,7 @@
             // pnlLunchNagerechten
             // 
             this.pnlLunchNagerechten.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlLunchNagerechten.Controls.Add(this.btnBackToLunchFromNagerechten);
             this.pnlLunchNagerechten.Controls.Add(this.btnBoerenKaas);
             this.pnlLunchNagerechten.Controls.Add(this.btnMadeleine);
             this.pnlLunchNagerechten.Controls.Add(this.btnTaart);
@@ -519,6 +733,16 @@
             this.pnlLunchNagerechten.Name = "pnlLunchNagerechten";
             this.pnlLunchNagerechten.Size = new System.Drawing.Size(240, 320);
             this.pnlLunchNagerechten.TabIndex = 14;
+            // 
+            // btnBackToLunchFromNagerechten
+            // 
+            this.btnBackToLunchFromNagerechten.Location = new System.Drawing.Point(12, 9);
+            this.btnBackToLunchFromNagerechten.Name = "btnBackToLunchFromNagerechten";
+            this.btnBackToLunchFromNagerechten.Size = new System.Drawing.Size(75, 23);
+            this.btnBackToLunchFromNagerechten.TabIndex = 5;
+            this.btnBackToLunchFromNagerechten.Text = "Go back";
+            this.btnBackToLunchFromNagerechten.UseVisualStyleBackColor = true;
+            this.btnBackToLunchFromNagerechten.Click += new System.EventHandler(this.btnBackToLunchFromNagerechten_Click);
             // 
             // btnBoerenKaas
             // 
@@ -682,6 +906,10 @@
             // 
             this.Description.Text = "Description";
             // 
+            // OrderItemID
+            // 
+            this.OrderItemID.Text = "OrderItemID";
+            // 
             // btnGoBackToCourseChoosingFromConfirmOrder
             // 
             this.btnGoBackToCourseChoosingFromConfirmOrder.Location = new System.Drawing.Point(12, 5);
@@ -775,6 +1003,7 @@
             this.btnGoBackToDinerCourseChoosingFromVoorgerechten.TabIndex = 4;
             this.btnGoBackToDinerCourseChoosingFromVoorgerechten.Text = "Go back";
             this.btnGoBackToDinerCourseChoosingFromVoorgerechten.UseVisualStyleBackColor = true;
+            this.btnGoBackToDinerCourseChoosingFromVoorgerechten.Click += new System.EventHandler(this.btnGoBackToDinerCourseChoosingFromVoorgerechten_Click);
             // 
             // btnDinerKrabZalmKoekjes
             // 
@@ -825,6 +1054,7 @@
             this.btnGoBackToDinerCourses.TabIndex = 4;
             this.btnGoBackToDinerCourses.Text = "Go back";
             this.btnGoBackToDinerCourses.UseVisualStyleBackColor = true;
+            this.btnGoBackToDinerCourses.Click += new System.EventHandler(this.btnGoBackToDinerCourses_Click);
             // 
             // btnDinerTussengerechtConsomméFazant
             // 
@@ -876,6 +1106,7 @@
             this.btnGoBackToDinerCoursesFromDinerHoofdgerechten.TabIndex = 4;
             this.btnGoBackToDinerCoursesFromDinerHoofdgerechten.Text = "Go back";
             this.btnGoBackToDinerCoursesFromDinerHoofdgerechten.UseVisualStyleBackColor = true;
+            this.btnGoBackToDinerCoursesFromDinerHoofdgerechten.Click += new System.EventHandler(this.btnGoBackToDinerCoursesFromDinerHoofdgerechten_Click);
             // 
             // btnDinerHoofdgerechtenOssenhaas
             // 
@@ -885,6 +1116,7 @@
             this.btnDinerHoofdgerechtenOssenhaas.TabIndex = 1;
             this.btnDinerHoofdgerechtenOssenhaas.Text = "Gebakken ossenhaas";
             this.btnDinerHoofdgerechtenOssenhaas.UseVisualStyleBackColor = true;
+            this.btnDinerHoofdgerechtenOssenhaas.Click += new System.EventHandler(this.btnDinerHoofdgerechtenOssenhaas_Click_1);
             // 
             // btnDinerHoofdgerechtKabeljauw
             // 
@@ -926,6 +1158,7 @@
             this.btnGoBackToDinerCoursesFromNagerechten.TabIndex = 4;
             this.btnGoBackToDinerCoursesFromNagerechten.Text = "Go back";
             this.btnGoBackToDinerCoursesFromNagerechten.UseVisualStyleBackColor = true;
+            this.btnGoBackToDinerCoursesFromNagerechten.Click += new System.EventHandler(this.btnGoBackToDinerCoursesFromNagerechten_Click);
             // 
             // btnDinerNagerechtenCherryBaby
             // 
@@ -947,31 +1180,482 @@
             this.btnDinerNagerechtenCaféSurprise.UseVisualStyleBackColor = true;
             this.btnDinerNagerechtenCaféSurprise.Click += new System.EventHandler(this.btnDinerNagerechtenCaféSurprise_Click);
             // 
-            // OrderItemID
+            // pnlFrisdranken
             // 
-            this.OrderItemID.Text = "OrderItemID";
+            this.pnlFrisdranken.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlFrisdranken.Controls.Add(this.btnTonic);
+            this.pnlFrisdranken.Controls.Add(this.btnSisi);
+            this.pnlFrisdranken.Controls.Add(this.btnColaLight);
+            this.pnlFrisdranken.Controls.Add(this.btnSpaGroen);
+            this.pnlFrisdranken.Controls.Add(this.btnCola);
+            this.pnlFrisdranken.Controls.Add(this.btnBitterLemon);
+            this.pnlFrisdranken.Controls.Add(this.btnSpaRood);
+            this.pnlFrisdranken.Controls.Add(this.btnBackToDrinksFromFrisdranken);
+            this.pnlFrisdranken.Location = new System.Drawing.Point(0, 0);
+            this.pnlFrisdranken.Name = "pnlFrisdranken";
+            this.pnlFrisdranken.Size = new System.Drawing.Size(240, 320);
+            this.pnlFrisdranken.TabIndex = 15;
+            // 
+            // btnTonic
+            // 
+            this.btnTonic.Location = new System.Drawing.Point(133, 167);
+            this.btnTonic.Name = "btnTonic";
+            this.btnTonic.Size = new System.Drawing.Size(85, 50);
+            this.btnTonic.TabIndex = 19;
+            this.btnTonic.Text = "Tonic";
+            this.btnTonic.UseVisualStyleBackColor = true;
+            this.btnTonic.Click += new System.EventHandler(this.btnTonic_Click);
+            // 
+            // btnSisi
+            // 
+            this.btnSisi.Location = new System.Drawing.Point(34, 167);
+            this.btnSisi.Name = "btnSisi";
+            this.btnSisi.Size = new System.Drawing.Size(85, 50);
+            this.btnSisi.TabIndex = 18;
+            this.btnSisi.Text = "Sisi";
+            this.btnSisi.UseVisualStyleBackColor = true;
+            this.btnSisi.Click += new System.EventHandler(this.btnSisi_Click);
+            // 
+            // btnColaLight
+            // 
+            this.btnColaLight.Location = new System.Drawing.Point(133, 111);
+            this.btnColaLight.Name = "btnColaLight";
+            this.btnColaLight.Size = new System.Drawing.Size(85, 50);
+            this.btnColaLight.TabIndex = 17;
+            this.btnColaLight.Text = "Coca-Cola Light";
+            this.btnColaLight.UseVisualStyleBackColor = true;
+            this.btnColaLight.Click += new System.EventHandler(this.btnColaLight_Click);
+            // 
+            // btnSpaGroen
+            // 
+            this.btnSpaGroen.Location = new System.Drawing.Point(133, 55);
+            this.btnSpaGroen.Name = "btnSpaGroen";
+            this.btnSpaGroen.Size = new System.Drawing.Size(85, 50);
+            this.btnSpaGroen.TabIndex = 16;
+            this.btnSpaGroen.Text = "Spa groen";
+            this.btnSpaGroen.UseVisualStyleBackColor = true;
+            this.btnSpaGroen.Click += new System.EventHandler(this.btnSpaGroen_Click);
+            // 
+            // btnCola
+            // 
+            this.btnCola.Location = new System.Drawing.Point(34, 111);
+            this.btnCola.Name = "btnCola";
+            this.btnCola.Size = new System.Drawing.Size(85, 50);
+            this.btnCola.TabIndex = 15;
+            this.btnCola.Text = "Coca-Cola";
+            this.btnCola.UseVisualStyleBackColor = true;
+            this.btnCola.Click += new System.EventHandler(this.btnCola_Click);
+            // 
+            // btnBitterLemon
+            // 
+            this.btnBitterLemon.Location = new System.Drawing.Point(36, 223);
+            this.btnBitterLemon.Name = "btnBitterLemon";
+            this.btnBitterLemon.Size = new System.Drawing.Size(184, 50);
+            this.btnBitterLemon.TabIndex = 14;
+            this.btnBitterLemon.Text = "Bitter-lemon";
+            this.btnBitterLemon.UseVisualStyleBackColor = true;
+            this.btnBitterLemon.Click += new System.EventHandler(this.btnBitterLemon_Click);
+            // 
+            // btnSpaRood
+            // 
+            this.btnSpaRood.Location = new System.Drawing.Point(34, 55);
+            this.btnSpaRood.Name = "btnSpaRood";
+            this.btnSpaRood.Size = new System.Drawing.Size(85, 50);
+            this.btnSpaRood.TabIndex = 6;
+            this.btnSpaRood.Text = "Spa rood";
+            this.btnSpaRood.UseVisualStyleBackColor = true;
+            this.btnSpaRood.Click += new System.EventHandler(this.btnSpaRood_Click);
+            // 
+            // btnBackToDrinksFromFrisdranken
+            // 
+            this.btnBackToDrinksFromFrisdranken.Location = new System.Drawing.Point(12, 9);
+            this.btnBackToDrinksFromFrisdranken.Name = "btnBackToDrinksFromFrisdranken";
+            this.btnBackToDrinksFromFrisdranken.Size = new System.Drawing.Size(75, 23);
+            this.btnBackToDrinksFromFrisdranken.TabIndex = 5;
+            this.btnBackToDrinksFromFrisdranken.Text = "Go back";
+            this.btnBackToDrinksFromFrisdranken.UseVisualStyleBackColor = true;
+            this.btnBackToDrinksFromFrisdranken.Click += new System.EventHandler(this.btnBackToDrinksFromFrisdranken_Click);
+            // 
+            // pnlBieren
+            // 
+            this.pnlBieren.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlBieren.Controls.Add(this.btnLeffeTripel);
+            this.pnlBieren.Controls.Add(this.btnKriek);
+            this.pnlBieren.Controls.Add(this.btnDuvel);
+            this.pnlBieren.Controls.Add(this.button26);
+            this.pnlBieren.Controls.Add(this.button27);
+            this.pnlBieren.Controls.Add(this.button28);
+            this.pnlBieren.Controls.Add(this.button29);
+            this.pnlBieren.Controls.Add(this.btnHertogJan);
+            this.pnlBieren.Controls.Add(this.btnBackFromBieren);
+            this.pnlBieren.Location = new System.Drawing.Point(0, 0);
+            this.pnlBieren.Name = "pnlBieren";
+            this.pnlBieren.Size = new System.Drawing.Size(240, 320);
+            this.pnlBieren.TabIndex = 15;
+            // 
+            // btnLeffeTripel
+            // 
+            this.btnLeffeTripel.Location = new System.Drawing.Point(37, 200);
+            this.btnLeffeTripel.Name = "btnLeffeTripel";
+            this.btnLeffeTripel.Size = new System.Drawing.Size(170, 50);
+            this.btnLeffeTripel.TabIndex = 14;
+            this.btnLeffeTripel.Text = "Leffe tripel";
+            this.btnLeffeTripel.UseVisualStyleBackColor = true;
+            this.btnLeffeTripel.Click += new System.EventHandler(this.btnLeffeTripel_Click);
+            // 
+            // btnKriek
+            // 
+            this.btnKriek.Location = new System.Drawing.Point(37, 146);
+            this.btnKriek.Name = "btnKriek";
+            this.btnKriek.Size = new System.Drawing.Size(170, 50);
+            this.btnKriek.TabIndex = 13;
+            this.btnKriek.Text = "Kriek";
+            this.btnKriek.UseVisualStyleBackColor = true;
+            this.btnKriek.Click += new System.EventHandler(this.btnKriek_Click);
+            // 
+            // btnDuvel
+            // 
+            this.btnDuvel.Location = new System.Drawing.Point(37, 92);
+            this.btnDuvel.Name = "btnDuvel";
+            this.btnDuvel.Size = new System.Drawing.Size(170, 50);
+            this.btnDuvel.TabIndex = 11;
+            this.btnDuvel.Text = "Duvel";
+            this.btnDuvel.UseVisualStyleBackColor = true;
+            this.btnDuvel.Click += new System.EventHandler(this.btnDuvel_Click);
+            // 
+            // button26
+            // 
+            this.button26.Location = new System.Drawing.Point(30, 266);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(0, 0);
+            this.button26.TabIndex = 10;
+            this.button26.Text = "Nagerechten";
+            this.button26.UseVisualStyleBackColor = true;
+            // 
+            // button27
+            // 
+            this.button27.Location = new System.Drawing.Point(12, 212);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(0, 0);
+            this.button27.TabIndex = 9;
+            this.button27.Text = "Nagerechten";
+            this.button27.UseVisualStyleBackColor = true;
+            // 
+            // button28
+            // 
+            this.button28.Location = new System.Drawing.Point(12, 225);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(0, 0);
+            this.button28.TabIndex = 8;
+            this.button28.Text = "Nagerechten";
+            this.button28.UseVisualStyleBackColor = true;
+            // 
+            // button29
+            // 
+            this.button29.Location = new System.Drawing.Point(35, 130);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(0, 0);
+            this.button29.TabIndex = 7;
+            this.button29.Text = "Nagerechten";
+            this.button29.UseVisualStyleBackColor = true;
+            // 
+            // btnHertogJan
+            // 
+            this.btnHertogJan.Location = new System.Drawing.Point(37, 38);
+            this.btnHertogJan.Name = "btnHertogJan";
+            this.btnHertogJan.Size = new System.Drawing.Size(170, 50);
+            this.btnHertogJan.TabIndex = 6;
+            this.btnHertogJan.Text = "Hertog jan";
+            this.btnHertogJan.UseVisualStyleBackColor = true;
+            this.btnHertogJan.Click += new System.EventHandler(this.btnHertogJan_Click);
+            // 
+            // btnBackFromBieren
+            // 
+            this.btnBackFromBieren.Location = new System.Drawing.Point(12, 9);
+            this.btnBackFromBieren.Name = "btnBackFromBieren";
+            this.btnBackFromBieren.Size = new System.Drawing.Size(75, 23);
+            this.btnBackFromBieren.TabIndex = 5;
+            this.btnBackFromBieren.Text = "Go back";
+            this.btnBackFromBieren.UseVisualStyleBackColor = true;
+            this.btnBackFromBieren.Click += new System.EventHandler(this.btnBackFromBieren_Click);
+            // 
+            // pnlWijnen
+            // 
+            this.pnlWijnen.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlWijnen.Controls.Add(this.btnFlesRodeWijn);
+            this.pnlWijnen.Controls.Add(this.btnGlasRodeWijn);
+            this.pnlWijnen.Controls.Add(this.btnChampagne);
+            this.pnlWijnen.Controls.Add(this.btnFlesWitteWijn);
+            this.pnlWijnen.Controls.Add(this.button36);
+            this.pnlWijnen.Controls.Add(this.button37);
+            this.pnlWijnen.Controls.Add(this.button38);
+            this.pnlWijnen.Controls.Add(this.button39);
+            this.pnlWijnen.Controls.Add(this.btnGlasWitteWijn);
+            this.pnlWijnen.Controls.Add(this.btnBackFromWijnen);
+            this.pnlWijnen.Location = new System.Drawing.Point(0, 0);
+            this.pnlWijnen.Name = "pnlWijnen";
+            this.pnlWijnen.Size = new System.Drawing.Size(240, 320);
+            this.pnlWijnen.TabIndex = 14;
+            // 
+            // btnFlesRodeWijn
+            // 
+            this.btnFlesRodeWijn.Location = new System.Drawing.Point(37, 200);
+            this.btnFlesRodeWijn.Name = "btnFlesRodeWijn";
+            this.btnFlesRodeWijn.Size = new System.Drawing.Size(170, 50);
+            this.btnFlesRodeWijn.TabIndex = 14;
+            this.btnFlesRodeWijn.Text = "Fles rode wijn";
+            this.btnFlesRodeWijn.UseVisualStyleBackColor = true;
+            this.btnFlesRodeWijn.Click += new System.EventHandler(this.btnFlesRodeWijn_Click);
+            // 
+            // btnGlasRodeWijn
+            // 
+            this.btnGlasRodeWijn.Location = new System.Drawing.Point(37, 146);
+            this.btnGlasRodeWijn.Name = "btnGlasRodeWijn";
+            this.btnGlasRodeWijn.Size = new System.Drawing.Size(170, 50);
+            this.btnGlasRodeWijn.TabIndex = 13;
+            this.btnGlasRodeWijn.Text = "Glas rode wijn";
+            this.btnGlasRodeWijn.UseVisualStyleBackColor = true;
+            this.btnGlasRodeWijn.Click += new System.EventHandler(this.btnGlasRodeWijn_Click);
+            // 
+            // btnChampagne
+            // 
+            this.btnChampagne.Location = new System.Drawing.Point(38, 253);
+            this.btnChampagne.Name = "btnChampagne";
+            this.btnChampagne.Size = new System.Drawing.Size(170, 50);
+            this.btnChampagne.TabIndex = 12;
+            this.btnChampagne.Text = "Champagne";
+            this.btnChampagne.UseVisualStyleBackColor = true;
+            this.btnChampagne.Click += new System.EventHandler(this.btnChampagne_Click);
+            // 
+            // btnFlesWitteWijn
+            // 
+            this.btnFlesWitteWijn.Location = new System.Drawing.Point(37, 92);
+            this.btnFlesWitteWijn.Name = "btnFlesWitteWijn";
+            this.btnFlesWitteWijn.Size = new System.Drawing.Size(170, 50);
+            this.btnFlesWitteWijn.TabIndex = 11;
+            this.btnFlesWitteWijn.Text = "Fles witte wijn";
+            this.btnFlesWitteWijn.UseVisualStyleBackColor = true;
+            this.btnFlesWitteWijn.Click += new System.EventHandler(this.btnFlesWitteWijn_Click);
+            // 
+            // button36
+            // 
+            this.button36.Location = new System.Drawing.Point(30, 266);
+            this.button36.Name = "button36";
+            this.button36.Size = new System.Drawing.Size(0, 0);
+            this.button36.TabIndex = 10;
+            this.button36.Text = "Nagerechten";
+            this.button36.UseVisualStyleBackColor = true;
+            // 
+            // button37
+            // 
+            this.button37.Location = new System.Drawing.Point(12, 212);
+            this.button37.Name = "button37";
+            this.button37.Size = new System.Drawing.Size(0, 0);
+            this.button37.TabIndex = 9;
+            this.button37.Text = "Nagerechten";
+            this.button37.UseVisualStyleBackColor = true;
+            // 
+            // button38
+            // 
+            this.button38.Location = new System.Drawing.Point(12, 225);
+            this.button38.Name = "button38";
+            this.button38.Size = new System.Drawing.Size(0, 0);
+            this.button38.TabIndex = 8;
+            this.button38.Text = "Nagerechten";
+            this.button38.UseVisualStyleBackColor = true;
+            // 
+            // button39
+            // 
+            this.button39.Location = new System.Drawing.Point(35, 130);
+            this.button39.Name = "button39";
+            this.button39.Size = new System.Drawing.Size(0, 0);
+            this.button39.TabIndex = 7;
+            this.button39.Text = "Nagerechten";
+            this.button39.UseVisualStyleBackColor = true;
+            // 
+            // btnGlasWitteWijn
+            // 
+            this.btnGlasWitteWijn.Location = new System.Drawing.Point(37, 38);
+            this.btnGlasWitteWijn.Name = "btnGlasWitteWijn";
+            this.btnGlasWitteWijn.Size = new System.Drawing.Size(170, 50);
+            this.btnGlasWitteWijn.TabIndex = 6;
+            this.btnGlasWitteWijn.Text = "Glas witte wijn";
+            this.btnGlasWitteWijn.UseVisualStyleBackColor = true;
+            this.btnGlasWitteWijn.Click += new System.EventHandler(this.btnGlasWitteWijn_Click);
+            // 
+            // btnBackFromWijnen
+            // 
+            this.btnBackFromWijnen.Location = new System.Drawing.Point(12, 9);
+            this.btnBackFromWijnen.Name = "btnBackFromWijnen";
+            this.btnBackFromWijnen.Size = new System.Drawing.Size(75, 23);
+            this.btnBackFromWijnen.TabIndex = 5;
+            this.btnBackFromWijnen.Text = "Go back";
+            this.btnBackFromWijnen.UseVisualStyleBackColor = true;
+            this.btnBackFromWijnen.Click += new System.EventHandler(this.btnBackFromWijnen_Click);
+            // 
+            // pnlGedestilleerdeDranken
+            // 
+            this.pnlGedestilleerdeDranken.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlGedestilleerdeDranken.Controls.Add(this.btnVieux);
+            this.pnlGedestilleerdeDranken.Controls.Add(this.btnRum);
+            this.pnlGedestilleerdeDranken.Controls.Add(this.btnBerenburg);
+            this.pnlGedestilleerdeDranken.Controls.Add(this.btnWhiskey);
+            this.pnlGedestilleerdeDranken.Controls.Add(this.btnJongeJenever);
+            this.pnlGedestilleerdeDranken.Controls.Add(this.btnBackFromGedestilleerdeDranken);
+            this.pnlGedestilleerdeDranken.Location = new System.Drawing.Point(0, 0);
+            this.pnlGedestilleerdeDranken.Name = "pnlGedestilleerdeDranken";
+            this.pnlGedestilleerdeDranken.Size = new System.Drawing.Size(240, 320);
+            this.pnlGedestilleerdeDranken.TabIndex = 15;
+            // 
+            // btnVieux
+            // 
+            this.btnVieux.Location = new System.Drawing.Point(37, 200);
+            this.btnVieux.Name = "btnVieux";
+            this.btnVieux.Size = new System.Drawing.Size(170, 50);
+            this.btnVieux.TabIndex = 14;
+            this.btnVieux.Text = "Vieux";
+            this.btnVieux.UseVisualStyleBackColor = true;
+            this.btnVieux.Click += new System.EventHandler(this.btnVieux_Click);
+            // 
+            // btnRum
+            // 
+            this.btnRum.Location = new System.Drawing.Point(37, 146);
+            this.btnRum.Name = "btnRum";
+            this.btnRum.Size = new System.Drawing.Size(170, 50);
+            this.btnRum.TabIndex = 13;
+            this.btnRum.Text = "Rum";
+            this.btnRum.UseVisualStyleBackColor = true;
+            this.btnRum.Click += new System.EventHandler(this.btnRum_Click);
+            // 
+            // btnBerenburg
+            // 
+            this.btnBerenburg.Location = new System.Drawing.Point(38, 253);
+            this.btnBerenburg.Name = "btnBerenburg";
+            this.btnBerenburg.Size = new System.Drawing.Size(170, 50);
+            this.btnBerenburg.TabIndex = 12;
+            this.btnBerenburg.Text = "Berenburg";
+            this.btnBerenburg.UseVisualStyleBackColor = true;
+            this.btnBerenburg.Click += new System.EventHandler(this.btnBerenburg_Click);
+            // 
+            // btnWhiskey
+            // 
+            this.btnWhiskey.Location = new System.Drawing.Point(37, 92);
+            this.btnWhiskey.Name = "btnWhiskey";
+            this.btnWhiskey.Size = new System.Drawing.Size(170, 50);
+            this.btnWhiskey.TabIndex = 11;
+            this.btnWhiskey.Text = "Whiskey";
+            this.btnWhiskey.UseVisualStyleBackColor = true;
+            this.btnWhiskey.Click += new System.EventHandler(this.btnWhiskey_Click);
+            // 
+            // btnJongeJenever
+            // 
+            this.btnJongeJenever.Location = new System.Drawing.Point(37, 38);
+            this.btnJongeJenever.Name = "btnJongeJenever";
+            this.btnJongeJenever.Size = new System.Drawing.Size(170, 50);
+            this.btnJongeJenever.TabIndex = 6;
+            this.btnJongeJenever.Text = "Jonge Jenever";
+            this.btnJongeJenever.UseVisualStyleBackColor = true;
+            this.btnJongeJenever.Click += new System.EventHandler(this.btnJongeJenever_Click);
+            // 
+            // btnBackFromGedestilleerdeDranken
+            // 
+            this.btnBackFromGedestilleerdeDranken.Location = new System.Drawing.Point(12, 9);
+            this.btnBackFromGedestilleerdeDranken.Name = "btnBackFromGedestilleerdeDranken";
+            this.btnBackFromGedestilleerdeDranken.Size = new System.Drawing.Size(75, 23);
+            this.btnBackFromGedestilleerdeDranken.TabIndex = 5;
+            this.btnBackFromGedestilleerdeDranken.Text = "Go back";
+            this.btnBackFromGedestilleerdeDranken.UseVisualStyleBackColor = true;
+            this.btnBackFromGedestilleerdeDranken.Click += new System.EventHandler(this.btnBackFromGedestilleerdeDranken_Click);
+            // 
+            // pnlKoffieThee
+            // 
+            this.pnlKoffieThee.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlKoffieThee.Controls.Add(this.btnGoBackFromKoffieThee);
+            this.pnlKoffieThee.Controls.Add(this.btnThee);
+            this.pnlKoffieThee.Controls.Add(this.btnEspresso);
+            this.pnlKoffieThee.Controls.Add(this.btnCappuchino);
+            this.pnlKoffieThee.Controls.Add(this.btnKoffie);
+            this.pnlKoffieThee.Location = new System.Drawing.Point(0, 0);
+            this.pnlKoffieThee.Name = "pnlKoffieThee";
+            this.pnlKoffieThee.Size = new System.Drawing.Size(240, 320);
+            this.pnlKoffieThee.TabIndex = 15;
+            // 
+            // btnGoBackFromKoffieThee
+            // 
+            this.btnGoBackFromKoffieThee.Location = new System.Drawing.Point(12, 9);
+            this.btnGoBackFromKoffieThee.Name = "btnGoBackFromKoffieThee";
+            this.btnGoBackFromKoffieThee.Size = new System.Drawing.Size(75, 23);
+            this.btnGoBackFromKoffieThee.TabIndex = 15;
+            this.btnGoBackFromKoffieThee.Text = "Go back";
+            this.btnGoBackFromKoffieThee.UseVisualStyleBackColor = true;
+            this.btnGoBackFromKoffieThee.Click += new System.EventHandler(this.btnGoBackFromKoffieThee_Click);
+            // 
+            // btnThee
+            // 
+            this.btnThee.Location = new System.Drawing.Point(37, 200);
+            this.btnThee.Name = "btnThee";
+            this.btnThee.Size = new System.Drawing.Size(170, 50);
+            this.btnThee.TabIndex = 14;
+            this.btnThee.Text = "Thee";
+            this.btnThee.UseVisualStyleBackColor = true;
+            this.btnThee.Click += new System.EventHandler(this.btnThee_Click);
+            // 
+            // btnEspresso
+            // 
+            this.btnEspresso.Location = new System.Drawing.Point(37, 146);
+            this.btnEspresso.Name = "btnEspresso";
+            this.btnEspresso.Size = new System.Drawing.Size(170, 50);
+            this.btnEspresso.TabIndex = 13;
+            this.btnEspresso.Text = "Espresso";
+            this.btnEspresso.UseVisualStyleBackColor = true;
+            this.btnEspresso.Click += new System.EventHandler(this.btnEspresso_Click);
+            // 
+            // btnCappuchino
+            // 
+            this.btnCappuchino.Location = new System.Drawing.Point(37, 92);
+            this.btnCappuchino.Name = "btnCappuchino";
+            this.btnCappuchino.Size = new System.Drawing.Size(170, 50);
+            this.btnCappuchino.TabIndex = 11;
+            this.btnCappuchino.Text = "Cappuchino";
+            this.btnCappuchino.UseVisualStyleBackColor = true;
+            this.btnCappuchino.Click += new System.EventHandler(this.btnCappuchino_Click);
+            // 
+            // btnKoffie
+            // 
+            this.btnKoffie.Location = new System.Drawing.Point(37, 38);
+            this.btnKoffie.Name = "btnKoffie";
+            this.btnKoffie.Size = new System.Drawing.Size(170, 50);
+            this.btnKoffie.TabIndex = 6;
+            this.btnKoffie.Text = "Koffie";
+            this.btnKoffie.UseVisualStyleBackColor = true;
+            this.btnKoffie.Click += new System.EventHandler(this.btnKoffie_Click);
             // 
             // PDAOrdering_Joey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(240, 321);
+            this.Controls.Add(this.pnlOpmerkingen);
+            this.Controls.Add(this.pnlBieren);
+            this.Controls.Add(this.pnlWijnen);
+            this.Controls.Add(this.pnlGedestilleerdeDranken);
+            this.Controls.Add(this.pnlKoffieThee);
+            this.Controls.Add(this.pnlFrisdranken);
+            this.Controls.Add(this.pnlDranken);
+            this.Controls.Add(this.pnlOrderOrPayment);
             this.Controls.Add(this.pnlConfirmOrder);
-            this.Controls.Add(this.pnlCourseChoosing);
-            this.Controls.Add(this.pnlDiner);
-            this.Controls.Add(this.pnlDinerTussengerechten);
             this.Controls.Add(this.pnlDinerNagerechten);
             this.Controls.Add(this.pnlDinerHoofdgerechten);
+            this.Controls.Add(this.pnlDinerTussengerechten);
             this.Controls.Add(this.pnlDinerVoorgerechten);
-            this.Controls.Add(this.pnlLunchNagerechten);
+            this.Controls.Add(this.pnlDiner);
             this.Controls.Add(this.pnlLunchVoorgerechten);
-            this.Controls.Add(this.pnlTableSelection);
-            this.Controls.Add(this.pnlOrderOrPayment);
-            this.Controls.Add(this.pnlLunch);
-            this.Controls.Add(this.pnlOrderReview);
             this.Controls.Add(this.pnlLunchHoofdgerechten);
-            this.Controls.Add(this.pnlOpmerkingen);
-            this.Controls.Add(this.pnlDranken);
+            this.Controls.Add(this.pnlLunchNagerechten);
+            this.Controls.Add(this.pnlLunch);
+            this.Controls.Add(this.pnlCourseChoosing);
+            this.Controls.Add(this.pnlTableSelection);
+            this.Controls.Add(this.pnlOrderReview);
             this.Name = "PDAOrdering_Joey";
             this.Text = "PDAOrdering_Joey";
             this.Load += new System.EventHandler(this.PDAOrdering_Joey_Load);
@@ -979,6 +1663,11 @@
             this.pnlOrderOrPayment.ResumeLayout(false);
             this.pnlCourseChoosing.ResumeLayout(false);
             this.pnlLunch.ResumeLayout(false);
+            this.pnlDranken.ResumeLayout(false);
+            this.pnlOpmerkingen.ResumeLayout(false);
+            this.pnlOpmerkingen.PerformLayout();
+            this.grpboxOpmerkingen.ResumeLayout(false);
+            this.grpboxOpmerkingen.PerformLayout();
             this.pnlLunchVoorgerechten.ResumeLayout(false);
             this.pnlLunchHoofdgerechten.ResumeLayout(false);
             this.pnlLunchNagerechten.ResumeLayout(false);
@@ -990,6 +1679,11 @@
             this.pnlDinerTussengerechten.ResumeLayout(false);
             this.pnlDinerHoofdgerechten.ResumeLayout(false);
             this.pnlDinerNagerechten.ResumeLayout(false);
+            this.pnlFrisdranken.ResumeLayout(false);
+            this.pnlBieren.ResumeLayout(false);
+            this.pnlWijnen.ResumeLayout(false);
+            this.pnlGedestilleerdeDranken.ResumeLayout(false);
+            this.pnlKoffieThee.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1038,7 +1732,7 @@
         private Label lblCurrentOrder;
         private Button btnSendOrder;
         private ListView listView1;
-        private Button btnBackToLunch;
+        private Button btnBackToCourseChoosing;
         private Button btnGoBackToOrderOrPayment;
         private Button btnGoBackToTableSelection;
         private Panel pnlConfirmOrder;
@@ -1077,5 +1771,63 @@
         private Button btnVerwijderItem;
         private Button btnDeleteOrder;
         private ColumnHeader OrderItemID;
+        private Button BtnBackToLunchFromHoofdgerechten;
+        private Button btnBackToLunchFromNagerechten;
+        private Button btnBackToLunchFromVoorgerechten;
+        private Button btnGedestilleerdeDranken;
+        private Button btnWijnen;
+        private Button btnKoffieThee;
+        private Button btnBieren;
+        private Button btnFrisdranken;
+        private Panel pnlFrisdranken;
+        private Button btnBitterLemon;
+        private Button btnSpaRood;
+        private Button btnBackToDrinksFromFrisdranken;
+        private Panel pnlBieren;
+        private Button btnLeffeTripel;
+        private Button btnKriek;
+        private Button btnDuvel;
+        private Button button26;
+        private Button button27;
+        private Button button28;
+        private Button button29;
+        private Button btnHertogJan;
+        private Button btnBackFromBieren;
+        private Panel pnlWijnen;
+        private Button btnFlesRodeWijn;
+        private Button btnGlasRodeWijn;
+        private Button btnChampagne;
+        private Button btnFlesWitteWijn;
+        private Button button36;
+        private Button button37;
+        private Button button38;
+        private Button button39;
+        private Button btnGlasWitteWijn;
+        private Button btnBackFromWijnen;
+        private Panel pnlGedestilleerdeDranken;
+        private Button btnVieux;
+        private Button btnRum;
+        private Button btnBerenburg;
+        private Button btnWhiskey;
+        private Button btnJongeJenever;
+        private Button btnBackFromGedestilleerdeDranken;
+        private Panel pnlKoffieThee;
+        private Button btnThee;
+        private Button btnEspresso;
+        private Button btnCappuchino;
+        private Button btnKoffie;
+        private Button btnBackToCourseChoosingFromDrinks;
+        private Button btnColaLight;
+        private Button btnSpaGroen;
+        private Button btnCola;
+        private Button btnTonic;
+        private Button btnSisi;
+        private Button btnGoBackFromKoffieThee;
+        private Button btnAddComment;
+        private GroupBox grpboxOpmerkingen;
+        private Label lblGemaakteOpmerkingen;
+        private Label lblOpmerkingen;
+        private TextBox txtBoxOpmerking;
+        private Button btnBackFromOpmerkingen;
     }
 }

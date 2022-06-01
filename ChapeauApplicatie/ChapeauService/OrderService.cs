@@ -22,10 +22,21 @@ namespace ChapeauService
             List<Order> orders = orderdb.GetAllOrders();
             return orders;
         }
-        
-        public void ConfirmOrder(int IDTable)
+
+        public List<Order> GetOrdersFromSelectedTable(int tableID)
         {
-            orderdb.OrderConfirm(IDTable);
+            List<Order> TableOrder = orderdb.GetOrderFromTable(tableID);
+            return TableOrder;
+        }
+
+        public void CreateNewOrder(int TableID)
+        {
+            orderdb.OrderCreateNew(TableID);
+        }
+        
+        public void ConfirmOrder(int IDTable, string commentaar)
+        {
+            orderdb.OrderConfirm(IDTable, commentaar);
         }
 
     }
