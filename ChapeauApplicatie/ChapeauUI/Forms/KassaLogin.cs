@@ -17,23 +17,25 @@ namespace ChapeauUI
         public KassaLogin()
         {
             InitializeComponent();
+            txtKassaLogIn.UseSystemPasswordChar = true;
         }
         private void btnKassaEnter_Click(object sender, EventArgs e)
         {
             EmployeeService employeeService = new EmployeeService();
-            EmployeeModel employee = new EmployeeModel();
 
-            employee.loginPassword = txtKassaLogIn.Text;
-            string employeeExist = employeeService.CheckEmployeeLogIn(employee.loginPassword);
+            string loginPassword = txtKassaLogIn.Text;
+            EmployeeModel employee = employeeService.CheckEmployeeLogIn(loginPassword);
 
-            if (employeeExist == "Wrong password")
+            if (employee.firstName == null)
             {
                 MessageBox.Show($"Verkeerd wachtwoord, probeer het opnieuw!");
                 txtKassaLogIn.Clear();
             }
             else
             {
+                MessageBox.Show($"Welkom {employee.firstName}");
                 TafelOverzicht tafelOverzicht = new TafelOverzicht();
+                tafelOverzicht.LogedInEmployee(employee.firstName);
                 this.Hide();
                 tafelOverzicht.Closed += (s, args) => this.Close();
                 tafelOverzicht.Show();
@@ -95,14 +97,14 @@ namespace ChapeauUI
             txtKassaLogIn.Text = txtKassaLogIn.Text.Substring(0, txtKassaLogIn.TextLength - 1);
         }
         //count voor het heen en weer klikken
-        public int count = 0;
+        private int count = 0;
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             count++;
             if (count % 2 != 0)
-                txtKassaLogIn.UseSystemPasswordChar = false;
-            else
                 txtKassaLogIn.UseSystemPasswordChar = true;
+            else
+                txtKassaLogIn.UseSystemPasswordChar = false;
         }
         //Timer
         private void timer1_Tick(object sender, EventArgs e)
@@ -113,6 +115,7 @@ namespace ChapeauUI
         private void KassaLogin_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            
         }
         private void panelTafelOverzicht_Paint(object sender, PaintEventArgs e)
         {

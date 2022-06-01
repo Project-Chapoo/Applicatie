@@ -26,34 +26,26 @@ namespace ChapeauDAL
             {
                 EmployeeModel employee = new EmployeeModel()
                 {
-                    firstName = (string)dr["FirstName"].ToString(),
-                    lastName = (string)dr["LastName"].ToString(),
-                    employeeFunction = (string)dr["EmployeeFunction"].ToString(),
-                    loginPassword = (string)dr["LoginPassword"].ToString(),
-                    loginUsername = (string)dr["LoginUsername"].ToString(),
+                    firstName = (string)dr["FirstName"],
+                    lastName = (string)dr["LastName"],
+                    employeeFunction = (string)dr["EmployeeFunction"],
+                    loginPassword = (string)dr["LoginPassword"],
+                    loginUsername = (string)dr["LoginUsername"],
                     isAdmin = (bool)dr["Admin"],
                 };
                 employees.Add(employee);
             }
             return employees;
         }
-        public string CheckEmployeeLogIn(string checkPassword)
+        public EmployeeModel CheckEmployeeLogIn(string checkPassword)
         {
-            //try catch gezeur
-            string query = "SELECT FirstName FROM Employee WHERE LoginPassword = @loginPassword ";
+            string query = "SELECT FirstName, LastName, EmployeeFunction, LoginPassword, LoginUsername, [Admin] FROM Employee WHERE LoginPassword = @loginPassword ";
             SqlParameter[] sqlParameters = new SqlParameter[]{
             new SqlParameter("@loginPassword", checkPassword)};
-            DataTable dataTable = ExecuteSelectQuery(query, sqlParameters);
-
-            if(dataTable.Rows.Count > 0)
-            {
-                DataRow dr = dataTable.Rows[0];
-                return dr.ToString();
-            }
-            else
-            {
-                return "Wrong password";
-            }
+            List<EmployeeModel> employeeName = ReadTables(ExecuteSelectQuery(query, sqlParameters));
+            EmployeeModel employee = employeeName[0];
+            return employee;
         }
+        
     }
 }

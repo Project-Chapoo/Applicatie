@@ -17,7 +17,7 @@ namespace ChapeauService
             this.employeeDb = new EmployeeDAO();
         }
 
-        public string CheckEmployeeLogIn(string checkPassword)
+        public EmployeeModel CheckEmployeeLogIn(string checkPassword)
         {
             return employeeDb.CheckEmployeeLogIn(checkPassword);
         }
