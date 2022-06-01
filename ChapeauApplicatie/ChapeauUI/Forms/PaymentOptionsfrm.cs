@@ -17,12 +17,12 @@ namespace ChapeauUI.Forms
             InitializeComponent();
         }
 
-        private void btnCashContant_Click(object sender, EventArgs e)
+        private void btnCardPayment_Click(object sender, EventArgs e)
         {
             // Add code
         }
 
-        private void btnCardPayment_Click(object sender, EventArgs e)
+        private void btnCashPayment_Click(object sender, EventArgs e)
         {
             // Add code
         }

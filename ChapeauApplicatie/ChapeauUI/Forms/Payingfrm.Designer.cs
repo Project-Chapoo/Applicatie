@@ -36,6 +36,7 @@
             this.btnOrderStatus = new System.Windows.Forms.Button();
             this.btnMenus = new System.Windows.Forms.Button();
             this.btnComment = new System.Windows.Forms.Button();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnPay
@@ -116,11 +117,20 @@
             this.btnComment.UseVisualStyleBackColor = true;
             this.btnComment.Click += new System.EventHandler(this.btnComment_Click);
             // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.Location = new System.Drawing.Point(13, 173);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(179, 16);
+            this.lblTotalPrice.TabIndex = 10;
+            this.lblTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Payingfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(232, 281);
+            this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.btnComment);
             this.Controls.Add(this.btnMenus);
             this.Controls.Add(this.btnOrderStatus);
@@ -146,5 +156,6 @@
         private Button btnOrderStatus;
         private Button btnMenus;
         private Button btnComment;
+        private Label lblTotalPrice;
     }
 }

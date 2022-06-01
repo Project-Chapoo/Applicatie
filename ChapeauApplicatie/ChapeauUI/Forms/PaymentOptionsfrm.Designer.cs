@@ -32,7 +32,7 @@
             this.btnOrderStatus = new System.Windows.Forms.Button();
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.btnCashContant = new System.Windows.Forms.Button();
+            this.btnCashPayment = new System.Windows.Forms.Button();
             this.btnCardPayment = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -75,16 +75,16 @@
             this.btnBack.Text = "<-";
             this.btnBack.UseVisualStyleBackColor = true;
             // 
-            // btnCashContant
+            // btnCashPayment
             // 
-            this.btnCashContant.Location = new System.Drawing.Point(9, 46);
-            this.btnCashContant.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCashContant.Name = "btnCashContant";
-            this.btnCashContant.Size = new System.Drawing.Size(204, 74);
-            this.btnCashContant.TabIndex = 12;
-            this.btnCashContant.Text = "Contant";
-            this.btnCashContant.UseVisualStyleBackColor = true;
-            this.btnCashContant.Click += new System.EventHandler(this.btnCashContant_Click);
+            this.btnCashPayment.Location = new System.Drawing.Point(9, 46);
+            this.btnCashPayment.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCashPayment.Name = "btnCashPayment";
+            this.btnCashPayment.Size = new System.Drawing.Size(204, 74);
+            this.btnCashPayment.TabIndex = 12;
+            this.btnCashPayment.Text = "Contant";
+            this.btnCashPayment.UseVisualStyleBackColor = true;
+            this.btnCashPayment.Click += new System.EventHandler(this.btnCashPayment_Click);
             // 
             // btnCardPayment
             // 
@@ -103,7 +103,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(224, 281);
             this.Controls.Add(this.btnCardPayment);
-            this.Controls.Add(this.btnCashContant);
+            this.Controls.Add(this.btnCashPayment);
             this.Controls.Add(this.btnMenus);
             this.Controls.Add(this.btnOrderStatus);
             this.Controls.Add(this.btnPayment);
@@ -120,7 +120,7 @@
         private Button btnOrderStatus;
         private Button btnPayment;
         private Button btnBack;
-        private Button btnCashContant;
+        private Button btnCashPayment;
         private Button btnCardPayment;
     }
 }
