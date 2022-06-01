@@ -32,10 +32,10 @@ namespace ChapeauUI.Forms
 
         private void btnAddTip_Click(object sender, EventArgs e)
         {
-            Tipfrm tf = new Tipfrm(bill, bill.TotalPrice);
+            Tipfrm tipForm = new Tipfrm(bill, bill.TotalPrice);
             this.Hide();
-            tf.Closed += (s, args) => this.Close();
-            tf.Show();
+            tipForm.Closed += (s, args) => this.Close();
+            tipForm.Show();
         }
 
         private void Payingfrm_Load(object sender, EventArgs e)
@@ -61,10 +61,18 @@ namespace ChapeauUI.Forms
 
         private void btnComment_Click(object sender, EventArgs e)
         {
-            Commentfrm tf = new Commentfrm(bill);
+            Commentfrm commentForm = new Commentfrm(bill);
             this.Hide();
-            tf.Closed += (s, args) => this.Close();
-            tf.Show();
+            commentForm.Closed += (s, args) => this.Close();
+            commentForm.Show();
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            PaymentOptionsfrm paymentOptionsForm = new PaymentOptionsfrm(bill);
+            this.Hide();
+            paymentOptionsForm.Closed += (s, args) => this.Close();
+            paymentOptionsForm.Show();
         }
 
         private void btnMenus_Click(object sender, EventArgs e)

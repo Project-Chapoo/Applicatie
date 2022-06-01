@@ -35,9 +35,9 @@
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnOrderStatus = new System.Windows.Forms.Button();
             this.btnMenus = new System.Windows.Forms.Button();
-            this.lblTotalPrice = new System.Windows.Forms.Label();
             this.btnComment = new System.Windows.Forms.Button();
             this.lblBTW = new System.Windows.Forms.Label();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnPay
@@ -48,6 +48,7 @@
             this.btnPay.TabIndex = 0;
             this.btnPay.Text = "Pay";
             this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // btnAddTip
             // 
@@ -110,16 +111,6 @@
             this.btnMenus.UseVisualStyleBackColor = true;
             this.btnMenus.Click += new System.EventHandler(this.btnMenus_Click);
             // 
-            // lblTotalPrice
-            // 
-            this.lblTotalPrice.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblTotalPrice.Location = new System.Drawing.Point(13, 174);
-            this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(179, 15);
-            this.lblTotalPrice.TabIndex = 8;
-            this.lblTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // btnComment
             // 
             this.btnComment.Location = new System.Drawing.Point(153, 192);
@@ -137,6 +128,13 @@
             this.lblBTW.Size = new System.Drawing.Size(179, 23);
             this.lblBTW.TabIndex = 10;
             this.lblBTW.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.Location = new System.Drawing.Point(13, 173);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(179, 16);
+            this.lblTotalPrice.TabIndex = 10;
+            this.lblTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Payingfrm
             // 
@@ -146,6 +144,7 @@
             this.Controls.Add(this.lblBTW);
             this.Controls.Add(this.btnComment);
             this.Controls.Add(this.lblTotalPrice);
+            this.Controls.Add(this.btnComment);
             this.Controls.Add(this.btnMenus);
             this.Controls.Add(this.btnOrderStatus);
             this.Controls.Add(this.btnPayment);
@@ -169,8 +168,9 @@
         private Button btnPayment;
         private Button btnOrderStatus;
         private Button btnMenus;
-        private Label lblTotalPrice;
         private Button btnComment;
         private Label lblBTW;
+        private Label lblTotalPrice;
+
     }
 }
