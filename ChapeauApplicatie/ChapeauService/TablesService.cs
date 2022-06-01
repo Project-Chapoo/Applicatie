@@ -25,6 +25,10 @@ namespace ChapeauService
             List<Tables> tables = tablesdb.GetAllTables();
             return tables;
         }
+        public void UpdateTableStatus(int tableID, int reserved)
+        {
+            tablesdb.UpdateTableStatus(tableID, reserved);
+        }
 
     }
 }

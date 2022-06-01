@@ -42,5 +42,11 @@ namespace ChapeauDAL
             Tables table = tables[0];
             return table;
         }
+        public void UpdateTableStatus(int tableID, int reserved)
+        {
+            string query = $"UPDATE [Tables] SET Reserved = {reserved} WHERE TableID = {tableID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
     }
 }

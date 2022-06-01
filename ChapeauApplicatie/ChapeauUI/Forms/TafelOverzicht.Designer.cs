@@ -61,6 +61,9 @@
             this.lblLopendeBestellingen = new System.Windows.Forms.Label();
             this.btnVrijBezet = new System.Windows.Forms.Button();
             this.pnlMeldingen = new System.Windows.Forms.Panel();
+            this.lblMelding3 = new System.Windows.Forms.Label();
+            this.lblMelding2 = new System.Windows.Forms.Label();
+            this.lblMelding1 = new System.Windows.Forms.Label();
             this.lblMeldingen = new System.Windows.Forms.Label();
             this.pnlKnoppen = new System.Windows.Forms.Panel();
             this.pnlLegenda = new System.Windows.Forms.Panel();
@@ -72,6 +75,8 @@
             this.pnlTijd = new System.Windows.Forms.Panel();
             this.lblTijdTafelOverzicht = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pnlLeeg = new System.Windows.Forms.Panel();
+            this.lblKlikTafel = new System.Windows.Forms.Label();
             this.pnlBalk.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTafelInfo.SuspendLayout();
@@ -79,6 +84,7 @@
             this.pnlKnoppen.SuspendLayout();
             this.pnlLegenda.SuspendLayout();
             this.pnlTijd.SuspendLayout();
+            this.pnlLeeg.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnTafel10
@@ -347,7 +353,7 @@
             // 
             this.lblWachtTijd2.AutoSize = true;
             this.lblWachtTijd2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblWachtTijd2.Location = new System.Drawing.Point(143, 320);
+            this.lblWachtTijd2.Location = new System.Drawing.Point(149, 320);
             this.lblWachtTijd2.Name = "lblWachtTijd2";
             this.lblWachtTijd2.Size = new System.Drawing.Size(50, 20);
             this.lblWachtTijd2.TabIndex = 41;
@@ -357,7 +363,7 @@
             // 
             this.lblWachtTijd1.AutoSize = true;
             this.lblWachtTijd1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblWachtTijd1.Location = new System.Drawing.Point(143, 283);
+            this.lblWachtTijd1.Location = new System.Drawing.Point(149, 265);
             this.lblWachtTijd1.Name = "lblWachtTijd1";
             this.lblWachtTijd1.Size = new System.Drawing.Size(50, 20);
             this.lblWachtTijd1.TabIndex = 40;
@@ -377,7 +383,7 @@
             // 
             this.lblLopendeBestelling1.AutoSize = true;
             this.lblLopendeBestelling1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblLopendeBestelling1.Location = new System.Drawing.Point(18, 283);
+            this.lblLopendeBestelling1.Location = new System.Drawing.Point(18, 265);
             this.lblLopendeBestelling1.Name = "lblLopendeBestelling1";
             this.lblLopendeBestelling1.Size = new System.Drawing.Size(57, 20);
             this.lblLopendeBestelling1.TabIndex = 38;
@@ -393,12 +399,13 @@
             this.btnGeserveerd.TabIndex = 37;
             this.btnGeserveerd.Text = "Geserveerd";
             this.btnGeserveerd.UseVisualStyleBackColor = false;
+            this.btnGeserveerd.Click += new System.EventHandler(this.btnGeserveerd_Click);
             // 
             // cbServeren2
             // 
             this.cbServeren2.AutoSize = true;
             this.cbServeren2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.cbServeren2.Location = new System.Drawing.Point(18, 515);
+            this.cbServeren2.Location = new System.Drawing.Point(18, 501);
             this.cbServeren2.Name = "cbServeren2";
             this.cbServeren2.Size = new System.Drawing.Size(101, 24);
             this.cbServeren2.TabIndex = 35;
@@ -409,7 +416,7 @@
             // 
             this.cbServeren1.AutoSize = true;
             this.cbServeren1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.cbServeren1.Location = new System.Drawing.Point(18, 468);
+            this.cbServeren1.Location = new System.Drawing.Point(18, 460);
             this.cbServeren1.Name = "cbServeren1";
             this.cbServeren1.Size = new System.Drawing.Size(101, 24);
             this.cbServeren1.TabIndex = 34;
@@ -453,11 +460,50 @@
             // pnlMeldingen
             // 
             this.pnlMeldingen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.pnlMeldingen.Controls.Add(this.lblMelding3);
+            this.pnlMeldingen.Controls.Add(this.lblMelding2);
+            this.pnlMeldingen.Controls.Add(this.lblMelding1);
             this.pnlMeldingen.Controls.Add(this.lblMeldingen);
             this.pnlMeldingen.Location = new System.Drawing.Point(860, 93);
             this.pnlMeldingen.Name = "pnlMeldingen";
             this.pnlMeldingen.Size = new System.Drawing.Size(234, 195);
             this.pnlMeldingen.TabIndex = 28;
+            // 
+            // lblMelding3
+            // 
+            this.lblMelding3.AutoSize = true;
+            this.lblMelding3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMelding3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.lblMelding3.Location = new System.Drawing.Point(29, 144);
+            this.lblMelding3.Name = "lblMelding3";
+            this.lblMelding3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblMelding3.Size = new System.Drawing.Size(0, 30);
+            this.lblMelding3.TabIndex = 34;
+            this.lblMelding3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMelding2
+            // 
+            this.lblMelding2.AutoSize = true;
+            this.lblMelding2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMelding2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.lblMelding2.Location = new System.Drawing.Point(29, 101);
+            this.lblMelding2.Name = "lblMelding2";
+            this.lblMelding2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblMelding2.Size = new System.Drawing.Size(0, 30);
+            this.lblMelding2.TabIndex = 33;
+            this.lblMelding2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMelding1
+            // 
+            this.lblMelding1.AutoSize = true;
+            this.lblMelding1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMelding1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.lblMelding1.Location = new System.Drawing.Point(29, 57);
+            this.lblMelding1.Name = "lblMelding1";
+            this.lblMelding1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblMelding1.Size = new System.Drawing.Size(0, 30);
+            this.lblMelding1.TabIndex = 32;
+            this.lblMelding1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblMeldingen
             // 
@@ -567,12 +613,33 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // pnlLeeg
+            // 
+            this.pnlLeeg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.pnlLeeg.Controls.Add(this.lblKlikTafel);
+            this.pnlLeeg.Location = new System.Drawing.Point(12, 145);
+            this.pnlLeeg.Name = "pnlLeeg";
+            this.pnlLeeg.Size = new System.Drawing.Size(234, 610);
+            this.pnlLeeg.TabIndex = 31;
+            // 
+            // lblKlikTafel
+            // 
+            this.lblKlikTafel.AutoSize = true;
+            this.lblKlikTafel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.lblKlikTafel.Location = new System.Drawing.Point(38, 22);
+            this.lblKlikTafel.Name = "lblKlikTafel";
+            this.lblKlikTafel.Size = new System.Drawing.Size(155, 40);
+            this.lblKlikTafel.TabIndex = 0;
+            this.lblKlikTafel.Text = "Klik op een tafel voor \r\nmeer inforamtie";
+            this.lblKlikTafel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // TafelOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(1106, 776);
+            this.Controls.Add(this.pnlLeeg);
             this.Controls.Add(this.pnlTijd);
             this.Controls.Add(this.pnlLegenda);
             this.Controls.Add(this.pnlMeldingen);
@@ -604,6 +671,8 @@
             this.pnlLegenda.PerformLayout();
             this.pnlTijd.ResumeLayout(false);
             this.pnlTijd.PerformLayout();
+            this.pnlLeeg.ResumeLayout(false);
+            this.pnlLeeg.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -652,5 +721,10 @@
         private Label lblBezet;
         private Label lblVrij;
         private Label lblEmployeeName;
+        private Label lblMelding3;
+        private Label lblMelding2;
+        private Label lblMelding1;
+        private Panel pnlLeeg;
+        private Label lblKlikTafel;
     }
 }

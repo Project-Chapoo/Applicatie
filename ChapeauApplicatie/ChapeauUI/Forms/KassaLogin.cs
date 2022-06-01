@@ -24,22 +24,31 @@ namespace ChapeauUI
             EmployeeService employeeService = new EmployeeService();
 
             string loginPassword = txtKassaLogIn.Text;
-            EmployeeModel employee = employeeService.CheckEmployeeLogIn(loginPassword);
-
-            if (employee.firstName == null)
+            if(loginPassword.Length < 4)
             {
                 MessageBox.Show($"Verkeerd wachtwoord, probeer het opnieuw!");
                 txtKassaLogIn.Clear();
             }
             else
             {
-                MessageBox.Show($"Welkom {employee.firstName}");
-                TafelOverzicht tafelOverzicht = new TafelOverzicht();
-                tafelOverzicht.LogedInEmployee(employee.firstName);
-                this.Hide();
-                tafelOverzicht.Closed += (s, args) => this.Close();
-                tafelOverzicht.Show();
+                EmployeeModel employee = employeeService.CheckEmployeeLogIn(loginPassword);
+                if (employee.firstName == null)
+                {
+                    MessageBox.Show($"Verkeerd wachtwoord, probeer het opnieuw!");
+                    txtKassaLogIn.Clear();
+                }
+                else
+                {
+                    MessageBox.Show($"Welkom {employee.firstName}");
+                    TafelOverzicht tafelOverzicht = new TafelOverzicht();
+                    tafelOverzicht.LogedInEmployee(employee.firstName);
+                    this.Hide();
+                    tafelOverzicht.Closed += (s, args) => this.Close();
+                    tafelOverzicht.Show();
+                }
             }
+
+            
         }
         private void btnKassa1_Click(object sender, EventArgs e)
         {
