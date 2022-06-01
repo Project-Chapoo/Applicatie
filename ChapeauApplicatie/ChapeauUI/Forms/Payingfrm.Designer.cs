@@ -125,6 +125,7 @@
             this.btnComment.TabIndex = 9;
             this.btnComment.Text = "Toev.";
             this.btnComment.UseVisualStyleBackColor = true;
+            this.btnComment.Click += new System.EventHandler(this.btnComment_Click);
             // 
             // Payingfrm
             // 

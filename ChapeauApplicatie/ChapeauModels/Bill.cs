@@ -14,6 +14,7 @@
 
         public int OrderID { get; }
         public int TableID { get; }
+        public string Comment { get; set; }
         public string EmployeeFirstName { get; }
         public string EmployeeLastName { get; }
         public List<BillItem> billItems { get; set; }

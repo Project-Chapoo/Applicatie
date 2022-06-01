@@ -61,5 +61,13 @@ namespace ChapeauUI.Forms
 
             lblTotalPrice.Text = $"Total Price: € {bill.TotalPrice:0.00}";
         }
+
+        private void btnComment_Click(object sender, EventArgs e)
+        {
+            Commentfrm tf = new Commentfrm(bill);
+            this.Hide();
+            tf.Closed += (s, args) => this.Close();
+            tf.Show();
+        }
     }
 }

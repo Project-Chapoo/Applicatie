@@ -125,5 +125,15 @@ namespace ChapeauUI.Forms
             pf.Closed += (s, args) => this.Close();
             pf.Show();
         }
+
+        private void btnMenus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOrderStatus_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
