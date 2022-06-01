@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChapeauModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,16 +13,19 @@ namespace ChapeauUI.Forms
 {
     public partial class Tipfrm : Form
     {
+        private Bill bill;        
         const double TwoEuroTip = 2;
         const double FiveEuroTip = 5;
         const double TenEuroTip = 10;
         private double currentTotalAmount;
 
-        public Tipfrm(double currentTotalAmount)
+        public Tipfrm(Bill bill, double currentTotalAmount)
         {
             InitializeComponent();
             this.currentTotalAmount = currentTotalAmount;
+            this.bill = bill;
             btnAddTip.Enabled = false;
+            lblTotalPrice.Text = $"Total Price: € {currentTotalAmount:0.00}";
         }
 
         // validate user entry for x euro and sends the tip to the paying form
@@ -94,7 +98,7 @@ namespace ChapeauUI.Forms
         // Opens the paying form with the tip amount
         private void OpenPayingFormWithTip(double tip)
         {
-            Payingfrm pf = new Payingfrm(tip);
+            Payingfrm pf = new Payingfrm(bill, tip);
             this.Hide();
             pf.Closed += (s, args) => this.Close();
             pf.Show();
@@ -108,7 +112,7 @@ namespace ChapeauUI.Forms
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Payingfrm pf = new Payingfrm();
+            Payingfrm pf = new Payingfrm(bill);
             this.Hide();
             pf.Closed += (s, args) => this.Close();
             pf.Show();
@@ -116,7 +120,7 @@ namespace ChapeauUI.Forms
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-            Payingfrm pf = new Payingfrm();
+            Payingfrm pf = new Payingfrm(bill);
             this.Hide();
             pf.Closed += (s, args) => this.Close();
             pf.Show();

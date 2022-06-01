@@ -14,24 +14,33 @@ namespace ChapeauUI.Forms
 {
     public partial class Payingfrm : Form
     {
-        private double tip;
-        
+        private PayingService payingService = new PayingService();
+        private Bill bill;
+
+        public Payingfrm(Bill bill)
+        {
+            this.bill = bill;
+            InitializeComponent();
+        }
+
         public Payingfrm()
         {
+            this.bill = payingService.GetOrder();
             InitializeComponent();
         }
 
-        public Payingfrm(double tip)
+        public Payingfrm(Bill bill, double tip)
         {
+            this.bill = bill;
+            this.bill = payingService.AddTip(bill, tip);
             InitializeComponent();
-            this.tip = tip;
         }
 
-        
+
 
         private void btnAddTip_Click(object sender, EventArgs e)
         {
-            Tipfrm tf = new Tipfrm(5);
+            Tipfrm tf = new Tipfrm(bill, bill.TotalPrice);
             this.Hide();
             tf.Closed += (s, args) => this.Close();
             tf.Show();
@@ -39,11 +48,21 @@ namespace ChapeauUI.Forms
 
         private void Payingfrm_Load(object sender, EventArgs e)
         {
-            //TODO: Add code that loads Bill data to the table
-            PayingService ps = new PayingService();
-            Bill bill = ps.GetBill();
+            txtOrder.Columns.Add("Quantity", 69);
+            txtOrder.Columns.Add("Item", 124);
+            txtOrder.Columns.Add("Price", 69);
 
-            txtOrder.Items.Add(Convert.ToString(bill.OrderID));
+            // euro character =  €
+
+            foreach (BillItem b in bill.billItems) 
+            { 
+                ListViewItem item = new ListViewItem(Convert.ToString(b.Quantity) + "x");
+                item.SubItems.Add(b.Description);
+                item.SubItems.Add($"€ {b.Price:0.00}");
+                txtOrder.Items.Add(item);
+            }
+
+            lblTotalPrice.Text = $"Total Price: € {bill.TotalPrice:0.00}";
         }
     }
 }

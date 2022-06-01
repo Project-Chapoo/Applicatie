@@ -5,10 +5,16 @@ namespace ChapeauService
 {
     public class PayingService
     {
-        PayingDAO pd = new PayingDAO();
-        public Bill GetBill()
+        PayingDAO payingDAO = new PayingDAO();
+        public Bill GetOrder()
         {
-            return pd.GetOrderInfo(1);
+            return payingDAO.GetOrderInfo(1);
+        }
+
+        public Bill AddTip(Bill bill, double tip)
+        {
+            bill.billItems.Add(new BillItem(bill.billItems.Count + 1, 1, "Tip", tip, false));
+            return bill;
         }
     }
 }
