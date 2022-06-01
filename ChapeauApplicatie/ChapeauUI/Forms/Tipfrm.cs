@@ -1,4 +1,5 @@
 ﻿using ChapeauModels;
+using ChapeauService;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,7 @@ namespace ChapeauUI.Forms
         const double FiveEuroTip = 5;
         const double TenEuroTip = 10;
         private double currentTotalAmount;
+        private PayingService payingService = new PayingService();
 
         public Tipfrm(Bill bill, double currentTotalAmount)
         {
@@ -98,7 +100,8 @@ namespace ChapeauUI.Forms
         // Opens the paying form with the tip amount
         private void OpenPayingFormWithTip(double tip)
         {
-            Payingfrm pf = new Payingfrm(bill, tip);
+            this.bill = payingService.AddTip(bill, tip);
+            Payingfrm pf = new Payingfrm(bill);
             this.Hide();
             pf.Closed += (s, args) => this.Close();
             pf.Show();

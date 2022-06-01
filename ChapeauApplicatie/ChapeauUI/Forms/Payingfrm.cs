@@ -14,25 +14,19 @@ namespace ChapeauUI.Forms
 {
     public partial class Payingfrm : Form
     {
-        private PayingService payingService = new PayingService();
         private Bill bill;
+        private PayingService payingService = new PayingService();
 
-        public Payingfrm(Bill bill)
-        {
-            this.bill = bill;
-            InitializeComponent();
-        }
 
-        public Payingfrm()
+        public Payingfrm() // Joey this contructor for de link between forms
         {
             this.bill = payingService.GetOrder();
             InitializeComponent();
         }
 
-        public Payingfrm(Bill bill, double tip)
+        public Payingfrm(Bill bill)
         {
             this.bill = bill;
-            this.bill = payingService.AddTip(bill, tip);
             InitializeComponent();
         }
 
