@@ -107,7 +107,8 @@ namespace ChapeauUI.Forms
         // Opens the paying form with the tip amount
         private void OpenPayingFormWithTip(double tip)
         {
-            Payingfrm payingForm = new Payingfrm(bill, tip);
+            payingService.AddTip(bill, tip);
+            Payingfrm payingForm = new Payingfrm(bill);
             this.Hide();
             payingForm.Closed += (s, args) => this.Close();
             payingForm.Show();

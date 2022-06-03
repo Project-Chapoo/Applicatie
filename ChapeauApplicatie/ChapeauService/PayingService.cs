@@ -44,5 +44,10 @@ namespace ChapeauService
 
             return btwPrice;
         }
+
+        public void SendBill(Bill bill) 
+        {
+            payingDAO.SendBill(bill);
+        }   
     }
 }
