@@ -232,11 +232,11 @@
             this.lblTafelInfo.AutoSize = true;
             this.lblTafelInfo.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTafelInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblTafelInfo.Location = new System.Drawing.Point(59, 14);
+            this.lblTafelInfo.Location = new System.Drawing.Point(81, 14);
             this.lblTafelInfo.Name = "lblTafelInfo";
-            this.lblTafelInfo.Size = new System.Drawing.Size(105, 31);
+            this.lblTafelInfo.Size = new System.Drawing.Size(60, 31);
             this.lblTafelInfo.TabIndex = 22;
-            this.lblTafelInfo.Text = "Tafel Info";
+            this.lblTafelInfo.Text = "Tafel";
             this.lblTafelInfo.Click += new System.EventHandler(this.label3_Click);
             // 
             // lblViewStatus
@@ -393,9 +393,9 @@
             // 
             this.btnGeserveerd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
             this.btnGeserveerd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnGeserveerd.Location = new System.Drawing.Point(38, 578);
+            this.btnGeserveerd.Location = new System.Drawing.Point(27, 576);
             this.btnGeserveerd.Name = "btnGeserveerd";
-            this.btnGeserveerd.Size = new System.Drawing.Size(155, 33);
+            this.btnGeserveerd.Size = new System.Drawing.Size(166, 33);
             this.btnGeserveerd.TabIndex = 37;
             this.btnGeserveerd.Text = "Geserveerd";
             this.btnGeserveerd.UseVisualStyleBackColor = false;
@@ -405,7 +405,7 @@
             // 
             this.cbServeren2.AutoSize = true;
             this.cbServeren2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.cbServeren2.Location = new System.Drawing.Point(18, 501);
+            this.cbServeren2.Location = new System.Drawing.Point(27, 515);
             this.cbServeren2.Name = "cbServeren2";
             this.cbServeren2.Size = new System.Drawing.Size(101, 24);
             this.cbServeren2.TabIndex = 35;
@@ -416,7 +416,7 @@
             // 
             this.cbServeren1.AutoSize = true;
             this.cbServeren1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.cbServeren1.Location = new System.Drawing.Point(18, 460);
+            this.cbServeren1.Location = new System.Drawing.Point(27, 474);
             this.cbServeren1.Name = "cbServeren1";
             this.cbServeren1.Size = new System.Drawing.Size(101, 24);
             this.cbServeren1.TabIndex = 34;
@@ -428,7 +428,7 @@
             this.lblKlaarVoorServeren.AutoSize = true;
             this.lblKlaarVoorServeren.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblKlaarVoorServeren.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblKlaarVoorServeren.Location = new System.Drawing.Point(18, 411);
+            this.lblKlaarVoorServeren.Location = new System.Drawing.Point(18, 425);
             this.lblKlaarVoorServeren.Name = "lblKlaarVoorServeren";
             this.lblKlaarVoorServeren.Size = new System.Drawing.Size(163, 25);
             this.lblKlaarVoorServeren.TabIndex = 33;
@@ -449,9 +449,9 @@
             // 
             this.btnVrijBezet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
             this.btnVrijBezet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVrijBezet.Location = new System.Drawing.Point(38, 133);
+            this.btnVrijBezet.Location = new System.Drawing.Point(149, 78);
             this.btnVrijBezet.Name = "btnVrijBezet";
-            this.btnVrijBezet.Size = new System.Drawing.Size(155, 33);
+            this.btnVrijBezet.Size = new System.Drawing.Size(73, 33);
             this.btnVrijBezet.TabIndex = 31;
             this.btnVrijBezet.Text = "Bezet";
             this.btnVrijBezet.UseVisualStyleBackColor = false;
@@ -466,7 +466,7 @@
             this.pnlMeldingen.Controls.Add(this.lblMeldingen);
             this.pnlMeldingen.Location = new System.Drawing.Point(860, 93);
             this.pnlMeldingen.Name = "pnlMeldingen";
-            this.pnlMeldingen.Size = new System.Drawing.Size(234, 195);
+            this.pnlMeldingen.Size = new System.Drawing.Size(234, 222);
             this.pnlMeldingen.TabIndex = 28;
             // 
             // lblMelding3
@@ -474,7 +474,7 @@
             this.lblMelding3.AutoSize = true;
             this.lblMelding3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMelding3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblMelding3.Location = new System.Drawing.Point(29, 144);
+            this.lblMelding3.Location = new System.Drawing.Point(29, 156);
             this.lblMelding3.Name = "lblMelding3";
             this.lblMelding3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.lblMelding3.Size = new System.Drawing.Size(0, 30);
@@ -486,7 +486,7 @@
             this.lblMelding2.AutoSize = true;
             this.lblMelding2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMelding2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblMelding2.Location = new System.Drawing.Point(29, 101);
+            this.lblMelding2.Location = new System.Drawing.Point(29, 113);
             this.lblMelding2.Name = "lblMelding2";
             this.lblMelding2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.lblMelding2.Size = new System.Drawing.Size(0, 30);
@@ -498,7 +498,7 @@
             this.lblMelding1.AutoSize = true;
             this.lblMelding1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMelding1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblMelding1.Location = new System.Drawing.Point(29, 57);
+            this.lblMelding1.Location = new System.Drawing.Point(29, 69);
             this.lblMelding1.Name = "lblMelding1";
             this.lblMelding1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.lblMelding1.Size = new System.Drawing.Size(0, 30);
@@ -521,7 +521,7 @@
             this.pnlKnoppen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.pnlKnoppen.Controls.Add(this.btnBarOverzicht);
             this.pnlKnoppen.Controls.Add(this.btnKeukenOverzicht);
-            this.pnlKnoppen.Location = new System.Drawing.Point(860, 317);
+            this.pnlKnoppen.Location = new System.Drawing.Point(860, 344);
             this.pnlKnoppen.Name = "pnlKnoppen";
             this.pnlKnoppen.Size = new System.Drawing.Size(234, 150);
             this.pnlKnoppen.TabIndex = 29;
@@ -534,9 +534,9 @@
             this.pnlLegenda.Controls.Add(this.panel2);
             this.pnlLegenda.Controls.Add(this.panel1);
             this.pnlLegenda.Controls.Add(this.lblLegenda);
-            this.pnlLegenda.Location = new System.Drawing.Point(860, 492);
+            this.pnlLegenda.Location = new System.Drawing.Point(860, 518);
             this.pnlLegenda.Name = "pnlLegenda";
-            this.pnlLegenda.Size = new System.Drawing.Size(234, 195);
+            this.pnlLegenda.Size = new System.Drawing.Size(234, 169);
             this.pnlLegenda.TabIndex = 29;
             // 
             // lblBezet
@@ -544,7 +544,7 @@
             this.lblBezet.AutoSize = true;
             this.lblBezet.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblBezet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblBezet.Location = new System.Drawing.Point(72, 125);
+            this.lblBezet.Location = new System.Drawing.Point(72, 108);
             this.lblBezet.Name = "lblBezet";
             this.lblBezet.Size = new System.Drawing.Size(54, 25);
             this.lblBezet.TabIndex = 43;
@@ -555,7 +555,7 @@
             this.lblVrij.AutoSize = true;
             this.lblVrij.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblVrij.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblVrij.Location = new System.Drawing.Point(72, 72);
+            this.lblVrij.Location = new System.Drawing.Point(72, 68);
             this.lblVrij.Name = "lblVrij";
             this.lblVrij.Size = new System.Drawing.Size(36, 25);
             this.lblVrij.TabIndex = 42;
@@ -564,7 +564,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Red;
-            this.panel2.Location = new System.Drawing.Point(29, 125);
+            this.panel2.Location = new System.Drawing.Point(29, 108);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(25, 25);
             this.panel2.TabIndex = 34;
@@ -572,7 +572,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Location = new System.Drawing.Point(29, 72);
+            this.panel1.Location = new System.Drawing.Point(29, 68);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(25, 25);
             this.panel1.TabIndex = 33;
@@ -582,7 +582,7 @@
             this.lblLegenda.AutoSize = true;
             this.lblLegenda.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblLegenda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblLegenda.Location = new System.Drawing.Point(61, 17);
+            this.lblLegenda.Location = new System.Drawing.Point(72, 16);
             this.lblLegenda.Name = "lblLegenda";
             this.lblLegenda.Size = new System.Drawing.Size(102, 31);
             this.lblLegenda.TabIndex = 32;
@@ -639,7 +639,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(1106, 776);
-            this.Controls.Add(this.pnlLeeg);
             this.Controls.Add(this.pnlTijd);
             this.Controls.Add(this.pnlLegenda);
             this.Controls.Add(this.pnlMeldingen);
@@ -654,8 +653,9 @@
             this.Controls.Add(this.btnTafel5);
             this.Controls.Add(this.btnTafel1);
             this.Controls.Add(this.pnlBalk);
-            this.Controls.Add(this.pnlTafelInfo);
             this.Controls.Add(this.pnlKnoppen);
+            this.Controls.Add(this.pnlTafelInfo);
+            this.Controls.Add(this.pnlLeeg);
             this.Name = "TafelOverzicht";
             this.Text = "TafelOverzicht";
             this.Load += new System.EventHandler(this.TafelOverzicht_Load);

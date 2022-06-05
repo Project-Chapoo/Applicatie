@@ -24,12 +24,13 @@ namespace ChapeauUI
         {
             timer1.Start();
             Meldingen();
-            LoadTableColors();
+            LoadTableColors(); 
         }
         private void TafelNummer(int Nummer)
         {
             pnlLeeg.Hide();
             this.tafelNummer = Nummer;
+            lblTafelInfo.Text = $"Tafel {Nummer}".ToString();  
             TafelStatus();
             ButtonTafelStatus();
             OrderStatus();
@@ -38,7 +39,7 @@ namespace ChapeauUI
         {
             TablesService tablesService = new TablesService();
             Tables table = tablesService.IsReserved(this.tafelNummer);
-
+            
             string button = $"btnTafel{this.tafelNummer}";
 
             if (table.Reserved == true)
@@ -137,13 +138,14 @@ namespace ChapeauUI
                 btnVrijBezet.Text = "Vrij";
                 
             }
-            else if (lblViewStatus.Text == "Vrij")
+            else 
             {
                 btnVrijBezet.Text = "Bezet";
             }
         }
         private void btnVrijBezet_Click(object sender, EventArgs e)
         {
+            btnVrijBezet.Enabled = true;
             TablesService tablesService = new TablesService();
             OrderService orderService = new OrderService();
             List<OrderStatusTable> orderStatusTables = orderService.BestellingPerTafel(this.tafelNummer);
@@ -151,7 +153,7 @@ namespace ChapeauUI
 
             if (btnVrijBezet.Text == "Vrij")
             {
-                if(orderTable.OrderReady == true || orderTable.OrderServed == true)
+                if(orderTable.OrderReady == true | orderTable.OrderServed == true)
                 {
                     btnVrijBezet.Enabled = false;
                 }
@@ -165,6 +167,7 @@ namespace ChapeauUI
                 tablesService.UpdateTableStatus(this.tafelNummer, 1);
             }
             TafelNummer(this.tafelNummer);
+            //btnVrijBezet.Enabled = true;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -237,12 +240,16 @@ namespace ChapeauUI
                     gereed.Add(table.TableId);
                 }
             }
-            for (int i = 1; i < gereed.Count; i++)
+            MeldingenWeergeven(gereed);
+        }
+        private void MeldingenWeergeven(List<int> gereed)
+        {
+            for (int i = 0; i < gereed.Count; i++)
             {
-                string label = $"lblMelding{(i)}";
-                if (i < 4 && gereed[(i-1)] != null)
+                string label = $"lblMelding{(i + 1)}";
+
+                if (i < 4)
                 {
-                    
                     pnlMeldingen.Controls[label].Text = $"Bestelling tafel {gereed[i]} is gereed";
                 }
                 else
@@ -250,10 +257,6 @@ namespace ChapeauUI
                     pnlMeldingen.Controls[label].Hide();
                 }
             }
-
-            //lblMelding1.Text = $"Bestelling tafel {gereed[0]} is gereed";
-            /*lblMelding2.Text = $"Bestelling tafel {gereed[1]} is gereed";
-            lblMelding3.Text = $"Bestelling tafel {gereed[2]} is gereed";*/
         }
         public void btnGeserveerd_Click(object sender, EventArgs e)
         {
@@ -263,8 +266,6 @@ namespace ChapeauUI
             Meldingen();
             OrderStatus();
         }
-
-
         private void label3_Click(object sender, EventArgs e)
         {
 

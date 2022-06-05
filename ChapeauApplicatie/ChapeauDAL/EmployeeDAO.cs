@@ -43,9 +43,15 @@ namespace ChapeauDAL
             SqlParameter[] sqlParameters = new SqlParameter[]{
             new SqlParameter("@loginPassword", checkPassword)};
             List<EmployeeModel> employeeName = ReadTables(ExecuteSelectQuery(query, sqlParameters));
-            EmployeeModel employee = employeeName[0];
-            return employee;
+            if (employeeName.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                EmployeeModel employee = employeeName[0];
+                return employee;
+            }
         }
-        
     }
 }

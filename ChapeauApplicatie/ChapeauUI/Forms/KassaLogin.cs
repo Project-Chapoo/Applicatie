@@ -26,16 +26,37 @@ namespace ChapeauUI
             string loginPassword = txtKassaLogIn.Text;
             if(loginPassword.Length < 4)
             {
-                MessageBox.Show($"Verkeerd wachtwoord, probeer het opnieuw!");
-                txtKassaLogIn.Clear();
+                WrongPassword();
+            }
+            else if(loginPassword.Length == 4)
+            {
+                EmployeeModel employee = employeeService.CheckEmployeeLogIn(loginPassword);
+                if (employee != null)
+                {
+                    MessageBox.Show($"Welkom {employee.firstName}");
+                    TafelOverzicht tafelOverzicht = new TafelOverzicht();
+                    tafelOverzicht.LogedInEmployee(employee.firstName);
+                    this.Hide();
+                    tafelOverzicht.Closed += (s, args) => this.Close();
+                    tafelOverzicht.Show();
+                }
+                else
+                {
+                    WrongPassword();
+                }
+            }
+            
+
+            /*if(loginPassword.Length < 4)
+            {
+                WrongPassword();
             }
             else
             {
                 EmployeeModel employee = employeeService.CheckEmployeeLogIn(loginPassword);
-                if (employee.firstName == null)
+                if (employee == null)
                 {
-                    MessageBox.Show($"Verkeerd wachtwoord, probeer het opnieuw!");
-                    txtKassaLogIn.Clear();
+                    WrongPassword();
                 }
                 else
                 {
@@ -46,9 +67,12 @@ namespace ChapeauUI
                     tafelOverzicht.Closed += (s, args) => this.Close();
                     tafelOverzicht.Show();
                 }
-            }
-
-            
+            }*/
+        }
+        private void WrongPassword()
+        {
+            MessageBox.Show($"Verkeerd wachtwoord, probeer het opnieuw!");
+            txtKassaLogIn.Clear();
         }
         private void btnKassa1_Click(object sender, EventArgs e)
         {
