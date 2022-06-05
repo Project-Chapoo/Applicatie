@@ -57,5 +57,13 @@ namespace ChapeauUI.Forms
         {
             // TODO: Add link to the order status form
         }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            Payingfrm payingForm = new Payingfrm(bill);
+            this.Hide();
+            payingForm.Closed += (s, args) => this.Close();
+            payingForm.Show();
+        }
     }
 }
