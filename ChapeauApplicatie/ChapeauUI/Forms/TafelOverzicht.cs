@@ -30,7 +30,11 @@ namespace ChapeauUI
         {
             pnlLeeg.Hide();
             this.tafelNummer = Nummer;
-            lblTafelInfo.Text = $"Tafel {Nummer}".ToString();  
+            lblTafelInfo.Text = $"Tafel {Nummer}".ToString();
+            UpdateTable();
+        }
+        private void UpdateTable()
+        {
             TafelStatus();
             ButtonTafelStatus();
             OrderStatus();
@@ -144,36 +148,41 @@ namespace ChapeauUI
             }
         }
         private void btnVrijBezet_Click(object sender, EventArgs e)
-        {
-            btnVrijBezet.Enabled = true;
-            TablesService tablesService = new TablesService();
+        { 
             OrderService orderService = new OrderService();
             List<OrderStatusTable> orderStatusTables = orderService.BestellingPerTafel(this.tafelNummer);
             OrderStatusTable orderTable = orderStatusTables[0];
 
             if (btnVrijBezet.Text == "Vrij")
             {
-                if(orderTable.OrderReady == true | orderTable.OrderServed == true)
-                {
-                    btnVrijBezet.Enabled = false;
-                }
-                else
-                {
-                    tablesService.UpdateTableStatus(this.tafelNummer, 0);
-                }
+                TafelVrij(orderTable);
             }
             else if(btnVrijBezet.Text == "Bezet")
             {
-                tablesService.UpdateTableStatus(this.tafelNummer, 1);
+                TafelBezet(orderTable);
             }
-            TafelNummer(this.tafelNummer);
-            //btnVrijBezet.Enabled = true;
+            //UpdateTable();
         }
+        private void TafelVrij(OrderStatusTable orderTable)
+        {
+            TablesService tablesService = new TablesService();
+            if (orderTable.OrderReady == false | orderTable.OrderServed == false)
+            {
+                tablesService.UpdateTableStatus(this.tafelNummer, 0);
+            }
+        }
+        private void TafelBezet(OrderStatusTable orderTable)
+        {
+            TablesService tablesService = new TablesService();
+            tablesService.UpdateTableStatus(this.tafelNummer, 1);
+        }
+        //Tijd
         private void timer1_Tick(object sender, EventArgs e)
         {
             DateTime OverzichtTijd = DateTime.Now;
             lblTijdTafelOverzicht.Text = OverzichtTijd.ToString("HH:mm  dd-MM-yyyy");
         }
+        //Naam ingelogde gebruiker
         public void LogedInEmployee(string employeeName)
         {
             lblEmployeeName.Text = (string)employeeName;
@@ -261,8 +270,8 @@ namespace ChapeauUI
         public void btnGeserveerd_Click(object sender, EventArgs e)
         {
             OrderService orderService = new OrderService();
-            orderService.UpdateOrderServed(this.tafelNummer);
-            orderService.UpdateOrderReady(this.tafelNummer);
+            orderService.UpdateOrderServed(1, this.tafelNummer);
+            orderService.UpdateOrderReady(0, this.tafelNummer);
             Meldingen();
             OrderStatus();
         }

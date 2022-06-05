@@ -46,13 +46,13 @@ namespace ChapeauService
         {
             return orderdb.OrderGereed();
         }
-        public void UpdateOrderServed(int tableID)
+        public void UpdateOrderServed(int served, int tableID)
         {
-            orderdb.UpdateOrderServed(tableID);
+            orderdb.UpdateOrderServed(served, tableID);
         }
-        public void UpdateOrderReady(int TableID)
+        public void UpdateOrderReady(int ready, int TableID)
         {
-            orderdb.UpdateOrderReady(TableID);
+            orderdb.UpdateOrderReady(ready, TableID);
         }
 
     }

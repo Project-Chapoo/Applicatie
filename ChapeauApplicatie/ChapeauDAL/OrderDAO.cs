@@ -87,15 +87,15 @@ namespace ChapeauDAL
             }
             return orderStatusTables;
         }
-        public void UpdateOrderServed(int tableID)
+        public void UpdateOrderServed(int served, int tableID)
         {
-            string query = $"UPDATE [Order] SET OrderServed = 1 WHERE TableID = {tableID}";
+            string query = $"UPDATE [Order] SET OrderServed = {served} WHERE TableID = {tableID}";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }
-        public void UpdateOrderReady(int tableID)
+        public void UpdateOrderReady(int ready, int tableID)
         {
-            string query = $"UPDATE [Order] SET OrderReady = 0 WHERE TableID = {tableID}";
+            string query = $"UPDATE [Order] SET OrderReady = {ready} WHERE TableID = {tableID}";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }
