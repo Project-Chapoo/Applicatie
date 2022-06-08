@@ -23,12 +23,12 @@ namespace ChapeauUI.Forms
 
         private void btnCardPayment_Click(object sender, EventArgs e)
         {
-            // Add code
+            MessageBox.Show("Done!");
         }
 
         private void btnCashPayment_Click(object sender, EventArgs e)
         {
-            // Add code
+            MessageBox.Show("Done!");
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -37,6 +37,23 @@ namespace ChapeauUI.Forms
             this.Hide();
             payingForm.Closed += (s, args) => this.Close();
             payingForm.Show();
+        }
+        private void btnMenus_Click(object sender, EventArgs e)
+        {
+            // TODO: Add link to the menu form
+        }
+
+        private void btnOrderStatus_Click(object sender, EventArgs e)
+        {
+            // TODO: Add link to the order status form
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            Payingfrm payingfrm = new Payingfrm();
+            this.Hide();
+            payingfrm.Closed += (s, args) => this.Close();
+            payingfrm.Show();
         }
     }
 }

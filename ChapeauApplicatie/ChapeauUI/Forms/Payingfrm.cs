@@ -43,9 +43,9 @@ namespace ChapeauUI.Forms
             bill.BTWPrice = payingService.CalculateBTW(bill);
 
             // Scroll bar is 21 px wide
-            txtOrder.Columns.Add("Aantal", 35);
-            txtOrder.Columns.Add("Item", 104);
-            txtOrder.Columns.Add("Prijs", 40);
+            txtOrder.Columns.Add("Aantal", 39);
+            txtOrder.Columns.Add("Item", 96);
+            txtOrder.Columns.Add("Prijs", 47);
 
             foreach (BillItem b in bill.billItems) 
             { 
@@ -83,6 +83,14 @@ namespace ChapeauUI.Forms
         private void btnOrderStatus_Click(object sender, EventArgs e)
         {
             // TODO: Add link to the order status form
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            Payingfrm payingfrm = new Payingfrm();
+            this.Hide();
+            payingfrm.Closed += (s, args) => this.Close();
+            payingfrm.Show();
         }
     }
 }
