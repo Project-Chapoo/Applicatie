@@ -19,11 +19,16 @@ namespace ChapeauUI
             InitializeComponent();
             txtKassaLogIn.UseSystemPasswordChar = true;
         }
+        private void KassaLogin_Load(object sender, EventArgs e)
+        {
+            timer2.Start();
+        }
         private void btnKassaEnter_Click(object sender, EventArgs e)
         {
             EmployeeService employeeService = new EmployeeService();
 
             string loginPassword = txtKassaLogIn.Text;
+
             if(loginPassword.Length < 4)
             {
                 WrongPassword();
@@ -33,41 +38,20 @@ namespace ChapeauUI
                 EmployeeModel employee = employeeService.CheckEmployeeLogIn(loginPassword);
                 if (employee != null)
                 {
+                    //weg halen?
                     MessageBox.Show($"Welkom {employee.firstName}");
                     TafelOverzicht tafelOverzicht = new TafelOverzicht();
-                    tafelOverzicht.LogedInEmployee(employee.firstName);
-                    this.Hide();
-                    tafelOverzicht.Closed += (s, args) => this.Close();
-                    tafelOverzicht.Show();
-                }
-                else
-                {
-                    WrongPassword();
-                }
-            }
-            
 
-            /*if(loginPassword.Length < 4)
-            {
-                WrongPassword();
-            }
-            else
-            {
-                EmployeeModel employee = employeeService.CheckEmployeeLogIn(loginPassword);
-                if (employee == null)
-                {
-                    WrongPassword();
-                }
-                else
-                {
-                    MessageBox.Show($"Welkom {employee.firstName}");
-                    TafelOverzicht tafelOverzicht = new TafelOverzicht();
                     tafelOverzicht.LogedInEmployee(employee.firstName);
                     this.Hide();
                     tafelOverzicht.Closed += (s, args) => this.Close();
                     tafelOverzicht.Show();
                 }
-            }*/
+                else
+                {
+                    WrongPassword();
+                }
+            }
         }
         private void WrongPassword()
         {
@@ -127,33 +111,37 @@ namespace ChapeauUI
         private void btnKassaBack_Click(object sender, EventArgs e)
         {
             //delete laatst ingetoetste nummer
-            txtKassaLogIn.Text = txtKassaLogIn.Text.Substring(0, txtKassaLogIn.TextLength - 1);
+            if(txtKassaLogIn.TextLength > 0)
+                txtKassaLogIn.Text = txtKassaLogIn.Text.Substring(0, txtKassaLogIn.TextLength - 1);
         }
+        
         //count voor het heen en weer klikken
         private int count = 0;
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            count++;
             if (count % 2 != 0)
                 txtKassaLogIn.UseSystemPasswordChar = true;
             else
                 txtKassaLogIn.UseSystemPasswordChar = false;
+            count++;
         }
         //Timer
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer2_Tick(object sender, EventArgs e)
         {
-            DateTime KassaTijd = DateTime.Now;
-            KassaInlogTijd.Text = KassaTijd.ToString("HH:mm  dd-MM-yyyy");
-        }
-        private void KassaLogin_Load(object sender, EventArgs e)
-        {
-            timer1.Start();
+            DateTime OverzichtTijd = DateTime.Now;
+            lblTime.Text = OverzichtTijd.ToString("HH:mm:ss  dd-MM-yyyy");
             
         }
+
+
         private void panelTafelOverzicht_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
+        private void txtKassaLogIn_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
