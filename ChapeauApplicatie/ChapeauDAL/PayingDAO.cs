@@ -7,6 +7,8 @@ namespace ChapeauDAL
 {
     public class PayingDAO : BaseDao
     {
+        private const int TipMenuID = 50;
+
         public Bill GetOrderInfo(int orderID)
         {
             string query = "SELECT * FROM[dbo].[Order] AS O JOIN[dbo].[Tables] AS T ON O.TableID = T.TableID JOIN[dbo].[Employee] AS E ON T.EmployeeID = E.EmployeeID WHERE O.OrderID = @orderID";
@@ -75,7 +77,7 @@ namespace ChapeauDAL
             {
                 count++;
             }
-            return count; 
+            return count;
         }
 
         /*
@@ -102,16 +104,59 @@ namespace ChapeauDAL
         public void SendBillItems(Bill bill)
         {
             int receiptID = GetReceiptIDS();
+            SqlParameter[] sqlParameters = new SqlParameter[4];
             string query = "INSERT INTO [dbo].[ReceiptItem] ([ReceiptID], [MenuItemID], [Quantity]) VALUES (@ReceiptID, @MenuItemID, @Quantity)";
             foreach (BillItem billItem in bill.billItems)
             {
-                SqlParameter[] sqlParameters = {
-                new SqlParameter("@ReceiptID", SqlDbType.Int) { Value = receiptID },
-                new SqlParameter("@MenuItemID", SqlDbType.Int) { Value = billItem.MenuItemID },
-                new SqlParameter("@Quantity", SqlDbType.Int) { Value = billItem.Quantity }
-            };
-            ExecuteEditQuery(query, sqlParameters);
+                if (billItem.Description != "tip")
+                {
+                    sqlParameters[0] = new SqlParameter("@ReceiptID", SqlDbType.Int) { Value = receiptID };
+                    sqlParameters[1] = new SqlParameter("@MenuItemID", SqlDbType.Int) { Value = billItem.MenuItemID };
+                    sqlParameters[2] = new SqlParameter("@Quantity", SqlDbType.Int) { Value = billItem.Quantity };
+                    sqlParameters[3] = new SqlParameter("@Price", SqlDbType.Real) { Value = billItem.Price };
+                }
+                else
+                {
+                    sqlParameters[0] = new SqlParameter("@ReceiptID", SqlDbType.Int) { Value = receiptID };
+                    sqlParameters[1] = new SqlParameter("@MenuItemID", SqlDbType.Int) { Value = TipMenuID };
+                    sqlParameters[2] = new SqlParameter("@Quantity", SqlDbType.Int) { Value = billItem.Quantity };
+                    sqlParameters[3] = new SqlParameter("@Price", SqlDbType.Real) { Value = billItem.Price };
+
+                }
             }
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void ResetAllTables(int orderID)
+        {
+            DeleteOrderItemsForID(orderID);
+            ResetOrderReadyAndServed(orderID);
+            ResetReserved(orderID);
+        }
+
+        public void DeleteOrderItemsForID(int orderID)
+        {
+            string query = "DELETE FROM [dbo].[OrderItem] WHERE OrderID = @OrderID";
+            SqlParameter[] sqlParameters = new SqlParameter[1];
+            sqlParameters[0] = new SqlParameter("@OrderID", SqlDbType.Int) { Value = orderID };
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void ResetOrderReadyAndServed(int orderID)
+        {
+            string query = "UPDATE [Order] SET [Comment] = NULL, [TimeOrdered] = NULL, [OrderReady] = 0, [OrderServed] = 0, [OrderedLatest] = NULL WHERE [OrderID] = @OrderID";
+            SqlParameter[] sqlParameters = new SqlParameter[1];
+            sqlParameters[0] = new SqlParameter("@OrderID", SqlDbType.Int) { Value = orderID };
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void ResetReserved(int orderID)
+        {
+            string query = "Update [Tables] SET [Reserved] = 0 WHERE TableID = @OrderID";
+            SqlParameter[] sqlParameters = new SqlParameter[1];
+            sqlParameters[0] = new SqlParameter("@OrderID", SqlDbType.Int) { Value = orderID };
+            ExecuteEditQuery(query, sqlParameters);
         }
     }
 }
+
