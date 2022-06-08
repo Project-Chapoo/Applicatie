@@ -26,20 +26,27 @@ namespace ChapeauDAL
             {
                 Tables table = new Tables()
                 {
-
+                    tableID = (int)dr["TableID"],
+                    Reserved = (bool)dr["Reserved"],
+                    EmployeeID = (int)dr["EmployeeID"],
                 };
                 tables.Add(table);
             }
             return tables;
         }
-        public bool Reserved(int tafelNummer)
-        { //niet alle tafels af in database, maar sql query zoeken en returnen
-
-            string query = "SELECT Reserved FROM Tables WHERE TableID = @tableID ";
-            SqlParameter[] sqlParameters = new SqlParameter[]{
-            new SqlParameter("@tableID", tafelNummer)};
-            List<Tables> reservedTable = ReadTables(ExecuteSelectQuery(query, sqlParameters));
-            return Convert.ToBoolean(reservedTable[0]);
+        public Tables IsGereserveerd(int tableID)
+        {
+            string query = $"SELECT Tableid, Reserved, EmployeeID FROM [tables] where tableid = {tableID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            List<Tables> tables = ReadTables(ExecuteSelectQuery(query, sqlParameters));
+            Tables table = tables[0];
+            return table;
+        }
+        public void UpdateTableStatus(int tableID, int reserved)
+        {
+            string query = $"UPDATE [Tables] SET Reserved = {reserved} WHERE TableID = {tableID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
         }
     }
 }

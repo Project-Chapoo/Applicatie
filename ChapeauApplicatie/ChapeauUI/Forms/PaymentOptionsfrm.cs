@@ -40,5 +40,22 @@ namespace ChapeauUI.Forms
             payingForm.Closed += (s, args) => this.Close();
             payingForm.Show();
         }
+        private void btnMenus_Click(object sender, EventArgs e)
+        {
+            // TODO: Add link to the menu form
+        }
+
+        private void btnOrderStatus_Click(object sender, EventArgs e)
+        {
+            // TODO: Add link to the order status form
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            Payingfrm payingfrm = new Payingfrm();
+            this.Hide();
+            payingfrm.Closed += (s, args) => this.Close();
+            payingfrm.Show();
+        }
     }
 }
