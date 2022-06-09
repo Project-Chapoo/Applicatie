@@ -24,7 +24,6 @@ namespace ChapeauUI
         {
             timer1.Start();
             timer2.Start();
-            timer4.Start();
             Meldingen();
             LoadTableColors(); 
         }
@@ -41,22 +40,29 @@ namespace ChapeauUI
             ButtonTafelStatus();
             OrderStatus();
         }
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            LoadTableColors();
+            Meldingen();
+        }
         private void LoadTableColors()
         {
             TablesService tablesService = new TablesService();
-
+            TableOrderService tableOrderService = new TableOrderService();
+            
             for (int i = 1; i <= 10; i++)
             {
-                string button = $"btnTafel{i}";
-                Tables table = tablesService.IsGereserveerd(i);
+                List<TableOrder> tableOrder = tableOrderService.TableOrders(i);
 
-                if (table.Reserved == true)
-                {
-                    this.Controls[button].BackColor = Color.Red;
-                }
-                else if (table.Reserved == false)
+                string button = $"btnTafel{i}";
+
+                if (tableOrder.Count == 0)
                 {
                     this.Controls[button].BackColor = Color.Gray;
+                }
+                else if(tableOrder.Count > 0)
+                {
+                    this.Controls[button].BackColor = Color.Red;
                 }
             }
         }
@@ -124,6 +130,7 @@ namespace ChapeauUI
         {
             //form bar overzicht laten zien
         }
+        
         //Tafel vrij of bezet markeren
         private void ButtonTafelStatus()
         {
@@ -195,7 +202,6 @@ namespace ChapeauUI
             DateTime OverzichtTijd = DateTime.Now;
             lblTijdTafelOverzicht.Text = OverzichtTijd.ToString("HH:mm:ss  dd-MM-yyyy");
         }
-        
         public void OrderStatus()
         {
             OrderService orderService = new OrderService();
@@ -204,6 +210,7 @@ namespace ChapeauUI
 
             TablesService tablesService = new TablesService();
             Tables table = tablesService.IsGereserveerd(this.tafelNummer);
+            HidePanels();
 
             if (table.Reserved == true)
             {
@@ -219,24 +226,23 @@ namespace ChapeauUI
             }
             else
             {
-                HidePanels();
                 lblLopendeBestelling1.Show();
                 lblLopendeBestelling1.Text = "Er zijn geen lopende \nbestellingen voor deze tafel";
             }
-
         }
         private void HidePanels()
         {
             lblWachtTijd1.Hide();
             lblWachtTijd2.Hide();
             lblWachtTijd3.Hide();
+            lblWachtTijd4.Hide();
             lblLopendeBestelling2.Hide();
             lblLopendeBestelling3.Hide();
+            lblLopendeBestelling4.Hide();
             cbServeren1.Hide();
             cbServeren2.Hide();
             btnGeserveerd.Hide();
         }
-
         public void Meldingen()
         {
             OrderService orderService = new OrderService();
@@ -268,7 +274,6 @@ namespace ChapeauUI
                 }
             }
         }
-        
         private bool TableOrderExists()
         {
             TableOrderService tableOrderService = new TableOrderService();
@@ -321,7 +326,7 @@ namespace ChapeauUI
                 string labelTijd = $"lblWachtTijd{(i + 1)}";
 
                 if (i < 4)
-                { 
+                {
                     pnlLopendeBestellingen.Controls[label].Show();
                     pnlLopendeBestellingen.Controls[labelTijd].Show();
                     pnlLopendeBestellingen.Controls[label].Text = $"{orderCategory[i]}";
@@ -331,19 +336,33 @@ namespace ChapeauUI
         }
         public void btnGeserveerd_Click(object sender, EventArgs e)
         {
+            GereedBestelling();
+            OrderStatus();
+            UpdateTable();
+        }
+        private void Geserveerd(List<string> geserveerd)
+        {
             if (cbServeren1.Checked)
             {
+                geserveerd.RemoveAt(0);
                 cbServeren1.Hide();
             }
             if (cbServeren2.Checked)
             {
+                geserveerd.RemoveAt(1);
                 cbServeren2.Hide();
             }
-            OrderStatus();
-            UpdateTable();
+            if (geserveerd.Count == 0)
+            {
+                OrderService orderService = new OrderService();
+                orderService.UpdateOrderServed(1, this.tafelNummer);
+                orderService.UpdateOrderReady(0, this.tafelNummer);
+            }
+            NogServeren(geserveerd);
         }
         private void GereedBestelling()
         {
+            
             OrderService orderService = new OrderService();
             List<OrderStatusTable> orderStatusTables = orderService.BestellingPerTafel(this.tafelNummer);
             OrderStatusTable order = orderStatusTables[0];
@@ -371,10 +390,10 @@ namespace ChapeauUI
                 Geserveerd(geserveerd);
             }
         }
-        private void Geserveerd(List<string> geserveerd)
+        private void NogServeren(List<string> geserveerd)
         {
             HidePanels();
-            btnGeserveerd.Show(); 
+            btnGeserveerd.Show();
 
             for (int i = 0; i < geserveerd.Count; i++)
             {
@@ -385,30 +404,10 @@ namespace ChapeauUI
                     pnlKlaarVoorServeren.Controls[checkBox].Text = $"{geserveerd[i]}";
                 }
             }
-            if(geserveerd.Count > 0)
-            {
-                btnGeserveerd.Enabled = true;
-            }
-            int count = 0;
-            if (cbServeren1.Checked)
-            {
-                count++;
-            }
-            if (cbServeren2.Checked)
-            {
-                count++;
-            }
-            if (count == geserveerd.Count)
-            {
-                OrderService orderService = new OrderService();
-                orderService.UpdateOrderServed(1, this.tafelNummer);
-                orderService.UpdateOrderReady(0, this.tafelNummer);
-            }
         }
-
         private void timer4_Tick(object sender, EventArgs e)
         {
-            Meldingen();
+            
         }
 
 
@@ -420,10 +419,7 @@ namespace ChapeauUI
         {
 
         }
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            //LoadTableColors();
-        }
+        
         private void timer3_Tick(object sender, EventArgs e)
         {
             

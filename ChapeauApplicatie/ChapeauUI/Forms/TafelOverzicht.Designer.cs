@@ -83,6 +83,8 @@
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.pnlLopendeBestellingen = new System.Windows.Forms.Panel();
+            this.lblWachtTijd4 = new System.Windows.Forms.Label();
+            this.lblLopendeBestelling4 = new System.Windows.Forms.Label();
             this.lblWachtTijd3 = new System.Windows.Forms.Label();
             this.lblLopendeBestelling3 = new System.Windows.Forms.Label();
             this.pnlKlaarVoorServeren = new System.Windows.Forms.Panel();
@@ -406,7 +408,7 @@
             // 
             this.lblWachtTijd2.AutoSize = true;
             this.lblWachtTijd2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblWachtTijd2.Location = new System.Drawing.Point(149, 143);
+            this.lblWachtTijd2.Location = new System.Drawing.Point(149, 108);
             this.lblWachtTijd2.Name = "lblWachtTijd2";
             this.lblWachtTijd2.Size = new System.Drawing.Size(0, 20);
             this.lblWachtTijd2.TabIndex = 41;
@@ -415,7 +417,7 @@
             // 
             this.lblWachtTijd1.AutoSize = true;
             this.lblWachtTijd1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblWachtTijd1.Location = new System.Drawing.Point(149, 91);
+            this.lblWachtTijd1.Location = new System.Drawing.Point(149, 75);
             this.lblWachtTijd1.Name = "lblWachtTijd1";
             this.lblWachtTijd1.Size = new System.Drawing.Size(0, 20);
             this.lblWachtTijd1.TabIndex = 40;
@@ -424,7 +426,7 @@
             // 
             this.lblLopendeBestelling2.AutoSize = true;
             this.lblLopendeBestelling2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblLopendeBestelling2.Location = new System.Drawing.Point(18, 143);
+            this.lblLopendeBestelling2.Location = new System.Drawing.Point(18, 108);
             this.lblLopendeBestelling2.Name = "lblLopendeBestelling2";
             this.lblLopendeBestelling2.Size = new System.Drawing.Size(0, 20);
             this.lblLopendeBestelling2.TabIndex = 39;
@@ -433,7 +435,7 @@
             // 
             this.lblLopendeBestelling1.AutoSize = true;
             this.lblLopendeBestelling1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblLopendeBestelling1.Location = new System.Drawing.Point(18, 91);
+            this.lblLopendeBestelling1.Location = new System.Drawing.Point(18, 75);
             this.lblLopendeBestelling1.Name = "lblLopendeBestelling1";
             this.lblLopendeBestelling1.Size = new System.Drawing.Size(0, 20);
             this.lblLopendeBestelling1.TabIndex = 38;
@@ -458,9 +460,8 @@
             this.cbServeren2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.cbServeren2.Location = new System.Drawing.Point(36, 116);
             this.cbServeren2.Name = "cbServeren2";
-            this.cbServeren2.Size = new System.Drawing.Size(101, 24);
+            this.cbServeren2.Size = new System.Drawing.Size(18, 17);
             this.cbServeren2.TabIndex = 35;
-            this.cbServeren2.Text = "checkBox2";
             this.cbServeren2.UseVisualStyleBackColor = true;
             // 
             // cbServeren1
@@ -469,9 +470,8 @@
             this.cbServeren1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.cbServeren1.Location = new System.Drawing.Point(38, 70);
             this.cbServeren1.Name = "cbServeren1";
-            this.cbServeren1.Size = new System.Drawing.Size(101, 24);
+            this.cbServeren1.Size = new System.Drawing.Size(18, 17);
             this.cbServeren1.TabIndex = 34;
-            this.cbServeren1.Text = "checkBox1";
             this.cbServeren1.UseVisualStyleBackColor = true;
             // 
             // lblKlaarVoorServeren
@@ -700,6 +700,7 @@
             // 
             // timer2
             // 
+            this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // timer3
@@ -713,6 +714,8 @@
             // pnlLopendeBestellingen
             // 
             this.pnlLopendeBestellingen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.pnlLopendeBestellingen.Controls.Add(this.lblWachtTijd4);
+            this.pnlLopendeBestellingen.Controls.Add(this.lblLopendeBestelling4);
             this.pnlLopendeBestellingen.Controls.Add(this.lblWachtTijd3);
             this.pnlLopendeBestellingen.Controls.Add(this.lblLopendeBestelling3);
             this.pnlLopendeBestellingen.Controls.Add(this.lblLopendeBestellingen);
@@ -725,11 +728,29 @@
             this.pnlLopendeBestellingen.Size = new System.Drawing.Size(234, 234);
             this.pnlLopendeBestellingen.TabIndex = 42;
             // 
+            // lblWachtTijd4
+            // 
+            this.lblWachtTijd4.AutoSize = true;
+            this.lblWachtTijd4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.lblWachtTijd4.Location = new System.Drawing.Point(149, 177);
+            this.lblWachtTijd4.Name = "lblWachtTijd4";
+            this.lblWachtTijd4.Size = new System.Drawing.Size(0, 20);
+            this.lblWachtTijd4.TabIndex = 45;
+            // 
+            // lblLopendeBestelling4
+            // 
+            this.lblLopendeBestelling4.AutoSize = true;
+            this.lblLopendeBestelling4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.lblLopendeBestelling4.Location = new System.Drawing.Point(18, 177);
+            this.lblLopendeBestelling4.Name = "lblLopendeBestelling4";
+            this.lblLopendeBestelling4.Size = new System.Drawing.Size(0, 20);
+            this.lblLopendeBestelling4.TabIndex = 44;
+            // 
             // lblWachtTijd3
             // 
             this.lblWachtTijd3.AutoSize = true;
             this.lblWachtTijd3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblWachtTijd3.Location = new System.Drawing.Point(149, 191);
+            this.lblWachtTijd3.Location = new System.Drawing.Point(149, 144);
             this.lblWachtTijd3.Name = "lblWachtTijd3";
             this.lblWachtTijd3.Size = new System.Drawing.Size(0, 20);
             this.lblWachtTijd3.TabIndex = 43;
@@ -738,7 +759,7 @@
             // 
             this.lblLopendeBestelling3.AutoSize = true;
             this.lblLopendeBestelling3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblLopendeBestelling3.Location = new System.Drawing.Point(18, 190);
+            this.lblLopendeBestelling3.Location = new System.Drawing.Point(18, 144);
             this.lblLopendeBestelling3.Name = "lblLopendeBestelling3";
             this.lblLopendeBestelling3.Size = new System.Drawing.Size(0, 20);
             this.lblLopendeBestelling3.TabIndex = 42;
@@ -864,5 +885,7 @@
         private Panel pnlKlaarVoorServeren;
         private Label lblWachtTijd3;
         private Label lblLopendeBestelling3;
+        private Label lblWachtTijd4;
+        private Label lblLopendeBestelling4;
     }
 }

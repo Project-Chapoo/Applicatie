@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ChapeauService;
 using ChapeauModels;
+using ChapeauUI.Forms;
 
 namespace ChapeauUI
 {
@@ -36,27 +37,71 @@ namespace ChapeauUI
             else if(loginPassword.Length == 4)
             {
                 EmployeeModel employee = employeeService.CheckEmployeeLogIn(loginPassword);
-                if (employee != null)
-                {
-                    //weg halen?
-                    MessageBox.Show($"Welkom {employee.firstName}");
-                    TafelOverzicht tafelOverzicht = new TafelOverzicht();
-
-                    tafelOverzicht.LogedInEmployee(employee.firstName);
-                    this.Hide();
-                    tafelOverzicht.Closed += (s, args) => this.Close();
-                    tafelOverzicht.Show();
-                }
-                else
-                {
-                    WrongPassword();
-                }
+                CheckPassword(employee);
+            }
+        }
+        private void CheckPassword(EmployeeModel employee)
+        {
+            if (employee == null)
+            {
+                WrongPassword();
+            }
+            else
+            {
+                CheckEmployeeFunction(employee);
+                //weg halen?
+                MessageBox.Show($"Welkom {employee.firstName}");
+                
             }
         }
         private void WrongPassword()
         {
             MessageBox.Show($"Verkeerd wachtwoord, probeer het opnieuw!");
             txtKassaLogIn.Clear();
+        }
+        private void CheckEmployeeFunction(EmployeeModel employee)
+        {
+            switch(employee.employeeFunction)
+            {
+                case "Bediening":
+                    PDA();
+                    break;
+                case "Kok":
+                    KeukenOverzicht();
+                    break;
+                case "Barmedewerker":
+                    BarOverzicht();
+                    break;
+                case "Eigenaar":
+                    TafelOverzicht(employee);
+                    break;
+            }
+        }
+        private void TafelOverzicht(EmployeeModel employee)
+        {
+            TafelOverzicht tafelOverzicht = new TafelOverzicht();
+            tafelOverzicht.LogedInEmployee(employee.firstName);
+            this.Hide();
+            tafelOverzicht.Closed += (s, args) => this.Close();
+            tafelOverzicht.Show();
+        }
+        private void BarOverzicht()
+        {
+            //mist nog
+        }
+        private void KeukenOverzicht()
+        {
+            KeukenFrm keukenForm = new KeukenFrm();
+            this.Hide();
+            keukenForm.Closed += (s, args) => this.Close();
+            keukenForm.Show();
+        }
+        private void PDA()
+        {
+            PDAOrdering_Joey pda = new PDAOrdering_Joey();
+            this.Hide();
+            pda.Closed += (s, args) => this.Close();
+            pda.Show();
         }
         private void btnKassa1_Click(object sender, EventArgs e)
         {
