@@ -99,6 +99,7 @@ namespace ChapeauDAL
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }
+
         public void TafelVrij(int tableID)
         {
             string query = $"";

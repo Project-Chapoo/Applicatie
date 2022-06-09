@@ -11,5 +11,6 @@ namespace ChapeauModels
         public int tableId { get; set; }
         public int menuId { get; set; }
         public string category { get; set; }
+        public bool readyOrderItem { get; set; }
     }
 }

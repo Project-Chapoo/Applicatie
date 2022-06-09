@@ -695,7 +695,7 @@
             this.lblKlikTafel.Name = "lblKlikTafel";
             this.lblKlikTafel.Size = new System.Drawing.Size(155, 40);
             this.lblKlikTafel.TabIndex = 0;
-            this.lblKlikTafel.Text = "Klik op een tafel voor \r\nmeer inforamtie";
+            this.lblKlikTafel.Text = "Klik op een tafel voor \r\nmeer informatie";
             this.lblKlikTafel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer2

@@ -210,37 +210,11 @@ namespace ChapeauUI
                 //aanpassen kijken of er wel een bestelling is
                 if (TableOrderExists() == true)
                 {
-                    HidePanels();
-                    lblLopendeBestelling1.Show();
-                    lblWachtTijd1.Show();
-
-                    lblLopendeBestelling2.Show();
-                    lblWachtTijd2.Show();
-
-                    lblLopendeBestelling3.Show();
-                    lblWachtTijd3.Show();
-
                     TableOrder();
-
                 }
-                else if (orderTable.OrderReady == true)
+                if (orderTable.OrderReady == true)
                 {
-                    HidePanels();
-
-                    cbServeren1.Show();
-                    cbServeren2.Show();
-                    btnGeserveerd.Show();
-                    lblLopendeBestelling1.Show();
-                    lblLopendeBestelling1.Text = "Er zijn geen lopende \nbestellingen voor deze tafel";
-
-                    cbServeren1.Text = "Keuken";
-                    cbServeren2.Text = "Bar";
-                }
-                else
-                {
-                    HidePanels();
-                    lblLopendeBestelling1.Show();
-                    lblLopendeBestelling1.Text = "Er zijn geen lopende \nbestellingen voor deze tafel";
+                    GereedBestelling();
                 }
             }
             else
@@ -294,13 +268,7 @@ namespace ChapeauUI
                 }
             }
         }
-        public void btnGeserveerd_Click(object sender, EventArgs e)
-        {
-            OrderService orderService = new OrderService();
-            orderService.UpdateOrderServed(1, this.tafelNummer);
-            orderService.UpdateOrderReady(0, this.tafelNummer);
-            OrderStatus();
-        }
+        
         private bool TableOrderExists()
         {
             TableOrderService tableOrderService = new TableOrderService();
@@ -320,28 +288,32 @@ namespace ChapeauUI
             List<TableOrder> tableOrder = tableOrderService.TableOrders(this.tafelNummer);
 
             List<string> orderCategory = new List<string>();
+          
             if(TableOrderExists() == true)
             {
                 foreach(TableOrder order in tableOrder)
                 {
-                    if(orderCategory.Contains(order.category) == false && (order.menuId == 1 | order.menuId == 2))
+                    if(order.readyOrderItem == false)
                     {
-                        orderCategory.Add(order.category);
-                    }
-                    else if(orderCategory.Contains("Dranken") == false && order.menuId == 3)
-                    {
-                        orderCategory.Add("Dranken");
+                        if (orderCategory.Contains(order.category) == false && (order.menuId == 1 | order.menuId == 2))
+                        {
+                            orderCategory.Add(order.category);
+                        }
+                        else if (orderCategory.Contains("Dranken") == false && order.menuId == 3)
+                        {
+                            orderCategory.Add("Dranken");
+                        }
                     }
                 }
             }
             LopendeBestellingen(orderCategory);
-
         }
         private void LopendeBestellingen(List<string> orderCategory)
         {
             OrderService orderService = new OrderService();
             List<OrderStatusTable> orderStatusTables = orderService.BestellingPerTafel(this.tafelNummer);
             OrderStatusTable orderTable = orderStatusTables[0];
+            HidePanels();
 
             for (int i = 0; i < orderCategory.Count; i++)
             {
@@ -349,21 +321,91 @@ namespace ChapeauUI
                 string labelTijd = $"lblWachtTijd{(i + 1)}";
 
                 if (i < 4)
-                {
+                { 
+                    pnlLopendeBestellingen.Controls[label].Show();
+                    pnlLopendeBestellingen.Controls[labelTijd].Show();
                     pnlLopendeBestellingen.Controls[label].Text = $"{orderCategory[i]}";
                     pnlLopendeBestellingen.Controls[labelTijd].Text = (DateTime.Now - orderTable.TimeOrdered).ToString(@"hh\:mm\:ss");
                 }
-                else
-                {
-                    pnlLopendeBestellingen.Controls[label].Hide();
-                    pnlLopendeBestellingen.Controls[labelTijd].Hide();
-                }
             }
+        }
+        public void btnGeserveerd_Click(object sender, EventArgs e)
+        {
+            if (cbServeren1.Checked)
+            {
+                cbServeren1.Hide();
+            }
+            if (cbServeren2.Checked)
+            {
+                cbServeren2.Hide();
+            }
+            OrderStatus();
+            UpdateTable();
         }
         private void GereedBestelling()
         {
+            OrderService orderService = new OrderService();
+            List<OrderStatusTable> orderStatusTables = orderService.BestellingPerTafel(this.tafelNummer);
+            OrderStatusTable order = orderStatusTables[0];
 
+            TableOrderService tableOrderService = new TableOrderService();
+            List<TableOrder> tableOrder = tableOrderService.TableOrders(this.tafelNummer);
+
+            List<string> geserveerd = new List<string>();
+
+            //Kijken of er een bestelling gereed is
+            if (order.OrderReady == true)
+            {
+                //Kijken wat voor bestelling gereed is
+                foreach (TableOrder o in tableOrder)
+                {
+                    if (geserveerd.Contains("Keuken") == false && (o.menuId == 1 | o.menuId == 2))
+                    {
+                        geserveerd.Add("Keuken");
+                    }
+                    else if (geserveerd.Contains("Bar") == false && o.menuId == 3)
+                    {
+                        geserveerd.Add("Bar");
+                    }
+                }
+                Geserveerd(geserveerd);
+            }
         }
+        private void Geserveerd(List<string> geserveerd)
+        {
+            HidePanels();
+            btnGeserveerd.Show(); 
+
+            for (int i = 0; i < geserveerd.Count; i++)
+            {
+                string checkBox = $"cbServeren{(i + 1)}";
+                if (i < 3)
+                {
+                    pnlKlaarVoorServeren.Controls[checkBox].Show();
+                    pnlKlaarVoorServeren.Controls[checkBox].Text = $"{geserveerd[i]}";
+                }
+            }
+            if(geserveerd.Count > 0)
+            {
+                btnGeserveerd.Enabled = true;
+            }
+            int count = 0;
+            if (cbServeren1.Checked)
+            {
+                count++;
+            }
+            if (cbServeren2.Checked)
+            {
+                count++;
+            }
+            if (count == geserveerd.Count)
+            {
+                OrderService orderService = new OrderService();
+                orderService.UpdateOrderServed(1, this.tafelNummer);
+                orderService.UpdateOrderReady(0, this.tafelNummer);
+            }
+        }
+
         private void timer4_Tick(object sender, EventArgs e)
         {
             Meldingen();
