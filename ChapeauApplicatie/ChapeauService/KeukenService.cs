@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ChapeauService
 {
-    public class KeukenService
+    public class KeukenService : BaseService
     {
         KeukenDAO keukenDAO;
         public KeukenService()

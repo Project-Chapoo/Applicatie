@@ -3,7 +3,7 @@ using ChapeauModels;
 
 namespace ChapeauService
 {
-    public class PayingService
+    public class PayingService : BaseService
     {
         private const double twentyOnePercentFactor = 21;
         private const double sixPercentFactor = 6;

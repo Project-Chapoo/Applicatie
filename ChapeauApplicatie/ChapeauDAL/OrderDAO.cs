@@ -49,13 +49,15 @@ namespace ChapeauDAL
         
         public void OrderNewest(int tableID)
         {
+            string updateQuery;
+            SqlParameter[] sqlParameters = new SqlParameter[0];
             for (int i = 1; i < 11; i++)
             {
-                string updateQuery = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = {i}";
+                updateQuery = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = {i}";
+                ExecuteEditQuery(updateQuery, sqlParameters);
+
             }
             string setQuery = $"update [Order] set orderedlatest = 1 where OrderID = {tableID}";
-            SqlParameter[] sqlParameters = new SqlParameter[0];
-            ExecuteEditQuery(updateQuery, sqlParameters);
             ExecuteEditQuery(setQuery, sqlParameters);
         }
        

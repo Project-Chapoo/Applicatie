@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ChapeauService
 {
-    public class BarService
+    public class BarService : BaseService
     {
         BarDAO barDAO;
         public BarService()

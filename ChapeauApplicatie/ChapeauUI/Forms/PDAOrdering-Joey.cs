@@ -16,21 +16,29 @@ namespace ChapeauUI
 {
     public partial class PDAOrdering_Joey : Form
     {
-        private int tableID = 0;        
+        private int tableID = 0;
+        private enum Tafelnummer 
+        {
+           tafel1 = 1,
+           tafel2 = 2,
+           tafel3 = 3,
+           tafel4 = 4,
+           tafel5 = 5,
+           tafel6 = 6,
+           tafel7 = 7,
+           tafel8 = 8,
+           tafel9 = 9,
+           tafel10 = 10,
+        }    
+
         private string commentaar;
         private DateTime tijd = DateTime.Now;
         private int menuItemID = 0;
         private OrderItemsService orderItemsService = new OrderItemsService();
 
-
         public PDAOrdering_Joey()
         {
             InitializeComponent();
-        }
-
-        private void SetTextLabelsToCorrectTable()
-        {
-            lblTableNumber.Text = $"Tafel: {tableID}";
         }
 
         private void HideAllPanels()
@@ -168,10 +176,11 @@ namespace ChapeauUI
         }
         private void btnTable1_Click(object sender, EventArgs e)
         {
-            showPanel("pnlOrderOrPayment");
-            tableID = 1;
+            showPanel("pnlOrderOrPayment");            
+            tableID = (int)Tafelnummer.tafel1;
+            SetTextLabelsToCorrectTable();
         }
-        
+
         private void btnOrdering_Click(object sender, EventArgs e)
         {           
             showPanel("CourseChoosing");
@@ -251,55 +260,64 @@ namespace ChapeauUI
         private void btnTable2_Click(object sender, EventArgs e)
         {
             showPanel("pnlOrderOrPayment");
-            tableID = 2;
+            tableID = (int)Tafelnummer.tafel2;
+            SetTextLabelsToCorrectTable();
         }
 
         private void btnTable3_Click(object sender, EventArgs e)
         {
             showPanel("pnlOrderOrPayment");
-            tableID = 3;
+            tableID = (int)Tafelnummer.tafel3;
+            SetTextLabelsToCorrectTable();
         }
 
         private void btnTable4_Click(object sender, EventArgs e)
         {
             showPanel("pnlOrderOrPayment");
-            tableID = 4;
+            tableID = (int)Tafelnummer.tafel4;
+            SetTextLabelsToCorrectTable();
         }
 
         private void btnTable5_Click(object sender, EventArgs e)
         {
             showPanel("pnlOrderOrPayment");
-            tableID = 5;
+            tableID = (int)Tafelnummer.tafel5;
+            SetTextLabelsToCorrectTable();
         }
 
         private void btnTable6_Click(object sender, EventArgs e)
         {
             showPanel("pnlOrderOrPayment");
-            tableID = 6;
+            tableID = (int)Tafelnummer.tafel6;
+            SetTextLabelsToCorrectTable();
         }
 
         private void btnTable7_Click(object sender, EventArgs e)
         {
             showPanel("pnlOrderOrPayment");
-            tableID = 7;
+            tableID = (int)Tafelnummer.tafel7;
+            SetTextLabelsToCorrectTable();
         }
 
         private void btnTable8_Click(object sender, EventArgs e)
         {
             showPanel("pnlOrderOrPayment");
-            tableID = 8;
+            tableID = (int)Tafelnummer.tafel8;
+            SetTextLabelsToCorrectTable();
         }
 
         private void btnTable9_Click(object sender, EventArgs e)
         {
             showPanel("pnlOrderOrPayment");
-            tableID = 9;
+            tableID = (int)Tafelnummer.tafel9;
+            SetTextLabelsToCorrectTable();
         }
 
         private void btnTable10_Click(object sender, EventArgs e)
         {
             showPanel("pnlOrderOrPayment");
-            tableID = 10;
+            tableID = (int)Tafelnummer.tafel10;
+            SetTextLabelsToCorrectTable();
         }
 
         private void btnGoBackToCourseChoosingFromConfirmOrder_Click(object sender, EventArgs e)
@@ -332,7 +350,6 @@ namespace ChapeauUI
         {
             showPanel("ConfirmOrder");
             lstViewOrderedItems();
-            SetTextLabelsToCorrectTable();
         }
 
         private void btnTaart_Click(object sender, EventArgs e)
@@ -488,18 +505,28 @@ namespace ChapeauUI
 
         private void btnRemoveItem_Click(object sender, EventArgs e)
         {
+            OrderItemsService orderItemsService = new OrderItemsService();
+            List<OrderItems> orderItemsList = orderItemsService.GetOrderItemsPerTable(tableID);
+            OrderItems items = new OrderItems();
             try
             {                
                 int selectedItem = int.Parse(lstviewOrder.SelectedItems[0].SubItems[3].Text);
-                OrderItemsService orderItemsService = new OrderItemsService();
-                orderItemsService.RemoveItem(selectedItem);
+                int quantityCheck = int.Parse(lstviewOrder.SelectedItems[0].SubItems[1].Text);
+                if (quantityCheck == 1) 
+                {
+                     MessageBox.Show("Verwijder het item in plaats van het aantal 0 maken.");
+                }
+                else 
+                {
+                    orderItemsService.RemoveItem(selectedItem);
+                }
                 lstViewOrderedItems();
             }
             catch (Exception)
             {
                 if (lstviewOrder.SelectedItems.Count == 0)
                 {
-                    MessageBox.Show("Selecteer eerst een gerecht wat u wilt verminderen");
+                    MessageBox.Show("Selecteer eerst een gerecht wat u wilt verminderen.");
                 };
             }            
         }
@@ -861,6 +888,31 @@ namespace ChapeauUI
             MessageBox.Show($"Tafel {tableID} is gereserveerd.");
             showPanel("pnlOrderOrPayment");
         }
+
+        private void SetTextLabelsToCorrectTable()
+        {
+            lblTableNumber.Text = $"Tafel: {tableID}";
+            lblTableBieren.Text = $"Tafel: {tableID}";
+            lblTableFrisdranken.Text = $"Tafel: {tableID}";
+            lblTableGedesilleerdeDranken.Text = $"Tafel: {tableID}";
+            lblTableKoffieThee.Text = $"Tafel: {tableID}";
+            lblTableWijnen.Text = $"Tafel: {tableID}";
+            lblTableDranken.Text = $"Tafel: {tableID}";
+            lblTableDinerVoorgerechten.Text = $"Tafel: {tableID}";
+            lblTableDinerTussengerechten.Text = $"Tafel: {tableID}";
+            lblTableDinerHoofdgerechten.Text = $"Tafel: {tableID}";
+            lblTableDinerNagerechten.Text = $"Tafel: {tableID}";
+            lblTableDiner.Text = $"Tafel: {tableID}";
+            lblTableLunchVoorgerechten.Text = $"Tafel: {tableID}";
+            lblTableLunchHoofdgerechten.Text = $"Tafel: {tableID}";
+            lblTableLunchNagerechten.Text = $"Tafel: {tableID}";
+            lblTableLunch.Text = $"Tafel: {tableID}";
+            lblTableCourseChoosing.Text = $"Tafel: {tableID}";
+            lblTableComments.Text = $"Tafel: {tableID}";
+            lblTableOrderOrPayment.Text = $"Tafel: {tableID}";
+        }
+
+
     }
 }
 

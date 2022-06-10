@@ -8,7 +8,7 @@ using ChapeauModels;
 
 namespace ChapeauService
 {
-    public class OrderService
+    public class OrderService : BaseService
     {
         OrderDAO orderdb;
 
@@ -27,11 +27,6 @@ namespace ChapeauService
         {
             List<Order> TableOrder = orderdb.GetOrderFromTable(tableID);
             return TableOrder;
-        }
-
-        public void CreateNewOrder(int TableID)
-        {
-            orderdb.OrderCreateNew(TableID);
         }
 
         public void ConfirmOrder(int IDTable, string commentaar)
