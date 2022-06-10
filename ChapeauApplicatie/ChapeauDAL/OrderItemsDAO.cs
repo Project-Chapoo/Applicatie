@@ -30,12 +30,81 @@ namespace ChapeauDAL
                     OrderItemID = (int)dr["OrderItemID"],
                     OrderID = (int)(dr["OrderID"]),
                     MenuItemID = (int)(dr["MenuItemID"]),
-                    quantity = (int)(dr["Quantity"]),
+                    Quantity = (int)(dr["Quantity"]),
                 };
                 orderItems.Add(orderitem);
             }
             return orderItems;
         }
 
+        public List<OrderItems> GetAllOrderItemsPerTable(int tableID)
+        {
+            string query = $"SELECT mi.menuitemid, oi.orderitemid, O.TableID, oi.Quantity, mi.description FROM OrderItem AS OI " +
+                           $"JOIN[dbo].[MenuItem] AS MI ON MI.MenuItemID = oi.MenuItemID " +
+                           $"join[dbo].[Order] as O on o.OrderID = OI.OrderID " +
+                           $"where oi.OrderID = {tableID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTablesPerTable(ExecuteSelectQuery(query, sqlParameters));
+        }
+
+        private List<OrderItems> ReadTablesPerTable(DataTable dataTable)
+        {
+            List<OrderItems> orderItems = new List<OrderItems>();
+
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                OrderItems orderItem = new OrderItems()
+                {
+                    MenuItemID = (int)dr["menuitemid"],
+                    OrderItemID = (int)dr["orderitemid"],
+                    Quantity = (int)(dr["quantity"]),
+                    TableID = (int)(dr["tableid"]),
+                    Description = (string)(dr["description"]),
+                };
+                orderItems.Add(orderItem);
+            }
+            return orderItems;
+        }
+
+        public void OrderItemAdd(int tableID, int MenuItemID)
+        {
+            string query = $"INSERT INTO [orderitem] (OrderID, MenuItemID, quantity) VALUES ({tableID}, {MenuItemID}, 1)";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void AddQuantity(int tableID, int menuItemID)
+        {
+            string query = $"update OrderItem set Quantity = Quantity +1 where OrderID = {tableID} and MenuItemID = {menuItemID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void ItemAdd(int selectedItemID)
+        {
+            string query = $"update OrderItem set Quantity = Quantity + 1 where OrderItemID = {selectedItemID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
+        public void ItemRemove(int selectedItemID)
+        {
+            string query = $"update OrderItem set Quantity = Quantity - 1 where OrderItemID = {selectedItemID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void OrderVerwijderen(int tableID)
+        {
+            string query = $"delete from OrderItem where tableID = {tableID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void ItemVerwijderen(int selectedItemID)
+        {
+            string query = $"delete from OrderItem where orderitemID = {selectedItemID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
     }
 }

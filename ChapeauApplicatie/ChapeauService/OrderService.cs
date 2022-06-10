@@ -38,6 +38,12 @@ namespace ChapeauService
         {
             orderdb.OrderConfirm(IDTable, commentaar);
         }
+
+        public void NewestOrder(int tableID)
+        {
+            orderdb.OrderNewest(tableID);
+        }
+      
         public List<OrderStatusTable> BestellingPerTafel(int tableID)
         {
             return orderdb.BestellingPerTafel(tableID);
@@ -54,6 +60,5 @@ namespace ChapeauService
         {
             orderdb.UpdateOrderReady(ready, TableID);
         }
-
     }
 }

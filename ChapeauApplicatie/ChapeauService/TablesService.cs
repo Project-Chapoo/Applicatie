@@ -30,5 +30,10 @@ namespace ChapeauService
             tablesdb.UpdateTableStatus(tableID, reserved);
         }
 
+        public void ReserveTable(int tableID)
+        {
+            tablesdb.TableReserve(tableID);
+        }
+
     }
 }

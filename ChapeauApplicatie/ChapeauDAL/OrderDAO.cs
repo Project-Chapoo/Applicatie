@@ -13,6 +13,7 @@ namespace ChapeauDAL
     {
         public List<Order> GetAllOrders()
         {
+
             string query = "SELECT OrderID, TableID, Comment, timeOrdered, OrderReady, OrderServed, OrderedLatest FROM [order]";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
@@ -45,18 +46,26 @@ namespace ChapeauDAL
             }
             return orders;
         }
-
-        public void OrderCreateNew(int tableID)
+        
+        public void OrderNewest(int tableID)
         {
-
+            for (int i = 1; i < 11; i++)
+            {
+                string updateQuery = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = {i}";
+            }
+            string setQuery = $"update [Order] set orderedlatest = 1 where OrderID = {tableID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(updateQuery, sqlParameters);
+            ExecuteEditQuery(setQuery, sqlParameters);
         }
-
+       
         public void OrderConfirm(int tableID, string commentaar)
         {
             string query = $"update [Order] set comment = '{commentaar}', TimeOrdered = CURRENT_TIMESTAMP where OrderID = {tableID}";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }
+
         public List<OrderStatusTable> BestellingPerTafel(int tableID)
         {
             string query = "SELECT TableID, TimeOrdered, OrderReady, OrderServed, [OrderedLatest] FROM [Order] WHERE TableID = @tableID ";
@@ -99,8 +108,5 @@ namespace ChapeauDAL
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }
-
-
-
     }
 }
