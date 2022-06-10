@@ -10,7 +10,7 @@ using ChapeauDAL;
 
 namespace ChapeauService
 {
-    public class MenuItemService
+    public class MenuItemService : BaseService
     {
         MenuItemDAO Menuitemsdb;
         public MenuItemService()

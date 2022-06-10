@@ -8,7 +8,7 @@ using ChapeauModels;
 
 namespace ChapeauService
 {
-    public class OrderItemsService
+    public class OrderItemsService : BaseService
     {
         OrderItemsDao orderitemsdb;
 

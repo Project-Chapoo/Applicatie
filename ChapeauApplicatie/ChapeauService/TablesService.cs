@@ -9,7 +9,7 @@ using ChapeauDAL;
 
 namespace ChapeauService
 {
-    public class TablesService
+    public class TablesService : BaseService
     {
         TablesDAO tablesdb;
         public TablesService()

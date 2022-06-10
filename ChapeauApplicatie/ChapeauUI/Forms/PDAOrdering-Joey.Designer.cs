@@ -40,12 +40,16 @@
             this.btnTable2 = new System.Windows.Forms.Button();
             this.btnTable1 = new System.Windows.Forms.Button();
             this.pnlOrderOrPayment = new System.Windows.Forms.Panel();
-            this.btnReserveer = new System.Windows.Forms.Button();
             this.btnGoBackToTableSelection = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.lblTableOrderOrPayment = new System.Windows.Forms.Label();
+            this.pbOrderOrPayment = new System.Windows.Forms.PictureBox();
+            this.btnReserveer = new System.Windows.Forms.Button();
+            this.btnPayment = new System.Windows.Forms.Button();
             this.btnOrdering = new System.Windows.Forms.Button();
             this.pnlCourseChoosing = new System.Windows.Forms.Panel();
             this.btnGoBackToOrderOrPayment = new System.Windows.Forms.Button();
+            this.lblTableCourseChoosing = new System.Windows.Forms.Label();
+            this.pbCourseChoosing = new System.Windows.Forms.PictureBox();
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnOpmerkingen = new System.Windows.Forms.Button();
             this.btnDranken = new System.Windows.Forms.Button();
@@ -53,20 +57,24 @@
             this.btnLunch = new System.Windows.Forms.Button();
             this.pnlLunch = new System.Windows.Forms.Panel();
             this.btnBackToCourseChoosing = new System.Windows.Forms.Button();
+            this.lblTableLunch = new System.Windows.Forms.Label();
+            this.pbLunch = new System.Windows.Forms.PictureBox();
             this.btnLunchNagerechten = new System.Windows.Forms.Button();
             this.btnLunchHoofdgerechten = new System.Windows.Forms.Button();
             this.btnLunchVoorgerechten = new System.Windows.Forms.Button();
             this.pnlDranken = new System.Windows.Forms.Panel();
-            this.btnGedestilleerdeDranken = new System.Windows.Forms.Button();
             this.btnBackToCourseChoosingFromDrinks = new System.Windows.Forms.Button();
+            this.lblTableDranken = new System.Windows.Forms.Label();
+            this.pbDranken = new System.Windows.Forms.PictureBox();
+            this.btnGedestilleerdeDranken = new System.Windows.Forms.Button();
             this.btnWijnen = new System.Windows.Forms.Button();
             this.btnKoffieThee = new System.Windows.Forms.Button();
             this.btnBieren = new System.Windows.Forms.Button();
             this.btnFrisdranken = new System.Windows.Forms.Button();
             this.pnlOpmerkingen = new System.Windows.Forms.Panel();
             this.btnBackFromOpmerkingen = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblTableComments = new System.Windows.Forms.Label();
+            this.pbComments = new System.Windows.Forms.PictureBox();
             this.btnAddComment = new System.Windows.Forms.Button();
             this.grpboxOpmerkingen = new System.Windows.Forms.GroupBox();
             this.lblGemaakteOpmerkingen = new System.Windows.Forms.Label();
@@ -74,16 +82,22 @@
             this.txtBoxOpmerking = new System.Windows.Forms.TextBox();
             this.pnlLunchVoorgerechten = new System.Windows.Forms.Panel();
             this.btnBackToLunchFromVoorgerechten = new System.Windows.Forms.Button();
+            this.lblTableLunchVoorgerechten = new System.Windows.Forms.Label();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.btnLunchVissoep = new System.Windows.Forms.Button();
             this.btnLunchPatéFazant = new System.Windows.Forms.Button();
             this.btnLunchSteakTartaar = new System.Windows.Forms.Button();
             this.pnlLunchHoofdgerechten = new System.Windows.Forms.Panel();
             this.BtnBackToLunchFromHoofdgerechten = new System.Windows.Forms.Button();
+            this.lblTableLunchHoofdgerechten = new System.Windows.Forms.Label();
+            this.pbLunchHoofdgerechten = new System.Windows.Forms.PictureBox();
             this.btnLinguini = new System.Windows.Forms.Button();
             this.btnKabeljauw = new System.Windows.Forms.Button();
             this.btnHertenstoofpot = new System.Windows.Forms.Button();
             this.pnlLunchNagerechten = new System.Windows.Forms.Panel();
             this.btnBackToLunchFromNagerechten = new System.Windows.Forms.Button();
+            this.lblTableLunchNagerechten = new System.Windows.Forms.Label();
+            this.pbLunchNagerechten = new System.Windows.Forms.PictureBox();
             this.btnBoerenKaas = new System.Windows.Forms.Button();
             this.btnMadeleine = new System.Windows.Forms.Button();
             this.btnTaart = new System.Windows.Forms.Button();
@@ -95,7 +109,7 @@
             this.Quantity = new System.Windows.Forms.ColumnHeader();
             this.Description = new System.Windows.Forms.ColumnHeader();
             this.OrderItemID = new System.Windows.Forms.ColumnHeader();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbConfirmOrder = new System.Windows.Forms.PictureBox();
             this.btnVerwijderItem = new System.Windows.Forms.Button();
             this.btnDeleteOrder = new System.Windows.Forms.Button();
             this.btnAddItem = new System.Windows.Forms.Button();
@@ -103,30 +117,43 @@
             this.btnConfirmOrder = new System.Windows.Forms.Button();
             this.pnlDiner = new System.Windows.Forms.Panel();
             this.btnGoBackToCourseChoosingFromDinerSelection = new System.Windows.Forms.Button();
+            this.lblTableDiner = new System.Windows.Forms.Label();
+            this.pbDiner = new System.Windows.Forms.PictureBox();
             this.btnDinerNagerechten = new System.Windows.Forms.Button();
             this.btnDinerHoofdgerechten = new System.Windows.Forms.Button();
             this.btnTussengerechten = new System.Windows.Forms.Button();
             this.btnDinerVoorgerechten = new System.Windows.Forms.Button();
             this.pnlDinerVoorgerechten = new System.Windows.Forms.Panel();
             this.btnGoBackToDinerCourseChoosingFromVoorgerechten = new System.Windows.Forms.Button();
+            this.lblTableDinerVoorgerechten = new System.Windows.Forms.Label();
+            this.pbDinerVoorgerechten = new System.Windows.Forms.PictureBox();
             this.btnDinerKrabZalmKoekjes = new System.Windows.Forms.Button();
             this.btnDinerFazant = new System.Windows.Forms.Button();
             this.btnDinerKalfstartaar = new System.Windows.Forms.Button();
             this.pnlDinerTussengerechten = new System.Windows.Forms.Panel();
             this.btnGoBackToDinerCourses = new System.Windows.Forms.Button();
+            this.lblTableDinerTussengerechten = new System.Windows.Forms.Label();
+            this.pbDinerTussengerechten = new System.Windows.Forms.PictureBox();
             this.btnDinerTussengerechtConsomméFazant = new System.Windows.Forms.Button();
             this.btnDinerTussengerechtVissoep = new System.Windows.Forms.Button();
             this.pnlDinerHoofdgerechten = new System.Windows.Forms.Panel();
-            this.btnDinerHoofdgerechtenHertenbiefstuk = new System.Windows.Forms.Button();
             this.btnGoBackToDinerCoursesFromDinerHoofdgerechten = new System.Windows.Forms.Button();
+            this.lblTableDinerHoofdgerechten = new System.Windows.Forms.Label();
+            this.pbDinerHoofdgerechten = new System.Windows.Forms.PictureBox();
             this.btnDinerHoofdgerechtenOssenhaas = new System.Windows.Forms.Button();
+            this.btnDinerHoofdgerechtenHertenbiefstuk = new System.Windows.Forms.Button();
             this.btnDinerHoofdgerechtKabeljauw = new System.Windows.Forms.Button();
             this.pnlDinerNagerechten = new System.Windows.Forms.Panel();
-            this.btnDinerNagerechtenFromage = new System.Windows.Forms.Button();
             this.btnGoBackToDinerCoursesFromNagerechten = new System.Windows.Forms.Button();
+            this.lblTableDinerNagerechten = new System.Windows.Forms.Label();
+            this.pbDinerNagerechten = new System.Windows.Forms.PictureBox();
+            this.btnDinerNagerechtenFromage = new System.Windows.Forms.Button();
             this.btnDinerNagerechtenCherryBaby = new System.Windows.Forms.Button();
             this.btnDinerNagerechtenCaféSurprise = new System.Windows.Forms.Button();
             this.pnlFrisdranken = new System.Windows.Forms.Panel();
+            this.btnBackToDrinksFromFrisdranken = new System.Windows.Forms.Button();
+            this.lblTableFrisdranken = new System.Windows.Forms.Label();
+            this.pbFrisdranken = new System.Windows.Forms.PictureBox();
             this.btnTonic = new System.Windows.Forms.Button();
             this.btnSisi = new System.Windows.Forms.Button();
             this.btnColaLight = new System.Windows.Forms.Button();
@@ -134,56 +161,80 @@
             this.btnCola = new System.Windows.Forms.Button();
             this.btnBitterLemon = new System.Windows.Forms.Button();
             this.btnSpaRood = new System.Windows.Forms.Button();
-            this.btnBackToDrinksFromFrisdranken = new System.Windows.Forms.Button();
             this.pnlBieren = new System.Windows.Forms.Panel();
+            this.btnBackFromBieren = new System.Windows.Forms.Button();
+            this.lblTableBieren = new System.Windows.Forms.Label();
+            this.pbBieren = new System.Windows.Forms.PictureBox();
             this.btnLeffeTripel = new System.Windows.Forms.Button();
             this.btnKriek = new System.Windows.Forms.Button();
             this.btnDuvel = new System.Windows.Forms.Button();
             this.btnHertogJan = new System.Windows.Forms.Button();
-            this.btnBackFromBieren = new System.Windows.Forms.Button();
             this.pnlWijnen = new System.Windows.Forms.Panel();
+            this.btnBackFromWijnen = new System.Windows.Forms.Button();
+            this.lblTableWijnen = new System.Windows.Forms.Label();
+            this.pbWijnen = new System.Windows.Forms.PictureBox();
             this.btnFlesRodeWijn = new System.Windows.Forms.Button();
             this.btnGlasRodeWijn = new System.Windows.Forms.Button();
             this.btnChampagne = new System.Windows.Forms.Button();
             this.btnFlesWitteWijn = new System.Windows.Forms.Button();
             this.btnGlasWitteWijn = new System.Windows.Forms.Button();
-            this.btnBackFromWijnen = new System.Windows.Forms.Button();
             this.pnlGedestilleerdeDranken = new System.Windows.Forms.Panel();
+            this.btnBackFromGedestilleerdeDranken = new System.Windows.Forms.Button();
+            this.lblTableGedesilleerdeDranken = new System.Windows.Forms.Label();
+            this.pbGedesilleerdeDranken = new System.Windows.Forms.PictureBox();
             this.btnVieux = new System.Windows.Forms.Button();
             this.btnRum = new System.Windows.Forms.Button();
             this.btnBerenburg = new System.Windows.Forms.Button();
             this.btnWhiskey = new System.Windows.Forms.Button();
             this.btnJongeJenever = new System.Windows.Forms.Button();
-            this.btnBackFromGedestilleerdeDranken = new System.Windows.Forms.Button();
             this.pnlKoffieThee = new System.Windows.Forms.Panel();
             this.btnGoBackFromKoffieThee = new System.Windows.Forms.Button();
+            this.lblTableKoffieThee = new System.Windows.Forms.Label();
+            this.pbKoffieThee = new System.Windows.Forms.PictureBox();
             this.btnThee = new System.Windows.Forms.Button();
             this.btnEspresso = new System.Windows.Forms.Button();
             this.btnCappuchino = new System.Windows.Forms.Button();
             this.btnKoffie = new System.Windows.Forms.Button();
             this.pnlTableSelection.SuspendLayout();
             this.pnlOrderOrPayment.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOrderOrPayment)).BeginInit();
             this.pnlCourseChoosing.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCourseChoosing)).BeginInit();
             this.pnlLunch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLunch)).BeginInit();
             this.pnlDranken.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDranken)).BeginInit();
             this.pnlOpmerkingen.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbComments)).BeginInit();
             this.grpboxOpmerkingen.SuspendLayout();
             this.pnlLunchVoorgerechten.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.pnlLunchHoofdgerechten.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLunchHoofdgerechten)).BeginInit();
             this.pnlLunchNagerechten.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLunchNagerechten)).BeginInit();
             this.pnlConfirmOrder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConfirmOrder)).BeginInit();
             this.pnlDiner.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDiner)).BeginInit();
             this.pnlDinerVoorgerechten.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDinerVoorgerechten)).BeginInit();
             this.pnlDinerTussengerechten.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDinerTussengerechten)).BeginInit();
             this.pnlDinerHoofdgerechten.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDinerHoofdgerechten)).BeginInit();
             this.pnlDinerNagerechten.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDinerNagerechten)).BeginInit();
             this.pnlFrisdranken.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFrisdranken)).BeginInit();
             this.pnlBieren.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBieren)).BeginInit();
             this.pnlWijnen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWijnen)).BeginInit();
             this.pnlGedestilleerdeDranken.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGedesilleerdeDranken)).BeginInit();
             this.pnlKoffieThee.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKoffieThee)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTableSelection
@@ -317,14 +368,47 @@
             // pnlOrderOrPayment
             // 
             this.pnlOrderOrPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
-            this.pnlOrderOrPayment.Controls.Add(this.btnReserveer);
             this.pnlOrderOrPayment.Controls.Add(this.btnGoBackToTableSelection);
-            this.pnlOrderOrPayment.Controls.Add(this.button2);
+            this.pnlOrderOrPayment.Controls.Add(this.lblTableOrderOrPayment);
+            this.pnlOrderOrPayment.Controls.Add(this.pbOrderOrPayment);
+            this.pnlOrderOrPayment.Controls.Add(this.btnReserveer);
+            this.pnlOrderOrPayment.Controls.Add(this.btnPayment);
             this.pnlOrderOrPayment.Controls.Add(this.btnOrdering);
             this.pnlOrderOrPayment.Location = new System.Drawing.Point(0, 0);
             this.pnlOrderOrPayment.Name = "pnlOrderOrPayment";
             this.pnlOrderOrPayment.Size = new System.Drawing.Size(240, 320);
             this.pnlOrderOrPayment.TabIndex = 11;
+            // 
+            // btnGoBackToTableSelection
+            // 
+            this.btnGoBackToTableSelection.Location = new System.Drawing.Point(12, 3);
+            this.btnGoBackToTableSelection.Name = "btnGoBackToTableSelection";
+            this.btnGoBackToTableSelection.Size = new System.Drawing.Size(25, 25);
+            this.btnGoBackToTableSelection.TabIndex = 2;
+            this.btnGoBackToTableSelection.Text = "<";
+            this.btnGoBackToTableSelection.UseVisualStyleBackColor = true;
+            this.btnGoBackToTableSelection.Click += new System.EventHandler(this.btnGoBackToTableSelection_Click);
+            // 
+            // lblTableOrderOrPayment
+            // 
+            this.lblTableOrderOrPayment.AutoSize = true;
+            this.lblTableOrderOrPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.lblTableOrderOrPayment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTableOrderOrPayment.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTableOrderOrPayment.Location = new System.Drawing.Point(93, 5);
+            this.lblTableOrderOrPayment.Name = "lblTableOrderOrPayment";
+            this.lblTableOrderOrPayment.Size = new System.Drawing.Size(48, 21);
+            this.lblTableOrderOrPayment.TabIndex = 17;
+            this.lblTableOrderOrPayment.Text = "Tafel: ";
+            // 
+            // pbOrderOrPayment
+            // 
+            this.pbOrderOrPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.pbOrderOrPayment.Location = new System.Drawing.Point(-12, -1);
+            this.pbOrderOrPayment.Name = "pbOrderOrPayment";
+            this.pbOrderOrPayment.Size = new System.Drawing.Size(264, 33);
+            this.pbOrderOrPayment.TabIndex = 16;
+            this.pbOrderOrPayment.TabStop = false;
             // 
             // btnReserveer
             // 
@@ -337,25 +421,15 @@
             this.btnReserveer.UseVisualStyleBackColor = false;
             this.btnReserveer.Click += new System.EventHandler(this.btnReserveer_Click);
             // 
-            // btnGoBackToTableSelection
+            // btnPayment
             // 
-            this.btnGoBackToTableSelection.Location = new System.Drawing.Point(12, 12);
-            this.btnGoBackToTableSelection.Name = "btnGoBackToTableSelection";
-            this.btnGoBackToTableSelection.Size = new System.Drawing.Size(75, 23);
-            this.btnGoBackToTableSelection.TabIndex = 2;
-            this.btnGoBackToTableSelection.Text = "Go Back";
-            this.btnGoBackToTableSelection.UseVisualStyleBackColor = true;
-            this.btnGoBackToTableSelection.Click += new System.EventHandler(this.btnGoBackToTableSelection_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.button2.Location = new System.Drawing.Point(36, 127);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(171, 84);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.btnPayment.Location = new System.Drawing.Point(36, 127);
+            this.btnPayment.Name = "btnPayment";
+            this.btnPayment.Size = new System.Drawing.Size(171, 84);
+            this.btnPayment.TabIndex = 1;
+            this.btnPayment.Text = "Betalen";
+            this.btnPayment.UseVisualStyleBackColor = false;
             // 
             // btnOrdering
             // 
@@ -364,7 +438,7 @@
             this.btnOrdering.Name = "btnOrdering";
             this.btnOrdering.Size = new System.Drawing.Size(171, 81);
             this.btnOrdering.TabIndex = 0;
-            this.btnOrdering.Text = "Ordering";
+            this.btnOrdering.Text = "Bestellen";
             this.btnOrdering.UseVisualStyleBackColor = false;
             this.btnOrdering.Click += new System.EventHandler(this.btnOrdering_Click);
             // 
@@ -372,6 +446,8 @@
             // 
             this.pnlCourseChoosing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
             this.pnlCourseChoosing.Controls.Add(this.btnGoBackToOrderOrPayment);
+            this.pnlCourseChoosing.Controls.Add(this.lblTableCourseChoosing);
+            this.pnlCourseChoosing.Controls.Add(this.pbCourseChoosing);
             this.pnlCourseChoosing.Controls.Add(this.btnOrder);
             this.pnlCourseChoosing.Controls.Add(this.btnOpmerkingen);
             this.pnlCourseChoosing.Controls.Add(this.btnDranken);
@@ -384,13 +460,34 @@
             // 
             // btnGoBackToOrderOrPayment
             // 
-            this.btnGoBackToOrderOrPayment.Location = new System.Drawing.Point(12, 5);
+            this.btnGoBackToOrderOrPayment.Location = new System.Drawing.Point(12, 3);
             this.btnGoBackToOrderOrPayment.Name = "btnGoBackToOrderOrPayment";
-            this.btnGoBackToOrderOrPayment.Size = new System.Drawing.Size(75, 23);
+            this.btnGoBackToOrderOrPayment.Size = new System.Drawing.Size(25, 25);
             this.btnGoBackToOrderOrPayment.TabIndex = 5;
-            this.btnGoBackToOrderOrPayment.Text = "Go back";
+            this.btnGoBackToOrderOrPayment.Text = "<";
             this.btnGoBackToOrderOrPayment.UseVisualStyleBackColor = true;
             this.btnGoBackToOrderOrPayment.Click += new System.EventHandler(this.btnGoBackToOrderOrPayment_Click);
+            // 
+            // lblTableCourseChoosing
+            // 
+            this.lblTableCourseChoosing.AutoSize = true;
+            this.lblTableCourseChoosing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.lblTableCourseChoosing.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTableCourseChoosing.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTableCourseChoosing.Location = new System.Drawing.Point(93, 5);
+            this.lblTableCourseChoosing.Name = "lblTableCourseChoosing";
+            this.lblTableCourseChoosing.Size = new System.Drawing.Size(48, 21);
+            this.lblTableCourseChoosing.TabIndex = 17;
+            this.lblTableCourseChoosing.Text = "Tafel: ";
+            // 
+            // pbCourseChoosing
+            // 
+            this.pbCourseChoosing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.pbCourseChoosing.Location = new System.Drawing.Point(-12, -1);
+            this.pbCourseChoosing.Name = "pbCourseChoosing";
+            this.pbCourseChoosing.Size = new System.Drawing.Size(264, 33);
+            this.pbCourseChoosing.TabIndex = 16;
+            this.pbCourseChoosing.TabStop = false;
             // 
             // btnOrder
             // 
@@ -406,7 +503,7 @@
             // btnOpmerkingen
             // 
             this.btnOpmerkingen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.btnOpmerkingen.Location = new System.Drawing.Point(36, 248);
+            this.btnOpmerkingen.Location = new System.Drawing.Point(36, 246);
             this.btnOpmerkingen.Name = "btnOpmerkingen";
             this.btnOpmerkingen.Size = new System.Drawing.Size(89, 60);
             this.btnOpmerkingen.TabIndex = 3;
@@ -451,6 +548,8 @@
             // 
             this.pnlLunch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
             this.pnlLunch.Controls.Add(this.btnBackToCourseChoosing);
+            this.pnlLunch.Controls.Add(this.lblTableLunch);
+            this.pnlLunch.Controls.Add(this.pbLunch);
             this.pnlLunch.Controls.Add(this.btnLunchNagerechten);
             this.pnlLunch.Controls.Add(this.btnLunchHoofdgerechten);
             this.pnlLunch.Controls.Add(this.btnLunchVoorgerechten);
@@ -461,13 +560,34 @@
             // 
             // btnBackToCourseChoosing
             // 
-            this.btnBackToCourseChoosing.Location = new System.Drawing.Point(12, 9);
+            this.btnBackToCourseChoosing.Location = new System.Drawing.Point(12, 3);
             this.btnBackToCourseChoosing.Name = "btnBackToCourseChoosing";
-            this.btnBackToCourseChoosing.Size = new System.Drawing.Size(75, 23);
+            this.btnBackToCourseChoosing.Size = new System.Drawing.Size(25, 25);
             this.btnBackToCourseChoosing.TabIndex = 3;
-            this.btnBackToCourseChoosing.Text = "Go back";
+            this.btnBackToCourseChoosing.Text = "<";
             this.btnBackToCourseChoosing.UseVisualStyleBackColor = true;
             this.btnBackToCourseChoosing.Click += new System.EventHandler(this.btnBackToLunch_Click);
+            // 
+            // lblTableLunch
+            // 
+            this.lblTableLunch.AutoSize = true;
+            this.lblTableLunch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.lblTableLunch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTableLunch.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTableLunch.Location = new System.Drawing.Point(93, 5);
+            this.lblTableLunch.Name = "lblTableLunch";
+            this.lblTableLunch.Size = new System.Drawing.Size(48, 21);
+            this.lblTableLunch.TabIndex = 17;
+            this.lblTableLunch.Text = "Tafel: ";
+            // 
+            // pbLunch
+            // 
+            this.pbLunch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.pbLunch.Location = new System.Drawing.Point(-12, -1);
+            this.pbLunch.Name = "pbLunch";
+            this.pbLunch.Size = new System.Drawing.Size(264, 33);
+            this.pbLunch.TabIndex = 16;
+            this.pbLunch.TabStop = false;
             // 
             // btnLunchNagerechten
             // 
@@ -505,8 +625,10 @@
             // pnlDranken
             // 
             this.pnlDranken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
-            this.pnlDranken.Controls.Add(this.btnGedestilleerdeDranken);
             this.pnlDranken.Controls.Add(this.btnBackToCourseChoosingFromDrinks);
+            this.pnlDranken.Controls.Add(this.lblTableDranken);
+            this.pnlDranken.Controls.Add(this.pbDranken);
+            this.pnlDranken.Controls.Add(this.btnGedestilleerdeDranken);
             this.pnlDranken.Controls.Add(this.btnWijnen);
             this.pnlDranken.Controls.Add(this.btnKoffieThee);
             this.pnlDranken.Controls.Add(this.btnBieren);
@@ -515,6 +637,37 @@
             this.pnlDranken.Name = "pnlDranken";
             this.pnlDranken.Size = new System.Drawing.Size(240, 320);
             this.pnlDranken.TabIndex = 13;
+            // 
+            // btnBackToCourseChoosingFromDrinks
+            // 
+            this.btnBackToCourseChoosingFromDrinks.Location = new System.Drawing.Point(12, 3);
+            this.btnBackToCourseChoosingFromDrinks.Name = "btnBackToCourseChoosingFromDrinks";
+            this.btnBackToCourseChoosingFromDrinks.Size = new System.Drawing.Size(25, 25);
+            this.btnBackToCourseChoosingFromDrinks.TabIndex = 15;
+            this.btnBackToCourseChoosingFromDrinks.Text = "<";
+            this.btnBackToCourseChoosingFromDrinks.UseVisualStyleBackColor = true;
+            this.btnBackToCourseChoosingFromDrinks.Click += new System.EventHandler(this.btnBackToCourseChoosingFromDrinks_Click);
+            // 
+            // lblTableDranken
+            // 
+            this.lblTableDranken.AutoSize = true;
+            this.lblTableDranken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.lblTableDranken.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTableDranken.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTableDranken.Location = new System.Drawing.Point(93, 5);
+            this.lblTableDranken.Name = "lblTableDranken";
+            this.lblTableDranken.Size = new System.Drawing.Size(48, 21);
+            this.lblTableDranken.TabIndex = 17;
+            this.lblTableDranken.Text = "Tafel: ";
+            // 
+            // pbDranken
+            // 
+            this.pbDranken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.pbDranken.Location = new System.Drawing.Point(-12, -1);
+            this.pbDranken.Name = "pbDranken";
+            this.pbDranken.Size = new System.Drawing.Size(264, 33);
+            this.pbDranken.TabIndex = 16;
+            this.pbDranken.TabStop = false;
             // 
             // btnGedestilleerdeDranken
             // 
@@ -526,16 +679,6 @@
             this.btnGedestilleerdeDranken.Text = "Gedestilleerde dranken";
             this.btnGedestilleerdeDranken.UseVisualStyleBackColor = false;
             this.btnGedestilleerdeDranken.Click += new System.EventHandler(this.btnGedestilleerdeDranken_Click);
-            // 
-            // btnBackToCourseChoosingFromDrinks
-            // 
-            this.btnBackToCourseChoosingFromDrinks.Location = new System.Drawing.Point(12, 9);
-            this.btnBackToCourseChoosingFromDrinks.Name = "btnBackToCourseChoosingFromDrinks";
-            this.btnBackToCourseChoosingFromDrinks.Size = new System.Drawing.Size(75, 23);
-            this.btnBackToCourseChoosingFromDrinks.TabIndex = 15;
-            this.btnBackToCourseChoosingFromDrinks.Text = "Go back";
-            this.btnBackToCourseChoosingFromDrinks.UseVisualStyleBackColor = true;
-            this.btnBackToCourseChoosingFromDrinks.Click += new System.EventHandler(this.btnBackToCourseChoosingFromDrinks_Click);
             // 
             // btnWijnen
             // 
@@ -585,8 +728,8 @@
             // 
             this.pnlOpmerkingen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
             this.pnlOpmerkingen.Controls.Add(this.btnBackFromOpmerkingen);
-            this.pnlOpmerkingen.Controls.Add(this.label1);
-            this.pnlOpmerkingen.Controls.Add(this.pictureBox2);
+            this.pnlOpmerkingen.Controls.Add(this.lblTableComments);
+            this.pnlOpmerkingen.Controls.Add(this.pbComments);
             this.pnlOpmerkingen.Controls.Add(this.btnAddComment);
             this.pnlOpmerkingen.Controls.Add(this.grpboxOpmerkingen);
             this.pnlOpmerkingen.Controls.Add(this.lblOpmerkingen);
@@ -606,26 +749,26 @@
             this.btnBackFromOpmerkingen.UseVisualStyleBackColor = true;
             this.btnBackFromOpmerkingen.Click += new System.EventHandler(this.btnBackFromOpmerkingen_Click);
             // 
-            // label1
+            // lblTableComments
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(93, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 21);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Tafel: ";
+            this.lblTableComments.AutoSize = true;
+            this.lblTableComments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.lblTableComments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTableComments.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTableComments.Location = new System.Drawing.Point(93, 5);
+            this.lblTableComments.Name = "lblTableComments";
+            this.lblTableComments.Size = new System.Drawing.Size(48, 21);
+            this.lblTableComments.TabIndex = 15;
+            this.lblTableComments.Text = "Tafel: ";
             // 
-            // pictureBox2
+            // pbComments
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
-            this.pictureBox2.Location = new System.Drawing.Point(-12, -3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(264, 33);
-            this.pictureBox2.TabIndex = 14;
-            this.pictureBox2.TabStop = false;
+            this.pbComments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.pbComments.Location = new System.Drawing.Point(-12, -1);
+            this.pbComments.Name = "pbComments";
+            this.pbComments.Size = new System.Drawing.Size(264, 33);
+            this.pbComments.TabIndex = 14;
+            this.pbComments.TabStop = false;
             // 
             // btnAddComment
             // 
@@ -679,6 +822,8 @@
             // 
             this.pnlLunchVoorgerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
             this.pnlLunchVoorgerechten.Controls.Add(this.btnBackToLunchFromVoorgerechten);
+            this.pnlLunchVoorgerechten.Controls.Add(this.lblTableLunchVoorgerechten);
+            this.pnlLunchVoorgerechten.Controls.Add(this.pictureBox8);
             this.pnlLunchVoorgerechten.Controls.Add(this.btnLunchVissoep);
             this.pnlLunchVoorgerechten.Controls.Add(this.btnLunchPatéFazant);
             this.pnlLunchVoorgerechten.Controls.Add(this.btnLunchSteakTartaar);
@@ -689,13 +834,34 @@
             // 
             // btnBackToLunchFromVoorgerechten
             // 
-            this.btnBackToLunchFromVoorgerechten.Location = new System.Drawing.Point(12, 9);
+            this.btnBackToLunchFromVoorgerechten.Location = new System.Drawing.Point(12, 3);
             this.btnBackToLunchFromVoorgerechten.Name = "btnBackToLunchFromVoorgerechten";
-            this.btnBackToLunchFromVoorgerechten.Size = new System.Drawing.Size(75, 23);
+            this.btnBackToLunchFromVoorgerechten.Size = new System.Drawing.Size(25, 25);
             this.btnBackToLunchFromVoorgerechten.TabIndex = 5;
-            this.btnBackToLunchFromVoorgerechten.Text = "Go back";
+            this.btnBackToLunchFromVoorgerechten.Text = "<";
             this.btnBackToLunchFromVoorgerechten.UseVisualStyleBackColor = true;
             this.btnBackToLunchFromVoorgerechten.Click += new System.EventHandler(this.btnBackToLunchFromVoorgerechten_Click);
+            // 
+            // lblTableLunchVoorgerechten
+            // 
+            this.lblTableLunchVoorgerechten.AutoSize = true;
+            this.lblTableLunchVoorgerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.lblTableLunchVoorgerechten.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTableLunchVoorgerechten.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTableLunchVoorgerechten.Location = new System.Drawing.Point(93, 5);
+            this.lblTableLunchVoorgerechten.Name = "lblTableLunchVoorgerechten";
+            this.lblTableLunchVoorgerechten.Size = new System.Drawing.Size(48, 21);
+            this.lblTableLunchVoorgerechten.TabIndex = 17;
+            this.lblTableLunchVoorgerechten.Text = "Tafel: ";
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.pictureBox8.Location = new System.Drawing.Point(-12, -1);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(264, 33);
+            this.pictureBox8.TabIndex = 16;
+            this.pictureBox8.TabStop = false;
             // 
             // btnLunchVissoep
             // 
@@ -734,6 +900,8 @@
             // 
             this.pnlLunchHoofdgerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
             this.pnlLunchHoofdgerechten.Controls.Add(this.BtnBackToLunchFromHoofdgerechten);
+            this.pnlLunchHoofdgerechten.Controls.Add(this.lblTableLunchHoofdgerechten);
+            this.pnlLunchHoofdgerechten.Controls.Add(this.pbLunchHoofdgerechten);
             this.pnlLunchHoofdgerechten.Controls.Add(this.btnLinguini);
             this.pnlLunchHoofdgerechten.Controls.Add(this.btnKabeljauw);
             this.pnlLunchHoofdgerechten.Controls.Add(this.btnHertenstoofpot);
@@ -744,13 +912,34 @@
             // 
             // BtnBackToLunchFromHoofdgerechten
             // 
-            this.BtnBackToLunchFromHoofdgerechten.Location = new System.Drawing.Point(12, 9);
+            this.BtnBackToLunchFromHoofdgerechten.Location = new System.Drawing.Point(12, 3);
             this.BtnBackToLunchFromHoofdgerechten.Name = "BtnBackToLunchFromHoofdgerechten";
-            this.BtnBackToLunchFromHoofdgerechten.Size = new System.Drawing.Size(75, 23);
+            this.BtnBackToLunchFromHoofdgerechten.Size = new System.Drawing.Size(25, 25);
             this.BtnBackToLunchFromHoofdgerechten.TabIndex = 4;
-            this.BtnBackToLunchFromHoofdgerechten.Text = "Go back";
+            this.BtnBackToLunchFromHoofdgerechten.Text = "<";
             this.BtnBackToLunchFromHoofdgerechten.UseVisualStyleBackColor = true;
             this.BtnBackToLunchFromHoofdgerechten.Click += new System.EventHandler(this.BtnBackToLunch_Click_1);
+            // 
+            // lblTableLunchHoofdgerechten
+            // 
+            this.lblTableLunchHoofdgerechten.AutoSize = true;
+            this.lblTableLunchHoofdgerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.lblTableLunchHoofdgerechten.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTableLunchHoofdgerechten.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTableLunchHoofdgerechten.Location = new System.Drawing.Point(93, 5);
+            this.lblTableLunchHoofdgerechten.Name = "lblTableLunchHoofdgerechten";
+            this.lblTableLunchHoofdgerechten.Size = new System.Drawing.Size(48, 21);
+            this.lblTableLunchHoofdgerechten.TabIndex = 17;
+            this.lblTableLunchHoofdgerechten.Text = "Tafel: ";
+            // 
+            // pbLunchHoofdgerechten
+            // 
+            this.pbLunchHoofdgerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.pbLunchHoofdgerechten.Location = new System.Drawing.Point(-12, -1);
+            this.pbLunchHoofdgerechten.Name = "pbLunchHoofdgerechten";
+            this.pbLunchHoofdgerechten.Size = new System.Drawing.Size(264, 33);
+            this.pbLunchHoofdgerechten.TabIndex = 16;
+            this.pbLunchHoofdgerechten.TabStop = false;
             // 
             // btnLinguini
             // 
@@ -789,6 +978,8 @@
             // 
             this.pnlLunchNagerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
             this.pnlLunchNagerechten.Controls.Add(this.btnBackToLunchFromNagerechten);
+            this.pnlLunchNagerechten.Controls.Add(this.lblTableLunchNagerechten);
+            this.pnlLunchNagerechten.Controls.Add(this.pbLunchNagerechten);
             this.pnlLunchNagerechten.Controls.Add(this.btnBoerenKaas);
             this.pnlLunchNagerechten.Controls.Add(this.btnMadeleine);
             this.pnlLunchNagerechten.Controls.Add(this.btnTaart);
@@ -799,13 +990,34 @@
             // 
             // btnBackToLunchFromNagerechten
             // 
-            this.btnBackToLunchFromNagerechten.Location = new System.Drawing.Point(12, 9);
+            this.btnBackToLunchFromNagerechten.Location = new System.Drawing.Point(12, 3);
             this.btnBackToLunchFromNagerechten.Name = "btnBackToLunchFromNagerechten";
-            this.btnBackToLunchFromNagerechten.Size = new System.Drawing.Size(75, 23);
+            this.btnBackToLunchFromNagerechten.Size = new System.Drawing.Size(25, 25);
             this.btnBackToLunchFromNagerechten.TabIndex = 5;
-            this.btnBackToLunchFromNagerechten.Text = "Go back";
+            this.btnBackToLunchFromNagerechten.Text = "<";
             this.btnBackToLunchFromNagerechten.UseVisualStyleBackColor = true;
             this.btnBackToLunchFromNagerechten.Click += new System.EventHandler(this.btnBackToLunchFromNagerechten_Click);
+            // 
+            // lblTableLunchNagerechten
+            // 
+            this.lblTableLunchNagerechten.AutoSize = true;
+            this.lblTableLunchNagerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.lblTableLunchNagerechten.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTableLunchNagerechten.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTableLunchNagerechten.Location = new System.Drawing.Point(93, 5);
+            this.lblTableLunchNagerechten.Name = "lblTableLunchNagerechten";
+            this.lblTableLunchNagerechten.Size = new System.Drawing.Size(48, 21);
+            this.lblTableLunchNagerechten.TabIndex = 17;
+            this.lblTableLunchNagerechten.Text = "Tafel: ";
+            // 
+            // pbLunchNagerechten
+            // 
+            this.pbLunchNagerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.pbLunchNagerechten.Location = new System.Drawing.Point(-12, -1);
+            this.pbLunchNagerechten.Name = "pbLunchNagerechten";
+            this.pbLunchNagerechten.Size = new System.Drawing.Size(264, 33);
+            this.pbLunchNagerechten.TabIndex = 16;
+            this.pbLunchNagerechten.TabStop = false;
             // 
             // btnBoerenKaas
             // 
@@ -846,7 +1058,7 @@
             this.pnlConfirmOrder.Controls.Add(this.lblTableNumber);
             this.pnlConfirmOrder.Controls.Add(this.btnGoBackToCourseChoosingFromConfirmOrder);
             this.pnlConfirmOrder.Controls.Add(this.lstviewOrder);
-            this.pnlConfirmOrder.Controls.Add(this.pictureBox1);
+            this.pnlConfirmOrder.Controls.Add(this.pbConfirmOrder);
             this.pnlConfirmOrder.Controls.Add(this.btnVerwijderItem);
             this.pnlConfirmOrder.Controls.Add(this.btnDeleteOrder);
             this.pnlConfirmOrder.Controls.Add(this.btnAddItem);
@@ -871,7 +1083,7 @@
             // 
             // btnGoBackToCourseChoosingFromConfirmOrder
             // 
-            this.btnGoBackToCourseChoosingFromConfirmOrder.Location = new System.Drawing.Point(12, 5);
+            this.btnGoBackToCourseChoosingFromConfirmOrder.Location = new System.Drawing.Point(12, 3);
             this.btnGoBackToCourseChoosingFromConfirmOrder.Name = "btnGoBackToCourseChoosingFromConfirmOrder";
             this.btnGoBackToCourseChoosingFromConfirmOrder.Size = new System.Drawing.Size(25, 25);
             this.btnGoBackToCourseChoosingFromConfirmOrder.TabIndex = 5;
@@ -910,14 +1122,14 @@
             // 
             this.OrderItemID.Text = "OrderItemID";
             // 
-            // pictureBox1
+            // pbConfirmOrder
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
-            this.pictureBox1.Location = new System.Drawing.Point(-12, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(264, 33);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.pbConfirmOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.pbConfirmOrder.Location = new System.Drawing.Point(-12, -1);
+            this.pbConfirmOrder.Name = "pbConfirmOrder";
+            this.pbConfirmOrder.Size = new System.Drawing.Size(264, 33);
+            this.pbConfirmOrder.TabIndex = 12;
+            this.pbConfirmOrder.TabStop = false;
             // 
             // btnVerwijderItem
             // 
@@ -982,6 +1194,8 @@
             // 
             this.pnlDiner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
             this.pnlDiner.Controls.Add(this.btnGoBackToCourseChoosingFromDinerSelection);
+            this.pnlDiner.Controls.Add(this.lblTableDiner);
+            this.pnlDiner.Controls.Add(this.pbDiner);
             this.pnlDiner.Controls.Add(this.btnDinerNagerechten);
             this.pnlDiner.Controls.Add(this.btnDinerHoofdgerechten);
             this.pnlDiner.Controls.Add(this.btnTussengerechten);
@@ -993,13 +1207,34 @@
             // 
             // btnGoBackToCourseChoosingFromDinerSelection
             // 
-            this.btnGoBackToCourseChoosingFromDinerSelection.Location = new System.Drawing.Point(12, 9);
+            this.btnGoBackToCourseChoosingFromDinerSelection.Location = new System.Drawing.Point(12, 3);
             this.btnGoBackToCourseChoosingFromDinerSelection.Name = "btnGoBackToCourseChoosingFromDinerSelection";
-            this.btnGoBackToCourseChoosingFromDinerSelection.Size = new System.Drawing.Size(75, 23);
+            this.btnGoBackToCourseChoosingFromDinerSelection.Size = new System.Drawing.Size(25, 25);
             this.btnGoBackToCourseChoosingFromDinerSelection.TabIndex = 4;
-            this.btnGoBackToCourseChoosingFromDinerSelection.Text = "Go back";
+            this.btnGoBackToCourseChoosingFromDinerSelection.Text = "<";
             this.btnGoBackToCourseChoosingFromDinerSelection.UseVisualStyleBackColor = true;
             this.btnGoBackToCourseChoosingFromDinerSelection.Click += new System.EventHandler(this.btnGoBackToCourseChoosingFromDinerSelection_Click);
+            // 
+            // lblTableDiner
+            // 
+            this.lblTableDiner.AutoSize = true;
+            this.lblTableDiner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.lblTableDiner.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTableDiner.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTableDiner.Location = new System.Drawing.Point(93, 5);
+            this.lblTableDiner.Name = "lblTableDiner";
+            this.lblTableDiner.Size = new System.Drawing.Size(48, 21);
+            this.lblTableDiner.TabIndex = 17;
+            this.lblTableDiner.Text = "Tafel: ";
+            // 
+            // pbDiner
+            // 
+            this.pbDiner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.pbDiner.Location = new System.Drawing.Point(-12, -1);
+            this.pbDiner.Name = "pbDiner";
+            this.pbDiner.Size = new System.Drawing.Size(264, 33);
+            this.pbDiner.TabIndex = 16;
+            this.pbDiner.TabStop = false;
             // 
             // btnDinerNagerechten
             // 
@@ -1049,6 +1284,8 @@
             // 
             this.pnlDinerVoorgerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
             this.pnlDinerVoorgerechten.Controls.Add(this.btnGoBackToDinerCourseChoosingFromVoorgerechten);
+            this.pnlDinerVoorgerechten.Controls.Add(this.lblTableDinerVoorgerechten);
+            this.pnlDinerVoorgerechten.Controls.Add(this.pbDinerVoorgerechten);
             this.pnlDinerVoorgerechten.Controls.Add(this.btnDinerKrabZalmKoekjes);
             this.pnlDinerVoorgerechten.Controls.Add(this.btnDinerFazant);
             this.pnlDinerVoorgerechten.Controls.Add(this.btnDinerKalfstartaar);
@@ -1059,13 +1296,34 @@
             // 
             // btnGoBackToDinerCourseChoosingFromVoorgerechten
             // 
-            this.btnGoBackToDinerCourseChoosingFromVoorgerechten.Location = new System.Drawing.Point(12, 9);
+            this.btnGoBackToDinerCourseChoosingFromVoorgerechten.Location = new System.Drawing.Point(12, 3);
             this.btnGoBackToDinerCourseChoosingFromVoorgerechten.Name = "btnGoBackToDinerCourseChoosingFromVoorgerechten";
-            this.btnGoBackToDinerCourseChoosingFromVoorgerechten.Size = new System.Drawing.Size(75, 23);
+            this.btnGoBackToDinerCourseChoosingFromVoorgerechten.Size = new System.Drawing.Size(25, 25);
             this.btnGoBackToDinerCourseChoosingFromVoorgerechten.TabIndex = 4;
-            this.btnGoBackToDinerCourseChoosingFromVoorgerechten.Text = "Go back";
+            this.btnGoBackToDinerCourseChoosingFromVoorgerechten.Text = "<";
             this.btnGoBackToDinerCourseChoosingFromVoorgerechten.UseVisualStyleBackColor = true;
             this.btnGoBackToDinerCourseChoosingFromVoorgerechten.Click += new System.EventHandler(this.btnGoBackToDinerCourseChoosingFromVoorgerechten_Click);
+            // 
+            // lblTableDinerVoorgerechten
+            // 
+            this.lblTableDinerVoorgerechten.AutoSize = true;
+            this.lblTableDinerVoorgerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.lblTableDinerVoorgerechten.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTableDinerVoorgerechten.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTableDinerVoorgerechten.Location = new System.Drawing.Point(93, 5);
+            this.lblTableDinerVoorgerechten.Name = "lblTableDinerVoorgerechten";
+            this.lblTableDinerVoorgerechten.Size = new System.Drawing.Size(48, 21);
+            this.lblTableDinerVoorgerechten.TabIndex = 17;
+            this.lblTableDinerVoorgerechten.Text = "Tafel: ";
+            // 
+            // pbDinerVoorgerechten
+            // 
+            this.pbDinerVoorgerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.pbDinerVoorgerechten.Location = new System.Drawing.Point(-12, -1);
+            this.pbDinerVoorgerechten.Name = "pbDinerVoorgerechten";
+            this.pbDinerVoorgerechten.Size = new System.Drawing.Size(264, 33);
+            this.pbDinerVoorgerechten.TabIndex = 16;
+            this.pbDinerVoorgerechten.TabStop = false;
             // 
             // btnDinerKrabZalmKoekjes
             // 
@@ -1104,6 +1362,8 @@
             // 
             this.pnlDinerTussengerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
             this.pnlDinerTussengerechten.Controls.Add(this.btnGoBackToDinerCourses);
+            this.pnlDinerTussengerechten.Controls.Add(this.lblTableDinerTussengerechten);
+            this.pnlDinerTussengerechten.Controls.Add(this.pbDinerTussengerechten);
             this.pnlDinerTussengerechten.Controls.Add(this.btnDinerTussengerechtConsomméFazant);
             this.pnlDinerTussengerechten.Controls.Add(this.btnDinerTussengerechtVissoep);
             this.pnlDinerTussengerechten.Location = new System.Drawing.Point(0, 0);
@@ -1113,13 +1373,34 @@
             // 
             // btnGoBackToDinerCourses
             // 
-            this.btnGoBackToDinerCourses.Location = new System.Drawing.Point(12, 9);
+            this.btnGoBackToDinerCourses.Location = new System.Drawing.Point(12, 3);
             this.btnGoBackToDinerCourses.Name = "btnGoBackToDinerCourses";
-            this.btnGoBackToDinerCourses.Size = new System.Drawing.Size(75, 23);
+            this.btnGoBackToDinerCourses.Size = new System.Drawing.Size(25, 25);
             this.btnGoBackToDinerCourses.TabIndex = 4;
-            this.btnGoBackToDinerCourses.Text = "Go back";
+            this.btnGoBackToDinerCourses.Text = "<";
             this.btnGoBackToDinerCourses.UseVisualStyleBackColor = true;
             this.btnGoBackToDinerCourses.Click += new System.EventHandler(this.btnGoBackToDinerCourses_Click);
+            // 
+            // lblTableDinerTussengerechten
+            // 
+            this.lblTableDinerTussengerechten.AutoSize = true;
+            this.lblTableDinerTussengerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.lblTableDinerTussengerechten.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTableDinerTussengerechten.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTableDinerTussengerechten.Location = new System.Drawing.Point(93, 5);
+            this.lblTableDinerTussengerechten.Name = "lblTableDinerTussengerechten";
+            this.lblTableDinerTussengerechten.Size = new System.Drawing.Size(48, 21);
+            this.lblTableDinerTussengerechten.TabIndex = 17;
+            this.lblTableDinerTussengerechten.Text = "Tafel: ";
+            // 
+            // pbDinerTussengerechten
+            // 
+            this.pbDinerTussengerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.pbDinerTussengerechten.Location = new System.Drawing.Point(-12, -1);
+            this.pbDinerTussengerechten.Name = "pbDinerTussengerechten";
+            this.pbDinerTussengerechten.Size = new System.Drawing.Size(264, 33);
+            this.pbDinerTussengerechten.TabIndex = 16;
+            this.pbDinerTussengerechten.TabStop = false;
             // 
             // btnDinerTussengerechtConsomméFazant
             // 
@@ -1146,35 +1427,47 @@
             // pnlDinerHoofdgerechten
             // 
             this.pnlDinerHoofdgerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
-            this.pnlDinerHoofdgerechten.Controls.Add(this.btnDinerHoofdgerechtenHertenbiefstuk);
             this.pnlDinerHoofdgerechten.Controls.Add(this.btnGoBackToDinerCoursesFromDinerHoofdgerechten);
+            this.pnlDinerHoofdgerechten.Controls.Add(this.lblTableDinerHoofdgerechten);
+            this.pnlDinerHoofdgerechten.Controls.Add(this.pbDinerHoofdgerechten);
             this.pnlDinerHoofdgerechten.Controls.Add(this.btnDinerHoofdgerechtenOssenhaas);
+            this.pnlDinerHoofdgerechten.Controls.Add(this.btnDinerHoofdgerechtenHertenbiefstuk);
             this.pnlDinerHoofdgerechten.Controls.Add(this.btnDinerHoofdgerechtKabeljauw);
             this.pnlDinerHoofdgerechten.Location = new System.Drawing.Point(0, 0);
             this.pnlDinerHoofdgerechten.Name = "pnlDinerHoofdgerechten";
             this.pnlDinerHoofdgerechten.Size = new System.Drawing.Size(240, 320);
             this.pnlDinerHoofdgerechten.TabIndex = 18;
             // 
-            // btnDinerHoofdgerechtenHertenbiefstuk
-            // 
-            this.btnDinerHoofdgerechtenHertenbiefstuk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.btnDinerHoofdgerechtenHertenbiefstuk.Location = new System.Drawing.Point(37, 179);
-            this.btnDinerHoofdgerechtenHertenbiefstuk.Name = "btnDinerHoofdgerechtenHertenbiefstuk";
-            this.btnDinerHoofdgerechtenHertenbiefstuk.Size = new System.Drawing.Size(170, 60);
-            this.btnDinerHoofdgerechtenHertenbiefstuk.TabIndex = 5;
-            this.btnDinerHoofdgerechtenHertenbiefstuk.Text = "Hertenbiefstuk";
-            this.btnDinerHoofdgerechtenHertenbiefstuk.UseVisualStyleBackColor = false;
-            this.btnDinerHoofdgerechtenHertenbiefstuk.Click += new System.EventHandler(this.btnDinerHoofdgerechtenHertenbiefstuk_Click);
-            // 
             // btnGoBackToDinerCoursesFromDinerHoofdgerechten
             // 
-            this.btnGoBackToDinerCoursesFromDinerHoofdgerechten.Location = new System.Drawing.Point(12, 9);
+            this.btnGoBackToDinerCoursesFromDinerHoofdgerechten.Location = new System.Drawing.Point(12, 3);
             this.btnGoBackToDinerCoursesFromDinerHoofdgerechten.Name = "btnGoBackToDinerCoursesFromDinerHoofdgerechten";
-            this.btnGoBackToDinerCoursesFromDinerHoofdgerechten.Size = new System.Drawing.Size(75, 23);
+            this.btnGoBackToDinerCoursesFromDinerHoofdgerechten.Size = new System.Drawing.Size(25, 25);
             this.btnGoBackToDinerCoursesFromDinerHoofdgerechten.TabIndex = 4;
-            this.btnGoBackToDinerCoursesFromDinerHoofdgerechten.Text = "Go back";
+            this.btnGoBackToDinerCoursesFromDinerHoofdgerechten.Text = "<";
             this.btnGoBackToDinerCoursesFromDinerHoofdgerechten.UseVisualStyleBackColor = true;
             this.btnGoBackToDinerCoursesFromDinerHoofdgerechten.Click += new System.EventHandler(this.btnGoBackToDinerCoursesFromDinerHoofdgerechten_Click);
+            // 
+            // lblTableDinerHoofdgerechten
+            // 
+            this.lblTableDinerHoofdgerechten.AutoSize = true;
+            this.lblTableDinerHoofdgerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.lblTableDinerHoofdgerechten.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTableDinerHoofdgerechten.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTableDinerHoofdgerechten.Location = new System.Drawing.Point(93, 5);
+            this.lblTableDinerHoofdgerechten.Name = "lblTableDinerHoofdgerechten";
+            this.lblTableDinerHoofdgerechten.Size = new System.Drawing.Size(48, 21);
+            this.lblTableDinerHoofdgerechten.TabIndex = 17;
+            this.lblTableDinerHoofdgerechten.Text = "Tafel: ";
+            // 
+            // pbDinerHoofdgerechten
+            // 
+            this.pbDinerHoofdgerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.pbDinerHoofdgerechten.Location = new System.Drawing.Point(-12, -1);
+            this.pbDinerHoofdgerechten.Name = "pbDinerHoofdgerechten";
+            this.pbDinerHoofdgerechten.Size = new System.Drawing.Size(264, 33);
+            this.pbDinerHoofdgerechten.TabIndex = 16;
+            this.pbDinerHoofdgerechten.TabStop = false;
             // 
             // btnDinerHoofdgerechtenOssenhaas
             // 
@@ -1186,6 +1479,17 @@
             this.btnDinerHoofdgerechtenOssenhaas.Text = "Gebakken ossenhaas";
             this.btnDinerHoofdgerechtenOssenhaas.UseVisualStyleBackColor = false;
             this.btnDinerHoofdgerechtenOssenhaas.Click += new System.EventHandler(this.btnDinerHoofdgerechtenOssenhaas_Click_1);
+            // 
+            // btnDinerHoofdgerechtenHertenbiefstuk
+            // 
+            this.btnDinerHoofdgerechtenHertenbiefstuk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.btnDinerHoofdgerechtenHertenbiefstuk.Location = new System.Drawing.Point(37, 179);
+            this.btnDinerHoofdgerechtenHertenbiefstuk.Name = "btnDinerHoofdgerechtenHertenbiefstuk";
+            this.btnDinerHoofdgerechtenHertenbiefstuk.Size = new System.Drawing.Size(170, 60);
+            this.btnDinerHoofdgerechtenHertenbiefstuk.TabIndex = 5;
+            this.btnDinerHoofdgerechtenHertenbiefstuk.Text = "Hertenbiefstuk";
+            this.btnDinerHoofdgerechtenHertenbiefstuk.UseVisualStyleBackColor = false;
+            this.btnDinerHoofdgerechtenHertenbiefstuk.Click += new System.EventHandler(this.btnDinerHoofdgerechtenHertenbiefstuk_Click);
             // 
             // btnDinerHoofdgerechtKabeljauw
             // 
@@ -1201,14 +1505,47 @@
             // pnlDinerNagerechten
             // 
             this.pnlDinerNagerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
-            this.pnlDinerNagerechten.Controls.Add(this.btnDinerNagerechtenFromage);
             this.pnlDinerNagerechten.Controls.Add(this.btnGoBackToDinerCoursesFromNagerechten);
+            this.pnlDinerNagerechten.Controls.Add(this.lblTableDinerNagerechten);
+            this.pnlDinerNagerechten.Controls.Add(this.pbDinerNagerechten);
+            this.pnlDinerNagerechten.Controls.Add(this.btnDinerNagerechtenFromage);
             this.pnlDinerNagerechten.Controls.Add(this.btnDinerNagerechtenCherryBaby);
             this.pnlDinerNagerechten.Controls.Add(this.btnDinerNagerechtenCaféSurprise);
             this.pnlDinerNagerechten.Location = new System.Drawing.Point(0, 0);
             this.pnlDinerNagerechten.Name = "pnlDinerNagerechten";
             this.pnlDinerNagerechten.Size = new System.Drawing.Size(240, 320);
             this.pnlDinerNagerechten.TabIndex = 19;
+            // 
+            // btnGoBackToDinerCoursesFromNagerechten
+            // 
+            this.btnGoBackToDinerCoursesFromNagerechten.Location = new System.Drawing.Point(12, 3);
+            this.btnGoBackToDinerCoursesFromNagerechten.Name = "btnGoBackToDinerCoursesFromNagerechten";
+            this.btnGoBackToDinerCoursesFromNagerechten.Size = new System.Drawing.Size(25, 25);
+            this.btnGoBackToDinerCoursesFromNagerechten.TabIndex = 4;
+            this.btnGoBackToDinerCoursesFromNagerechten.Text = "<";
+            this.btnGoBackToDinerCoursesFromNagerechten.UseVisualStyleBackColor = true;
+            this.btnGoBackToDinerCoursesFromNagerechten.Click += new System.EventHandler(this.btnGoBackToDinerCoursesFromNagerechten_Click);
+            // 
+            // lblTableDinerNagerechten
+            // 
+            this.lblTableDinerNagerechten.AutoSize = true;
+            this.lblTableDinerNagerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.lblTableDinerNagerechten.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTableDinerNagerechten.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTableDinerNagerechten.Location = new System.Drawing.Point(93, 5);
+            this.lblTableDinerNagerechten.Name = "lblTableDinerNagerechten";
+            this.lblTableDinerNagerechten.Size = new System.Drawing.Size(48, 21);
+            this.lblTableDinerNagerechten.TabIndex = 17;
+            this.lblTableDinerNagerechten.Text = "Tafel: ";
+            // 
+            // pbDinerNagerechten
+            // 
+            this.pbDinerNagerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.pbDinerNagerechten.Location = new System.Drawing.Point(-12, -1);
+            this.pbDinerNagerechten.Name = "pbDinerNagerechten";
+            this.pbDinerNagerechten.Size = new System.Drawing.Size(264, 33);
+            this.pbDinerNagerechten.TabIndex = 16;
+            this.pbDinerNagerechten.TabStop = false;
             // 
             // btnDinerNagerechtenFromage
             // 
@@ -1220,16 +1557,6 @@
             this.btnDinerNagerechtenFromage.Text = "Port e fromage";
             this.btnDinerNagerechtenFromage.UseVisualStyleBackColor = false;
             this.btnDinerNagerechtenFromage.Click += new System.EventHandler(this.btnDinerNagerechtenFromage_Click);
-            // 
-            // btnGoBackToDinerCoursesFromNagerechten
-            // 
-            this.btnGoBackToDinerCoursesFromNagerechten.Location = new System.Drawing.Point(12, 9);
-            this.btnGoBackToDinerCoursesFromNagerechten.Name = "btnGoBackToDinerCoursesFromNagerechten";
-            this.btnGoBackToDinerCoursesFromNagerechten.Size = new System.Drawing.Size(75, 23);
-            this.btnGoBackToDinerCoursesFromNagerechten.TabIndex = 4;
-            this.btnGoBackToDinerCoursesFromNagerechten.Text = "Go back";
-            this.btnGoBackToDinerCoursesFromNagerechten.UseVisualStyleBackColor = true;
-            this.btnGoBackToDinerCoursesFromNagerechten.Click += new System.EventHandler(this.btnGoBackToDinerCoursesFromNagerechten_Click);
             // 
             // btnDinerNagerechtenCherryBaby
             // 
@@ -1256,6 +1583,9 @@
             // pnlFrisdranken
             // 
             this.pnlFrisdranken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.pnlFrisdranken.Controls.Add(this.btnBackToDrinksFromFrisdranken);
+            this.pnlFrisdranken.Controls.Add(this.lblTableFrisdranken);
+            this.pnlFrisdranken.Controls.Add(this.pbFrisdranken);
             this.pnlFrisdranken.Controls.Add(this.btnTonic);
             this.pnlFrisdranken.Controls.Add(this.btnSisi);
             this.pnlFrisdranken.Controls.Add(this.btnColaLight);
@@ -1263,11 +1593,41 @@
             this.pnlFrisdranken.Controls.Add(this.btnCola);
             this.pnlFrisdranken.Controls.Add(this.btnBitterLemon);
             this.pnlFrisdranken.Controls.Add(this.btnSpaRood);
-            this.pnlFrisdranken.Controls.Add(this.btnBackToDrinksFromFrisdranken);
             this.pnlFrisdranken.Location = new System.Drawing.Point(0, 0);
             this.pnlFrisdranken.Name = "pnlFrisdranken";
             this.pnlFrisdranken.Size = new System.Drawing.Size(240, 320);
             this.pnlFrisdranken.TabIndex = 15;
+            // 
+            // btnBackToDrinksFromFrisdranken
+            // 
+            this.btnBackToDrinksFromFrisdranken.Location = new System.Drawing.Point(12, 3);
+            this.btnBackToDrinksFromFrisdranken.Name = "btnBackToDrinksFromFrisdranken";
+            this.btnBackToDrinksFromFrisdranken.Size = new System.Drawing.Size(25, 25);
+            this.btnBackToDrinksFromFrisdranken.TabIndex = 5;
+            this.btnBackToDrinksFromFrisdranken.Text = "<";
+            this.btnBackToDrinksFromFrisdranken.UseVisualStyleBackColor = true;
+            this.btnBackToDrinksFromFrisdranken.Click += new System.EventHandler(this.btnBackToDrinksFromFrisdranken_Click);
+            // 
+            // lblTableFrisdranken
+            // 
+            this.lblTableFrisdranken.AutoSize = true;
+            this.lblTableFrisdranken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.lblTableFrisdranken.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTableFrisdranken.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTableFrisdranken.Location = new System.Drawing.Point(93, 5);
+            this.lblTableFrisdranken.Name = "lblTableFrisdranken";
+            this.lblTableFrisdranken.Size = new System.Drawing.Size(48, 21);
+            this.lblTableFrisdranken.TabIndex = 21;
+            this.lblTableFrisdranken.Text = "Tafel: ";
+            // 
+            // pbFrisdranken
+            // 
+            this.pbFrisdranken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.pbFrisdranken.Location = new System.Drawing.Point(-12, -1);
+            this.pbFrisdranken.Name = "pbFrisdranken";
+            this.pbFrisdranken.Size = new System.Drawing.Size(264, 33);
+            this.pbFrisdranken.TabIndex = 20;
+            this.pbFrisdranken.TabStop = false;
             // 
             // btnTonic
             // 
@@ -1346,28 +1706,51 @@
             this.btnSpaRood.UseVisualStyleBackColor = false;
             this.btnSpaRood.Click += new System.EventHandler(this.btnSpaRood_Click);
             // 
-            // btnBackToDrinksFromFrisdranken
-            // 
-            this.btnBackToDrinksFromFrisdranken.Location = new System.Drawing.Point(12, 9);
-            this.btnBackToDrinksFromFrisdranken.Name = "btnBackToDrinksFromFrisdranken";
-            this.btnBackToDrinksFromFrisdranken.Size = new System.Drawing.Size(75, 23);
-            this.btnBackToDrinksFromFrisdranken.TabIndex = 5;
-            this.btnBackToDrinksFromFrisdranken.Text = "Go back";
-            this.btnBackToDrinksFromFrisdranken.UseVisualStyleBackColor = true;
-            this.btnBackToDrinksFromFrisdranken.Click += new System.EventHandler(this.btnBackToDrinksFromFrisdranken_Click);
-            // 
             // pnlBieren
             // 
             this.pnlBieren.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.pnlBieren.Controls.Add(this.btnBackFromBieren);
+            this.pnlBieren.Controls.Add(this.lblTableBieren);
+            this.pnlBieren.Controls.Add(this.pbBieren);
             this.pnlBieren.Controls.Add(this.btnLeffeTripel);
             this.pnlBieren.Controls.Add(this.btnKriek);
             this.pnlBieren.Controls.Add(this.btnDuvel);
             this.pnlBieren.Controls.Add(this.btnHertogJan);
-            this.pnlBieren.Controls.Add(this.btnBackFromBieren);
             this.pnlBieren.Location = new System.Drawing.Point(0, 0);
             this.pnlBieren.Name = "pnlBieren";
             this.pnlBieren.Size = new System.Drawing.Size(240, 320);
             this.pnlBieren.TabIndex = 15;
+            // 
+            // btnBackFromBieren
+            // 
+            this.btnBackFromBieren.Location = new System.Drawing.Point(12, 3);
+            this.btnBackFromBieren.Name = "btnBackFromBieren";
+            this.btnBackFromBieren.Size = new System.Drawing.Size(25, 25);
+            this.btnBackFromBieren.TabIndex = 5;
+            this.btnBackFromBieren.Text = "<";
+            this.btnBackFromBieren.UseVisualStyleBackColor = true;
+            this.btnBackFromBieren.Click += new System.EventHandler(this.btnBackFromBieren_Click);
+            // 
+            // lblTableBieren
+            // 
+            this.lblTableBieren.AutoSize = true;
+            this.lblTableBieren.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.lblTableBieren.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTableBieren.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTableBieren.Location = new System.Drawing.Point(93, 5);
+            this.lblTableBieren.Name = "lblTableBieren";
+            this.lblTableBieren.Size = new System.Drawing.Size(48, 21);
+            this.lblTableBieren.TabIndex = 17;
+            this.lblTableBieren.Text = "Tafel: ";
+            // 
+            // pbBieren
+            // 
+            this.pbBieren.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.pbBieren.Location = new System.Drawing.Point(-12, -1);
+            this.pbBieren.Name = "pbBieren";
+            this.pbBieren.Size = new System.Drawing.Size(264, 33);
+            this.pbBieren.TabIndex = 16;
+            this.pbBieren.TabStop = false;
             // 
             // btnLeffeTripel
             // 
@@ -1413,29 +1796,52 @@
             this.btnHertogJan.UseVisualStyleBackColor = false;
             this.btnHertogJan.Click += new System.EventHandler(this.btnHertogJan_Click);
             // 
-            // btnBackFromBieren
-            // 
-            this.btnBackFromBieren.Location = new System.Drawing.Point(12, 9);
-            this.btnBackFromBieren.Name = "btnBackFromBieren";
-            this.btnBackFromBieren.Size = new System.Drawing.Size(75, 23);
-            this.btnBackFromBieren.TabIndex = 5;
-            this.btnBackFromBieren.Text = "Go back";
-            this.btnBackFromBieren.UseVisualStyleBackColor = true;
-            this.btnBackFromBieren.Click += new System.EventHandler(this.btnBackFromBieren_Click);
-            // 
             // pnlWijnen
             // 
             this.pnlWijnen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.pnlWijnen.Controls.Add(this.btnBackFromWijnen);
+            this.pnlWijnen.Controls.Add(this.lblTableWijnen);
+            this.pnlWijnen.Controls.Add(this.pbWijnen);
             this.pnlWijnen.Controls.Add(this.btnFlesRodeWijn);
             this.pnlWijnen.Controls.Add(this.btnGlasRodeWijn);
             this.pnlWijnen.Controls.Add(this.btnChampagne);
             this.pnlWijnen.Controls.Add(this.btnFlesWitteWijn);
             this.pnlWijnen.Controls.Add(this.btnGlasWitteWijn);
-            this.pnlWijnen.Controls.Add(this.btnBackFromWijnen);
             this.pnlWijnen.Location = new System.Drawing.Point(0, 0);
             this.pnlWijnen.Name = "pnlWijnen";
             this.pnlWijnen.Size = new System.Drawing.Size(240, 320);
             this.pnlWijnen.TabIndex = 14;
+            // 
+            // btnBackFromWijnen
+            // 
+            this.btnBackFromWijnen.Location = new System.Drawing.Point(12, 3);
+            this.btnBackFromWijnen.Name = "btnBackFromWijnen";
+            this.btnBackFromWijnen.Size = new System.Drawing.Size(25, 25);
+            this.btnBackFromWijnen.TabIndex = 5;
+            this.btnBackFromWijnen.Text = "<";
+            this.btnBackFromWijnen.UseVisualStyleBackColor = true;
+            this.btnBackFromWijnen.Click += new System.EventHandler(this.btnBackFromWijnen_Click);
+            // 
+            // lblTableWijnen
+            // 
+            this.lblTableWijnen.AutoSize = true;
+            this.lblTableWijnen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.lblTableWijnen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTableWijnen.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTableWijnen.Location = new System.Drawing.Point(93, 5);
+            this.lblTableWijnen.Name = "lblTableWijnen";
+            this.lblTableWijnen.Size = new System.Drawing.Size(48, 21);
+            this.lblTableWijnen.TabIndex = 17;
+            this.lblTableWijnen.Text = "Tafel: ";
+            // 
+            // pbWijnen
+            // 
+            this.pbWijnen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.pbWijnen.Location = new System.Drawing.Point(-12, -1);
+            this.pbWijnen.Name = "pbWijnen";
+            this.pbWijnen.Size = new System.Drawing.Size(264, 33);
+            this.pbWijnen.TabIndex = 16;
+            this.pbWijnen.TabStop = false;
             // 
             // btnFlesRodeWijn
             // 
@@ -1492,29 +1898,52 @@
             this.btnGlasWitteWijn.UseVisualStyleBackColor = false;
             this.btnGlasWitteWijn.Click += new System.EventHandler(this.btnGlasWitteWijn_Click);
             // 
-            // btnBackFromWijnen
-            // 
-            this.btnBackFromWijnen.Location = new System.Drawing.Point(12, 9);
-            this.btnBackFromWijnen.Name = "btnBackFromWijnen";
-            this.btnBackFromWijnen.Size = new System.Drawing.Size(75, 23);
-            this.btnBackFromWijnen.TabIndex = 5;
-            this.btnBackFromWijnen.Text = "Go back";
-            this.btnBackFromWijnen.UseVisualStyleBackColor = true;
-            this.btnBackFromWijnen.Click += new System.EventHandler(this.btnBackFromWijnen_Click);
-            // 
             // pnlGedestilleerdeDranken
             // 
             this.pnlGedestilleerdeDranken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.pnlGedestilleerdeDranken.Controls.Add(this.btnBackFromGedestilleerdeDranken);
+            this.pnlGedestilleerdeDranken.Controls.Add(this.lblTableGedesilleerdeDranken);
+            this.pnlGedestilleerdeDranken.Controls.Add(this.pbGedesilleerdeDranken);
             this.pnlGedestilleerdeDranken.Controls.Add(this.btnVieux);
             this.pnlGedestilleerdeDranken.Controls.Add(this.btnRum);
             this.pnlGedestilleerdeDranken.Controls.Add(this.btnBerenburg);
             this.pnlGedestilleerdeDranken.Controls.Add(this.btnWhiskey);
             this.pnlGedestilleerdeDranken.Controls.Add(this.btnJongeJenever);
-            this.pnlGedestilleerdeDranken.Controls.Add(this.btnBackFromGedestilleerdeDranken);
             this.pnlGedestilleerdeDranken.Location = new System.Drawing.Point(0, 0);
             this.pnlGedestilleerdeDranken.Name = "pnlGedestilleerdeDranken";
             this.pnlGedestilleerdeDranken.Size = new System.Drawing.Size(240, 320);
             this.pnlGedestilleerdeDranken.TabIndex = 15;
+            // 
+            // btnBackFromGedestilleerdeDranken
+            // 
+            this.btnBackFromGedestilleerdeDranken.Location = new System.Drawing.Point(12, 3);
+            this.btnBackFromGedestilleerdeDranken.Name = "btnBackFromGedestilleerdeDranken";
+            this.btnBackFromGedestilleerdeDranken.Size = new System.Drawing.Size(25, 25);
+            this.btnBackFromGedestilleerdeDranken.TabIndex = 5;
+            this.btnBackFromGedestilleerdeDranken.Text = "<";
+            this.btnBackFromGedestilleerdeDranken.UseVisualStyleBackColor = true;
+            this.btnBackFromGedestilleerdeDranken.Click += new System.EventHandler(this.btnBackFromGedestilleerdeDranken_Click);
+            // 
+            // lblTableGedesilleerdeDranken
+            // 
+            this.lblTableGedesilleerdeDranken.AutoSize = true;
+            this.lblTableGedesilleerdeDranken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.lblTableGedesilleerdeDranken.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTableGedesilleerdeDranken.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTableGedesilleerdeDranken.Location = new System.Drawing.Point(93, 5);
+            this.lblTableGedesilleerdeDranken.Name = "lblTableGedesilleerdeDranken";
+            this.lblTableGedesilleerdeDranken.Size = new System.Drawing.Size(48, 21);
+            this.lblTableGedesilleerdeDranken.TabIndex = 17;
+            this.lblTableGedesilleerdeDranken.Text = "Tafel: ";
+            // 
+            // pbGedesilleerdeDranken
+            // 
+            this.pbGedesilleerdeDranken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.pbGedesilleerdeDranken.Location = new System.Drawing.Point(-12, -1);
+            this.pbGedesilleerdeDranken.Name = "pbGedesilleerdeDranken";
+            this.pbGedesilleerdeDranken.Size = new System.Drawing.Size(264, 33);
+            this.pbGedesilleerdeDranken.TabIndex = 16;
+            this.pbGedesilleerdeDranken.TabStop = false;
             // 
             // btnVieux
             // 
@@ -1571,20 +2000,12 @@
             this.btnJongeJenever.UseVisualStyleBackColor = false;
             this.btnJongeJenever.Click += new System.EventHandler(this.btnJongeJenever_Click);
             // 
-            // btnBackFromGedestilleerdeDranken
-            // 
-            this.btnBackFromGedestilleerdeDranken.Location = new System.Drawing.Point(12, 9);
-            this.btnBackFromGedestilleerdeDranken.Name = "btnBackFromGedestilleerdeDranken";
-            this.btnBackFromGedestilleerdeDranken.Size = new System.Drawing.Size(75, 23);
-            this.btnBackFromGedestilleerdeDranken.TabIndex = 5;
-            this.btnBackFromGedestilleerdeDranken.Text = "Go back";
-            this.btnBackFromGedestilleerdeDranken.UseVisualStyleBackColor = true;
-            this.btnBackFromGedestilleerdeDranken.Click += new System.EventHandler(this.btnBackFromGedestilleerdeDranken_Click);
-            // 
             // pnlKoffieThee
             // 
             this.pnlKoffieThee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
             this.pnlKoffieThee.Controls.Add(this.btnGoBackFromKoffieThee);
+            this.pnlKoffieThee.Controls.Add(this.lblTableKoffieThee);
+            this.pnlKoffieThee.Controls.Add(this.pbKoffieThee);
             this.pnlKoffieThee.Controls.Add(this.btnThee);
             this.pnlKoffieThee.Controls.Add(this.btnEspresso);
             this.pnlKoffieThee.Controls.Add(this.btnCappuchino);
@@ -1596,13 +2017,34 @@
             // 
             // btnGoBackFromKoffieThee
             // 
-            this.btnGoBackFromKoffieThee.Location = new System.Drawing.Point(12, 9);
+            this.btnGoBackFromKoffieThee.Location = new System.Drawing.Point(12, 3);
             this.btnGoBackFromKoffieThee.Name = "btnGoBackFromKoffieThee";
-            this.btnGoBackFromKoffieThee.Size = new System.Drawing.Size(75, 23);
+            this.btnGoBackFromKoffieThee.Size = new System.Drawing.Size(25, 25);
             this.btnGoBackFromKoffieThee.TabIndex = 15;
-            this.btnGoBackFromKoffieThee.Text = "Go back";
+            this.btnGoBackFromKoffieThee.Text = "<";
             this.btnGoBackFromKoffieThee.UseVisualStyleBackColor = true;
             this.btnGoBackFromKoffieThee.Click += new System.EventHandler(this.btnGoBackFromKoffieThee_Click);
+            // 
+            // lblTableKoffieThee
+            // 
+            this.lblTableKoffieThee.AutoSize = true;
+            this.lblTableKoffieThee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.lblTableKoffieThee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTableKoffieThee.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTableKoffieThee.Location = new System.Drawing.Point(93, 5);
+            this.lblTableKoffieThee.Name = "lblTableKoffieThee";
+            this.lblTableKoffieThee.Size = new System.Drawing.Size(48, 21);
+            this.lblTableKoffieThee.TabIndex = 17;
+            this.lblTableKoffieThee.Text = "Tafel: ";
+            // 
+            // pbKoffieThee
+            // 
+            this.pbKoffieThee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(127)))));
+            this.pbKoffieThee.Location = new System.Drawing.Point(-12, -1);
+            this.pbKoffieThee.Name = "pbKoffieThee";
+            this.pbKoffieThee.Size = new System.Drawing.Size(264, 33);
+            this.pbKoffieThee.TabIndex = 16;
+            this.pbKoffieThee.TabStop = false;
             // 
             // btnThee
             // 
@@ -1653,55 +2095,89 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(240, 321);
-            this.Controls.Add(this.pnlOrderOrPayment);
-            this.Controls.Add(this.pnlOpmerkingen);
             this.Controls.Add(this.pnlConfirmOrder);
-            this.Controls.Add(this.pnlTableSelection);
-            this.Controls.Add(this.pnlCourseChoosing);
-            this.Controls.Add(this.pnlLunch);
-            this.Controls.Add(this.pnlLunchNagerechten);
-            this.Controls.Add(this.pnlLunchHoofdgerechten);
-            this.Controls.Add(this.pnlLunchVoorgerechten);
-            this.Controls.Add(this.pnlDiner);
-            this.Controls.Add(this.pnlDinerVoorgerechten);
-            this.Controls.Add(this.pnlDinerTussengerechten);
-            this.Controls.Add(this.pnlDinerHoofdgerechten);
-            this.Controls.Add(this.pnlDinerNagerechten);
-            this.Controls.Add(this.pnlDranken);
-            this.Controls.Add(this.pnlFrisdranken);
-            this.Controls.Add(this.pnlKoffieThee);
-            this.Controls.Add(this.pnlGedestilleerdeDranken);
-            this.Controls.Add(this.pnlWijnen);
+            this.Controls.Add(this.pnlOrderOrPayment);
             this.Controls.Add(this.pnlBieren);
+            this.Controls.Add(this.pnlWijnen);
+            this.Controls.Add(this.pnlGedestilleerdeDranken);
+            this.Controls.Add(this.pnlKoffieThee);
+            this.Controls.Add(this.pnlFrisdranken);
+            this.Controls.Add(this.pnlDranken);
+            this.Controls.Add(this.pnlDinerNagerechten);
+            this.Controls.Add(this.pnlDinerHoofdgerechten);
+            this.Controls.Add(this.pnlDinerTussengerechten);
+            this.Controls.Add(this.pnlDinerVoorgerechten);
+            this.Controls.Add(this.pnlDiner);
+            this.Controls.Add(this.pnlLunchVoorgerechten);
+            this.Controls.Add(this.pnlLunchHoofdgerechten);
+            this.Controls.Add(this.pnlLunchNagerechten);
+            this.Controls.Add(this.pnlLunch);
+            this.Controls.Add(this.pnlCourseChoosing);
+            this.Controls.Add(this.pnlTableSelection);
+            this.Controls.Add(this.pnlOpmerkingen);
             this.Name = "PDAOrdering_Joey";
             this.Text = "PDAOrdering_Joey";
             this.Load += new System.EventHandler(this.PDAOrdering_Joey_Load);
             this.pnlTableSelection.ResumeLayout(false);
             this.pnlOrderOrPayment.ResumeLayout(false);
+            this.pnlOrderOrPayment.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOrderOrPayment)).EndInit();
             this.pnlCourseChoosing.ResumeLayout(false);
+            this.pnlCourseChoosing.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCourseChoosing)).EndInit();
             this.pnlLunch.ResumeLayout(false);
+            this.pnlLunch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLunch)).EndInit();
             this.pnlDranken.ResumeLayout(false);
+            this.pnlDranken.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDranken)).EndInit();
             this.pnlOpmerkingen.ResumeLayout(false);
             this.pnlOpmerkingen.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbComments)).EndInit();
             this.grpboxOpmerkingen.ResumeLayout(false);
             this.grpboxOpmerkingen.PerformLayout();
             this.pnlLunchVoorgerechten.ResumeLayout(false);
+            this.pnlLunchVoorgerechten.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.pnlLunchHoofdgerechten.ResumeLayout(false);
+            this.pnlLunchHoofdgerechten.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLunchHoofdgerechten)).EndInit();
             this.pnlLunchNagerechten.ResumeLayout(false);
+            this.pnlLunchNagerechten.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLunchNagerechten)).EndInit();
             this.pnlConfirmOrder.ResumeLayout(false);
             this.pnlConfirmOrder.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConfirmOrder)).EndInit();
             this.pnlDiner.ResumeLayout(false);
+            this.pnlDiner.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDiner)).EndInit();
             this.pnlDinerVoorgerechten.ResumeLayout(false);
+            this.pnlDinerVoorgerechten.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDinerVoorgerechten)).EndInit();
             this.pnlDinerTussengerechten.ResumeLayout(false);
+            this.pnlDinerTussengerechten.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDinerTussengerechten)).EndInit();
             this.pnlDinerHoofdgerechten.ResumeLayout(false);
+            this.pnlDinerHoofdgerechten.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDinerHoofdgerechten)).EndInit();
             this.pnlDinerNagerechten.ResumeLayout(false);
+            this.pnlDinerNagerechten.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDinerNagerechten)).EndInit();
             this.pnlFrisdranken.ResumeLayout(false);
+            this.pnlFrisdranken.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFrisdranken)).EndInit();
             this.pnlBieren.ResumeLayout(false);
+            this.pnlBieren.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBieren)).EndInit();
             this.pnlWijnen.ResumeLayout(false);
+            this.pnlWijnen.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWijnen)).EndInit();
             this.pnlGedestilleerdeDranken.ResumeLayout(false);
+            this.pnlGedestilleerdeDranken.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGedesilleerdeDranken)).EndInit();
             this.pnlKoffieThee.ResumeLayout(false);
+            this.pnlKoffieThee.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKoffieThee)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1719,7 +2195,7 @@
         private Button btnTable2;
         private Button btnTable1;
         private Panel pnlOrderOrPayment;
-        private Button button2;
+        private Button btnPayment;
         private Button btnOrdering;
         private Panel pnlCourseChoosing;
         private Button btnOrder;
@@ -1836,9 +2312,43 @@
         private TextBox txtBoxOpmerking;
         private Button btnBackFromOpmerkingen;
         private Label lblTableNumber;
-        private PictureBox pictureBox1;
-        private Label label1;
-        private PictureBox pictureBox2;
+        private PictureBox pbConfirmOrder;
+        private Label lblTableComments;
+        private PictureBox pbComments;
         private Button btnReserveer;
+        private Label lblTableOrderOrPayment;
+        private PictureBox pbOrderOrPayment;
+        private Label lblTableCourseChoosing;
+        private PictureBox pbCourseChoosing;
+        private Label lblTableLunch;
+        private PictureBox pbLunch;
+        private Label lblTableDranken;
+        private PictureBox pbDranken;
+        private Label lblTableLunchVoorgerechten;
+        private PictureBox pictureBox8;
+        private Label lblTableLunchHoofdgerechten;
+        private PictureBox pbLunchHoofdgerechten;
+        private Label lblTableLunchNagerechten;
+        private PictureBox pbLunchNagerechten;
+        private Label lblTableDiner;
+        private PictureBox pbDiner;
+        private Label lblTableDinerVoorgerechten;
+        private PictureBox pbDinerVoorgerechten;
+        private Label lblTableDinerTussengerechten;
+        private PictureBox pbDinerTussengerechten;
+        private Label lblTableDinerHoofdgerechten;
+        private PictureBox pbDinerHoofdgerechten;
+        private Label lblTableDinerNagerechten;
+        private PictureBox pbDinerNagerechten;
+        private Label lblTableFrisdranken;
+        private PictureBox pbFrisdranken;
+        private Label lblTableBieren;
+        private PictureBox pbBieren;
+        private Label lblTableWijnen;
+        private PictureBox pbWijnen;
+        private Label lblTableGedesilleerdeDranken;
+        private PictureBox pbGedesilleerdeDranken;
+        private Label lblTableKoffieThee;
+        private PictureBox pbKoffieThee;
     }
 }

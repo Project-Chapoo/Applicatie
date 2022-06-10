@@ -95,7 +95,7 @@ namespace ChapeauDAL
 
         public void OrderVerwijderen(int tableID)
         {
-            string query = $"delete from OrderItem where tableID = {tableID}";
+            string query = $"delete from OrderItem where OrderID = {tableID}";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }
