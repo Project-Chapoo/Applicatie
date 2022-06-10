@@ -13,7 +13,8 @@ namespace ChapeauDAL
     {
         public List<Order> GetAllOrders()
         {
-            string query = "SELECT orderid, tableid FROM [order]";
+
+            string query = "SELECT OrderID, TableID, Comment, timeOrdered, OrderReady, OrderServed, OrderedLatest FROM [order]";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
@@ -35,42 +36,75 @@ namespace ChapeauDAL
                 {
                     OrderId = (int)dr["OrderID"],
                     TableId = (int)(dr["TableID"]),
+                    Comment = (string)dr["Comment"],
+                    TimeOrdered = (DateTime)dr["timeOrdered"],
+                    OrderReady = (bool)dr["OrderReady"],
+                    OrderServed = (bool)dr["OrderServed"],
+                    OrderedLatest = (int)dr["OrderedLatest"]
                 };
                 orders.Add(order);
             }
             return orders;
         }
-
+        
         public void OrderNewest(int tableID)
         {
-            string query = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = 1";
-            string query2 = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = 2";
-            string query3 = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = 3";
-            string query4 = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = 4";
-            string query5 = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = 5";
-            string query6 = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = 6";
-            string query7 = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = 7";
-            string query8 = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = 8";
-            string query9 = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = 9";
-            string query10 = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = 10";
-            string query11 = $"update [Order] set orderedlatest = 1 where OrderID = {tableID}";
+            for (int i = 1; i < 11; i++)
+            {
+                string updateQuery = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = {i}";
+            }
+            string setQuery = $"update [Order] set orderedlatest = 1 where OrderID = {tableID}";
             SqlParameter[] sqlParameters = new SqlParameter[0];
-            ExecuteEditQuery(query, sqlParameters);
-            ExecuteEditQuery(query2, sqlParameters);
-            ExecuteEditQuery(query3, sqlParameters);
-            ExecuteEditQuery(query4, sqlParameters);
-            ExecuteEditQuery(query5, sqlParameters);
-            ExecuteEditQuery(query6, sqlParameters);
-            ExecuteEditQuery(query7, sqlParameters);
-            ExecuteEditQuery(query8, sqlParameters);
-            ExecuteEditQuery(query9, sqlParameters);
-            ExecuteEditQuery(query10, sqlParameters);
-            ExecuteEditQuery(query11, sqlParameters);
+            ExecuteEditQuery(updateQuery, sqlParameters);
+            ExecuteEditQuery(setQuery, sqlParameters);
         }
-
+       
         public void OrderConfirm(int tableID, string commentaar)
         {
             string query = $"update [Order] set comment = '{commentaar}', TimeOrdered = CURRENT_TIMESTAMP where OrderID = {tableID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public List<OrderStatusTable> BestellingPerTafel(int tableID)
+        {
+            string query = "SELECT TableID, TimeOrdered, OrderReady, OrderServed, [OrderedLatest] FROM [Order] WHERE TableID = @tableID ";
+            SqlParameter[] sqlParameters = new SqlParameter[] { new SqlParameter("@tableID", tableID)};
+            return ReadOrderTable(ExecuteSelectQuery(query, sqlParameters));
+        }
+        public List<OrderStatusTable> OrderGereed()
+        {
+            string query = "SELECT TableID, TimeOrdered, OrderReady, OrderServed, [OrderedLatest] FROM [Order] ORDER BY [OrderedLatest] DESC";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadOrderTable(ExecuteSelectQuery(query, sqlParameters));
+        }
+        private List<OrderStatusTable> ReadOrderTable(DataTable dataTable)
+        {
+            List<OrderStatusTable> orderStatusTables = new List<OrderStatusTable>();
+
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                OrderStatusTable orderStatusTable = new OrderStatusTable()
+                {
+                    TableId = (int)(dr["TableID"]),
+                    TimeOrdered = (DateTime)dr["timeOrdered"],
+                    OrderReady = (bool)dr["OrderReady"],
+                    OrderServed = (bool)dr["OrderServed"],
+                    OrderedLatest = (int)dr["OrderedLatest"]
+                };
+                orderStatusTables.Add(orderStatusTable);
+            }
+            return orderStatusTables;
+        }
+        public void UpdateOrderServed(int served, int tableID)
+        {
+            string query = $"UPDATE [Order] SET OrderServed = {served} WHERE TableID = {tableID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
+        public void UpdateOrderReady(int ready, int tableID)
+        {
+            string query = $"UPDATE [Order] SET OrderReady = {ready} WHERE TableID = {tableID}";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }

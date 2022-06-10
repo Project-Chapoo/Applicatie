@@ -14,6 +14,8 @@
 
         public int OrderID { get; }
         public int TableID { get; }
+        public string Comment { get; set; }
+        public double BTWPrice { get; set; }
         public string EmployeeFirstName { get; }
         public string EmployeeLastName { get; }
         public List<BillItem> billItems { get; set; }
@@ -25,9 +27,17 @@
             }
         }
 
-        public void AddTip(double tip)
+        public double TotalPrice
         {
-            billItems.Add(new BillItem(billItems.Count, 1, "fooi", tip, false));
+            get
+            {
+                double totalPrice = 0;
+                foreach (BillItem item in billItems)
+                {
+                    totalPrice += (item.Price * item.Quantity);
+                }
+                return totalPrice;
+            }
         }
     }
 }

@@ -12,21 +12,22 @@ namespace ChapeauService
     public class TablesService
     {
         TablesDAO tablesdb;
-
         public TablesService()
         {
             this.tablesdb = new TablesDAO();
         }
-
-        public bool Reserved(int tafelNummer)
+        public Tables IsReserved(int tableID)
         {
-            return tablesdb.Reserved(tafelNummer);
+            return tablesdb.IsGereserveerd(tableID);
         }
-
         public List<Tables> GetTables()
         {
             List<Tables> tables = tablesdb.GetAllTables();
             return tables;
+        }
+        public void UpdateTableStatus(int tableID, int reserved)
+        {
+            tablesdb.UpdateTableStatus(tableID, reserved);
         }
 
         public void ReserveTable(int tableID)

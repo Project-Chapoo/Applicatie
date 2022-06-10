@@ -28,7 +28,12 @@ namespace ChapeauService
             List<Order> TableOrder = orderdb.GetOrderFromTable(tableID);
             return TableOrder;
         }
-       
+
+        public void CreateNewOrder(int TableID)
+        {
+            orderdb.OrderCreateNew(TableID);
+        }
+
         public void ConfirmOrder(int IDTable, string commentaar)
         {
             orderdb.OrderConfirm(IDTable, commentaar);
@@ -37,6 +42,23 @@ namespace ChapeauService
         public void NewestOrder(int tableID)
         {
             orderdb.OrderNewest(tableID);
+        }
+      
+        public List<OrderStatusTable> BestellingPerTafel(int tableID)
+        {
+            return orderdb.BestellingPerTafel(tableID);
+        }
+        public List<OrderStatusTable> OrderGereed()
+        {
+            return orderdb.OrderGereed();
+        }
+        public void UpdateOrderServed(int served, int tableID)
+        {
+            orderdb.UpdateOrderServed(served, tableID);
+        }
+        public void UpdateOrderReady(int ready, int TableID)
+        {
+            orderdb.UpdateOrderReady(ready, TableID);
         }
     }
 }
