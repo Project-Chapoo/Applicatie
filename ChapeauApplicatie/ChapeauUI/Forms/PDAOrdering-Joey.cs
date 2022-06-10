@@ -888,7 +888,7 @@ namespace ChapeauUI
             MessageBox.Show($"Tafel {tableID} is gereserveerd.");
             showPanel("pnlOrderOrPayment");
         }
-
+        //lelijke code
         private void SetTextLabelsToCorrectTable()
         {
             lblTableNumber.Text = $"Tafel: {tableID}";
