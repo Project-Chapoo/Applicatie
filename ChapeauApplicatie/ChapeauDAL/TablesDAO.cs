@@ -41,5 +41,12 @@ namespace ChapeauDAL
             List<Tables> reservedTable = ReadTables(ExecuteSelectQuery(query, sqlParameters));
             return Convert.ToBoolean(reservedTable[0]);
         }
+
+        public void TableReserve(int tableID)
+        {
+            string query = $"update [Tables] set reserved = 1 where TableID = {tableID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
     }
 }

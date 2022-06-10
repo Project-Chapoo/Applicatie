@@ -34,6 +34,11 @@ namespace ChapeauService
             orderitemsdb.OrderItemAdd(tableID, menuItemID);
         }
 
+        public void QuantityAdd(int tableID, int menuItemID)
+        {
+            orderitemsdb.AddQuantity(tableID, menuItemID);
+        }
+
         public void AddItem(int selectedItemID)
         {
             orderitemsdb.ItemAdd(selectedItemID);

@@ -41,9 +41,31 @@ namespace ChapeauDAL
             return orders;
         }
 
-        public void OrderCreateNew(int tableID)
+        public void OrderNewest(int tableID)
         {
-            
+            string query = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = 1";
+            string query2 = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = 2";
+            string query3 = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = 3";
+            string query4 = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = 4";
+            string query5 = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = 5";
+            string query6 = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = 6";
+            string query7 = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = 7";
+            string query8 = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = 8";
+            string query9 = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = 9";
+            string query10 = $"update [Order] set orderedlatest = orderedlatest + 1 where tableID = 10";
+            string query11 = $"update [Order] set orderedlatest = 1 where OrderID = {tableID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+            ExecuteEditQuery(query2, sqlParameters);
+            ExecuteEditQuery(query3, sqlParameters);
+            ExecuteEditQuery(query4, sqlParameters);
+            ExecuteEditQuery(query5, sqlParameters);
+            ExecuteEditQuery(query6, sqlParameters);
+            ExecuteEditQuery(query7, sqlParameters);
+            ExecuteEditQuery(query8, sqlParameters);
+            ExecuteEditQuery(query9, sqlParameters);
+            ExecuteEditQuery(query10, sqlParameters);
+            ExecuteEditQuery(query11, sqlParameters);
         }
 
         public void OrderConfirm(int tableID, string commentaar)

@@ -28,16 +28,15 @@ namespace ChapeauService
             List<Order> TableOrder = orderdb.GetOrderFromTable(tableID);
             return TableOrder;
         }
-
-        public void CreateNewOrder(int TableID)
-        {
-            orderdb.OrderCreateNew(TableID);
-        }
-        
+       
         public void ConfirmOrder(int IDTable, string commentaar)
         {
             orderdb.OrderConfirm(IDTable, commentaar);
         }
 
+        public void NewestOrder(int tableID)
+        {
+            orderdb.OrderNewest(tableID);
+        }
     }
 }

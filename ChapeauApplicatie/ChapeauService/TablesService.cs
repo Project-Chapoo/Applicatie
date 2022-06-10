@@ -29,5 +29,10 @@ namespace ChapeauService
             return tables;
         }
 
+        public void ReserveTable(int tableID)
+        {
+            tablesdb.TableReserve(tableID);
+        }
+
     }
 }
