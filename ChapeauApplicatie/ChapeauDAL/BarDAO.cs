@@ -13,7 +13,7 @@ namespace ChapeauDAL
     {
         public List<OrderModel> GetOrderListByLatest()
         {
-            string query = "SELECT OrderID, TableID, Comment, TimeOrdered, OrderReady, OrderServed, OrderedLatest FROM [ORder] WHERE OrderReady = 0 AND orderID IN (SELECT OrderID FROM OrderItem WHERE MenuItemID > 21 GROUP BY OrderID HAVING COUNT(OrderID) > 1) ORDER BY [OrderedLatest] DESC";
+            string query = "SELECT OrderID, TableID, Comment, TimeOrdered, OrderReady, OrderServed, OrderedLatest FROM [ORder] WHERE OrderReady = 0 AND orderID IN (SELECT OrderID FROM OrderItem WHERE MenuItemID > 21 AND ReadyOrderItem = 0 GROUP BY OrderID HAVING COUNT(OrderID) > 1) ORDER BY [OrderedLatest] DESC";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadOrderTables(ExecuteSelectQuery(query, sqlParameters));
         }

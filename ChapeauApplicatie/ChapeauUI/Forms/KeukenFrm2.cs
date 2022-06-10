@@ -54,8 +54,10 @@ namespace ChapeauUI.Forms
             txtOpmerkingList.Add(opmerkingen2txt);
             txtOpmerkingList.Add(opmerkingen3txt);
 
-            for (int i = 0; i < 3;)
+            for (int i = 0; i < orders.Count;)
             {
+                if (i > 2)
+                    return;
                 FillList(keuken, orders[i].OrderId, i, listviews[i]);
                 FillTimeLabels(orders[i].TimeOrdered, labelTimeList[i]);
                 FillTableLabels(orders[i].TableId, labelTableList[i]);
