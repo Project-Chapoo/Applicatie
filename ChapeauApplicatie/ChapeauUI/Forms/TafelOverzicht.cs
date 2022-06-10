@@ -39,10 +39,10 @@ namespace ChapeauUI
             TafelStatus();
             ButtonTafelStatus();
             OrderStatus();
+            LoadTableColors();
         }
         private void timer2_Tick(object sender, EventArgs e)
-        {
-            LoadTableColors();
+        {   
             Meldingen();
         }
         private void LoadTableColors()
