@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using ChapeauModels;
 using ChapeauService;
 using ChapeauDAL;
-
+using ChapeauUI.Forms;
 
 namespace ChapeauUI
 {
@@ -912,7 +912,13 @@ namespace ChapeauUI
             lblTableOrderOrPayment.Text = $"Tafel: {tableID}";
         }
 
-
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            Payingfrm payingFrm = new Payingfrm(tableID);
+            this.Hide();
+            payingFrm.Closed += (s, args) => this.Close();
+            payingFrm.Show();
+        }
     }
 }
 
