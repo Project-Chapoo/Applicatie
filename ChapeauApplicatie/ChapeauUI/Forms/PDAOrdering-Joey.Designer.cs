@@ -195,6 +195,7 @@
             this.btnEspresso = new System.Windows.Forms.Button();
             this.btnCappuchino = new System.Windows.Forms.Button();
             this.btnKoffie = new System.Windows.Forms.Button();
+            this.MenuItem = new System.Windows.Forms.ColumnHeader();
             this.pnlTableSelection.SuspendLayout();
             this.pnlOrderOrPayment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOrderOrPayment)).BeginInit();
@@ -1097,7 +1098,8 @@
             this.TafelID,
             this.Quantity,
             this.Description,
-            this.OrderItemID});
+            this.OrderItemID,
+            this.MenuItem});
             this.lstviewOrder.FullRowSelect = true;
             this.lstviewOrder.GridLines = true;
             this.lstviewOrder.Location = new System.Drawing.Point(4, 34);
@@ -2090,6 +2092,10 @@
             this.btnKoffie.UseVisualStyleBackColor = false;
             this.btnKoffie.Click += new System.EventHandler(this.btnKoffie_Click);
             // 
+            // MenuItem
+            // 
+            this.MenuItem.Text = "MenuItemID";
+            // 
             // PDAOrdering_Joey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -2350,5 +2356,6 @@
         private PictureBox pbGedesilleerdeDranken;
         private Label lblTableKoffieThee;
         private PictureBox pbKoffieThee;
+        private ColumnHeader MenuItem;
     }
 }

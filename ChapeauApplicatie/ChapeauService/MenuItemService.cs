@@ -23,10 +23,12 @@ namespace ChapeauService
             return menuItem;
         }
 
-        public void LunchSteak()
+        public List<MenuItem> getStockOfMenuItems(int menuItemID)
         {
-            Menuitemsdb.SteakLunch();
+            List<MenuItem> menuItems = Menuitemsdb.GetStockForMenuItems(menuItemID);
+            return menuItems;
         }
+     
     }
     
 }

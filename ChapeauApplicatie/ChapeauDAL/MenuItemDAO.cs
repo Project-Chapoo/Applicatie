@@ -18,6 +18,15 @@ namespace ChapeauDAL
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
+        public List<MenuItem> GetStockForMenuItems(int menuItemID)
+        {
+            string query = "select menuitemid, stock " +
+                           "from menuitem" +
+                          $"where menuitemid = {menuItemID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTablesForStock(ExecuteSelectQuery(query, sqlParameters));
+        }
+
         private List<MenuItem> ReadTables(DataTable dataTable)
         {
             List<MenuItem> menuItems = new List<MenuItem>();
@@ -29,9 +38,25 @@ namespace ChapeauDAL
                     menuItemID = (int)dr["menuItemid"],
                     menuID = (int)(dr["menuID"]),
                     Category = (string)(dr["category"]),
-                    description = (int)(dr["description"]),
-                    price = (int)(dr["price"]),
-                    alcohol = (int)(dr["alcohol"]),
+                    description = (string)(dr["description"]),
+                    price = Convert.ToDouble(dr["price"]),
+                    alcohol = (bool)(dr["alcohol"]),
+                    stock = (int)(dr["stock"]),
+                };
+                menuItems.Add(menuItem);
+            }
+            return menuItems;
+        }
+
+        private List<MenuItem> ReadTablesForStock(DataTable dataTable)
+        {
+            List<MenuItem> menuItems = new List<MenuItem>();
+
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                MenuItem menuItem = new MenuItem()
+                {
+                    menuItemID = (int)dr["menuItemid"],
                     stock = (int)(dr["stock"]),
                 };
                 menuItems.Add(menuItem);

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ChapeauUI.Forms.BarFrm" Collapsed="true">
-    <Position X="7.5" Y="3.25" Width="1.5" />
+    <Position X="18" Y="0.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
@@ -17,15 +17,8 @@
       <FileName>Forms\Commentfrm.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ChapeauUI.Forms.KeukenFrm" Collapsed="true">
-    <Position X="7.5" Y="1.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AQAACAAAACAgAAAAAACAAADCAwAAGgAAAXEAAIAAAAA=</HashCode>
-      <FileName>Forms\KeukenFrm.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="ChapeauUI.Forms.KeukenFrm2" Collapsed="true">
-    <Position X="9.25" Y="1.25" Width="1.5" />
+    <Position X="16.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgCAIAACAAACAAgACIEAD+BwEAGlgAAQAAAIAAAAA=</HashCode>
       <FileName>Forms\KeukenFrm2.cs</FileName>
@@ -46,7 +39,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ChapeauUI.Forms.Tipfrm" Collapsed="true">
-    <Position X="5.75" Y="3.25" Width="1.5" />
+    <Position X="19.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BwAAIAASgGCAgIEAAgCABIACAwAgABFAAAABAQAFIAA=</HashCode>
       <FileName>Forms\Tipfrm.cs</FileName>
@@ -67,14 +60,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ChapeauUI.PDAOrdering_Joey" Collapsed="true">
-    <Position X="9.25" Y="2.25" Width="1.5" />
+    <Position X="23.25" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="ChapeauUI.PDAOrdering_Joey.Tafelnummer" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Forms\PDAOrdering-Joey.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>d5Nuw6LOwv/r3/HSF6jmM7d/blz6IT+z3eE7pVHP4ro=</HashCode>
+      <HashCode>d5duy6POwv/r3/HWF6jvO7d/blz6aT+z/eE7pVPP8r8=</HashCode>
       <FileName>Forms\PDAOrdering-Joey.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChapeauUI.TafelOverzicht" Collapsed="true">
-    <Position X="4" Y="3.25" Width="1.5" />
+    <Position X="21.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EgWQoCQIiCCCqIQAdijQEAQCAkIEaAAgMMAyIQPAAFg=</HashCode>
       <FileName>Forms\TafelOverzicht.cs</FileName>

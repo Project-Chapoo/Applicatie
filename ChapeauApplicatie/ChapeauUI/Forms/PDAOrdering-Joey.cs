@@ -35,6 +35,8 @@ namespace ChapeauUI
         private DateTime tijd = DateTime.Now;
         private int menuItemID = 0;
         private OrderItemsService orderItemsService = new OrderItemsService();
+        MenuItem item = new MenuItem();
+
 
         public PDAOrdering_Joey()
         {
@@ -66,19 +68,42 @@ namespace ChapeauUI
             pnlWijnen.Hide();
         }
 
+        private void CheckStockThenOrder(int menuItemID)
+        {
+            MenuItemService menuItemService = new MenuItemService();
+            List<MenuItem> ItemsList = menuItemService.GetMenuItems();
+            menuItemID--;
+            if (ItemsList[menuItemID].stock > 0)
+            {
+                MessageBox.Show("Sufficient Stock");
+            }
+            else
+            {
+                MessageBox.Show("out of stock");
+            }
+
+
+         
+        }
+        private void DepleteStockWhenOrdering()
+        {
+            StockService stockService = new StockService();
+            stockService.SubstractStock(menuItemID);            
+        }
 
         private void OrderOrAddQuantity()
         {
             List<OrderItems> orderItemsList = orderItemsService.GetOrderItemsPerTable(tableID);
-            foreach (OrderItems item in orderItemsList)
-            {
-                if (item.MenuItemID == menuItemID)
+            
+                foreach (OrderItems item in orderItemsList)
                 {
-                    orderItemsService.QuantityAdd(tableID, menuItemID);
-                    return;
+                    if (item.MenuItemID == menuItemID)
+                    {
+                        orderItemsService.QuantityAdd(tableID, menuItemID);
+                        return;
+                    }
                 }
-            }
-            orderItemsService.AddOrderItem(tableID, menuItemID);
+                orderItemsService.AddOrderItem(tableID, menuItemID);
         }
 
         private void PDAOrdering_Joey_Load(object sender, EventArgs e)
@@ -328,14 +353,21 @@ namespace ChapeauUI
         private void btnLunchSteakTartaar_Click(object sender, EventArgs e)
         {
             menuItemID = 1;
-            OrderOrAddQuantity();
-            showPanel("Lunch");
+            bool stockDepletedForItem1 = false;
+
+            
+                CheckStockThenOrder(menuItemID);
+                //OrderOrAddQuantity();
+                //DepleteStockWhenOrdering();
+                showPanel("Lunch");
+            
         }
 
         private void btnLunchPatéFazant_Click(object sender, EventArgs e)
         {
             menuItemID = 2;
-            OrderOrAddQuantity();
+            CheckStockThenOrder(menuItemID);
+            //OrderOrAddQuantity();
             showPanel("Lunch");
         }
 
@@ -468,6 +500,8 @@ namespace ChapeauUI
             showPanel("Diner");
         }
 
+
+        // zorg dat stock niet in de min kan..............////////////////////////////////////////////////////////////////////////////////
         private void btnConfirmOrder_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Order is verstuurd naar de keuken/Bar");
@@ -477,6 +511,11 @@ namespace ChapeauUI
 
             OrderService orderService = new OrderService();
             orderService.ConfirmOrder(IDtable, commentaar);
+            OrderItemsService orderItemsService = new OrderItemsService();
+            List<OrderItems> orderItemsList = orderItemsService.GetOrderItemsPerTable(tableID);
+            StockService stockService = new StockService();
+
+            
 
             txtBoxOpmerking.Text = "";
             commentaar = "";
@@ -488,10 +527,14 @@ namespace ChapeauUI
         private void btnAddItem_Click(object sender, EventArgs e)
         {
             try
-            {                
+            {
+                int stockItem = int.Parse(lstviewOrder.SelectedItems[0].SubItems[4].Text);
                 int selectedOrderItemID = int.Parse(lstviewOrder.SelectedItems[0].SubItems[3].Text);
                 OrderItemsService orderItemsService = new OrderItemsService();
+                StockService stockService = new StockService();
                 orderItemsService.AddItem(selectedOrderItemID);
+                stockService.DepleteFromStock(stockItem);
+                
                 lstViewOrderedItems();
             }
             catch (Exception)
@@ -505,7 +548,9 @@ namespace ChapeauUI
 
         private void btnRemoveItem_Click(object sender, EventArgs e)
         {
+            int stockItem = int.Parse(lstviewOrder.SelectedItems[0].SubItems[4].Text);
             OrderItemsService orderItemsService = new OrderItemsService();
+            StockService stockService = new StockService();
             List<OrderItems> orderItemsList = orderItemsService.GetOrderItemsPerTable(tableID);
             OrderItems items = new OrderItems();
             try
@@ -518,6 +563,7 @@ namespace ChapeauUI
                 }
                 else 
                 {
+                    stockService.AddToStock(stockItem);
                     orderItemsService.RemoveItem(selectedItem);
                 }
                 lstViewOrderedItems();
@@ -542,7 +588,8 @@ namespace ChapeauUI
                 ListViewItem li = new ListViewItem(orderItem.TableID.ToString());
                 li.SubItems.Add(orderItem.Quantity.ToString());
                 li.SubItems.Add(orderItem.Description.ToString());
-                li.SubItems.Add(orderItem.OrderItemID.ToString());                
+                li.SubItems.Add(orderItem.OrderItemID.ToString());
+                li.SubItems.Add(orderItem.MenuItemID.ToString());
                 lstviewOrder.Items.Add(li);
             }
         }
