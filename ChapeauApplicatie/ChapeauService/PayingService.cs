@@ -44,5 +44,19 @@ namespace ChapeauService
 
             return btwPrice;
         }
+
+        public void SendBill(Bill bill) 
+        {
+            CheckIfCommentPresent(bill);
+            payingDAO.SendBill(bill);
+        }   
+
+        private void CheckIfCommentPresent(Bill bill)
+        {
+            if (bill.Comment is null)
+            {
+                bill.Comment = "No comment given...";
+            }
+        }
     }
 }

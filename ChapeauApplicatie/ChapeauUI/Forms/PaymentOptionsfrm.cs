@@ -1,4 +1,5 @@
 ﻿using ChapeauModels;
+using ChapeauService;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace ChapeauUI.Forms
     public partial class PaymentOptionsfrm : Form
     {
         private Bill bill;
+        private PayingService payingService = new PayingService();
 
         public PaymentOptionsfrm(Bill bill)
         {
@@ -23,12 +25,12 @@ namespace ChapeauUI.Forms
 
         private void btnCardPayment_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Done!");
+            payingService.SendBill(bill);
         }
 
         private void btnCashPayment_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Done!");
+            payingService.SendBill(bill);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
