@@ -11,7 +11,7 @@ namespace ChapeauDAL
 
         public Bill GetOrderInfo(int orderID)
         {
-            string query = "SELECT * FROM[dbo].[Order] AS O JOIN[dbo].[Tables] AS T ON O.TableID = T.TableID JOIN[dbo].[Employee] AS E ON T.EmployeeID = E.EmployeeID WHERE O.OrderID = @orderID";
+            string query = "SELECT O.[OrderID], O.[TableID], E.[FirstName], E.[LastName] FROM[dbo].[Order] AS O JOIN[dbo].[Tables] AS T ON O.TableID = T.TableID JOIN[dbo].[Employee] AS E ON T.EmployeeID = E.EmployeeID WHERE O.OrderID = @orderID";
 
             SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@orderID", SqlDbType.Int) { Value = orderID };
@@ -31,15 +31,17 @@ namespace ChapeauDAL
                 string employeeLastName = (string)dr["LastName"];
                 bill = new Bill(orderID, tableID, employeeFirstName, employeeLastName);
             }
-            bill.billItems = GetOrderItems();
+            bill.billItems = GetOrderItems(bill.OrderID);
             return bill;
         }
 
-        public List<BillItem> GetOrderItems()
+        public List<BillItem> GetOrderItems(int orderID)
         {
-            string query = "SELECT Quantity, [Description], Price, Alcohol, M.MenuItemID FROM[dbo].[OrderItem] AS O " +
-                            "JOIN[dbo].[MenuItem] AS M ON O.MenuItemID = M.MenuItemID; ";
-            SqlParameter[] sqlParameters = new SqlParameter[0];
+            string query = "SELECT O.[Quantity], M.[Description], M.[Price], M.[Alcohol], M.[MenuItemID] FROM[dbo].[OrderItem] AS O JOIN[dbo].[MenuItem] AS M ON O.MenuItemID = M.MenuItemID WHERE O.[OrderID] = @orderID";
+            SqlParameter[] sqlParameters = new SqlParameter[1]
+            {
+                new SqlParameter("@orderID", SqlDbType.Int) { Value = orderID },
+            };
             return ReadTablesBillItems(ExecuteSelectQuery(query, sqlParameters));
         }
 
@@ -99,6 +101,7 @@ namespace ChapeauDAL
             };
             ExecuteEditQuery(query, sqlParameters);
             SendBillItems(bill);
+            ResetAllTables(bill.OrderID);
         }
 
         public void SendBillItems(Bill bill)
