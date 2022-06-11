@@ -430,6 +430,7 @@
             this.btnPayment.TabIndex = 1;
             this.btnPayment.Text = "Betalen";
             this.btnPayment.UseVisualStyleBackColor = false;
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // btnOrdering
             // 
@@ -2095,8 +2096,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(240, 321);
-            this.Controls.Add(this.pnlConfirmOrder);
             this.Controls.Add(this.pnlOrderOrPayment);
+            this.Controls.Add(this.pnlConfirmOrder);
             this.Controls.Add(this.pnlBieren);
             this.Controls.Add(this.pnlWijnen);
             this.Controls.Add(this.pnlGedestilleerdeDranken);
