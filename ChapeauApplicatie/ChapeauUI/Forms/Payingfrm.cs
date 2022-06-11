@@ -54,7 +54,7 @@ namespace ChapeauUI.Forms
                 txtOrder.Items.Add(item);
             }
 
-            lblTotalPrice.Text = $"Total Price: € {bill.TotalPrice:0.00}";
+            lblTotalPrice.Text = $"Totale prijs: € {bill.TotalPrice:0.00}";
             lblBTW.Text = $"BTW: € {bill.BTWPrice:0.00}";
         }
 
