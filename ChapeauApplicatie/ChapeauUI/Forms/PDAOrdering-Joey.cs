@@ -16,20 +16,22 @@ namespace ChapeauUI
 {
     public partial class PDAOrdering_Joey : Form
     {
+
         private int tableID = 0;
-        private enum Tafelnummer 
+        
+        private enum Tafelnummer
         {
-           tafel1 = 1,
-           tafel2 = 2,
-           tafel3 = 3,
-           tafel4 = 4,
-           tafel5 = 5,
-           tafel6 = 6,
-           tafel7 = 7,
-           tafel8 = 8,
-           tafel9 = 9,
-           tafel10 = 10,
-        }    
+            tafel1 = 1,
+            tafel2 = 2,
+            tafel3 = 3,
+            tafel4 = 4,
+            tafel5 = 5,
+            tafel6 = 6,
+            tafel7 = 7,
+            tafel8 = 8,
+            tafel9 = 9,
+            tafel10 = 10,
+        }
 
         private string commentaar;
         private DateTime tijd = DateTime.Now;
@@ -40,6 +42,9 @@ namespace ChapeauUI
         {
             InitializeComponent();
         }
+
+        
+
 
         private void HideAllPanels()
         {
