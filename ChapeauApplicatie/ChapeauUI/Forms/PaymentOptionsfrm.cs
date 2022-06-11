@@ -50,7 +50,7 @@ namespace ChapeauUI.Forms
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-            Payingfrm payingfrm = new Payingfrm();
+            Payingfrm payingfrm = new Payingfrm(bill.OrderID);
             this.Hide();
             payingfrm.Closed += (s, args) => this.Close();
             payingfrm.Show();

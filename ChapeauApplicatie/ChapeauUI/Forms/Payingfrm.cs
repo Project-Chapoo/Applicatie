@@ -17,10 +17,9 @@ namespace ChapeauUI.Forms
         private Bill bill;
         private PayingService payingService = new PayingService();
 
-
-        public Payingfrm() // Joey this contructor for de link between forms
+        public Payingfrm(int orderID) // Joey this contructor for de link between forms
         {
-            this.bill = payingService.GetOrder();
+            this.bill = payingService.GetOrder(orderID);
             InitializeComponent();
         }
 
@@ -87,7 +86,7 @@ namespace ChapeauUI.Forms
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-            Payingfrm payingfrm = new Payingfrm();
+            Payingfrm payingfrm = new Payingfrm(bill.OrderID);
             this.Hide();
             payingfrm.Closed += (s, args) => this.Close();
             payingfrm.Show();
