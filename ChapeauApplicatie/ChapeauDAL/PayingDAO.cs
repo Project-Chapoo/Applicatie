@@ -89,8 +89,6 @@ namespace ChapeauDAL
 
         public void SendBill(Bill bill)
         {
-
-
             string query = "INSERT INTO [dbo].[Receipt] ([TableID], [comment], [DateAndTime], [EmployeeFirstName], [EmployeeLastName]) VALUES (@TableID, @comment, @DateAndTime, @EmployeeFirstName, @EmployeeLastName)";
             SqlParameter[] sqlParameters = {
                 new SqlParameter("@TableID", SqlDbType.Int) { Value = bill.TableID },
@@ -147,9 +145,11 @@ namespace ChapeauDAL
 
         public void ResetOrderReadyAndServed(int orderID)
         {
-            string query = "UPDATE [Order] SET [Comment] = NULL, [TimeOrdered] = NULL, [OrderReady] = 0, [OrderServed] = 0, [OrderedLatest] = NULL WHERE [OrderID] = @OrderID";
-            SqlParameter[] sqlParameters = new SqlParameter[1];
-            sqlParameters[0] = new SqlParameter("@OrderID", SqlDbType.Int) { Value = orderID };
+            string query = "UPDATE [Order] SET [Comment] = @EmptyString, [TimeOrdered] = @DateTime, [OrderReady] = 0, [OrderServed] = 0 WHERE [OrderID] = @OrderID";
+            SqlParameter[] sqlParameters = new SqlParameter[3];
+            sqlParameters[0] = new SqlParameter("EmptyString", SqlDbType.VarChar) { Value = "No comment..." };
+            sqlParameters[1] = new SqlParameter("@DateTime", SqlDbType.DateTime) { Value = DateTime.Now };
+            sqlParameters[2] = new SqlParameter("@OrderID", SqlDbType.Int) { Value = orderID };
             ExecuteEditQuery(query, sqlParameters);
         }
 
