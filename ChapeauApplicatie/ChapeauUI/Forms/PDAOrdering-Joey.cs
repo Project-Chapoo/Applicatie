@@ -41,6 +41,11 @@ namespace ChapeauUI
             InitializeComponent();
         }
 
+        public PDAOrdering_Joey(int tableID)
+        {
+            this.tableID = tableID;
+        }
+
         private void HideAllPanels()
         {
             pnlTableSelection.Hide();
