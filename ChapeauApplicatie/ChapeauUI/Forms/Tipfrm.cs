@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ChapeauModels;
+using ChapeauService;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,16 +14,20 @@ namespace ChapeauUI.Forms
 {
     public partial class Tipfrm : Form
     {
+        private Bill bill;        
         const double TwoEuroTip = 2;
         const double FiveEuroTip = 5;
         const double TenEuroTip = 10;
         private double currentTotalAmount;
+        private PayingService payingService = new PayingService();
 
-        public Tipfrm(double currentTotalAmount)
+        public Tipfrm(Bill bill, double currentTotalAmount)
         {
             InitializeComponent();
             this.currentTotalAmount = currentTotalAmount;
+            this.bill = bill;
             btnAddTip.Enabled = false;
+            lblTotalPrice.Text = $"Total Price: € {currentTotalAmount:0.00}";
         }
 
         // validate user entry for x euro and sends the tip to the paying form
@@ -34,12 +40,19 @@ namespace ChapeauUI.Forms
             {
                 tip = Convert.ToDouble(txtbTip.Text);
             }
+            // Error message no number
             catch (Exception ex)
             {
-                MessageBox.Show("Please enter a valid tip amount!\n" + ex , "Error!" );
+                MessageBox.Show("You cannot enter a word for a tip!", "Error!" );
                 return;
             }
 
+            // Error message negative number
+            if (tip < 0)
+            {
+                MessageBox.Show("You cannot enter a negative amount for a tip!", "Waring!");
+                return;
+            }
             
             if (tip > currentTotalAmount)
             {
@@ -94,10 +107,11 @@ namespace ChapeauUI.Forms
         // Opens the paying form with the tip amount
         private void OpenPayingFormWithTip(double tip)
         {
-            Payingfrm pf = new Payingfrm(tip);
+            payingService.AddTip(bill, tip);
+            Payingfrm payingForm = new Payingfrm(bill);
             this.Hide();
-            pf.Closed += (s, args) => this.Close();
-            pf.Show();
+            payingForm.Closed += (s, args) => this.Close();
+            payingForm.Show();
         }
 
         // Turns on the button when the textbox is not empty
@@ -108,18 +122,28 @@ namespace ChapeauUI.Forms
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Payingfrm pf = new Payingfrm();
+            Payingfrm payingForm = new Payingfrm(bill);
             this.Hide();
-            pf.Closed += (s, args) => this.Close();
-            pf.Show();
+            payingForm.Closed += (s, args) => this.Close();
+            payingForm.Show();
         }
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-            Payingfrm pf = new Payingfrm();
+            Payingfrm payingForm = new Payingfrm(bill);
             this.Hide();
-            pf.Closed += (s, args) => this.Close();
-            pf.Show();
+            payingForm.Closed += (s, args) => this.Close();
+            payingForm.Show();
+        }
+
+        private void btnMenus_Click(object sender, EventArgs e)
+        {
+            // TODO: Add link to the menu form
+        }
+
+        private void btnOrderStatus_Click(object sender, EventArgs e)
+        {
+            // TODO: Add link to the order status form
         }
     }
 }

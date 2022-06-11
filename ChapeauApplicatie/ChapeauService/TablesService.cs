@@ -9,7 +9,7 @@ using ChapeauDAL;
 
 namespace ChapeauService
 {
-    public class TablesService
+    public class TablesService : BaseService
     {
         TablesDAO tablesdb;
         public TablesService()
@@ -28,6 +28,11 @@ namespace ChapeauService
         public void UpdateTableStatus(int tableID, int reserved)
         {
             tablesdb.UpdateTableStatus(tableID, reserved);
+        }
+
+        public void ReserveTable(int tableID)
+        {
+            tablesdb.TableReserve(tableID);
         }
 
     }

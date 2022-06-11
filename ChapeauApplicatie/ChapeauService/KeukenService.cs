@@ -8,24 +8,28 @@ using System.Threading.Tasks;
 
 namespace ChapeauService
 {
-    public class KeukenService
+    public class KeukenService : BaseService
     {
         KeukenDAO keukenDAO;
         public KeukenService()
         {
             keukenDAO = new KeukenDAO();
         }
-        public List<KeukenItemModel> GetFirstOrder()
+        public List<KeukenItemModel> GetOrderByID(int OrderID)
         {
-            return keukenDAO.GetFirstOrder();
+            return keukenDAO.GetOrderByID(OrderID);
         }
-        public List<KeukenItemModel> GetSecondOrder()
+        public void ReadyOrder(int orderID)
         {
-            return keukenDAO.GetSecondOrder();
+            keukenDAO.ReadyOrder(orderID);
         }
-        public List<KeukenItemModel> GetThirdOrder()
+        public List<OrderModel> GetOrderListByLatest()
         {
-            return keukenDAO.GetThirdOrder();
+            return keukenDAO.GetOrderListByLatest();
+        }
+        public void ReadyOrderItem(int orderItemID)
+        {
+            keukenDAO.ReadyOrderItem(orderItemID);
         }
     }
 

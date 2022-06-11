@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ChapeauUI.Forms.BarFrm" Collapsed="true">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAACAIAACAAACAAgACIEAD+BwACGkgAAQgAAAAAAAA=</HashCode>
+      <FileName>Forms\BarFrm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChapeauUI.Forms.Commentfrm" Collapsed="true">
+    <Position X="4" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BwEAAAAAgCCAAABAAACAAIACAAAwAABAAAAAAQABAAA=</HashCode>
+      <FileName>Forms\Commentfrm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChapeauUI.Forms.KeukenFrm" Collapsed="true">
+    <Position X="7.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAACAAAACAgAAAAAACAAADCAwAAGgAAAXEAAIAAAAA=</HashCode>
+      <FileName>Forms\KeukenFrm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChapeauUI.Forms.KeukenFrm2" Collapsed="true">
+    <Position X="9.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgCAIAACAAACAAgACIEAD+BwEAGlgAAQAAAIAAAAA=</HashCode>
+      <FileName>Forms\KeukenFrm2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChapeauUI.Forms.Payingfrm" Collapsed="true">
+    <Position X="5.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BwAAAAAAgGCAAAAAIACCBAAGAQAwABBAgBAAAQABEAA=</HashCode>
+      <FileName>Forms\Payingfrm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChapeauUI.Forms.PaymentOptionsfrm" Collapsed="true">
+    <Position X="7.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BwAAAAAAgCCAAAAAACCCAIATAAAgAABAAAAAAQABAAA=</HashCode>
+      <FileName>Forms\PaymentOptionsfrm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChapeauUI.Forms.Tipfrm" Collapsed="true">
+    <Position X="5.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BwAAIAASgGCAgIEAAgCABIACAwAgABFAAAABAQAFIAA=</HashCode>
+      <FileName>Forms\Tipfrm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChapeauUI.KassaLogin" Collapsed="true">
+    <Position X="5.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACAAAECAAAEAAFAXAAAJCAAAgIABBAAAAYAAIAQA=</HashCode>
+      <FileName>Forms\KassaLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChapeauUI.Mainfrm" Collapsed="true">
+    <Position X="4" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Forms\Mainfrm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChapeauUI.PDAOrdering_Joey" Collapsed="true">
+    <Position X="9.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>d5Nuw6LOwv/r3/HSF6jmM7d/blz6IT+z3eE7pVHP4ro=</HashCode>
+      <FileName>Forms\PDAOrdering-Joey.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChapeauUI.TafelOverzicht" Collapsed="true">
+    <Position X="4" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgWQoCQIiCCCqIQAdijQEAQCAkIEaAAgMMAyIQPAAFg=</HashCode>
+      <FileName>Forms\TafelOverzicht.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

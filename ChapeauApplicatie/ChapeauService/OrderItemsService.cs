@@ -8,7 +8,7 @@ using ChapeauModels;
 
 namespace ChapeauService
 {
-    public class OrderItemsService
+    public class OrderItemsService : BaseService
     {
         OrderItemsDao orderitemsdb;
 
@@ -23,5 +23,40 @@ namespace ChapeauService
             return orderItems;
         }
 
+        public List<OrderItems> GetOrderItemsPerTable(int tableID)
+        {
+            List<OrderItems> orderItems = orderitemsdb.GetAllOrderItemsPerTable(tableID);
+            return orderItems;
+        }
+
+        public void AddOrderItem(int tableID, int menuItemID)
+        {
+            orderitemsdb.OrderItemAdd(tableID, menuItemID);
+        }
+
+        public void QuantityAdd(int tableID, int menuItemID)
+        {
+            orderitemsdb.AddQuantity(tableID, menuItemID);
+        }
+
+        public void AddItem(int selectedItemID)
+        {
+            orderitemsdb.ItemAdd(selectedItemID);
+        }
+
+        public void RemoveItem(int selectedItemID)
+        {
+            orderitemsdb.ItemRemove(selectedItemID);
+        }
+
+        public void VerwijderOrder(int tableID)
+        {
+            orderitemsdb.OrderVerwijderen(tableID);
+        }
+
+        public void VerwijderItem(int selectedItemID)
+        {
+            orderitemsdb.ItemVerwijderen(selectedItemID);
+        }
     }
 }
