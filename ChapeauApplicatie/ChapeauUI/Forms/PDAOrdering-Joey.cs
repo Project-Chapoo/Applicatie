@@ -80,6 +80,7 @@ namespace ChapeauUI
             else
             {
                 MessageBox.Show("out of stock");
+                MessageBox.Show("out of stock");
             }
 
 
@@ -960,6 +961,11 @@ namespace ChapeauUI
         }
 
 
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

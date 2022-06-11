@@ -109,6 +109,7 @@
             this.Quantity = new System.Windows.Forms.ColumnHeader();
             this.Description = new System.Windows.Forms.ColumnHeader();
             this.OrderItemID = new System.Windows.Forms.ColumnHeader();
+            this.MenuItem = new System.Windows.Forms.ColumnHeader();
             this.pbConfirmOrder = new System.Windows.Forms.PictureBox();
             this.btnVerwijderItem = new System.Windows.Forms.Button();
             this.btnDeleteOrder = new System.Windows.Forms.Button();
@@ -195,7 +196,6 @@
             this.btnEspresso = new System.Windows.Forms.Button();
             this.btnCappuchino = new System.Windows.Forms.Button();
             this.btnKoffie = new System.Windows.Forms.Button();
-            this.MenuItem = new System.Windows.Forms.ColumnHeader();
             this.pnlTableSelection.SuspendLayout();
             this.pnlOrderOrPayment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOrderOrPayment)).BeginInit();
@@ -431,6 +431,7 @@
             this.btnPayment.TabIndex = 1;
             this.btnPayment.Text = "Betalen";
             this.btnPayment.UseVisualStyleBackColor = false;
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // btnOrdering
             // 
@@ -1123,6 +1124,10 @@
             // OrderItemID
             // 
             this.OrderItemID.Text = "OrderItemID";
+            // 
+            // MenuItem
+            // 
+            this.MenuItem.Text = "MenuItemID";
             // 
             // pbConfirmOrder
             // 
@@ -2092,17 +2097,13 @@
             this.btnKoffie.UseVisualStyleBackColor = false;
             this.btnKoffie.Click += new System.EventHandler(this.btnKoffie_Click);
             // 
-            // MenuItem
-            // 
-            this.MenuItem.Text = "MenuItemID";
-            // 
             // PDAOrdering_Joey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(240, 321);
-            this.Controls.Add(this.pnlConfirmOrder);
             this.Controls.Add(this.pnlOrderOrPayment);
+            this.Controls.Add(this.pnlConfirmOrder);
             this.Controls.Add(this.pnlBieren);
             this.Controls.Add(this.pnlWijnen);
             this.Controls.Add(this.pnlGedestilleerdeDranken);
