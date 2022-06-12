@@ -55,9 +55,14 @@ namespace ChapeauService
         {
             orderdb.UpdateOrderReady(ready, TableID);
         }
-
-        
-=======
+        public void UpdateBarServed(int barServed, int tableID)
+        {
+            orderdb.UpdateBarServed(barServed, tableID);    
+        }
+        public void UpdateKitchenServed(int kitchenServed, int tableID)
+        {
+            orderdb.UpdateKitchenServed(kitchenServed, tableID);
+        }
 
     }
 }

@@ -80,8 +80,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblKlikTafel = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.pnlLopendeBestellingen = new System.Windows.Forms.Panel();
             this.lblWachtTijd4 = new System.Windows.Forms.Label();
             this.lblLopendeBestelling4 = new System.Windows.Forms.Label();
@@ -511,36 +509,36 @@
             // lblMelding3
             // 
             this.lblMelding3.AutoSize = true;
-            this.lblMelding3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMelding3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMelding3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.lblMelding3.Location = new System.Drawing.Point(17, 162);
             this.lblMelding3.Name = "lblMelding3";
             this.lblMelding3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblMelding3.Size = new System.Drawing.Size(0, 33);
+            this.lblMelding3.Size = new System.Drawing.Size(0, 30);
             this.lblMelding3.TabIndex = 34;
             this.lblMelding3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblMelding2
             // 
             this.lblMelding2.AutoSize = true;
-            this.lblMelding2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMelding2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMelding2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.lblMelding2.Location = new System.Drawing.Point(17, 119);
             this.lblMelding2.Name = "lblMelding2";
             this.lblMelding2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblMelding2.Size = new System.Drawing.Size(0, 33);
+            this.lblMelding2.Size = new System.Drawing.Size(0, 30);
             this.lblMelding2.TabIndex = 33;
             this.lblMelding2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblMelding1
             // 
             this.lblMelding1.AutoSize = true;
-            this.lblMelding1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMelding1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMelding1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.lblMelding1.Location = new System.Drawing.Point(17, 75);
             this.lblMelding1.Name = "lblMelding1";
             this.lblMelding1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblMelding1.Size = new System.Drawing.Size(0, 33);
+            this.lblMelding1.Size = new System.Drawing.Size(0, 30);
             this.lblMelding1.TabIndex = 32;
             this.lblMelding1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -664,6 +662,7 @@
             // 
             // timer1
             // 
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pnlLeeg
@@ -702,14 +701,6 @@
             // 
             this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // timer3
-            // 
-            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
-            // 
-            // timer4
-            // 
-            this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
             // 
             // pnlLopendeBestellingen
             // 
@@ -877,8 +868,6 @@
         private Panel pnlLeeg;
         private Label lblKlikTafel;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Timer timer3;
-        private System.Windows.Forms.Timer timer4;
         private Label lBLGaNaar;
         private Label label1;
         private Panel pnlLopendeBestellingen;

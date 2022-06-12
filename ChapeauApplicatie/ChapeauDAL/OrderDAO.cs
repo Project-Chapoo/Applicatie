@@ -60,7 +60,6 @@ namespace ChapeauDAL
             string setQuery = $"update [Order] set orderedlatest = 1 where OrderID = {tableID}";
             ExecuteEditQuery(setQuery, sqlParameters);
         }
-       
         public void OrderConfirm(int tableID, string commentaar)
         {
             string query = $"update [Order] set comment = '{commentaar}', TimeOrdered = CURRENT_TIMESTAMP where OrderID = {tableID}";
@@ -68,15 +67,16 @@ namespace ChapeauDAL
             ExecuteEditQuery(query, sqlParameters);
         }
 
+        //TafelOverzicht
         public List<OrderStatusTable> BestellingPerTafel(int tableID)
         {
-            string query = "SELECT TableID, TimeOrdered, OrderReady, OrderServed, [OrderedLatest] FROM [Order] WHERE TableID = @tableID ";
+            string query = "SELECT TableID, TimeOrdered, OrderReady, OrderServed, [OrderedLatest], BarServed, KitchenServed FROM [Order] WHERE TableID = @tableID ";
             SqlParameter[] sqlParameters = new SqlParameter[] { new SqlParameter("@tableID", tableID)};
             return ReadOrderTable(ExecuteSelectQuery(query, sqlParameters));
         }
         public List<OrderStatusTable> OrderGereed()
         {
-            string query = "SELECT TableID, TimeOrdered, OrderReady, OrderServed, [OrderedLatest] FROM [Order] ORDER BY [OrderedLatest] DESC";
+            string query = "SELECT TableID, TimeOrdered, OrderReady, OrderServed, [OrderedLatest], BarServed, KitchenServed FROM [Order] ORDER BY [OrderedLatest] DESC";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadOrderTable(ExecuteSelectQuery(query, sqlParameters));
         }
@@ -88,11 +88,13 @@ namespace ChapeauDAL
             {
                 OrderStatusTable orderStatusTable = new OrderStatusTable()
                 {
-                    TableId = (int)(dr["TableID"]),
-                    TimeOrdered = (DateTime)dr["timeOrdered"],
-                    OrderReady = (bool)dr["OrderReady"],
-                    OrderServed = (bool)dr["OrderServed"],
-                    OrderedLatest = (int)dr["OrderedLatest"]
+                    tableId = (int)(dr["TableID"]),
+                    timeOrdered = (DateTime)dr["timeOrdered"],
+                    orderReady = (bool)dr["OrderReady"],
+                    orderServed = (bool)dr["OrderServed"],
+                    orderedLatest = (int)dr["OrderedLatest"],
+                    barServed = (bool)dr["BarServed"],
+                    kitchenServed = (bool)dr["KitchenServed"]
                 };
                 orderStatusTables.Add(orderStatusTable);
             }
@@ -110,16 +112,18 @@ namespace ChapeauDAL
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }
-
-
-        public void TafelVrij(int tableID)
+        public void UpdateBarServed(int barServed, int tableID)
         {
-            string query = $"";
+            string query = $"UPDATE [Order] SET BarServed = {barServed} WHERE TableID = {tableID}";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }
-
-
+        public void UpdateKitchenServed(int kitchenServed, int tableID)
+        {
+            string query = $"UPDATE [Order] SET KitchenServed = {kitchenServed} WHERE TableID = {tableID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
 
     }
 }

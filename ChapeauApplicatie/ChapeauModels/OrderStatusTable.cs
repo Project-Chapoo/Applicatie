@@ -8,10 +8,12 @@ namespace ChapeauModels
 {
     public class OrderStatusTable
     {
-        public int TableId { get; set; }
-        public DateTime TimeOrdered { get; set; }
-        public bool OrderReady { get; set; }
-        public bool OrderServed { get; set; }
-        public int OrderedLatest { get; set; }
+        public int tableId { get; set; }
+        public DateTime timeOrdered { get; set; }
+        public bool orderReady { get; set; }
+        public bool orderServed { get; set; }
+        public int orderedLatest { get; set; }
+        public bool barServed { get; set; }
+        public bool kitchenServed { get; set; }
     }
 }

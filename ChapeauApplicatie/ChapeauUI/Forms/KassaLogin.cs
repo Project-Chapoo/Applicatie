@@ -22,7 +22,7 @@ namespace ChapeauUI
         }
         private void KassaLogin_Load(object sender, EventArgs e)
         {
-            timer2.Start();
+            timerTijd.Start();
         }
         private void btnKassaEnter_Click(object sender, EventArgs e)
         {
@@ -49,9 +49,6 @@ namespace ChapeauUI
             else
             {
                 CheckEmployeeFunction(employee);
-                //weg halen?
-                MessageBox.Show($"Welkom {employee.firstName}");
-                
             }
         }
         private void WrongPassword()
@@ -67,10 +64,10 @@ namespace ChapeauUI
                     PDA();
                     break;
                 case "Kok":
-                    KeukenOverzicht();
+                    KeukenOverzicht(employee.firstName);
                     break;
                 case "Barmedewerker":
-                    BarOverzicht();
+                    BarOverzicht(employee.firstName);
                     break;
                 case "Eigenaar":
                     TafelOverzicht(employee);
@@ -81,77 +78,71 @@ namespace ChapeauUI
         {
             TafelOverzicht tafelOverzicht = new TafelOverzicht();
             tafelOverzicht.LogedInEmployee(employee.firstName);
+            tafelOverzicht.
             this.Hide();
             tafelOverzicht.Closed += (s, args) => this.Close();
             tafelOverzicht.Show();
         }
-        private void BarOverzicht()
+        private void BarOverzicht(string employeeFirstName)
         {
-            //mist nog
+            BarFrm barForm = new BarFrm(employeeFirstName);
+            this.Hide();
+            barForm.Closed += (s, args) => this.Close();
+            barForm.Show();
         }
-        private void KeukenOverzicht()
+        private void KeukenOverzicht(string EmployeeFirstName)
         {
-            KeukenFrm keukenForm = new KeukenFrm();
+            KeukenFrm2 keukenForm = new KeukenFrm2(EmployeeFirstName);
             this.Hide();
             keukenForm.Closed += (s, args) => this.Close();
             keukenForm.Show();
         }
         private void PDA()
         {
-            PDAOrdering_Joey pda = new PDAOrdering_Joey();
+            BedieningFrm bedieningForm = new BedieningFrm();
             this.Hide();
-            pda.Closed += (s, args) => this.Close();
-            pda.Show();
+            bedieningForm.Closed += (s, args) => this.Close();
+            bedieningForm.Show();
         }
         private void btnKassa1_Click(object sender, EventArgs e)
         {
-            if(txtKassaLogIn.TextLength < 4)
-                txtKassaLogIn.Text += 1;
+            Password(int.Parse(btnKassa1.Text));
         }
         private void btnKassa2_Click(object sender, EventArgs e)
         {
-            if (txtKassaLogIn.TextLength < 4)
-                txtKassaLogIn.Text += 2;
+            Password(int.Parse(btnKassa2.Text));
         }
         private void btnKassa3_Click(object sender, EventArgs e)
         {
-            if (txtKassaLogIn.TextLength < 4)
-                txtKassaLogIn.Text += 3;
+            Password(int.Parse(btnKassa3.Text));
         }
         private void btnKassa4_Click(object sender, EventArgs e)
         {
-            if (txtKassaLogIn.TextLength < 4)
-                txtKassaLogIn.Text += 4;
+            Password(int.Parse(btnKassa4.Text));
         }
         private void btnKassa5_Click(object sender, EventArgs e)
         {
-            if (txtKassaLogIn.TextLength < 4)
-                txtKassaLogIn.Text += 5;
+            Password(int.Parse(btnKassa5.Text));
         }
         private void btnKassa6_Click(object sender, EventArgs e)
         {
-            if (txtKassaLogIn.TextLength < 4)
-                txtKassaLogIn.Text += 6;
+            Password(int.Parse(btnKassa6.Text));
         }
         private void btnKassa7_Click(object sender, EventArgs e)
         {
-            if (txtKassaLogIn.TextLength < 4)
-                txtKassaLogIn.Text += 7;
+            Password(int.Parse(btnKassa7.Text));
         }
         private void btnKassa8_Click(object sender, EventArgs e)
         {
-            if (txtKassaLogIn.TextLength < 4)
-                txtKassaLogIn.Text += 8;
+            Password(int.Parse(btnKassa8.Text));
         }
         private void btnKassa9_Click(object sender, EventArgs e)
         {
-            if (txtKassaLogIn.TextLength < 4)
-                txtKassaLogIn.Text += 9;
+            Password(int.Parse(btnKassa9.Text));
         }
         private void btnKassa0_Click(object sender, EventArgs e)
         {
-            if (txtKassaLogIn.TextLength < 4)
-                txtKassaLogIn.Text += 0;
+            Password(int.Parse(btnKassa0.Text));
         }
         private void btnKassaBack_Click(object sender, EventArgs e)
         {
@@ -159,10 +150,9 @@ namespace ChapeauUI
             if(txtKassaLogIn.TextLength > 0)
                 txtKassaLogIn.Text = txtKassaLogIn.Text.Substring(0, txtKassaLogIn.TextLength - 1);
         }
-        
         //count voor het heen en weer klikken
         private int count = 0;
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void llblHidePassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (count % 2 != 0)
                 txtKassaLogIn.UseSystemPasswordChar = true;
@@ -170,8 +160,13 @@ namespace ChapeauUI
                 txtKassaLogIn.UseSystemPasswordChar = false;
             count++;
         }
+        private void Password(int number)
+        {
+            if (txtKassaLogIn.TextLength < 4)
+                txtKassaLogIn.Text += number;
+        }
         //Timer
-        private void timer2_Tick(object sender, EventArgs e)
+        private void timerTijd_Tick(object sender, EventArgs e)
         {
             DateTime OverzichtTijd = DateTime.Now;
             lblTime.Text = OverzichtTijd.ToString("HH:mm:ss  dd-MM-yyyy");

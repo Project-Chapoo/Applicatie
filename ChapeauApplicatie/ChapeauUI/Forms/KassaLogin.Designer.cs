@@ -54,7 +54,7 @@
             this.pnlLogIn = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.llblHidePassword = new System.Windows.Forms.LinkLabel();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timerTijd = new System.Windows.Forms.Timer(this.components);
             this.pnlKassaLogIn.SuspendLayout();
             this.panelTafelOverzicht.SuspendLayout();
             this.pnlBottom.SuspendLayout();
@@ -254,7 +254,8 @@
             // btnKassaBack
             // 
             this.btnKassaBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.btnKassaBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnKassaBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnKassaBack.BackgroundImage")));
+            this.btnKassaBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnKassaBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKassaBack.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnKassaBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
@@ -262,7 +263,6 @@
             this.btnKassaBack.Name = "btnKassaBack";
             this.btnKassaBack.Size = new System.Drawing.Size(58, 53);
             this.btnKassaBack.TabIndex = 13;
-            this.btnKassaBack.Text = "<-";
             this.btnKassaBack.UseVisualStyleBackColor = false;
             this.btnKassaBack.Click += new System.EventHandler(this.btnKassaBack_Click);
             // 
@@ -302,9 +302,9 @@
             this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.lblTime.Location = new System.Drawing.Point(896, 18);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(50, 20);
+            this.lblTime.Size = new System.Drawing.Size(34, 20);
             this.lblTime.TabIndex = 16;
-            this.lblTime.Text = "label1";
+            this.lblTime.Text = "Tijd";
             // 
             // KassaInlogTijd
             // 
@@ -382,11 +382,12 @@
             this.llblHidePassword.TabStop = true;
             this.llblHidePassword.Text = "👁";
             this.llblHidePassword.VisitedLinkColor = System.Drawing.Color.Black;
-            this.llblHidePassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.llblHidePassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblHidePassword_LinkClicked);
             // 
-            // timer2
+            // timerTijd
             // 
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            this.timerTijd.Interval = 1000;
+            this.timerTijd.Tick += new System.EventHandler(this.timerTijd_Tick);
             // 
             // KassaLogin
             // 
@@ -436,7 +437,7 @@
         private PictureBox pbLogo;
         private Panel panel2;
         private Panel pnlBottom;
-        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timerTijd;
         private Label lblTime;
     }
 }
