@@ -40,7 +40,7 @@ namespace ChapeauDAL
 
         public List<OrderItems> GetAllOrderItemsPerTable(int tableID)
         {
-            string query = $"SELECT mi.menuitemid, oi.orderitemid, O.TableID, oi.Quantity, mi.description FROM OrderItem AS OI " +
+            string query = $"SELECT mi.menuitemid, oi.orderitemid, O.TableID, oi.Quantity, mi.description, mi.Stock FROM OrderItem AS OI " +
                            $"JOIN[dbo].[MenuItem] AS MI ON MI.MenuItemID = oi.MenuItemID " +
                            $"join[dbo].[Order] as O on o.OrderID = OI.OrderID " +
                            $"where oi.OrderID = {tableID}";
@@ -61,6 +61,7 @@ namespace ChapeauDAL
                     Quantity = (int)(dr["quantity"]),
                     TableID = (int)(dr["tableid"]),
                     Description = (string)(dr["description"]),
+                    Stock = (int)(dr["stock"]),
                 };
                 orderItems.Add(orderItem);
             }
@@ -69,7 +70,7 @@ namespace ChapeauDAL
 
         public void OrderItemAdd(int tableID, int MenuItemID)
         {
-            string query = $"INSERT INTO [orderitem] (OrderID, MenuItemID, quantity) VALUES ({tableID}, {MenuItemID}, 1)";
+            string query = $"INSERT INTO [orderitem] (OrderID, MenuItemID, quantity, ReadyOrderItem) VALUES ({tableID}, {MenuItemID}, 1, 0)";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }

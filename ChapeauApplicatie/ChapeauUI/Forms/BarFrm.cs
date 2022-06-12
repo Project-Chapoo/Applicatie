@@ -14,14 +14,18 @@ namespace ChapeauUI.Forms
 {
     public partial class BarFrm : Form
     {
-        public BarFrm()
+        private string EmployeeName = "";
+        public BarFrm(string EmployeeName)
         {
             InitializeComponent();
+            this.EmployeeName = EmployeeName;
         }
 
         private void BarFrm_Load(object sender, EventArgs e)
         {
+            timer1.Start();
             FIllListViews();
+            LogedInEmployee(EmployeeName);
         }
         private void FIllListViews()
         {
@@ -61,9 +65,17 @@ namespace ChapeauUI.Forms
                 FillTimeLabels(orders[i].TimeOrdered, labelTimeList[i]);
                 FillTableLabels(orders[i].TableId, labelTableList[i]);
                 txtOpmerkingList[i].Text = orders[i].Comment;
+                
                 i++;
             }
 
+        }
+        
+        private void FillTimeStrings(DateTime TimeOrdered, Label label)
+        {
+            DateTime OverzichtTijd = DateTime.Now;
+            lblTimeNow.Text = OverzichtTijd.ToString("HH:mm dd/mm/yyyy");
+            label.Text = OverzichtTijd.Subtract(TimeOrdered).ToString(@"hh\:mm");
         }
         private void FillTimeLabels(DateTime time, Label label)
         {
@@ -87,28 +99,30 @@ namespace ChapeauUI.Forms
         }
         private void ReadyOrder(int number)
         {
-            KeukenService keuken = new KeukenService();
-            List<OrderModel> keukenOrders = keuken.GetOrderListByLatest();
-            List<KeukenItemModel> keukenItems = keuken.GetOrderByID(keukenOrders[number].OrderId);
-
             BarService bar = new BarService();
             List<OrderModel> barOrders = bar.GetOrderListByLatest();
-            if (keukenItems[0] is null)
+            try
             {
-                try
+                KeukenService keuken = new KeukenService();
+                List<OrderModel> keukenOrders = keuken.GetOrderListByLatest();
+                List<KeukenItemModel> keukenItems = keuken.GetOrderByID(keukenOrders[number].OrderId);
+                if (keukenItems[0].OrderItemID == 0)
                 {
+                    MessageBox.Show("whole order is ready");
                     bar.ReadyOrder(barOrders[number].OrderId);
                     FIllListViews();
                 }
-                catch (Exception ex)
+                else
                 {
-
-                    MessageBox.Show("There are no Orders");
+                    MessageBox.Show("only items are ready");
+                    bar.ReadyAllBarOrderItems(barOrders[number].OrderId);
+                    FIllListViews();
                 }
             }
-            else
+            catch (Exception)
             {
-                bar.ReadyAllBarOrderItems(barOrders[number].OrderId);
+                MessageBox.Show("whole order is ready");
+                bar.ReadyOrder(barOrders[number].OrderId);
                 FIllListViews();
             }
         }
@@ -142,6 +156,54 @@ namespace ChapeauUI.Forms
         private void btnGereed1_Click(object sender, EventArgs e)
         {
             ReadyOrder(0);
+        }
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            KassaLogin kassaLogin = new KassaLogin();
+            this.Hide();
+            kassaLogin.Closed += (s, args) => this.Close();
+            kassaLogin.Show();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TafelOverzicht tafelOverzicht = new TafelOverzicht();
+            tafelOverzicht.Show();
+            tafelOverzicht.LogedInEmployee(EmployeeName);
+
+        }
+        public void LogedInEmployee(string employeeName)
+        {
+            lblEmployeeName.Text = employeeName;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            BarService bar = new BarService();
+            List<OrderModel> orders = bar.GetOrderListByLatest();
+
+            List<Label> labelTimeWaitingList = new List<Label>();
+            labelTimeWaitingList.Add(lblWaitingTime1);
+            labelTimeWaitingList.Add(lblWaitingTime2);
+            labelTimeWaitingList.Add(lblWaitingTime3);
+            for (int i = 0; i < orders.Count; i++)
+            {
+                if (i > 2)
+                    return;
+                FillTimeStrings(orders[i].TimeOrdered, labelTimeWaitingList[i]);
+
+            }
+        }
+
+        private void btnGereed2_Click(object sender, EventArgs e)
+        {
+            ReadyOrder(1);
+        }
+
+        private void btnGereed3_Click(object sender, EventArgs e)
+        {
+            ReadyOrder(2);
         }
     }
 }

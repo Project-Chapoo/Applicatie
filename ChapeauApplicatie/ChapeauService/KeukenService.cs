@@ -31,6 +31,10 @@ namespace ChapeauService
         {
             keukenDAO.ReadyOrderItem(orderItemID);
         }
+        public void ReadyAllKeukenOrderItems(int orderID)
+        {
+            keukenDAO.ReadyAllKeukenOrderItems(orderID);
+        }
     }
 
 }

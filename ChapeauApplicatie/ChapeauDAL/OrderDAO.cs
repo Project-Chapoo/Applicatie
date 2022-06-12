@@ -13,7 +13,6 @@ namespace ChapeauDAL
     {
         public List<Order> GetAllOrders()
         {
-
             string query = "SELECT OrderID, TableID, Comment, timeOrdered, OrderReady, OrderServed, OrderedLatest FROM [order]";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
@@ -62,8 +61,9 @@ namespace ChapeauDAL
         }
         public void OrderConfirm(int tableID, string commentaar)
         {
-            string query = $"update [Order] set comment = '{commentaar}', TimeOrdered = CURRENT_TIMESTAMP where OrderID = {tableID}";
-            SqlParameter[] sqlParameters = new SqlParameter[0];
+            string query = $"update [Order] set comment = '{commentaar}', TimeOrdered = @DateAndTime where OrderID = {tableID}";        
+            SqlParameter[] sqlParameters = new SqlParameter[1];
+            sqlParameters[0] = new SqlParameter("@DateAndTime", SqlDbType.DateTime) { Value = DateTime.Now };
             ExecuteEditQuery(query, sqlParameters);
         }
 
