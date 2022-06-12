@@ -17,6 +17,7 @@ namespace ChapeauUI
     {
         private int tafelNummer;
         private EmployeeModel employee;
+
         public TafelOverzicht()
         {
             InitializeComponent();
@@ -172,18 +173,18 @@ namespace ChapeauUI
 
             if (btnVrijBezet.Text == "Vrij")
             {
-                TafelVrij(orderTable);
+                TafelVrij();
             }
             else if(btnVrijBezet.Text == "Bezet")
             {
-                TafelBezet(orderTable);
+                TafelBezet();
             }
             UpdateTable();
         }
-        private void TafelVrij(OrderStatusTable orderTable)
+        private void TafelVrij()
         {
             TablesService tablesService = new TablesService();
-            //aanpassen checken of er geen bestellingen staat
+            //Kijken of er geen bestellingen staat
             if (TableOrderExists() == false)
             {
                 tablesService.UpdateTableStatus(this.tafelNummer, 0);
@@ -193,7 +194,7 @@ namespace ChapeauUI
                 MessageBox.Show("Deze tafel heeft nog een bestelling open staan");
             }
         }
-        private void TafelBezet(OrderStatusTable orderTable)
+        private void TafelBezet()
         {
             TablesService tablesService = new TablesService();
             tablesService.UpdateTableStatus(this.tafelNummer, 1);
@@ -308,6 +309,7 @@ namespace ChapeauUI
                 lblLopendeBestelling1.Text = "Er zijn geen lopende \nbestellingen voor deze tafel";
             }
         }
+        //Lopende bestellingen
         private void LopendeBestellingen()
         {
             TableOrderService tableOrderService = new TableOrderService();
@@ -357,6 +359,7 @@ namespace ChapeauUI
                 }
             }
         }
+        //Bestellingen klaar voor serveren
         public void btnGeserveerd_Click(object sender, EventArgs e)
         {
             GereedBestelling();
