@@ -17,10 +17,9 @@ namespace ChapeauUI.Forms
         private Bill bill;
         private PayingService payingService = new PayingService();
 
-
-        public Payingfrm() // Joey this contructor for de link between forms
+        public Payingfrm(int orderID) // Joey this contructor for de link between forms
         {
-            this.bill = payingService.GetOrder();
+            this.bill = payingService.GetOrder(orderID);
             InitializeComponent();
         }
 
@@ -77,7 +76,10 @@ namespace ChapeauUI.Forms
 
         private void btnMenus_Click(object sender, EventArgs e)
         {
-            // TODO: Add link to the menu form
+            PDAOrdering_Joey p = new PDAOrdering_Joey(bill.TableID);
+            this.Hide();
+            p.Closed += (s, args) => this.Close();
+            p.Show();
         }
 
         private void btnOrderStatus_Click(object sender, EventArgs e)
@@ -87,10 +89,18 @@ namespace ChapeauUI.Forms
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-            Payingfrm payingfrm = new Payingfrm();
+            Payingfrm payingfrm = new Payingfrm(bill.OrderID);
             this.Hide();
             payingfrm.Closed += (s, args) => this.Close();
             payingfrm.Show();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            PDAOrdering_Joey p = new PDAOrdering_Joey(bill.TableID);
+            this.Hide();
+            p.Closed += (s, args) => this.Close();
+            p.Show();
         }
     }
 }

@@ -11,15 +11,29 @@ namespace ChapeauService
         private const double oneHunderdsixPercentFactor = 106;
         private const string billItemTipDescription = "tip";
         PayingDAO payingDAO = new PayingDAO();
-        public Bill GetOrder()
+        public Bill GetOrder(int orderID)
         {
-            return payingDAO.GetOrderInfo(1);
+            return payingDAO.GetOrderInfo(orderID);
         }
 
         public Bill AddTip(Bill bill, double tip)
         {
             bill.billItems.Add(new BillItem(bill.billItems.Count + 1, 1, billItemTipDescription, tip, false));
             return bill;
+        }
+
+        public void SendBill(Bill bill)
+        {
+            CheckIfComment(bill);
+            payingDAO.SendBill(bill);
+        }
+
+        private void CheckIfComment(Bill bill)
+        {
+            if (bill.Comment is null)
+            {
+                bill.Comment = " ";
+            }
         }
 
         public double CalculateBTW(Bill bill)
