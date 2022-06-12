@@ -35,6 +35,10 @@ namespace ChapeauService
         {
             barDAO.ReadyAllBarOrderItems(orderID);
         }
+        public bool CheckBarOnOrderID(int orderID)
+        {
+            return barDAO.CheckBarOnOrderID(orderID);
+        }
     }
 
 }

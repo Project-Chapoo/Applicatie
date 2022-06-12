@@ -17,6 +17,15 @@ namespace ChapeauDAL
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadOrderTables(ExecuteSelectQuery(query, sqlParameters));
         }
+        public bool CheckKeukenOnKeukenID(int orderID)
+        {
+            string query = $"SELECT OrderID FROM [ORder] WHERE OrderReady = 0 AND OrderID = {orderID} AND orderID IN (SELECT OrderID FROM OrderItem WHERE MenuItemID < 21 AND ReadyOrderItem = 0 GROUP BY OrderID HAVING COUNT(OrderID) > 0) ORDER BY [OrderedLatest] DESC";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            List<KeukenItemModel> keukenItemList = ReadTables(ExecuteSelectQuery(query, sqlParameters));
+            if (keukenItemList[0].OrderID == 0)
+                return false;
+            return true;
+        }
         public void ReadyAllKeukenOrderItems(int OrderID)
         {
             string query2 = $"UPDATE OrderItem SET ReadyOrderItem = 1 WHERE OrderID = {OrderID} AND MenuItemID < 21";
@@ -25,7 +34,7 @@ namespace ChapeauDAL
         }
         public List<KeukenItemModel> GetOrderByID(int OrderID)
         {
-            string query = $"SELECT [OI].OrderItemID, [OI].Quantity, [MI].[Description] FROM OrderItem AS[OI] JOIN MenuItem AS[MI] ON[OI].MenuItemID = [MI].MenuItemID WHERE OrderID = {OrderID} AND [OI].MenuItemID < 21 AND [OI].ReadyOrderItem = 0";
+            string query = $"SELECT [OI].OrderItemID, [OI].Quantity, [MI].[Description], [OI].OrderID FROM OrderItem AS[OI] JOIN MenuItem AS[MI] ON[OI].MenuItemID = [MI].MenuItemID WHERE OrderID = {OrderID} AND [OI].MenuItemID < 21 AND [OI].ReadyOrderItem = 0";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
@@ -73,6 +82,7 @@ namespace ChapeauDAL
                 {
                     OrderItemID = (int)dr["OrderItemID"],
                     Description = (string)(dr["Description"]),
+                    OrderID = (int)dr["OrderID"],
                     quantity = (int)(dr["Quantity"]),
                 };
                 keukenItems.Add(keukenItem);
