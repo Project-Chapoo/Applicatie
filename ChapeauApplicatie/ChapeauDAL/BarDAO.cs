@@ -17,9 +17,19 @@ namespace ChapeauDAL
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadOrderTables(ExecuteSelectQuery(query, sqlParameters));
         }
+
+        public bool CheckBarOnOrderID(int orderID)
+        {
+            string query = $"SELECT OrderID FROM [ORder] WHERE OrderReady = 0 AND OrderID = {orderID} AND orderID IN (SELECT OrderID FROM OrderItem WHERE MenuItemID > 21 AND ReadyOrderItem = 0 GROUP BY OrderID HAVING COUNT(OrderID) > 0) ORDER BY [OrderedLatest] DESC";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            List<BarItemModel> barItemList = ReadTables(ExecuteSelectQuery(query, sqlParameters));
+            if (barItemList[0].OrderID == 0)
+                return false;
+            return true;
+        }
         public List<BarItemModel> GetOrderByID(int OrderID)
         {
-            string query = $"SELECT [OI].OrderItemID, [OI].Quantity, [MI].[Description] FROM OrderItem AS[OI] JOIN MenuItem AS[MI] ON[OI].MenuItemID = [MI].MenuItemID WHERE OrderID = {OrderID} AND [OI].MenuItemID > 21 AND [OI].ReadyOrderItem = 0";
+            string query = $"SELECT [OI].OrderItemID, [OI].Quantity, [MI].[Description], [OI].OrderID FROM OrderItem AS[OI] JOIN MenuItem AS[MI] ON[OI].MenuItemID = [MI].MenuItemID WHERE OrderID = {OrderID} AND [OI].MenuItemID > 21 AND [OI].ReadyOrderItem = 0";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
@@ -32,8 +42,10 @@ namespace ChapeauDAL
         public void ReadyOrder(int orderID)
         {
             string query = $"Update [Order] SET OrderReady = 1 WHERE OrderID = {orderID}";
+            string query1 = $"Update [Order] SET OrderServed = 0 WHERE OrderID = {orderID}";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
+            ExecuteEditQuery(query1, sqlParameters);
         }
         public void ReadyAllBarOrderItems(int orderID)
         {
@@ -72,6 +84,7 @@ namespace ChapeauDAL
                 {
                     OrderItemID = (int)dr["OrderItemID"],
                     Description = (string)(dr["Description"]),
+                    OrderID = (int)dr["OrderID"],
                     quantity = (int)(dr["Quantity"]),
                 };
                 keukenItems.Add(keukenItem);

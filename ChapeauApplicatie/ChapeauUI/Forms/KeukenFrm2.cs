@@ -108,6 +108,7 @@ namespace ChapeauUI.Forms
             ReadyOrder(2);
         }
         private void ReadyOrder(int number)
+
         {
             KeukenService keuken = new KeukenService();
             List<OrderModel> keukenitems = keuken.GetOrderListByLatest();
@@ -116,7 +117,7 @@ namespace ChapeauUI.Forms
                 BarService Bar = new BarService();
                 List<OrderModel> barOrders = Bar.GetOrderListByLatest();
                 List<BarItemModel> barItems = Bar.GetOrderByID(barOrders[number].OrderId);
-                if (barItems[0].OrderItemID == 0)
+                if (keuken.CheckKeukenOnKeukenID(barItems[0].OrderID))
                 {
                     MessageBox.Show("whole order is ready");
                     keuken.ReadyOrder(keukenitems[number].OrderId);

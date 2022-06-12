@@ -106,7 +106,7 @@ namespace ChapeauUI.Forms
                 KeukenService keuken = new KeukenService();
                 List<OrderModel> keukenOrders = keuken.GetOrderListByLatest();
                 List<KeukenItemModel> keukenItems = keuken.GetOrderByID(keukenOrders[number].OrderId);
-                if (keukenItems[0].OrderItemID == 0)
+                if (bar.CheckBarOnOrderID(keukenItems[0].OrderID))
                 {
                     MessageBox.Show("whole order is ready");
                     bar.ReadyOrder(barOrders[number].OrderId);

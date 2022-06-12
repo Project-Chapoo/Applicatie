@@ -10,6 +10,7 @@ namespace ChapeauModels
     {
         public int OrderItemID { get; set; }
         public string Description { get; set; }
+        public int OrderID { get; set; }
         public int quantity { get; set; }
     }
 }
