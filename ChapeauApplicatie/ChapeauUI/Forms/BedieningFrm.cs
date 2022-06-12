@@ -12,14 +12,17 @@ namespace ChapeauUI.Forms
 {
     public partial class BedieningFrm : Form
     {
-        public BedieningFrm()
+        private string employeeName;
+        public BedieningFrm(string employeeName)
         {
             InitializeComponent();
+            this.employeeName = employeeName;
         }
 
         private void btnTafelOverzicht_Click(object sender, EventArgs e)
         {
             TafelOverzicht tafelOverzicht = new TafelOverzicht();
+            tafelOverzicht.LogedInEmployee(employeeName);
             this.Hide();
             tafelOverzicht.Closed += (s, args) => this.Close();
             tafelOverzicht.Show();

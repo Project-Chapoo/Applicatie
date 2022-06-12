@@ -61,7 +61,7 @@ namespace ChapeauUI
             switch(employee.employeeFunction)
             {
                 case "Bediening":
-                    PDA();
+                    PDA(employee.firstName);
                     break;
                 case "Kok":
                     KeukenOverzicht(employee.firstName);
@@ -96,9 +96,9 @@ namespace ChapeauUI
             keukenForm.Closed += (s, args) => this.Close();
             keukenForm.Show();
         }
-        private void PDA()
+        private void PDA(string employee)
         {
-            BedieningFrm bedieningForm = new BedieningFrm();
+            BedieningFrm bedieningForm = new BedieningFrm(employee);
             this.Hide();
             bedieningForm.Closed += (s, args) => this.Close();
             bedieningForm.Show();
