@@ -60,7 +60,6 @@ namespace ChapeauDAL
         protected void ExecuteEditQuery(string query, SqlParameter[] sqlParameters)
         {
             SqlCommand command = new SqlCommand();
-
             try
             {
                 command.Connection = OpenConnection();

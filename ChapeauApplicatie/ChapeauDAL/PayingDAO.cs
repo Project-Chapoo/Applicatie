@@ -42,6 +42,7 @@ namespace ChapeauDAL
             {
                 new SqlParameter("@orderID", SqlDbType.Int) { Value = orderID },
             };
+
             return ReadTablesBillItems(ExecuteSelectQuery(query, sqlParameters));
         }
 
@@ -100,6 +101,7 @@ namespace ChapeauDAL
             ExecuteEditQuery(query, sqlParameters);
             SendBillItems(bill);
             ResetAllTables(bill.OrderID);
+
         }
 
         public void SendBillItems(Bill bill)
@@ -162,3 +164,4 @@ namespace ChapeauDAL
         }
     }
 }
+
