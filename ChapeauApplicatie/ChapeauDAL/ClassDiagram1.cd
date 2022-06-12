@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ChapeauDAL.EmployeeDAO">
+    <Position X="6" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAQAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EmployeeDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChapeauDAL.KeukenDAO">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAQAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>KeukenDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChapeauDAL.OrderDAO">
+    <Position X="8.75" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAgAAgAIAAQAAAAAAAAAAAAAAAAAAAgAAAAAAABABAw=</HashCode>
+      <FileName>OrderDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChapeauDAL.OrderItemsDao">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>OrderItemsDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChapeauDAL.PayingDAO">
+    <Position X="4" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAEAAAAAAAAAAAABEAAAAAAAAAA=</HashCode>
+      <FileName>PayingDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChapeauDAL.TableOrderDAO">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>TableOrderDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChapeauDAL.TablesDAO">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAGQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>TablesDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChapeauDAL.BaseDao" Collapsed="true">
+    <Position X="10.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAACABAAAQQAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>BaseDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
