@@ -14,15 +14,18 @@ namespace ChapeauUI.Forms
 {
     public partial class KeukenFrm2 : Form
     {
-        public KeukenFrm2()
+        private string EmployeeName = "";
+        public KeukenFrm2(string EmployeeName)
         {
             InitializeComponent();
+            this.EmployeeName = EmployeeName;
         }
 
         private void KeukenFrm2_Load(object sender, EventArgs e)
         {
-            
+            timer1.Start();
             FIllListViews();
+            LogedInEmployee(EmployeeName);
         }
         private void FIllListViews()
         {
@@ -65,7 +68,10 @@ namespace ChapeauUI.Forms
                 i++;
             }
         }
-
+        private void FillTimeStrings(DateTime TimeOrdered, Label label)
+        {
+            
+        }
         private void FillTimeLabels(DateTime time, Label label)
         {
             label.Text = time.ToString();
@@ -104,16 +110,30 @@ namespace ChapeauUI.Forms
         private void ReadyOrder(int number)
         {
             KeukenService keuken = new KeukenService();
-            List<OrderModel> orders = keuken.GetOrderListByLatest();
+            List<OrderModel> keukenitems = keuken.GetOrderListByLatest();
             try
             {
-                keuken.ReadyOrder(orders[number].OrderId);
-                FIllListViews();
+                BarService Bar = new BarService();
+                List<OrderModel> barOrders = Bar.GetOrderListByLatest();
+                List<BarItemModel> barItems = Bar.GetOrderByID(barOrders[number].OrderId);
+                if (barItems[0].OrderItemID == 0)
+                {
+                    MessageBox.Show("whole order is ready");
+                    keuken.ReadyOrder(keukenitems[number].OrderId);
+                    FIllListViews();
+                }
+                else
+                {
+                    MessageBox.Show("only items are ready");
+                    keuken.ReadyAllKeukenOrderItems(keukenitems[number].OrderId);
+                    FIllListViews();
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                MessageBox.Show("There are no Orders");
+                MessageBox.Show("whole order is ready");
+                keuken.ReadyOrder(keukenitems[number].OrderId);
+                FIllListViews();
             }
         }
 
@@ -141,6 +161,46 @@ namespace ChapeauUI.Forms
             }
             catch (Exception ex)
             { }
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            KassaLogin kassaLogin = new KassaLogin();
+            this.Hide();
+            kassaLogin.Closed += (s, args) => this.Close();
+            kassaLogin.Show();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TafelOverzicht tafelOverzicht = new TafelOverzicht();
+            tafelOverzicht.Show();
+            tafelOverzicht.LogedInEmployee(EmployeeName);
+        }
+        public void LogedInEmployee(string employeeName)
+        {
+            lblEmployeeName.Text = employeeName;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            KeukenService keuken = new KeukenService();
+            List<OrderModel> orders = keuken.GetOrderListByLatest();
+
+            List<Label> labelTimeWaitingList = new List<Label>();
+            labelTimeWaitingList.Add(lblWaitingTime1);
+            labelTimeWaitingList.Add(lblWaitingTime2);
+            labelTimeWaitingList.Add(lblWaitingTime3);
+
+            DateTime OverzichtTijd = DateTime.Now;
+            lblTimeNow.Text = OverzichtTijd.ToString("HH:mm dd/mm/yyyy");
+            for (int i = 0; i < orders.Count; i++)
+            {
+                if (i > 2)
+                    return;
+                labelTimeWaitingList[i].Text = OverzichtTijd.Subtract(orders[i].TimeOrdered).ToString(@"hh\:mm");
+            }
         }
     }
 }
