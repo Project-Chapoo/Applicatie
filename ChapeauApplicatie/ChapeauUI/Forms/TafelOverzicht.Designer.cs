@@ -75,11 +75,11 @@
             this.lblLegenda = new System.Windows.Forms.Label();
             this.pnlTijd = new System.Windows.Forms.Panel();
             this.lblTijdTafelOverzicht = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timerTijd = new System.Windows.Forms.Timer(this.components);
             this.pnlLeeg = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblKlikTafel = new System.Windows.Forms.Label();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timerUpdate = new System.Windows.Forms.Timer(this.components);
             this.pnlLopendeBestellingen = new System.Windows.Forms.Panel();
             this.lblWachtTijd4 = new System.Windows.Forms.Label();
             this.lblLopendeBestelling4 = new System.Windows.Forms.Label();
@@ -660,10 +660,10 @@
             this.lblTijdTafelOverzicht.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblTijdTafelOverzicht.Click += new System.EventHandler(this.lblTijdTafelOverzicht_Click);
             // 
-            // timer1
+            // timerTijd
             // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timerTijd.Interval = 1000;
+            this.timerTijd.Tick += new System.EventHandler(this.timerTijd_Tick);
             // 
             // pnlLeeg
             // 
@@ -697,10 +697,10 @@
             this.lblKlikTafel.Text = "Klik op een tafel voor \r\nmeer informatie";
             this.lblKlikTafel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // timer2
+            // timerUpdate
             // 
-            this.timer2.Interval = 1000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            this.timerUpdate.Interval = 1000;
+            this.timerUpdate.Tick += new System.EventHandler(this.timerUpdate_Tick);
             // 
             // pnlLopendeBestellingen
             // 
@@ -845,7 +845,7 @@
         private PictureBox pbLogo;
         private Button btnVrijBezet;
         private Label lblMeldingen;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timerTijd;
         private Label lblTijdTafelOverzicht;
         private Button btnGeserveerd;
         private CheckBox cbServeren2;
@@ -867,7 +867,7 @@
         private Label lblMelding1;
         private Panel pnlLeeg;
         private Label lblKlikTafel;
-        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timerUpdate;
         private Label lBLGaNaar;
         private Label label1;
         private Panel pnlLopendeBestellingen;

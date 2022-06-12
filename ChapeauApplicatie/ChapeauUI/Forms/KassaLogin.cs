@@ -77,8 +77,7 @@ namespace ChapeauUI
         private void TafelOverzicht(EmployeeModel employee)
         {
             TafelOverzicht tafelOverzicht = new TafelOverzicht();
-            tafelOverzicht.LogedInEmployee(employee.firstName);
-            tafelOverzicht.
+            tafelOverzicht.LogedInEmployee(employee);
             this.Hide();
             tafelOverzicht.Closed += (s, args) => this.Close();
             tafelOverzicht.Show();

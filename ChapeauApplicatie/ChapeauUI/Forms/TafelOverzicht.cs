@@ -16,18 +16,19 @@ namespace ChapeauUI
     public partial class TafelOverzicht : Form
     {
         private int tafelNummer;
-        private string employeeFirstName;
+        private EmployeeModel employee;
         public TafelOverzicht()
         {
             InitializeComponent();
         }
         private void TafelOverzicht_Load(object sender, EventArgs e)
         {
-            timer1.Start();
-            timer2.Start();
+            timerTijd.Start();
+            timerUpdate.Start();
             Meldingen();
             HidePanels();
-            LoadTableColors(); 
+            LoadTableColors();
+            Function();
         }
         private void TafelNummer(int Nummer)
         {
@@ -44,7 +45,7 @@ namespace ChapeauUI
             LoadTableColors();
             Meldingen();
         }
-        private void timer2_Tick(object sender, EventArgs e)
+        private void timerUpdate_Tick(object sender, EventArgs e)
         {   
             Meldingen();
         }
@@ -69,10 +70,23 @@ namespace ChapeauUI
             }
         }
         //Naam ingelogde gebruiker weergeven
-        public void LogedInEmployee(string employeeName)
+        public void LogedInEmployee(EmployeeModel employee)
         {
-            this.employeeFirstName = employeeName;
-            lblEmployeeName.Text = (string)employeeName;
+            this.employee = employee;
+            lblEmployeeName.Text = employee.firstName;
+        }
+        private void Function()
+        {
+            if(employee.employeeFunction == "Bediening")
+            {
+                btnKeukenOverzicht.Enabled = false;
+                btnBarOverzicht.Enabled = false;
+            }
+            else
+            {
+                btnKeukenOverzicht.Enabled = true;
+                btnBarOverzicht.Enabled = true;
+            }
         }
         //Uitloggen
         private void btnKassaLogOut_Click(object sender, EventArgs e)
@@ -124,14 +138,14 @@ namespace ChapeauUI
         }
         private void btnKeukenOverzicht_Click_1(object sender, EventArgs e)
         {
-            KeukenFrm2 keukenForm = new KeukenFrm2(employeeFirstName);
+            KeukenFrm2 keukenForm = new KeukenFrm2(employee.firstName);
             this.Hide();
             keukenForm.Closed += (s, args) => this.Close();
             keukenForm.Show();
         }
         private void btnBarOverzicht_Click_1(object sender, EventArgs e)
         {
-            BarFrm barForm = new BarFrm(employeeFirstName);
+            BarFrm barForm = new BarFrm(employee.firstName);
             this.Hide();
             barForm.Closed += (s, args) => this.Close();
             barForm.Show();
@@ -203,7 +217,7 @@ namespace ChapeauUI
             }
         }
         //Tijd
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timerTijd_Tick(object sender, EventArgs e)
         {
             DateTime OverzichtTijd = DateTime.Now;
             lblTijdTafelOverzicht.Text = OverzichtTijd.ToString("HH:mm:ss  dd-MM-yyyy");
