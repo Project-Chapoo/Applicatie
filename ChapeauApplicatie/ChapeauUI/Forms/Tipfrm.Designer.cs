@@ -170,6 +170,7 @@
             this.btnMenus.TabIndex = 7;
             this.btnMenus.Text = "Menu\'s";
             this.btnMenus.UseVisualStyleBackColor = false;
+            this.btnMenus.Click += new System.EventHandler(this.btnMenus_Click);
             // 
             // panel1
             // 

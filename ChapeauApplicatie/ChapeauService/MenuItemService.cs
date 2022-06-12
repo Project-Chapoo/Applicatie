@@ -23,10 +23,26 @@ namespace ChapeauService
             return menuItem;
         }
 
-        public void LunchSteak()
+        public void DepleteFromStock(int menuItemID)
         {
-            Menuitemsdb.SteakLunch();
+            Menuitemsdb.StockDepletion(menuItemID);
         }
+
+        public void DepleteFromStockWhileAddindQuantity(int menuItemID)
+        {
+            Menuitemsdb.StockDepletionWhileAddindQuantity(menuItemID);
+        }
+
+        public void IncreaseStockWhileAddindQuantity(int menuItemID)
+        {
+            Menuitemsdb.StockIncreaseWhileAddindQuantity(menuItemID);
+        }
+
+        public void AddToStock(int menuItemId)
+        {
+            Menuitemsdb.AddStock(menuItemId);
+        }
+
     }
     
 }

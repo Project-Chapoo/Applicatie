@@ -29,9 +29,9 @@ namespace ChapeauDAL
                     menuItemID = (int)dr["menuItemid"],
                     menuID = (int)(dr["menuID"]),
                     Category = (string)(dr["category"]),
-                    description = (int)(dr["description"]),
-                    price = (int)(dr["price"]),
-                    alcohol = (int)(dr["alcohol"]),
+                    description = (string)(dr["description"]),
+                    price = Convert.ToDouble(dr["price"]),
+                    alcohol = (bool)(dr["alcohol"]),
                     stock = (int)(dr["stock"]),
                 };
                 menuItems.Add(menuItem);
@@ -39,9 +39,37 @@ namespace ChapeauDAL
             return menuItems;
         }
 
-        public void SteakLunch()
+        public void StockSubstract(int menuItemID)
         {
-            string query = $"update menuitems set stock = stock - 1 where menuitemID = 1";
+            string query = $"update stock set stock = stock - 1 where MenuID = {menuItemID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void StockDepletion(int menuItemID)
+        {
+            string query = $"update menuItem set stock = stock - 1 where MenuItemID = {menuItemID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void AddStock(int menuItemID)
+        {
+            string query = $"update menuItem set stock = stock + 1 where MenuItemID = {menuItemID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void StockIncreaseWhileAddindQuantity(int menuItemID)
+        {
+            string query = $"update menuItem set stock = stock + 1 where MenuItemID = {menuItemID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void StockDepletionWhileAddindQuantity(int menuItemID)
+        {
+            string query = $"update menuItem set stock = stock - 1 where menuitemID = '{menuItemID}'";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }

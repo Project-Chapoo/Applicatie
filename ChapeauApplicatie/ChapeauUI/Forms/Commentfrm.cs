@@ -50,7 +50,10 @@ namespace ChapeauUI.Forms
 
         private void btnMenus_Click(object sender, EventArgs e)
         {
-            // TODO: Add link to the menu form
+            PDAOrdering_Joey p = new PDAOrdering_Joey(bill.TableID);
+            this.Hide();
+            p.Closed += (s, args) => this.Close();
+            p.Show();
         }
 
         private void btnOrderStatus_Click(object sender, EventArgs e)
