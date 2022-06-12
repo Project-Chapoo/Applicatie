@@ -48,6 +48,7 @@ namespace ChapeauDAL
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }
+        
 
         public void TableReserve(int tableID)
         {

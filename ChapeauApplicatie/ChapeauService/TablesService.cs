@@ -16,7 +16,7 @@ namespace ChapeauService
         {
             this.tablesdb = new TablesDAO();
         }
-        public Tables IsReserved(int tableID)
+        public Tables IsGereserveerd(int tableID)
         {
             return tablesdb.IsGereserveerd(tableID);
         }
