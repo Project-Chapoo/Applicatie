@@ -17,7 +17,7 @@ namespace ChapeauUI
     {
         private int tafelNummer;
         private EmployeeModel employee;
-
+        
         public TafelOverzicht()
         {
             InitializeComponent();
