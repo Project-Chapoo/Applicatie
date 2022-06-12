@@ -73,8 +73,9 @@ namespace ChapeauUI
         //Naam ingelogde gebruiker weergeven
         public void LogedInEmployee(string employee)
         {
-            this.employeeName = employee;
             lblEmployeeName.Text = employee;
+            this.employeeName = employee;
+            
         }
         
         //Uitloggen
@@ -245,7 +246,7 @@ namespace ChapeauUI
             {
                 string label = $"lblMelding{(i + 1)}";
 
-                if (i < 4)
+                if (i < gereed.Count)
                 {
                     pnlMeldingen.Controls[label].Text = $"Bestelling tafel {gereed[i]} gereed";
                 }
