@@ -109,6 +109,7 @@
             this.Quantity = new System.Windows.Forms.ColumnHeader();
             this.Description = new System.Windows.Forms.ColumnHeader();
             this.OrderItemID = new System.Windows.Forms.ColumnHeader();
+            this.Stock = new System.Windows.Forms.ColumnHeader();
             this.pbConfirmOrder = new System.Windows.Forms.PictureBox();
             this.btnVerwijderItem = new System.Windows.Forms.Button();
             this.btnDeleteOrder = new System.Windows.Forms.Button();
@@ -195,6 +196,7 @@
             this.btnEspresso = new System.Windows.Forms.Button();
             this.btnCappuchino = new System.Windows.Forms.Button();
             this.btnKoffie = new System.Windows.Forms.Button();
+            this.MenuItem = new System.Windows.Forms.ColumnHeader();
             this.pnlTableSelection.SuspendLayout();
             this.pnlOrderOrPayment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOrderOrPayment)).BeginInit();
@@ -1098,7 +1100,9 @@
             this.TafelID,
             this.Quantity,
             this.Description,
-            this.OrderItemID});
+            this.OrderItemID,
+            this.Stock,
+            this.MenuItem});
             this.lstviewOrder.FullRowSelect = true;
             this.lstviewOrder.GridLines = true;
             this.lstviewOrder.Location = new System.Drawing.Point(4, 34);
@@ -1122,6 +1126,10 @@
             // OrderItemID
             // 
             this.OrderItemID.Text = "OrderItemID";
+            // 
+            // Stock
+            // 
+            this.Stock.Text = "Stock";
             // 
             // pbConfirmOrder
             // 
@@ -2091,13 +2099,17 @@
             this.btnKoffie.UseVisualStyleBackColor = false;
             this.btnKoffie.Click += new System.EventHandler(this.btnKoffie_Click);
             // 
+            // MenuItem
+            // 
+            this.MenuItem.Text = "MenuItem";
+            // 
             // PDAOrdering_Joey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(240, 321);
-            this.Controls.Add(this.pnlOrderOrPayment);
             this.Controls.Add(this.pnlConfirmOrder);
+            this.Controls.Add(this.pnlOrderOrPayment);
             this.Controls.Add(this.pnlBieren);
             this.Controls.Add(this.pnlWijnen);
             this.Controls.Add(this.pnlGedestilleerdeDranken);
@@ -2351,5 +2363,7 @@
         private PictureBox pbGedesilleerdeDranken;
         private Label lblTableKoffieThee;
         private PictureBox pbKoffieThee;
+        private ColumnHeader Stock;
+        private ColumnHeader MenuItem;
     }
 }

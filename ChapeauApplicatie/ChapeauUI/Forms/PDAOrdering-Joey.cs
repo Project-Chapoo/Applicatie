@@ -19,31 +19,29 @@ namespace ChapeauUI
 
         private int tableID = 0;
         
-        private enum Tafelnummer
-        {
-            tafel1 = 1,
-            tafel2 = 2,
-            tafel3 = 3,
-            tafel4 = 4,
-            tafel5 = 5,
-            tafel6 = 6,
-            tafel7 = 7,
-            tafel8 = 8,
-            tafel9 = 9,
-            tafel10 = 10,
-        }
+       
 
         private string commentaar;
         private DateTime tijd = DateTime.Now;
         private int menuItemID = 0;
         private OrderItemsService orderItemsService = new OrderItemsService();
+        
 
         public PDAOrdering_Joey()
         {
             InitializeComponent();
         }
 
-        
+        public PDAOrdering_Joey(int tableID)
+        {
+            InitializeComponent();
+            this.tableID = tableID;
+            HideAllPanels();
+            showPanel("pnlOrderOrPayment");
+        }
+
+
+
 
 
         private void HideAllPanels()
@@ -69,6 +67,36 @@ namespace ChapeauUI
             pnlKoffieThee.Hide();
             pnlBieren.Hide();
             pnlWijnen.Hide();
+        }
+
+        private void CheckStockThenOrder(int menuItemID)
+        {
+            MenuItemService menuItemService = new MenuItemService();
+            List<MenuItem> ItemsList = menuItemService.GetMenuItems();
+            menuItemID--;
+            if (ItemsList[menuItemID].stock > 0)
+            {
+                DepleteStockWhenOrdering();
+                OrderOrAddQuantity();
+            }
+            else
+            {
+                MessageBox.Show("Voorraad is op, kies een ander gerecht.");
+            }
+        }
+
+        private void DepleteStockWhenOrdering()
+        {
+            MenuItemService menuItemService = new MenuItemService();
+            menuItemService.DepleteFromStock(menuItemID);
+        }
+
+ 
+
+        private void AddToStockWhenOrdering()
+        {
+            MenuItemService menuItemService = new MenuItemService();
+            menuItemService.AddToStock(menuItemID);
         }
 
 
@@ -193,22 +221,22 @@ namespace ChapeauUI
 
         private void btnHertenstoofpot_Click(object sender, EventArgs e)
         {
-            menuItemID = 4;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem4;
+            CheckStockThenOrder(menuItemID);
             showPanel("Lunch");
         }
 
         private void btnKabeljauw_Click(object sender, EventArgs e)
         {
-            menuItemID = 5;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem5;
+            CheckStockThenOrder(menuItemID);
             showPanel("Lunch");
         }
 
         private void btnLinguini_Click(object sender, EventArgs e)
         {
-            menuItemID = 6;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem6;
+            CheckStockThenOrder(menuItemID);
             showPanel("Lunch");
         }
 
@@ -332,22 +360,22 @@ namespace ChapeauUI
 
         private void btnLunchSteakTartaar_Click(object sender, EventArgs e)
         {
-            menuItemID = 1;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem1;
+            CheckStockThenOrder(menuItemID);
             showPanel("Lunch");
         }
 
         private void btnLunchPatéFazant_Click(object sender, EventArgs e)
         {
-            menuItemID = 2;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem2;
+            CheckStockThenOrder(menuItemID);
             showPanel("Lunch");
         }
 
         private void btnLunchVissoep_Click(object sender, EventArgs e)
         {
-            menuItemID = 3;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem3;
+            CheckStockThenOrder(menuItemID);
             showPanel("Lunch");
         }
 
@@ -359,22 +387,22 @@ namespace ChapeauUI
 
         private void btnTaart_Click(object sender, EventArgs e)
         {
-            menuItemID = 7;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem7;
+            CheckStockThenOrder(menuItemID);
             showPanel("Lunch");
         }
 
         private void btnMadeleine_Click(object sender, EventArgs e)
         {
-            menuItemID = 8;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem8;
+            CheckStockThenOrder(menuItemID);
             showPanel("Lunch");
         }
 
         private void btnBoerenKaas_Click(object sender, EventArgs e)
         {
-            menuItemID = 9;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem9;
+            CheckStockThenOrder(menuItemID);
             showPanel("Lunch");
         }
 
@@ -405,71 +433,71 @@ namespace ChapeauUI
 
         private void btnDinerKalfstartaar_Click(object sender, EventArgs e)
         {
-            menuItemID = 10;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem10;
+            CheckStockThenOrder(menuItemID);
             showPanel("Diner");
         }
 
         private void btnDinerFazant_Click(object sender, EventArgs e)
         {
-            menuItemID = 11;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem11;
+            CheckStockThenOrder(menuItemID);
             showPanel("Diner");
         }
 
         private void btnDinerKrabZalmKoekjes_Click(object sender, EventArgs e)
         {
-            menuItemID = 12;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem12;
+            CheckStockThenOrder(menuItemID);
             showPanel("Diner");
         }
 
         private void btnDinerTussengerechtVissoep_Click(object sender, EventArgs e)
         {
-            menuItemID = 13;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem13;
+            CheckStockThenOrder(menuItemID);
             showPanel("Diner");
         }
 
         private void btnDinerTussengerechtConsomméFazant_Click(object sender, EventArgs e)
         {
-            menuItemID = 14;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem14;
+            CheckStockThenOrder(menuItemID);
             showPanel("Diner");
         }
 
         private void btnDinerHoofdgerechtKabeljauw_Click(object sender, EventArgs e)
         {
-            menuItemID = 15;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem15;
+            CheckStockThenOrder(menuItemID);
             showPanel("Diner");
         }
 
         private void btnDinerHoofdgerechtenHertenbiefstuk_Click(object sender, EventArgs e)
         {
-            menuItemID = 17;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem17;
+            CheckStockThenOrder(menuItemID);
             showPanel("Diner");
         }
 
         private void btnDinerNagerechtenCaféSurprise_Click(object sender, EventArgs e)
         {
-            menuItemID = 18;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem18;
+            CheckStockThenOrder(menuItemID);
             showPanel("Diner");
         }
 
         private void btnDinerNagerechtenCherryBaby_Click(object sender, EventArgs e)
         {
-            menuItemID = 19;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem19;
+            CheckStockThenOrder(menuItemID);
             showPanel("Diner");
         }
 
         private void btnDinerNagerechtenFromage_Click(object sender, EventArgs e)
         {
-            menuItemID = 20;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem20;
+            CheckStockThenOrder(menuItemID);
             showPanel("Diner");
         }
 
@@ -495,8 +523,20 @@ namespace ChapeauUI
             try
             {                
                 int selectedOrderItemID = int.Parse(lstviewOrder.SelectedItems[0].SubItems[3].Text);
+                int StockCount = int.Parse(lstviewOrder.SelectedItems[0].SubItems[4].Text);
+                int selectedMenuItem = int.Parse(lstviewOrder.SelectedItems[0].SubItems[5].Text);
                 OrderItemsService orderItemsService = new OrderItemsService();
-                orderItemsService.AddItem(selectedOrderItemID);
+                MenuItemService menuItemService = new MenuItemService();
+                if (StockCount > 0)
+                {
+                    orderItemsService.AddItem(selectedOrderItemID);
+                    menuItemService.DepleteFromStockWhileAddindQuantity(selectedMenuItem);
+                    lstViewOrderedItems();
+                }
+                else
+                {
+                    MessageBox.Show("Voorraad is op, kies een ander gerecht om het aantal ervan te verhogen.");
+                }
                 lstViewOrderedItems();
             }
             catch (Exception)
@@ -513,17 +553,23 @@ namespace ChapeauUI
             OrderItemsService orderItemsService = new OrderItemsService();
             List<OrderItems> orderItemsList = orderItemsService.GetOrderItemsPerTable(tableID);
             OrderItems items = new OrderItems();
+
             try
             {                
                 int selectedItem = int.Parse(lstviewOrder.SelectedItems[0].SubItems[3].Text);
                 int quantityCheck = int.Parse(lstviewOrder.SelectedItems[0].SubItems[1].Text);
+                int selectedMenuItem = int.Parse(lstviewOrder.SelectedItems[0].SubItems[5].Text);
+                MenuItemService menuItemService = new MenuItemService();
+
                 if (quantityCheck == 1) 
                 {
-                     MessageBox.Show("Verwijder het item in plaats van het aantal 0 maken.");
+                     MessageBox.Show("Verwijder het item in plaats van het aantal 0 te maken.");
                 }
                 else 
                 {
                     orderItemsService.RemoveItem(selectedItem);
+                    menuItemService.IncreaseStockWhileAddindQuantity(selectedMenuItem);
+                    lstViewOrderedItems();
                 }
                 lstViewOrderedItems();
             }
@@ -548,6 +594,8 @@ namespace ChapeauUI
                 li.SubItems.Add(orderItem.Quantity.ToString());
                 li.SubItems.Add(orderItem.Description.ToString());
                 li.SubItems.Add(orderItem.OrderItemID.ToString());                
+                li.SubItems.Add(orderItem.Stock.ToString());                
+                li.SubItems.Add(orderItem.MenuItemID.ToString());                
                 lstviewOrder.Items.Add(li);
             }
         }
@@ -632,8 +680,8 @@ namespace ChapeauUI
 
         private void btnDinerHoofdgerechtenOssenhaas_Click_1(object sender, EventArgs e)
         {
-            menuItemID = 16;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem16;
+            CheckStockThenOrder(menuItemID);
             showPanel("Diner");
         }
 
@@ -674,50 +722,50 @@ namespace ChapeauUI
 
         private void btnSpaRood_Click(object sender, EventArgs e)
         {
-            menuItemID = 21;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem21;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
         private void btnSpaGroen_Click(object sender, EventArgs e)
         {
-            menuItemID = 22;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem22;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
         private void btnCola_Click(object sender, EventArgs e)
         {
-            menuItemID = 24;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem24;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
         private void btnColaLight_Click(object sender, EventArgs e)
         {
-            menuItemID = 23;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem23;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
         private void btnSisi_Click(object sender, EventArgs e)
         {
-            menuItemID = 25;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem25;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
         private void btnTonic_Click(object sender, EventArgs e)
         {
-            menuItemID = 26;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem26;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
         private void btnBitterLemon_Click(object sender, EventArgs e)
         {
-            menuItemID = 27;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem27;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
@@ -733,29 +781,29 @@ namespace ChapeauUI
 
         private void btnKoffie_Click(object sender, EventArgs e)
         {
-            menuItemID = 42;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem42;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
         private void btnCappuchino_Click(object sender, EventArgs e)
         {
-            menuItemID = 43;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem43;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
         private void btnEspresso_Click(object sender, EventArgs e)
         {
-            menuItemID = 44;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem44;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
         private void btnThee_Click(object sender, EventArgs e)
         {
-            menuItemID = 45;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem45;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
@@ -766,36 +814,36 @@ namespace ChapeauUI
 
         private void btnJongeJenever_Click(object sender, EventArgs e)
         {
-            menuItemID = 37;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem37;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
         private void btnWhiskey_Click(object sender, EventArgs e)
         {
-            menuItemID = 38;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem38;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
         private void btnRum_Click(object sender, EventArgs e)
         {
-            menuItemID = 39;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem39;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
         private void btnVieux_Click(object sender, EventArgs e)
         {
-            menuItemID = 40;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem40;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
         private void btnBerenburg_Click(object sender, EventArgs e)
         {
-            menuItemID = 41;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem41;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
@@ -806,36 +854,36 @@ namespace ChapeauUI
 
         private void btnGlasWitteWijn_Click(object sender, EventArgs e)
         {
-            menuItemID = 33;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem33;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
         private void btnFlesWitteWijn_Click(object sender, EventArgs e)
         {
-            menuItemID = 32;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem32;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
         private void btnGlasRodeWijn_Click(object sender, EventArgs e)
         {
-            menuItemID = 35;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem35;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
         private void btnFlesRodeWijn_Click(object sender, EventArgs e)
         {
-            menuItemID = 34;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem34;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
         private void btnChampagne_Click(object sender, EventArgs e)
         {
-            menuItemID = 36;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem36;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
@@ -846,29 +894,29 @@ namespace ChapeauUI
 
         private void btnHertogJan_Click(object sender, EventArgs e)
         {
-            menuItemID = 28;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem28;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
         private void btnDuvel_Click(object sender, EventArgs e)
         {
-            menuItemID = 29;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem29;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
         private void btnKriek_Click(object sender, EventArgs e)
         {
-            menuItemID = 30;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem30;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
         private void btnLeffeTripel_Click(object sender, EventArgs e)
         {
-            menuItemID = 31;
-            OrderOrAddQuantity();
+            menuItemID = (int)MenuItems.MenuItem31;
+            CheckStockThenOrder(menuItemID);
             showPanel("Dranken");
         }
 
