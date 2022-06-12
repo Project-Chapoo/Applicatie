@@ -26,11 +26,13 @@ namespace ChapeauUI.Forms
         private void btnCardPayment_Click(object sender, EventArgs e)
         {
             payingService.SendBill(bill);
+            this.Close();
         }
 
         private void btnCashPayment_Click(object sender, EventArgs e)
         {
             payingService.SendBill(bill);
+            this.Close();
         }
 
         private void btnBack_Click(object sender, EventArgs e)

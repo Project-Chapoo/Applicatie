@@ -70,28 +70,28 @@ namespace ChapeauUI
                     BarOverzicht(employee.firstName);
                     break;
                 case "Eigenaar":
-                    TafelOverzicht(employee);
+                    TafelOverzicht(employee.firstName);
                     break;
             }
         }
-        private void TafelOverzicht(EmployeeModel employee)
+        private void TafelOverzicht(string employeeName)
         {
             TafelOverzicht tafelOverzicht = new TafelOverzicht();
-            tafelOverzicht.LogedInEmployee(employee);
+            tafelOverzicht.LogedInEmployee(employeeName);
             this.Hide();
             tafelOverzicht.Closed += (s, args) => this.Close();
             tafelOverzicht.Show();
         }
-        private void BarOverzicht(string employeeFirstName)
+        private void BarOverzicht(string employee)
         {
-            BarFrm barForm = new BarFrm(employeeFirstName);
+            BarFrm barForm = new BarFrm(employee);
             this.Hide();
             barForm.Closed += (s, args) => this.Close();
             barForm.Show();
         }
-        private void KeukenOverzicht(string EmployeeFirstName)
+        private void KeukenOverzicht(string employee)
         {
-            KeukenFrm2 keukenForm = new KeukenFrm2(EmployeeFirstName);
+            KeukenFrm2 keukenForm = new KeukenFrm2(employee);
             this.Hide();
             keukenForm.Closed += (s, args) => this.Close();
             keukenForm.Show();

@@ -16,7 +16,7 @@ namespace ChapeauUI
     public partial class TafelOverzicht : Form
     {
         private int tafelNummer;
-        private EmployeeModel employee;
+        private string employeeName;
         
         public TafelOverzicht()
         {
@@ -29,7 +29,7 @@ namespace ChapeauUI
             Meldingen();
             HidePanels();
             LoadTableColors();
-            Function();
+           
         }
         private void TafelNummer(int Nummer)
         {
@@ -71,24 +71,12 @@ namespace ChapeauUI
             }
         }
         //Naam ingelogde gebruiker weergeven
-        public void LogedInEmployee(EmployeeModel employee)
+        public void LogedInEmployee(string employee)
         {
-            this.employee = employee;
-            lblEmployeeName.Text = employee.firstName;
+            this.employeeName = employee;
+            lblEmployeeName.Text = employee;
         }
-        private void Function()
-        {
-            if(employee.employeeFunction == "Bediening")
-            {
-                btnKeukenOverzicht.Enabled = false;
-                btnBarOverzicht.Enabled = false;
-            }
-            else
-            {
-                btnKeukenOverzicht.Enabled = true;
-                btnBarOverzicht.Enabled = true;
-            }
-        }
+        
         //Uitloggen
         private void btnKassaLogOut_Click(object sender, EventArgs e)
         {
@@ -139,14 +127,14 @@ namespace ChapeauUI
         }
         private void btnKeukenOverzicht_Click_1(object sender, EventArgs e)
         {
-            KeukenFrm2 keukenForm = new KeukenFrm2(employee.firstName);
+            KeukenFrm2 keukenForm = new KeukenFrm2(employeeName);
             this.Hide();
             keukenForm.Closed += (s, args) => this.Close();
             keukenForm.Show();
         }
         private void btnBarOverzicht_Click_1(object sender, EventArgs e)
         {
-            BarFrm barForm = new BarFrm(employee.firstName);
+            BarFrm barForm = new BarFrm(employeeName);
             this.Hide();
             barForm.Closed += (s, args) => this.Close();
             barForm.Show();
@@ -253,7 +241,7 @@ namespace ChapeauUI
         }
         private void MeldingenWeergeven(List<int> gereed)
         {
-            for (int i = 0; i < gereed.Count; i++)
+            for (int i = 0; i < 3; i++)
             {
                 string label = $"lblMelding{(i + 1)}";
 
@@ -401,6 +389,7 @@ namespace ChapeauUI
             {
                 orderService.UpdateBarServed(1, this.tafelNummer);
                 nogServeren.Remove("Bar");
+                btnGeserveerd.Hide();
             }
             if(cbServeren2.Checked)
             {

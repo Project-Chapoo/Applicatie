@@ -59,11 +59,7 @@ namespace ChapeauService
             return btwPrice;
         }
 
-        public void SendBill(Bill bill) 
-        {
-            CheckIfCommentPresent(bill);
-            payingDAO.SendBill(bill);
-        }   
+           
 
         private void CheckIfCommentPresent(Bill bill)
         {

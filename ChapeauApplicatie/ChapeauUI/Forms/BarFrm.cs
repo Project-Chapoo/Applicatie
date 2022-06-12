@@ -14,18 +14,18 @@ namespace ChapeauUI.Forms
 {
     public partial class BarFrm : Form
     {
-        private string EmployeeName = "";
-        public BarFrm(string EmployeeName)
+        private string employeeName;
+        public BarFrm(string employeeName)
         {
             InitializeComponent();
-            this.EmployeeName = EmployeeName;
+            this.employeeName = employeeName;
         }
 
         private void BarFrm_Load(object sender, EventArgs e)
         {
             timer1.Start();
             FIllListViews();
-            LogedInEmployee(EmployeeName);
+            LogedInEmployee();
         }
         private void FIllListViews()
         {
@@ -170,10 +170,10 @@ namespace ChapeauUI.Forms
             this.Hide();
             TafelOverzicht tafelOverzicht = new TafelOverzicht();
             tafelOverzicht.Show();
-            tafelOverzicht.LogedInEmployee(EmployeeName);
+            tafelOverzicht.LogedInEmployee(employeeName);
 
         }
-        public void LogedInEmployee(string employeeName)
+        public void LogedInEmployee()
         {
             lblEmployeeName.Text = employeeName;
         }

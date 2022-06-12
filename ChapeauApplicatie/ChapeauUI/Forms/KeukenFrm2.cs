@@ -14,18 +14,18 @@ namespace ChapeauUI.Forms
 {
     public partial class KeukenFrm2 : Form
     {
-        private string EmployeeName = "";
-        public KeukenFrm2(string EmployeeName)
+        private string employeeName;
+        public KeukenFrm2(string employeeName)
         {
             InitializeComponent();
-            this.EmployeeName = EmployeeName;
+            this.employeeName = employeeName;
         }
 
         private void KeukenFrm2_Load(object sender, EventArgs e)
         {
             timer1.Start();
             FIllListViews();
-            LogedInEmployee(EmployeeName);
+            LogedInEmployee();
         }
         private void FIllListViews()
         {
@@ -176,9 +176,9 @@ namespace ChapeauUI.Forms
             this.Hide();
             TafelOverzicht tafelOverzicht = new TafelOverzicht();
             tafelOverzicht.Show();
-            tafelOverzicht.LogedInEmployee(EmployeeName);
+            tafelOverzicht.LogedInEmployee(employeeName);
         }
-        public void LogedInEmployee(string employeeName)
+        public void LogedInEmployee()
         {
             lblEmployeeName.Text = employeeName;
         }
