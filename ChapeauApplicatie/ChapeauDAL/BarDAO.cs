@@ -42,8 +42,10 @@ namespace ChapeauDAL
         public void ReadyOrder(int orderID)
         {
             string query = $"Update [Order] SET OrderReady = 1 WHERE OrderID = {orderID}";
+            string query1 = $"Update [Order] SET OrderServed = 0 WHERE OrderID = {orderID}";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
+            ExecuteEditQuery(query1, sqlParameters);
         }
         public void ReadyAllBarOrderItems(int orderID)
         {
