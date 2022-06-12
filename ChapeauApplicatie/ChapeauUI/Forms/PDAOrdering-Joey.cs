@@ -69,6 +69,9 @@ namespace ChapeauUI
             pnlWijnen.Hide();
         }
 
+
+        //checks stock and then if the stock isn't 0 or less, it puts the item in order items
+        //if stock is 0, shows a message that the item is out of stock
         private void CheckStockThenOrder(int menuItemID)
         {
             MenuItemService menuItemService = new MenuItemService();
