@@ -36,8 +36,8 @@
             this.btnOrderStatus = new System.Windows.Forms.Button();
             this.btnMenus = new System.Windows.Forms.Button();
             this.btnComment = new System.Windows.Forms.Button();
-            this.lblBTW = new System.Windows.Forms.Label();
-            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.lblLowAndHighBTW = new System.Windows.Forms.Label();
+            this.lblTotalPriceAndBTW = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -154,25 +154,25 @@
             this.btnComment.UseVisualStyleBackColor = false;
             this.btnComment.Click += new System.EventHandler(this.btnComment_Click);
             // 
-            // lblBTW
+            // lblLowAndHighBTW
             // 
-            this.lblBTW.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblBTW.ForeColor = System.Drawing.Color.White;
-            this.lblBTW.Location = new System.Drawing.Point(11, 190);
-            this.lblBTW.Name = "lblBTW";
-            this.lblBTW.Size = new System.Drawing.Size(179, 16);
-            this.lblBTW.TabIndex = 10;
-            this.lblBTW.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblLowAndHighBTW.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblLowAndHighBTW.ForeColor = System.Drawing.Color.White;
+            this.lblLowAndHighBTW.Location = new System.Drawing.Point(11, 190);
+            this.lblLowAndHighBTW.Name = "lblLowAndHighBTW";
+            this.lblLowAndHighBTW.Size = new System.Drawing.Size(202, 16);
+            this.lblLowAndHighBTW.TabIndex = 10;
+            this.lblLowAndHighBTW.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblTotalPrice
+            // lblTotalPriceAndBTW
             // 
-            this.lblTotalPrice.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTotalPrice.ForeColor = System.Drawing.Color.White;
-            this.lblTotalPrice.Location = new System.Drawing.Point(11, 206);
-            this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(179, 16);
-            this.lblTotalPrice.TabIndex = 10;
-            this.lblTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTotalPriceAndBTW.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalPriceAndBTW.ForeColor = System.Drawing.Color.White;
+            this.lblTotalPriceAndBTW.Location = new System.Drawing.Point(11, 206);
+            this.lblTotalPriceAndBTW.Name = "lblTotalPriceAndBTW";
+            this.lblTotalPriceAndBTW.Size = new System.Drawing.Size(204, 16);
+            this.lblTotalPriceAndBTW.TabIndex = 10;
+            this.lblTotalPriceAndBTW.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel1
             // 
@@ -239,8 +239,8 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblBTW);
-            this.Controls.Add(this.lblTotalPrice);
+            this.Controls.Add(this.lblLowAndHighBTW);
+            this.Controls.Add(this.lblTotalPriceAndBTW);
             this.Controls.Add(this.txtOrder);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
@@ -267,8 +267,8 @@
         private Button btnOrderStatus;
         private Button btnMenus;
         private Button btnComment;
-        private Label lblBTW;
-        private Label lblTotalPrice;
+        private Label lblLowAndHighBTW;
+        private Label lblTotalPriceAndBTW;
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;

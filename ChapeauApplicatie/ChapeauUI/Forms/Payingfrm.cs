@@ -53,9 +53,8 @@ namespace ChapeauUI.Forms
                 item.SubItems.Add($"€ {b.Price:0.00}");
                 txtOrder.Items.Add(item);
             }
-
-            lblTotalPrice.Text = $"Totale prijs: € {bill.TotalPrice:0.00}";
-            lblBTW.Text = $"BTW: € {bill.BTWPrice:0.00}";
+            lblTotalPriceAndBTW.Text = $"Totale prijs: € {bill.TotalPrice:0.00} - BTW: € {bill.BTWPrice:0.00}";
+            lblLowAndHighBTW.Text = $"6% BTW: € {bill.LowBTWPrice:0.00} - 21% BTW: € {bill.HighBTWPrice:0.00}";
         }
 
         private void btnComment_Click(object sender, EventArgs e)
