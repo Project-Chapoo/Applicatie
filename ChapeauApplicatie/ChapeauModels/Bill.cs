@@ -16,6 +16,8 @@
         public int TableID { get; }
         public string Comment { get; set; }
         public double BTWPrice { get; set; }
+        public double LowBTWPrice { get; set; }
+        public double HighBTWPrice { get; set; }
         public string EmployeeFirstName { get; }
         public string EmployeeLastName { get; }
         public List<BillItem> billItems { get; set; }

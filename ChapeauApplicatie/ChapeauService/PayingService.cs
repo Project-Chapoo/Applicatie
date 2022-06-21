@@ -36,6 +36,16 @@ namespace ChapeauService
             }
         }
 
+        public double CalculateLowBTWPrice(BillItem b)
+        {
+            return (b.Price / oneHunderdsixPercentFactor * sixPercentFactor) * b.Quantity;
+        }
+
+        public double CalculateHighBTWPrice(BillItem b)
+        {
+            return (b.Price / oneHunderdTwentyOnePercentFactor * twentyOnePercentFactor) * b.Quantity;
+        }
+
         public double CalculateBTW(Bill bill)
         {
             double btwPrice = 0;
@@ -48,11 +58,13 @@ namespace ChapeauService
                 }
                 else if (b.Alcohol)
                 {
-                    btwPrice += (b.Price / oneHunderdTwentyOnePercentFactor * twentyOnePercentFactor) * b.Quantity;
+                    btwPrice += CalculateHighBTWPrice(b);
+                    bill.HighBTWPrice += CalculateHighBTWPrice(b); 
                 }
                 else
                 {
-                    btwPrice += (b.Price / oneHunderdsixPercentFactor * sixPercentFactor) * b.Quantity;
+                    btwPrice += CalculateLowBTWPrice(b);
+                    bill.LowBTWPrice += CalculateLowBTWPrice(b);
                 }
             }
 
